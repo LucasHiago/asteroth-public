@@ -1,5 +1,7 @@
 # Asteroth
 
+![Asteroth banner](concepts/white_red_bg.png)
+
 > MMORPG isométrico em um planeta esférico, onde tudo o que existe foi construído (e pode ser destruído) pelos players.
 
 Asteroth é um mundo persistente. Um único planeta — uma esfera real, gerada de uma seed. O mundo nasce vazio: sem cidades pré-fabricadas, sem NPCs em vilarejos, sem estruturas imutáveis. Toda civilização que existir nele será construída pelos próprios players. E tudo que é construído pode ser destruído ou pilhado.
