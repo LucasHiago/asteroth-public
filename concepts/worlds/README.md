@@ -10,13 +10,13 @@ Estes não substituem os [Contos dos Governantes](../../stories/), são paisagen
 |---|---|---|
 | 01 | [O herdeiro do vale](01-o-herdeiro-do-vale.md) | `0bc15ba7-…` |
 | 02 | [A cachoeira que escuta](02-a-cachoeira-que-escuta.md) | `5ffef3ab-…` |
-| 03 | [A esfera nas mãos](03-a-esfera-nas-maos.md) | `6f74f502-…` |
-| 04 | [A cartógrafa de Porto Velho](04-a-cartografa-de-porto-velho.md) | `35e2e1c6-…` |
+| 03 | [A centelha de Asteroth](03-a-centelha-de-asteroth.md) | `6f74f502-…` |
+| 04 | [A cartógrafa da Cidadela](04-a-cartografa-da-cidadela.md) | `35e2e1c6-…` |
 | 05 | [O mensageiro do desfiladeiro](05-o-mensageiro-do-desfiladeiro.md) | `280d1a25-…` |
 | 06 | [O caminho de Abneroon](06-o-caminho-de-abneroon.md) | `748fbdf6-…` |
-| 07 | [A noite de quem acampa](07-a-noite-de-quem-acampa.md) | `1495a997-…` |
+| 07 | [A guardiã do portal âmbar](07-a-guardia-do-portal-ambar.md) | `1495a997-…` |
 | 08 | [Antes da descida](08-antes-da-descida.md) | `37797ea6-…` |
-| 09 | [A torre que cresceu sozinha](09-a-torre-que-cresceu-sozinha.md) | `c44ebb64-…` |
+| 09 | [O que veio com a primavera](09-o-que-veio-com-a-primavera.md) | `c44ebb64-…` |
 | 10 | [O vigia da margem](10-o-vigia-da-margem.md) | `cd8f1bf2-…` |
 | 11 | [O monge que parou de andar](11-o-monge-que-parou-de-andar.md) | `cf83d72b-…` |
 | 12 | [A ilha do contrato](12-a-ilha-do-contrato.md) | `d48500cf-…` |
