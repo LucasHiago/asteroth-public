@@ -42,6 +42,20 @@ Infelizmente para os homens, **Asteroth não está sozinho**. Ele é apenas um e
 
 Cada um desses governantes desperta sob condições específicas, quase sempre desencadeadas por **ações humanas** dentro do planeta. O catálogo dos despertares está em [`GOVERNANTES.md`](GOVERNANTES.md).
 
+O lugar onde Asteroth dorme hoje tem nome próprio. Veja [Mithril e as montanhas de Nimue](#mithril-e-as-montanhas-de-nimue).
+
+## Mithril e as montanhas de Nimue
+
+**Partícula e vazio são opostos naturais.** Uma partícula é uma diferença no vazio, um ponto de presença onde antes não havia nada. Por isso se repelem. Onde uma cresce, o outro se condensa pra resistir.
+
+**Mithril** é o vazio condensado. Aglomerado em rocha, lembra diamante na densidade, mas é negro. Quando se aproxima de uma divindade, ou de qualquer coisa nascida da partícula verdadeira, **ilumina-se em tom azulado**. Quanto mais forte a presença, mais intenso o brilho. Esse mesmo brilho **enfraquece divindades**. Inclusive Asteroth.
+
+O mithril é prisão natural. Não foi feito pra conter divindades, apenas as contém, pelo simples fato de existir. Nem **Astaroth**, nascido direto do colapso da partícula verdadeira, nem **Asteroth**, seu primeiro filho, jamais conseguiram atravessar uma cordilheira de mithril sem deixar parte de si pra trás.
+
+As **montanhas de Nimue**, a leste do continente conhecido, são uma dessas cordilheiras. Gélidas, intransponíveis, rodeadas de veios de mithril expostos a céu aberto. Foi para o coração de Nimue que Asteroth foi descansar depois do cataclismo. Hoje, milênios passados, o que dorme ali não é mais um corpo. É um **espírito preso**. A cratera vulcânica original se calou e congelou. A montanha cresceu por cima. O rei do planeta está dentro, e a própria montanha o segura.
+
+Fragmentos menores de mithril, longe de Nimue, espalham-se pelo mundo. Onde aparecem, em geral estão acompanhados de coisas que não deveriam estar soltas.
+
 ---
 
 ## O planeta
