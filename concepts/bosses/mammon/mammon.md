@@ -1,27 +1,15 @@
 # Mammon, o Demônio da Avareza
 
-> Concept art em **low poly**, **fundo transparente**, sheet de personagem em corpo inteiro, pose sentada num trono de moedas, leve plongée.
+> Demônio obeso opulento, 5m, olhos de moeda dourada, manto púrpura, sentado em ouro. Ver [STYLE.md](../STYLE.md).
 
-## Prompt
+## Subject
 
-Concept art low poly, transparent background, full body character sheet, pose sentada num pequeno trono de moedas amontoadas.
+```
+Opulent obese greed demon, 5m, exaggerated rolls of fat, triple chin, lazy lounging pose seated on a small throne of piled gold coins, wide grinning face with golden teeth, flat pig-snout nose, two short gold-leafed ram horns twisted upward, eyes are shining gold coins with vertical dollar-sign pupils, oily red-wine wine skin with darker spots and folds, golden scales growing on shoulders chest and forearms like fused coin armor, long purple imperial cloak with gold embroidered lining, thick layered gold chains over chest with cifrao and scale medallions, wide red leather belt with bulging coin pouches, divided black hoofed feet with gold toe-rings, thin tail ending in a tiny hand clutching a coin, short scepter topped with overflowing treasure chest in right hand, orbital ring of gold coins floating around body.
+```
 
-Demônio obeso e opulento, cerca de **5 metros de altura**, físico exageradamente gordo: barriga gigantesca pendendo entre as coxas abertas, papada tripla, braços roliços com punhos curtos. Postura preguiçosa, recostado, uma das mãos apoiando o queixo, a outra segurando moedas que escorrem entre os dedos.
+## Negative
 
-**Cabeça:** rosto largo, bochechas estufadas, sorriso ganancioso fixo mostrando **dentes de ouro** alinhados. Nariz de porco achatado com narinas largas. **Dois chifres curtos de carneiro** torcidos pra cima na testa, ambos folheados a ouro com entalhes de moedas antigas.
-
-**Olhos:** **duas moedas de ouro cintilantes** no lugar dos globos oculares, cada uma marcada com um símbolo monetário arcano, pupilas pretas no centro como cifrões verticais.
-
-**Pele:** tom **vermelho-vinho oleoso**, untuoso, brilhante, com pintas escuras espalhadas. Em volta do pescoço, dobras grossas como anéis de gordura. Por cima, **escamas douradas** crescendo dos ombros, do peito e dos antebraços como uma armadura natural feita de moedas fundidas.
-
-**Tronco e roupa:** **manto longo púrpura imperial** caindo dos ombros pra trás, forrado por dentro com **tecido dourado bordado**, costurado com fios de prata. No peito, **correntes grossas de ouro** sobrepostas, com medalhões: balanças, baús, símbolos de cifrão arcano. Cinto largo de couro vermelho com **bolsas estufadas de moedas** penduradas.
-
-**Pernas e pés:** coxas grossas, panturrilhas curtas, pés com cascos pretos divididos como de bode, anéis de ouro nos artelhos.
-
-**Cauda:** longa e fina, cor da pele, ponta em formato de **mão fechada segurando uma moeda**.
-
-**Aura:** **moedas de ouro flutuando** em órbita ao redor do corpo, polígonos dourados em rotação lenta. Pequenas faíscas amarelas pipocando no ar. Embaixo dele, um pequeno **lago de ouro líquido** com formato hexagonal facetado.
-
-**Acessórios:** segura na mão um **cetro curto** com cabeça em forma de baú aberto transbordando joias. Anéis enormes em cada dedo: rubis, esmeraldas, diamantes em geometria low poly.
-
-Estilo: low poly facetado, paleta dominada por **dourado intenso, vermelho-vinho e púrpura**, cell-shading rico, iluminação quente como de tesouro iluminado por tocha.
+```
+realistic, photoreal, smooth shading, blurry, low detail, extra limbs, deformed, cluttered background, watermark, text, low quality
+```

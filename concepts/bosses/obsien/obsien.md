@@ -1,29 +1,15 @@
 # Obsien, o Senhor do Vidro Vulcânico
 
-> Concept art em **low poly**, **fundo transparente**, sheet de personagem em corpo inteiro, pose dinâmica, lava escorrendo.
+> Elemental ágil de obsidiana com magma nas frestas, 4m, duas lâminas curvas. Ver [STYLE.md](../STYLE.md).
 
-## Prompt
+## Subject
 
-Concept art low poly, transparent background, full body character sheet, pose dinâmica, peso no pé esquerdo, braço direito estendido pra frente, gotejando magma.
+```
+Athletic elemental humanoid forged from obsidian and magma, 4m, agile dynamic pose with weight on left foot and right arm extended forward dripping molten lava, broad shoulders defined waist muscular legs, faceted skull of polished black obsidian with violet and blue reflections on facets, no hair, fine cracks across face revealing pulsing orange-red magma below especially around mouth and eyes, eyes are elongated slits of bright lava with molten tears streaming, body built from black obsidian armor plates fused into flesh, between plates living rachaduras stream bright red-orange-yellow magma, large central fire-rune crack glowing on chest, pointed obsidian spikes on shoulders, broad forearms with shiny black claws on fingertips, magma dripping from fingertips in slow motion, three-toed obsidian feet leaving molten footprints, twin curved obsidian black scimitars one in each hand with bright cutting edge and orange runes glowing in the center, heat haze and floating embers around body, faint molten pool forming below.
+```
 
-Entidade humanoide elemental, cerca de **4 metros de altura**, físico atlético e ágil (apesar de ser feito de magma e obsidiana), ombros largos, cintura definida, pernas musculosas e proporcionais. Postura ativa, em movimento constante, nunca em repouso.
+## Negative
 
-**Cabeça:** crânio facetado em **obsidiana pura**, polido como espelho negro, com **reflexos azulados e roxos** nas facetas. Sem cabelo. **Rachaduras finas** atravessando o rosto deixam ver **magma laranja-vermelho pulsante** por baixo, especialmente em volta da boca e dos olhos.
-
-**Olhos:** **fendas alongadas com lava brilhante** dentro, sem globos oculares, apenas luz líquida laranja-amarela escorrendo levemente como lágrimas de fogo.
-
-**Pele:** corpo composto por **placas geométricas low poly de obsidiana negra brilhante**, dispostas como armadura natural fundida na carne. Entre as placas, **rachaduras vivas mostram magma fluindo** em vermelho-laranja-amarelo. A textura alterna entre **superfície de vidro vulcânico polido** e **veios de lava em movimento**. As articulações são as áreas mais luminosas, onde a obsidiana se quebra mais.
-
-**Tronco:** peito coberto por placas grandes de obsidiana, com uma **runa de fogo central** desenhada por uma rachadura maior, parecendo um símbolo intencional.
-
-**Braços:** ombros com placas pontiagudas pra cima como espinhos negros. Antebraços largos, mãos com **garras de obsidiana negra brilhante**. Pontas dos dedos escorrendo gotas de magma que caem em câmera lenta.
-
-**Pernas:** coxas e panturrilhas com placas. Pés terminando em garras tridáctilas de obsidiana. **Rastro de magma** marcando o chão onde ele pisa.
-
-**Aura:** **partículas de brasa** flutuando ao redor do corpo, polígonos pequenos vermelho-laranja em ascensão. **Distorção térmica** sutil no ar em volta. **Pequenas labaredas** saltando das fendas de tempos em tempos. Embaixo dele, **uma poça facetada de magma** se forma onde para.
-
-**Acessórios:** **par de lâminas curvas de obsidiana negra** brilhante, uma em cada mão, com fio cortante reluzente e cabo enrolado em couro queimado. As lâminas têm **runas brilhando em laranja** no centro.
-
-**Detalhe característico:** mesmo com tantas placas pesadas, sua silhueta deve sugerir **velocidade**. Ele nunca está estático.
-
-Estilo: low poly facetado, paleta dominante **preto-obsidiana brilhante, vermelho-magma, laranja-lava e amarelo-incandescente**, cell-shading dramático com contraste forte entre negro polido e luz interna, iluminação interna vinda das rachaduras.
+```
+realistic, photoreal, smooth shading, blurry, low detail, extra limbs, deformed, cluttered background, watermark, text, low quality
+```

@@ -1,23 +1,15 @@
 # Cthulhu, o Sumo Sacerdote dos Antigos
 
-> Concept art em **low poly**, **fundo transparente**, sheet de personagem em corpo inteiro, pose imponente vista de frente, leve contraplongée.
+> Titã cósmico aquático, 30m, rosto coberto por tentáculos, asas atrofiadas. Ver [STYLE.md](../STYLE.md).
 
-## Prompt
+## Subject
 
-Concept art low poly, transparent background, full body character sheet, frontal pose.
+```
+Cosmic priest titan, 30m colossal hunched humanoid, lower face replaced by mass of long thick tentacles like a beard with suckers, small luminous white pupil-less eyes deep under heavy scaled brow, dark moss-green skin with abyssal blue chest and deep purple veins on shoulders, atrophied membranous bat wing pair folded behind, oversized webbed hands with curved black claws, three-toed clawed feet, alien non-euclidean runes carved on chest and forearms, faint green and purple particle aura, seawater dripping from shoulders.
+```
 
-Titã cósmico humanoide colossal, cerca de **30 metros de altura**, postura de sacerdote ancestral recém-desperto: ombros largos curvados pra frente, pescoço grosso, espinha levemente curvada como quem dormiu eras submerso. Corpo musculoso e bulboso com proporções desumanas, abdômen denso, coxas pesadas, pés de três dedos com garras chatas adaptadas pro fundo do mar.
+## Negative
 
-**Cabeça:** crânio massivo, sem boca visível, no lugar do rosto inferior uma **massa densa de tentáculos longos** descendo como barba viva, cada tentáculo com ventosas que pulsam fracamente. Olhos pequenos, brancos sem íris, ofuscantemente luminosos contra a sombra do rosto, posicionados bem fundos sob uma testa proeminente em escamas grossas.
-
-**Pele:** escamas geométricas low poly, paleta dominante em **verde-musgo profundo** com manchas de **azul-petróleo abissal** e veios de **púrpura escuro** correndo do peito até os ombros. Textura úmida, com brilhos pontuais como se acabasse de emergir do oceano.
-
-**Costas:** **par de asas membranosas** dobradas, finas e esfarrapadas, da cor da carne morta, com nervuras escuras, claramente atrofiadas pelo tempo submerso.
-
-**Membros:** braços longos desproporcionais, mãos enormes com garras pretas curvas, dedos palmados. Pernas troncudas.
-
-**Aura:** distorção atmosférica em volta da cabeça, leve halo de **partículas roxas e verdes** flutuando como esporos de pesadelo, sugestão de água escorrendo dos ombros em filetes finos.
-
-**Detalhes ocultistas:** entalhes rúnicos low poly em baixo-relevo no peito e nos antebraços, símbolos não-euclidianos que parecem se contorcer.
-
-Estilo: facetado, polígonos visíveis, **sem realismo**, sombreado em cell-shading suave, sem outline grosso. Iluminação fria vinda de cima.
+```
+realistic, photoreal, smooth shading, blurry, low detail, extra limbs, deformed, cluttered background, watermark, text, low quality
+```
