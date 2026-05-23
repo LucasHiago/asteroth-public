@@ -1,6 +1,6 @@
 # Contos do mundo de Asteroth
 
-Histórias curtas ambientadas no mundo. Cada conto é independente — pode ser lido sozinho — mas todos se passam no mesmo planeta, sob o mesmo sol, sob as duas luas.
+Histórias curtas ambientadas no mundo. Cada conto é independente, pode ser lido sozinho, mas todos se passam no mesmo planeta, sob o mesmo sol, sob as duas luas.
 
 A intenção é que essa pasta cresça com o tempo, e que dela nasçam livros no futuro.
 
@@ -8,9 +8,9 @@ A intenção é que essa pasta cresça com o tempo, e que dela nasçam livros no
 
 A ordem cronológica do mundo (quando o conto se passa em relação à linha do tempo de Asteroth) está no cabeçalho de cada arquivo. Sem isso, leia em qualquer ordem.
 
-## Coleção atual — Contos dos Governantes
+## Coleção atual: Contos dos Governantes
 
-Vinte e seis vinhetas, uma por governante do panteão (ver [`../GOVERNANTES.md`](../GOVERNANTES.md)). Cada uma mostra a entidade interagindo com humanos — em alguns casos no momento do despertar, em outros já em ação.
+Vinte e seis vinhetas, uma por governante do panteão (ver [`../GOVERNANTES.md`](../GOVERNANTES.md)). Cada uma mostra a entidade interagindo com humanos, em alguns casos no momento do despertar, em outros já em ação.
 
 | # | Conto | Governante |
 |---|---|---|
@@ -59,6 +59,6 @@ Vinte e seis vinhetas, uma por governante do panteão (ver [`../GOVERNANTES.md`]
 
 ## Material relacionado
 
-- [`../LORE.md`](../LORE.md) — canon do mundo (planeta, sol, luas, civilização).
-- [`../GOVERNANTES.md`](../GOVERNANTES.md) — panteão das 26 entidades.
-- [`../GAMEPLAY.md`](../GAMEPLAY.md) — mecânicas em tom narrativo.
+- [`../LORE.md`](../LORE.md), canon do mundo (planeta, sol, luas, civilização).
+- [`../GOVERNANTES.md`](../GOVERNANTES.md), panteão das 26 entidades.
+- [`../GAMEPLAY.md`](../GAMEPLAY.md), mecânicas em tom narrativo.

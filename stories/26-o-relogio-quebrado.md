@@ -10,15 +10,15 @@ Foi uma hora simples. Sem testemunhas. Apenas voltar a sala da experiência ao e
 
 Não houve dia seguinte.
 
-À noite, a sala se encheu de uma luz fria que não tinha cor. Chronus desceu — não do teto, não da janela. Apareceu de dentro do próprio relógio na parede, como se sempre tivesse estado ali. Mantos cósmicos flutuando ao redor de algo que pareceu, por um instante, a face de um homem.
+À noite, a sala se encheu de uma luz fria que não tinha cor. Chronus desceu, não do teto, não da janela. Apareceu de dentro do próprio relógio na parede, como se sempre tivesse estado ali. Mantos cósmicos flutuando ao redor de algo que pareceu, por um instante, a face de um homem.
 
-— *Você abusou* — disse. — *De tempo que não era seu.*
+"Você abusou", disse., "De tempo que não era seu."
 
 Avran tentou falar. A voz não saiu. Olhou o relógio: estava quebrado. Pra trás. Não-funcionando.
 
-Chronus tocou-lhe o peito. Avran sentiu a primeira ferida — não no corpo, mas na vida. Cada lembrança feliz que ele tinha começou a sangrar, aos poucos. As feridas eram dolorosas e nunca cicatrizariam. Avran iria viver — Chronus não o matou — mas viveria como velório eterno.
+Chronus tocou-lhe o peito. Avran sentiu a primeira ferida, não no corpo, mas na vida. Cada lembrança feliz que ele tinha começou a sangrar, aos poucos. As feridas eram dolorosas e nunca cicatrizariam. Avran iria viver, Chronus não o matou, mas viveria como velório eterno.
 
-Encontraram-no anos depois, sentado na mesma sala, fitando o mesmo relógio quebrado. Vivo. Velho. Vazio. Murmurando, em loop, uma única palavra: — *Devolve.*
+Encontraram-no anos depois, sentado na mesma sala, fitando o mesmo relógio quebrado. Vivo. Velho. Vazio. Murmurando, em loop, uma única palavra:, *Devolve.*
 
 ---
 
