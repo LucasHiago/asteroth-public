@@ -56,7 +56,7 @@ Um recorte da coleção em [`concepts/worlds/`](concepts/worlds/). Cada arte aco
 | [![A ilha do contrato](concepts/worlds/d48500cf-a5ff-4a96-879a-6ee40174bc6d.png)](concepts/worlds/12-a-ilha-do-contrato.md) | [![O caminho de Abneroon](concepts/worlds/748fbdf6-f57b-430f-9997-0a22093cbd16.png)](concepts/worlds/06-o-caminho-de-abneroon.md) |
 | *[A ilha do contrato](concepts/worlds/12-a-ilha-do-contrato.md)* | *[O caminho de Abneroon](concepts/worlds/06-o-caminho-de-abneroon.md)* |
 
-Ver os 15 em [`concepts/worlds/`](concepts/worlds/).
+Ver os 17 em [`concepts/worlds/`](concepts/worlds/).
 
 ## Status
 
