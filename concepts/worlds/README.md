@@ -13,7 +13,7 @@ Estes não substituem os [Contos dos Governantes](../../stories/) — são paisa
 | 03 | [A esfera nas mãos](03-a-esfera-nas-maos.md) | `6f74f502-…` |
 | 04 | [A cartógrafa de Porto Velho](04-a-cartografa-de-porto-velho.md) | `35e2e1c6-…` |
 | 05 | [O mensageiro do desfiladeiro](05-o-mensageiro-do-desfiladeiro.md) | `280d1a25-…` |
-| 06 | [O mapa que não fecha](06-o-mapa-que-nao-fecha.md) | `748fbdf6-…` |
+| 06 | [O caminho de Abneroon](06-o-caminho-de-abneroon.md) | `748fbdf6-…` |
 | 07 | [A noite de quem acampa](07-a-noite-de-quem-acampa.md) | `1495a997-…` |
 | 08 | [Antes da descida](08-antes-da-descida.md) | `37797ea6-…` |
 | 09 | [A torre que cresceu sozinha](09-a-torre-que-cresceu-sozinha.md) | `c44ebb64-…` |
