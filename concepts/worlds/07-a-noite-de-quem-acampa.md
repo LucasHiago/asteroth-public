@@ -6,11 +6,11 @@
 
 ---
 
-Tomar acampou no único lugar plano que encontrou antes da escuridão completa. Fogueira pequena — não queria atrair o que dormia mais acima, na capela com janelas de vidro azul que ninguém da região reconhecia como sua. Tinha uma tenda, um cobertor, um cantil, um amuleto que a mãe deu e que ele nunca usou porque achava bobagem.
+Tomar acampou no único lugar plano que encontrou antes da escuridão completa. Fogueira pequena, não queria atrair o que dormia mais acima, na capela com janelas de vidro azul que ninguém da região reconhecia como sua. Tinha uma tenda, um cobertor, um cantil, um amuleto que a mãe deu e que ele nunca usou porque achava bobagem.
 
 Naquela noite, usou. Pendurou no mastro da tenda. A luz das pedras dele era roxa, fraca, mas constante.
 
-O céu estava aberto. As duas luas não apareciam — uma rara coincidência de fases — e a Via dos Antigos riscava o céu de ponta a ponta. Estrelas caíam de quando em quando. Tomar ficou contando. Parou na vigésima. Não dava pra contar tudo, e contar tudo era a coisa errada.
+O céu estava aberto. As duas luas não apareciam, uma rara coincidência de fases, e a Via dos Antigos riscava o céu de ponta a ponta. Estrelas caíam de quando em quando. Tomar ficou contando. Parou na vigésima. Não dava pra contar tudo, e contar tudo era a coisa errada.
 
 A capela, do alto, brilhou uma vez. Um pulso fraco de luz azul. Tomar não se mexeu. Esperou. A capela não pulsou de novo. Talvez não tivesse sido para ele.
 

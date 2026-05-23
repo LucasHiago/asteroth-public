@@ -1,8 +1,8 @@
-# Conceitos de mundo — Asteroth
+# Conceitos de mundo: Asteroth
 
 Quinze vinhetas curtas, uma para cada concept art da pasta. Cada arquivo apresenta a imagem e um conto breve ambientado no mesmo planeta dos demais materiais (ver [`../../LORE.md`](../../LORE.md)).
 
-Estes não substituem os [Contos dos Governantes](../../stories/) — são paisagens habitadas, momentos avulsos, fragmentos do que a vida diária em Asteroth se parece quando o panteão está em silêncio.
+Estes não substituem os [Contos dos Governantes](../../stories/), são paisagens habitadas, momentos avulsos, fragmentos do que a vida diária em Asteroth se parece quando o panteão está em silêncio.
 
 ## Coleção
 
@@ -33,6 +33,6 @@ Estes não substituem os [Contos dos Governantes](../../stories/) — são paisa
 
 ## Material relacionado
 
-- [`../../LORE.md`](../../LORE.md) — canon do mundo.
-- [`../../GOVERNANTES.md`](../../GOVERNANTES.md) — panteão das 26 entidades.
-- [`../../stories/`](../../stories/) — coleção principal de contos.
+- [`../../LORE.md`](../../LORE.md), canon do mundo.
+- [`../../GOVERNANTES.md`](../../GOVERNANTES.md), panteão das 26 entidades.
+- [`../../stories/`](../../stories/), coleção principal de contos.

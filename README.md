@@ -4,7 +4,7 @@
 
 > MMORPG isométrico em um planeta esférico, onde tudo o que existe foi construído (e pode ser destruído) pelos players.
 
-Asteroth é um mundo persistente. Um único planeta — uma esfera real, gerada de uma seed. O mundo nasce vazio: sem cidades pré-fabricadas, sem NPCs em vilarejos, sem estruturas imutáveis. Toda civilização que existir nele será construída pelos próprios players. E tudo que é construído pode ser destruído ou pilhado.
+Asteroth é um mundo persistente. Um único planeta, uma esfera real, gerada de uma seed. O mundo nasce vazio: sem cidades pré-fabricadas, sem NPCs em vilarejos, sem estruturas imutáveis. Toda civilização que existir nele será construída pelos próprios players. E tudo que é construído pode ser destruído ou pilhado.
 
 A graça do jogo está no ciclo:
 
@@ -16,14 +16,14 @@ Cada partida do mundo (em escala de servidor, não de player) é uma história �
 
 ## O que você vai encontrar aqui
 
-Este é o **espaço público** do Asteroth — o canal externo do projeto. Aqui mora:
+Este é o **espaço público** do Asteroth, o canal externo do projeto. Aqui mora:
 
-- **Lore do mundo** ([`LORE.md`](LORE.md)) — a origem cosmogônica das partículas, Asteroth como entidade, e o mundo físico (planeta esférico, sol, duas luas, civilização player-driven).
-- **Os Governantes** ([`GOVERNANTES.md`](GOVERNANTES.md)) — o panteão das 26 entidades que dividem o domínio do planeta: Cthulhu, Azazel, Beelzebub, Metatron, Hastur, Abaron, Abaddon, Mammon, Baphomet, Asratheet — e os 16 regentes menores. Cada um com sua própria condição de despertar.
-- **Como o mundo funciona** ([`GAMEPLAY.md`](GAMEPLAY.md)) — mecânicas de jogo (classes, fama) escritas como o jogador as entende.
-- **Contos** ([`stories/`](stories/)) — histórias curtas ambientadas no mundo. Material narrativo que pode virar livro no futuro.
-- **Conceitos visuais** ([`concepts/worlds/`](concepts/worlds/)) — concept arts do mundo, cada uma acompanhada de uma vinheta curta. Paisagens habitadas, momentos avulsos, atmosfera de Asteroth quando o panteão está em silêncio.
-- **Status do projeto** ([`CHANGELOG.md`](CHANGELOG.md)) — marcos públicos do desenvolvimento.
+- **Lore do mundo** ([`LORE.md`](LORE.md)): a origem cosmogônica das partículas, Asteroth como entidade, e o mundo físico (planeta esférico, sol, duas luas, civilização player-driven).
+- **Os Governantes** ([`GOVERNANTES.md`](GOVERNANTES.md)): o panteão das 26 entidades que dividem o domínio do planeta. Cthulhu, Azazel, Beelzebub, Metatron, Hastur, Abaron, Abaddon, Mammon, Baphomet, Asratheet, além dos 16 regentes menores. Cada um com sua própria condição de despertar.
+- **Como o mundo funciona** ([`GAMEPLAY.md`](GAMEPLAY.md)): mecânicas de jogo (classes, fama) escritas como o jogador as entende.
+- **Contos** ([`stories/`](stories/)): histórias curtas ambientadas no mundo. Material narrativo que pode virar livro no futuro.
+- **Conceitos visuais** ([`concepts/worlds/`](concepts/worlds/)): concept arts do mundo, cada uma acompanhada de uma vinheta curta. Paisagens habitadas, momentos avulsos, atmosfera de Asteroth quando o panteão está em silêncio.
+- **Status do projeto** ([`CHANGELOG.md`](CHANGELOG.md)): marcos públicos do desenvolvimento.
 
 O **código-fonte** do jogo e da engine fica num repositório separado, privado.
 
@@ -39,13 +39,13 @@ Asteroth é um projeto pessoal, em desenvolvimento desde 2012, construído numa 
 
 Asteroth combina três influências:
 
-- **Albion Online** — MMO isométrico, mundo persistente, economia 100% conduzida por players, social/guild driven.
-- **Rust** — destruição, raid, full-loot, ausência de safe zones absolutas, tensão constante.
-- **O diferencial Asteroth** — o mundo é **um planeta de verdade**, não um mapa plano. Você caminha em volta da esfera, há horizonte curvo, o sol nasce e se põe, duas luas atravessam o céu.
+- **Albion Online**: MMO isométrico, mundo persistente, economia 100% conduzida por players, social/guild driven.
+- **Rust**: destruição, raid, full-loot, ausência de safe zones absolutas, tensão constante.
+- **O diferencial Asteroth**: o mundo é **um planeta de verdade**, não um mapa plano. Você caminha em volta da esfera, há horizonte curvo, o sol nasce e se põe, duas luas atravessam o céu.
 
 ## Conceitos visuais
 
-Um recorte da coleção em [`concepts/worlds/`](concepts/worlds/) — cada arte acompanha uma vinheta curta no mesmo arquivo.
+Um recorte da coleção em [`concepts/worlds/`](concepts/worlds/). Cada arte acompanha uma vinheta curta no mesmo arquivo.
 
 | | |
 |---|---|
@@ -60,4 +60,4 @@ Ver os 15 em [`concepts/worlds/`](concepts/worlds/).
 
 ## Status
 
-Em desenvolvimento ativo. Atualmente na **Fase 0 — Fundação 3D** (pipeline de renderização: cubo girando em isométrico, depth test, sistema de mesh). O roadmap segue até MMO infra (Fase 5) e conteúdo (Fase 6+). Marcos públicos vão aparecendo aqui no [`CHANGELOG.md`](CHANGELOG.md).
+Em desenvolvimento ativo. Atualmente na **Fase 0: Fundação 3D** (pipeline de renderização: cubo girando em isométrico, depth test, sistema de mesh). O roadmap segue até MMO infra (Fase 5) e conteúdo (Fase 6+). Marcos públicos vão aparecendo aqui no [`CHANGELOG.md`](CHANGELOG.md).
