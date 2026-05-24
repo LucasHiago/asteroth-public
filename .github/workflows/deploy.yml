@@ -29,8 +29,10 @@ jobs:
         run: |
           mkdir -p _deploy
           cp -r site/. _deploy/
-          mkdir -p _deploy/concepts
-          cp -r concepts/. _deploy/concepts/
+          # Remove the local-dev symlink (site/concepts -> ../concepts) before
+          # copying the real concepts/ folder into the deploy bundle
+          rm -rf _deploy/concepts
+          cp -r concepts _deploy/concepts
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
