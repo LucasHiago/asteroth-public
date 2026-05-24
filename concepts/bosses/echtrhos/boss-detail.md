@@ -1,6 +1,6 @@
 # Echtrhos, o Senhor das Tempestades Antigas
 
-![Echtrhos](echtrhos.jpg)
+![Echtrhos](echtrhos.png)
 
 > *"Não corra. Esconda. Correr é trilha pra ele encontrar você."*
 

@@ -1,6 +1,6 @@
 # Obsien, o Senhor do Vidro Vulcânico
 
-![Obsien](obsien.jpg)
+![Obsien](obsien.png)
 
 > *"Ele é feito de magma e ainda assim é o mais rápido. Reze pra encontrar outra coisa antes."*
 

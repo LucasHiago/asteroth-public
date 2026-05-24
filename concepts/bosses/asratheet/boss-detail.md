@@ -1,6 +1,6 @@
 # Asratheet, o Senhor dos Mares
 
-![Asratheet](asratheet.jpg)
+![Asratheet](asratheet.png)
 
 > *"O mar não obedece a ninguém. Mas o mar obedece a ele."*
 

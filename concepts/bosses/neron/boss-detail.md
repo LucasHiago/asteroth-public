@@ -1,6 +1,6 @@
 # Neron, o Nômade do Tomo
 
-![Neron](neron.jpg)
+![Neron](neron.png)
 
 > *"Ele aparece no horizonte. As coisas que vêm com ele vêm depois."*
 

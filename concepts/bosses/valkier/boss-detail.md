@@ -1,6 +1,6 @@
 # Valkier, o Senhor dos Céus
 
-![Valkier](valkier.jpg)
+![Valkier](valkier.png)
 
 > *"Você ouve as asas antes de ver. Quando vê, já é tarde."*
 

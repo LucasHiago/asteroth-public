@@ -1,6 +1,6 @@
 # Abaron, o Senhor das Chamas
 
-![Abaron](abaron.jpg)
+![Abaron](abaron.png)
 
 > *"Era uma cratera. Agora é um homem. Tente desfazer essa equação se você consegue."*
 

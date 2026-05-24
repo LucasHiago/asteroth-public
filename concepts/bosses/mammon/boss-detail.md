@@ -1,6 +1,6 @@
 # Mammon, o Demônio da Avareza
 
-![Mammon](mammon.jpg)
+![Mammon](mammon.png)
 
 > *"Você não vai querer matar Mammon. Você vai querer ser ele."*
 

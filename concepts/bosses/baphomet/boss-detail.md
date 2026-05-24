@@ -1,6 +1,6 @@
 # Baphomet, o Senhor dos Mortos-Vivos
 
-![Baphomet](baphomet.jpg)
+![Baphomet](baphomet.png)
 
 > *"Não escolha um lado dele pra olhar. Os dois lados estão olhando você."*
 

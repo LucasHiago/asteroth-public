@@ -1,6 +1,6 @@
 # Zaniel, o Paladino Corrompido
 
-![Zaniel](zaniel.jpg)
+![Zaniel](zaniel.png)
 
 > *"Ele ainda saúda no início do combate. É costume velho. Não te salva."*
 

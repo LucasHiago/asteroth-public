@@ -1,6 +1,6 @@
 # Hastur, o Colosso
 
-![Hastur](hastur.jpg)
+![Hastur](hastur.png)
 
 > *"Não tente entender a forma dele. A forma é só pra você ter pra onde olhar."*
 

@@ -1,6 +1,6 @@
 # Aslon, o Herdeiro Perturbado
 
-![Aslon](aslon.jpg)
+![Aslon](aslon.png)
 
 > *"Ele ri antes. Ele ri durante. Quem mata sorrindo é o pior."*
 

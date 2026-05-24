@@ -1,6 +1,6 @@
 # Procodile, o Mestre da Lâmina
 
-![Procodile](procodile.jpg)
+![Procodile](procodile.png)
 
 > *"Asteroth foi o único. Ninguém mais. Nem mesmo encostou."*
 

@@ -1,6 +1,6 @@
 # Abaddon, o Anjo do Abismo
 
-![Abaddon](abaddon.jpg)
+![Abaddon](abaddon.png)
 
 > *"O que dói não é o que ele faz. É o silêncio com que faz."*
 

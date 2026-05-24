@@ -1,6 +1,6 @@
 # Greenkir, o Sussurro do Gelo
 
-![Greenkir](greenkir.jpg)
+![Greenkir](greenkir.png)
 
 > *"Mantenha a tocha acesa. Se ela apagar, ele já está dentro do raio."*
 

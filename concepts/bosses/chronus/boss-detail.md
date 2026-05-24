@@ -1,6 +1,6 @@
 # Chronus, o Sentinela Eterno
 
-![Chronus](chronus.jpg)
+![Chronus](chronus.png)
 
 > *"Ele não te mata. Ele te suspende. Você morre de outra coisa, séculos depois, sem saber."*
 

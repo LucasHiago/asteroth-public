@@ -1,6 +1,6 @@
 # Moon, a Raposa Luminescente
 
-![Moon](moon.jpg)
+![Moon](moon.png)
 
 > *"Ela é bonita. Continue olhando, esse é o erro."*
 

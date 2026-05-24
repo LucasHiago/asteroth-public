@@ -1,6 +1,6 @@
 # Metatron, a Voz Celestial
 
-![Metatron](metatron.jpg)
+![Metatron](metatron.png)
 
 > *"Não tem rosto, não tem corpo. Só olhos, e a sentença que vem deles."*
 

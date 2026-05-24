@@ -1,6 +1,6 @@
 # Tartarus, o Executor do Abismo
 
-![Tartarus](tartarus.jpg)
+![Tartarus](tartarus.png)
 
 > *"Ele não vem brigar. Ele vem buscar."*
 

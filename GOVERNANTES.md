@@ -38,7 +38,7 @@ A ativação deste antigo demônio é indicador claro de que as ações humanas 
 
 ## Beelzebub: o Senhor das Moscas
 
-![Beelzebub](concepts/bosses/beelzebub/beelzebub.jpg)
+![Beelzebub](concepts/bosses/beelzebub/beelzebub.png)
 
 Beelzebub, também conhecido como o **Senhor das Moscas**, é figura formidável no panteão dos demônios, personificando a corrupção e a decadência. Sua influência é sentida mais profundamente em áreas marcadas pelo abandono e pela sujeira, onde a acumulação de resíduos serve como catalisador para sua ascensão. Anunciado por enxames de insetos e fedor fétido, simboliza não apenas a degradação ambiental, mas também a degradação moral da humanidade.
 
@@ -52,7 +52,7 @@ O surgimento de Beelzebub é lembrete sombrio da interligação entre ambiente e
 
 ## Metatron: a Voz Celestial
 
-![Metatron](concepts/bosses/metatron/metatron.jpg)
+![Metatron](concepts/bosses/metatron/metatron.png)
 
 Metatron, conhecido como o **escriba celestial** e um dos mais poderosos arcanjos, é ser de luz e sabedoria. Atua como voz divina e guardião dos segredos celestes. Sua ligação com a humanidade é profunda, serve como ponte entre o céu e a terra, e é frequentemente associado à justiça e à ordem celestial. No plano terrestre, sua presença é farol de esperança e orientação, restabelecendo o equilíbrio sempre que há desvios significativos da retidão.
 
@@ -66,7 +66,7 @@ Quando desperta, é comum que aqueles sensíveis às vibrações espirituais sin
 
 ## Hastur: o Colosso
 
-![Hastur](concepts/bosses/hastur/hastur.jpg)
+![Hastur](concepts/bosses/hastur/hastur.png)
 
 Uma das descrições mais intrigantes de Hastur é a do **colosso**. Imagine-o como entidade colossal, cuja mera presença distorce a realidade ao seu redor. Sua forma pode ser a de uma criatura amorfa gigantesca, coberta por uma pele que parece tecida de sombras e luz da lua, pulsando com brilho etéreo e oscilante. Seus olhos, se podemos chamá-los assim, são abismos infinitos, refletindo estrelas mortas e galáxias esquecidas, fitando diretamente a alma de quem ouse encará-lo.
 
@@ -78,7 +78,7 @@ Conforme a batalha avança, derrotar Hastur sobrecarrega o vencedor com **acúmu
 
 ## Abaron: o Senhor das Chamas
 
-![Abaron](concepts/bosses/abaron/abaron.jpg)
+![Abaron](concepts/bosses/abaron/abaron.png)
 
 Em um reino esquecido pelo tempo, as lendas falam de Abaron, o **senhor das chamas**, gigante colossal cuja essência está entrelaçada com o fogo primordial do universo. Seu nascimento, mistério envolto em chamas e magia, ocorreu nas profundezas de um vulcão adormecido, onde fogo e rocha se fundiram para criar uma entidade de poder inimaginável.
 
@@ -94,7 +94,7 @@ Aqueles que brincam com fogo agem com cautela. Despertar Abaron é convidar a ir
 
 ## Abaddon: o Anjo do Abismo
 
-![Abaddon](concepts/bosses/abaddon/abaddon.jpg)
+![Abaddon](concepts/bosses/abaddon/abaddon.png)
 
 Abaddon, conhecido nas lendas antigas como o **Anjo do Abismo**, é figura imponente e temida, guardião das profundezas e senhor da destruição. Personifica o fim e a ruína, e permanece símbolo do apocalipse em crenças e mitos. Conforme descrita em textos antigos, sua aparência evoca terror: olhos como chamas de fogo, asas negras como a noite mais densa, e uma aura que emana escuridão e frio.
 
@@ -108,7 +108,7 @@ Na presença de Abaddon, a esperança parece desvanecer-se e a coragem dos homen
 
 ## Mammon: o Demônio da Avareza
 
-![Mammon](concepts/bosses/mammon/mammon.jpg)
+![Mammon](concepts/bosses/mammon/mammon.png)
 
 Mammon é o **demônio da avareza**, personificação da ganância insaciável e do desejo imoderado de riqueza material. Sua figura está envolta em contos que o retratam como ser cuja essência se entrelaça com ouro e prata, que ele não apenas controla, mas usa pra seduzir e corromper as almas dos homens. Sua presença está associada a aumentos desenfreados de ganância, levando sociedades ao declínio moral e à eventual ruína.
 
@@ -122,7 +122,7 @@ Na presença de Mammon, a verdadeira riqueza, a do espírito e do coração, par
 
 ## Baphomet: o Senhor dos Mortos-Vivos
 
-![Baphomet](concepts/bosses/baphomet/baphomet.jpg)
+![Baphomet](concepts/bosses/baphomet/baphomet.png)
 
 Baphomet, entidade enigmática cujas origens se perdem nas brumas do tempo, é frequentemente associada a **mistérios ocultos, sabedoria arcana e ao equilíbrio entre os opostos**. Representado como figura andrógina que sintetiza elementos masculinos e femininos, com características tanto animais quanto humanas, simboliza a união dos opostos e o princípio hermético da dualidade. Sua imagem, adornada com símbolos esotéricos como a estrela invertida, chifres de cabra e asas de serafim, evoca um poder que transcende a compreensão mortal.
 
@@ -136,7 +136,7 @@ Sua presença instiga medo reverente. Sua força é imensa; seu conhecimento, ab
 
 ## Asratheet: o Senhor dos Mares
 
-![Asratheet](concepts/bosses/asratheet/asratheet.jpg)
+![Asratheet](concepts/bosses/asratheet/asratheet.png)
 
 Asratheet, **senhor dos mares e comandante dos tubarões**, é entidade colossal cuja lenda está tecida nas profundezas mais escuras dos oceanos. Governante soberano de todas as criaturas marinhas, impõe respeito e medo, sua presença formidável causa ondas gigantescas e correntes incontroláveis. Seu corpo, esculpido pelas próprias forças do mar, reflete a vastidão e o mistério dos oceanos: escamas que brilham como as profundezas abissais, olhos que brilham com a ferocidade das tempestades.
 
@@ -154,97 +154,97 @@ Além dos dez listados acima, outros regentes circulam pelo planeta. Aparecem em
 
 ### Astaroth: a Mão Direita
 
-![Astaroth](concepts/bosses/astaroth/astaroth.jpg)
+![Astaroth](concepts/bosses/astaroth/astaroth.png)
 
 [Astaroth](LORE.md#asteroth-o-filho-da-partícula) é a mão direita de Asteroth, não confundir com o rei. Desperta apenas para **anunciar o retorno do soberano**. Seu surgimento é evento solene, marcado pela agitação de poderes antigos e pelo alinhamento de corpos celestes, prenunciando o retorno do reinado de Asteroth.
 
 ### Valkier
 
-![Valkier](concepts/bosses/valkier/valkier.jpg)
+![Valkier](concepts/bosses/valkier/valkier.png)
 
 Emerge em lugares repletos de criaturas aladas. Conhecido por sua **agilidade e destreza** lendárias. Sua presença sinaliza uma reunião de maravilhas aviárias, manobras rápidas e curvas fechadas são histórias sussurradas entre os habitantes dos céus.
 
 ### Greenkir
 
-![Greenkir](concepts/bosses/greenkir/greenkir.jpg)
+![Greenkir](concepts/bosses/greenkir/greenkir.png)
 
 Assombra perenemente os **lugares mais frios**. Lança alucinações e sequestra os incautos. Viajantes são aconselhados a permanecer vigilantes, e a nunca deixar suas tochas se apagarem durante as noites geladas, para não serem vítimas de suas garras.
 
 ### Obsien
 
-![Obsien](concepts/bosses/obsien/obsien.jpg)
+![Obsien](concepts/bosses/obsien/obsien.png)
 
 Ser de **magma e vidro vulcânico**. Nunca descansa. Se você encontrar um lago de magma vivo, certamente é obra dele. Esteja avisado: nunca tente acordá-lo. Embora composto de magma, está longe de ser lento.
 
 ### Procodile
 
-![Procodile](concepts/bosses/procodile/procodile.jpg)
+![Procodile](concepts/bosses/procodile/procodile.png)
 
 Entidade do pântano, com aparência reptiliana. Famoso pelo **domínio da lâmina**. Ninguém, exceto Asteroth, jamais o subjugou. Seu nome é sinônimo de habilidade de combate incomparável nas profundezas obscuras.
 
 ### Neron
 
-![Neron](concepts/bosses/neron/neron.jpg)
+![Neron](concepts/bosses/neron/neron.png)
 
 Andarilho nômade com **cabeça de chacal**. Carrega um tomo que invoca monstros rastejantes. Sua figura solitária no horizonte é presságio dos companheiros estranhos e misteriosos que ele traz das páginas de seu antigo livro.
 
 ### Iymue
 
-![Iymue](concepts/bosses/iymue/iymue.jpg)
+![Iymue](concepts/bosses/iymue/iymue.png)
 
 Ser **alado noturno**. Frequentemente comparado a uma coruja. Diz-se que ele é a personificação do pesadelo, à espreita na escuridão, onde sua fuga silenciosa precede o terror que se segue.
 
 ### Moon
 
-![Moon](concepts/bosses/moon/moon.jpg)
+![Moon](concepts/bosses/moon/moon.png)
 
 Não se deixe enganar pelo nome bonito. Carrega o **fascínio de uma raposa luminescente**, mas abriga uma sede de sangue igualmente cativante. Um momento de hesitação na presença dela pode significar o seu fim.
 
 ### Zaniel
 
-![Zaniel](concepts/bosses/zaniel/zaniel.jpg)
+![Zaniel](concepts/bosses/zaniel/zaniel.png)
 
 **Paladino corrompido**. Já foi um campeão dos deuses. Hoje, abandonou sua lealdade divina pra abraçar a imortalidade como necromante. Imagine-o como uma máquina de guerra morta-viva, inflexível e implacável no campo de batalha.
 
 ### Aslon
 
-![Aslon](concepts/bosses/aslon/aslon.jpg)
+![Aslon](concepts/bosses/aslon/aslon.png)
 
 Aparece em meio a **reuniões da classe dos assassinos**. Antes conhecido como assassino sádico e brincalhão, hoje é o herdeiro perturbado de um legado manchado de sangue. Sua presença sussurra sobre ações sombrias e quedas silenciosas.
 
 ### Urien
 
-![Urien](concepts/bosses/urien/urien.jpg)
+![Urien](concepts/bosses/urien/urien.png)
 
 **Senhor dos lobos**. Se você vir uma matilha se movendo metodicamente de um ponto a outro à noite, corra. E não seja pego. Pois ele já sentiu sua presença, marcando você na linguagem silenciosa da natureza.
 
 ### Echtrhos
 
-![Echtrhos](concepts/bosses/echtrhos/echtrhos.jpg)
+![Echtrhos](concepts/bosses/echtrhos/echtrhos.png)
 
 **Senhor das tempestades antigas**. Desperta com a convergência de tempestades elétricas extremas, manifestando-se como um gigante composto por nuvens de tempestade e relâmpagos. Manipula o clima, provoca raios em toda a área, transforma territórios em zonas de desastre. Esteja atento ao local onde Echtrhos se manifesta, e evite construir nas proximidades.
 
 ### Nephile
 
-![Nephile](concepts/bosses/nephile/nephile.jpg)
+![Nephile](concepts/bosses/nephile/nephile.png)
 
 **Guardiã de segredos esquecidos**. Surge quando conhecimentos ou magias antigas são redescobertas. Forma etérea, oscilando entre visibilidade e invisibilidade. Possui o poder de **ocultar ou revelar segredos**, influenciando o curso da história ao proteger ou expor conhecimentos antigos. Você é digno?
 
 ### Tartarus
 
-![Tartarus](concepts/bosses/tartarus/tartarus.jpg)
+![Tartarus](concepts/bosses/tartarus/tartarus.png)
 
 **Executor do abismo**. Convocado por atos de profunda traição e corrupção moral. Levanta-se do chão como um titã vestido com a armadura dos mortos traídos, trazendo correntes capazes de infligir dor à alma. Sua presença serve como lembrete do peso da consciência em ações corruptas.
 
 ### Yemir
 
-![Yemir](concepts/bosses/yemir/yemir.jpg)
+![Yemir](concepts/bosses/yemir/yemir.png)
 
 **Antigo protetor da natureza**. Desperta em resposta ao desequilíbrio causado em áreas de grande natureza e vida. Aparece como entidade composta por flora e fauna, capaz de regenerar terras devastadas, destruindo tudo que não é puro em seu caminho, transformando-o de volta em natureza e vegetação. Convoca também animais para defender o entorno. Sua ira provoca o crescimento descontrolado da vegetação e desperta feras protetoras da floresta.
 
 ### Chronus
 
-![Chronus](concepts/bosses/chronus/chronus.jpg)
+![Chronus](concepts/bosses/chronus/chronus.png)
 
 **Sentinela eterno**. Não cause distorções temporais se não quiser lidar com o senhor do tempo. Envolto em mantos que flutuam ao redor do relógio cósmico, **congela o tempo** e inflige feridas dolorosas que nunca cicatrizam. Não abuse do tempo que você passa em Asteroth.
 

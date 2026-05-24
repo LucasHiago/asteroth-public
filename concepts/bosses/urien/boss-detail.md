@@ -1,6 +1,6 @@
 # Urien, o Senhor dos Lobos
 
-![Urien](urien.jpg)
+![Urien](urien.png)
 
 > *"A matilha vem na frente. Ele vem quando você já entendeu que não vai escapar."*
 

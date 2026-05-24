@@ -1,6 +1,6 @@
 # Beelzebub, o Senhor das Moscas
 
-![Beelzebub](beelzebub.jpg)
+![Beelzebub](beelzebub.png)
 
 > *"Antes dele aparecer, as moscas vieram. Depois das moscas, o cheiro. Depois do cheiro, ele."*
 

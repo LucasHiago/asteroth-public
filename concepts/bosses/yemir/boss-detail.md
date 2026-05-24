@@ -1,6 +1,6 @@
 # Yemir, o Protetor da Natureza
 
-![Yemir](yemir.jpg)
+![Yemir](yemir.png)
 
 > *"Ele não te odeia. Ele só não vê diferença entre você e o machado que você carrega."*
 

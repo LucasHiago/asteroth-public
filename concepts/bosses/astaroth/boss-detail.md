@@ -1,6 +1,6 @@
 # Astaroth, a Mão Direita
 
-![Astaroth](astaroth.jpg)
+![Astaroth](astaroth.png)
 
 > *"Não é o rei. Mas quando ele aparece, o rei está chegando."*
 

@@ -1,6 +1,6 @@
 # Nephile, a Guardiã de Segredos Esquecidos
 
-![Nephile](nephile.jpg)
+![Nephile](nephile.png)
 
 > *"Quem é digno pode olhar. Quem olha sem ser, esquece o próprio nome."*
 

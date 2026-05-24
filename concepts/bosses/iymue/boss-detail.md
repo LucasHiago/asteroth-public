@@ -1,6 +1,6 @@
 # Iymue, a Coruja do Pesadelo
 
-![Iymue](iymue.jpg)
+![Iymue](iymue.png)
 
 > *"Você ouve o silêncio dela antes de qualquer outra coisa. É um silêncio que tem peso."*
 
