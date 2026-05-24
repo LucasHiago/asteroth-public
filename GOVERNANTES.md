@@ -10,7 +10,7 @@
 
 ## Cthulhu: o Sumo Sacerdote dos Antigos
 
-![Cthulhu](concepts/bosses/cthulhu/cthulhu.jpg)
+![Cthulhu](concepts/bosses/cthulhu/cthulhu.png)
 
 > *"Abandone toda esperança, você que entra aqui."*
 

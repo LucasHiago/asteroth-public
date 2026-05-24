@@ -1,6 +1,6 @@
 # Cthulhu, o Sumo Sacerdote dos Antigos
 
-![Cthulhu](cthulhu.jpg)
+![Cthulhu](cthulhu.png)
 
 > *"Vimos a montanha respirar. Depois a montanha abriu a barba e a barba era viva."*
 
