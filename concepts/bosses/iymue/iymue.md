@@ -1,31 +1,15 @@
 # Iymue, a Coruja do Pesadelo
 
-> Concept art em **low poly**, **fundo transparente**, sheet de personagem em corpo inteiro, pose pousada com asas semi-abertas.
+> Humanoide-coruja noturna, 2.8m, olhos enormes amarelo-violeta, asas semi-abertas. Ver [STYLE.md](../STYLE.md).
 
-## Prompt
+## Subject
 
-Concept art low poly, transparent background, full body character sheet, pose pousada, leve agachamento, asas semi-abertas em alerta, cabeça inclinada ligeiramente pro lado em curiosidade predatória.
+```
+Owl humanoid nocturnal predator, 2.8m, slim hollow-boned light frame, perched crouched pose with wings half-open in alert and head tilted curiously, oversized round owl head dominating body with heart-shaped feathered facial disc in pale feathers, short curved sharp black beak slightly open, pointed ear-tuft feathers rising from skull, eyes are two huge amber-violet orbs filling face with thin vertical black slit pupils reflecting starry night sky inside, body covered in stratified low-poly feathers with deep purple back fading to blue-gray flanks and white moonlight chest and belly with thin horizontal black barred markings, wing-arms half open with long primary feathers in black-violet and softer purple-gray secondaries, thin three-clawed hands still emerging from wing joints, body in hunched perched stance with feathered downy thighs and huge legs ending in four sharp black talons three forward one back, short black-and-white checkered tail-fan, luminous crescent moon floating behind head as inverted halo, small low-poly stars orbiting body, falling feathers drifting in slow motion, fine necklace with small black hourglass pendant on chest.
+```
 
-Humanoide-coruja noturno, cerca de **2,8 metros de altura**, físico esbelto e leve, ossos ocos como pássaro, braços que se tornam asas, pernas finas e fortes terminando em garras. Postura silenciosa, em equilíbrio absoluto.
+## Negative
 
-**Cabeça:** **cabeça de coruja gigantesca** desproporcional ao corpo, redonda, com **disco facial** em penas pálidas em formato de coração. **Bico curto curvo afiado** em **preto fosco**, levemente entreaberto. **Tufos de penas como orelhas pontudas** subindo das laterais do crânio, como uma coruja-de-orelhas-curtas.
-
-**Olhos:** **dois orbes enormes amarelo-violeta** ocupando boa parte do rosto, pupilas pretas verticais finas, refletindo um céu noturno estrelado dentro deles. Sem pálpebras visíveis, brilho hipnótico.
-
-**Penas e pele:** corpo todo coberto de **penas low poly** em padrão estratificado, paleta **roxo-escuro profundo** no dorso, **cinza-azulado** nos flancos, e **branco-luar** no peito e na barriga. Manchas pretas espalhadas como camuflagem noturna. O rosto facial em penas brancas formando o disco característico.
-
-**Braços/Asas:** **asas-braço fundidas**, semi-abertas, com penas grandes facetadas: as primárias longas em **preto-violeta**, as secundárias mais claras em **roxo-cinza**. Da metade pra baixo, ainda existem **mãos finas de garras pretas** saindo da articulação da asa, três dedos por mão, ainda funcionais.
-
-**Tronco:** peito coberto por penas brancas com **listras horizontais finas pretas** lembrando um padrão de coruja-real. Postura curva, ombros para frente.
-
-**Pernas:** finas, cobertas de penugem branca até o joelho. **Pés enormes com quatro garras pretas** afiadas (três pra frente, uma pra trás), claramente projetadas pra agarrar presas.
-
-**Cauda:** **leque curto de penas** atrás, em padrão xadrez de preto e branco.
-
-**Aura:** **lua crescente luminosa** flutuando atrás da cabeça como halo invertido. **Estrelas pequenas low poly** orbitando ao redor do corpo. **Penas soltas caindo** em câmera lenta. **Sombra densa** se acumulando aos pés, derramando-se como tinta no chão.
-
-**Detalhe psicológico:** ela parece estar **espiando direto pra alma do observador**. Postura inclinada, paciente.
-
-**Acessórios:** **colar fino** com um pequeno pingente em formato de **ampulheta de areia preta**, simbolizando que o tempo do incauto está acabando.
-
-Estilo: low poly facetado, paleta dominante **roxo-escuro, preto-noite, branco-luar e cinza-azulado** com pontuais **amarelo-violeta nos olhos**, cell-shading noturno e suave, iluminação fria de luar vinda de cima.
+```
+realistic, photoreal, smooth shading, blurry, low detail, extra limbs, deformed, cluttered background, watermark, text, low quality
+```

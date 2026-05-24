@@ -1,6 +1,6 @@
 # Conceitos de mundo: Asteroth
 
-Quinze vinhetas curtas, uma para cada concept art da pasta. Cada arquivo apresenta a imagem e um conto breve ambientado no mesmo planeta dos demais materiais (ver [`../../LORE.md`](../../LORE.md)).
+Dezessete vinhetas curtas, uma para cada concept art da pasta. Cada arquivo apresenta a imagem e um conto breve ambientado no mesmo planeta dos demais materiais (ver [`../../LORE.md`](../../LORE.md)).
 
 Estes não substituem os [Contos dos Governantes](../../stories/), são paisagens habitadas, momentos avulsos, fragmentos do que a vida diária em Asteroth se parece quando o panteão está em silêncio.
 
@@ -23,6 +23,8 @@ Estes não substituem os [Contos dos Governantes](../../stories/), são paisagen
 | 13 | [O vale sem nome](13-o-vale-sem-nome.md) | `e34f6baf-…` |
 | 14 | [O último entardecer](14-o-ultimo-entardecer.md) | `f24253e2-…` |
 | 15 | [O violino sobre os telhados](15-o-violino-sobre-os-telhados.md) | `fb1cfd5b-…` |
+| 16 | [A aparição sobre Mereon](16-a-aparicao-sobre-mereon.md) | `40a630a1-…` |
+| 17 | [O selo no tempo](17-o-selo-no-tempo.md) | `10f12028-…` |
 
 ## Convenção
 
