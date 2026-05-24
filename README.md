@@ -1,6 +1,10 @@
 # Asteroth
 
-![Asteroth banner](concepts/white_red_bg.png)
+<p align="center">
+  <img src="concepts/letters.png" alt="Asteroth" width="500"/>
+</p>
+
+![Asteroth cover](concepts/cover.png)
 
 > MMORPG isométrico em um planeta esférico, onde tudo o que existe foi construído (e pode ser destruído) pelos players.
 
