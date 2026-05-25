@@ -739,3 +739,33 @@ blockquote {
   .modal-content { padding: 2rem 1.25rem 1.5rem; max-height: calc(100vh - 1rem); }
   .modal-body img { max-width: 260px; }
 }
+
+/* =========================
+   SCROLLBARS DISCRETOS
+   ========================= */
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+
+/* Chromium / Safari */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
