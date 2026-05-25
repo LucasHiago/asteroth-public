@@ -417,6 +417,7 @@ blockquote {
 }
 
 .world-list { display: none; }
+.story-list { display: none; }
 
 .world-card:hover {
   transform: translateY(-3px);
