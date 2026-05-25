@@ -657,15 +657,206 @@
     <p class="kicker">Mecânicas de jogo escritas como o jogador as entende, não como o sistema as implementa.</p>
   </div>
 
-  <h3>Classes</h3>
-  <p>Em Asteroth, a liberdade pra escolher entre as diversas classes é elemento central. Mas, uma vez que uma classe principal é selecionada, cria-se um <strong>vínculo mais forte com essa escolha</strong> em comparação com as demais.</p>
-  <p>Ao fazer sua escolha inicial, digamos, <strong>Bucaneiro</strong>, você adquire uma habilidade única, inerente a essa classe. Essa habilidade fica com você pra sempre. Mesmo que mais tarde você troque pra outra classe, como <strong>Arqueiro</strong>, sua habilidade principal de Bucaneiro permanece.</p>
+  <h3>Identidade em quatro camadas</h3>
+  <p>Seu personagem em Asteroth não é uma planilha de stats. É uma <strong>pilha de quatro camadas</strong>, da mais permanente pra mais fluida. Nada te tranca em arquétipo: tank-sacerdote-necromante é jogável. Mas <strong>alinhar as camadas dá pico</strong>, é onde o jogo entrega o raríssimo.</p>
 
-  <h3>Fama</h3>
-  <p>A fama em Asteroth é tratada de forma única. Influencia diretamente os status do jogador. À medida que se ganha fama, os status são concedidos de maneira <strong>aleatória</strong>, em percentuais maiores ou menores, independente da classe escolhida.</p>
-  <p>Ao alcançar a marca de <strong>1.000 pontos de fama</strong>, ativa-se um bônus percentual nos ganhos de status. Esses bônus podem incluir aumento em roubo de vida, destreza, vida, defesa, dano, velocidade de movimento, velocidade de ataque, mana, velocidade de disparo de habilidades.</p>
-  <p>Cada ponto de fama adquirido se traduz em <strong>0,005 pontos de bônus</strong> aplicados diretamente aos seus status. A primeira grande marca acontece em 1.000 pontos. Ao alcançar cerca de 10.000, você notará um aumento significativo na força do seu personagem.</p>
-  <p>Mas a fama em Asteroth vem com seus riscos: <strong>ela pode ser roubada</strong>, e uma porção é perdida ao morrer. Esse mecanismo garante o equilíbrio no universo, onde o próprio jogo é o árbitro supremo.</p>
+  <div class="identity-stack">
+    <div class="identity-layer">
+      <span class="identity-num">01</span>
+      <h4>Raça</h4>
+      <p>Escolhida no spawn, inata e permanente. Dá <strong>afinidades</strong>, aptidões naturais que multiplicam a eficácia em ações específicas. Anão tem afinidade de forja. Elfo, de visão. Dark elf enxerga no escuro. Demônio canaliza magia com cooldown menor.</p>
+    </div>
+    <div class="identity-layer">
+      <span class="identity-num">02</span>
+      <h4>Classe</h4>
+      <p>Define <strong>onde você é mais forte</strong>, não restringe. Limite de duas classes ativas. Trocar a primária custa 50% do XP guardado + ouro, e cooldown de 72h. A habilidade principal da primeira classe escolhida fica com você pra sempre, mesmo depois de trocar.</p>
+    </div>
+    <div class="identity-layer">
+      <span class="identity-num">03</span>
+      <h4>Affinity</h4>
+      <p>A interseção <strong>raça × classe × ação</strong>. Quando alinha, o resultado escala em raridade, qualidade ou eficácia. Anão sacerdote forjando arma de sacerdote produz uma arma mais rara que qualquer outro setup. É a assinatura de quem fabrica.</p>
+    </div>
+    <div class="identity-layer">
+      <span class="identity-num">04</span>
+      <h4>Gear</h4>
+      <p>Equipamento atual. Carrega <strong>item skills</strong>, e troca livre redefine seu kit. Tirar um capacete é rápido. Tirar luva, bota ou peça com runa encrustrada leva tempo, e runa só troca em local específico. PvP responde a essa fricção.</p>
+    </div>
+  </div>
+
+  <h3>Hierarquia de classes</h3>
+  <p>Toda classe tem ao menos <strong>uma produção ou ação exclusiva</strong> que ninguém mais consegue. Exclusividade não é vantagem, é <strong>monopólio funcional</strong>: sem caçador ninguém tem pet, sem ferreiro não há espada acima de certo tier, sem mercador o mercado não funciona. É o que garante demanda real por cada classe.</p>
+
+  <div class="class-tree">
+    <div class="class-block">
+      <h4>Combate</h4>
+      <ul>
+        <li><strong>Guerreiro</strong>, DPS melee, dano sustentado</li>
+        <li><strong>Tank / Defensor</strong>, aguenta porrada, controle de aggro</li>
+        <li><strong>Sacerdote</strong>, heal, buff, suporte de grupo</li>
+        <li><strong>Arqueiro</strong>, DPS físico de longe</li>
+        <li><strong>Ladino</strong>, burst, stealth, mobilidade</li>
+        <li><strong>Mago</strong>, DPS mágico
+          <ul>
+            <li><strong>Rogue</strong>, foco em roubo de vida</li>
+            <li><strong>Elemental</strong>, escolhe um elemento</li>
+            <li><strong>Sorcerer</strong>, cura ofensiva e magia de ataque</li>
+            <li><strong>Druid</strong>, controla mobs e cura inferior</li>
+            <li><strong>Boticário</strong>, canaliza magia via poções (cura, buff, debuff, AoE)</li>
+          </ul>
+        </li>
+        <li><strong>Joker</strong>, foco em armadilhas em volume</li>
+        <li><strong>Hunter</strong>, doma e controla feras raras</li>
+      </ul>
+    </div>
+
+    <div class="class-block">
+      <h4>Artesão / Construtivo</h4>
+      <ul>
+        <li><strong>Ferreiro</strong>, armas e armaduras de metal</li>
+        <li><strong>Alquimista</strong>, poções (buff, debuff), consumíveis</li>
+        <li><strong>Arquiteto / Construtor</strong>, prédios, estruturas, defesas</li>
+        <li><strong>Artesão</strong>, joalheria, marcenaria, alfaiataria</li>
+        <li><strong>Cartesiano</strong>, desenha mapas, tem visão global única</li>
+      </ul>
+    </div>
+
+    <div class="class-block">
+      <h4>Mundo / Gathering</h4>
+      <ul>
+        <li><strong>Caçador</strong>, animais, peles, carne</li>
+        <li><strong>Lenhador</strong>, madeira</li>
+        <li><strong>Minerador</strong>, rocha, minério</li>
+        <li><strong>Pescador</strong>, peixe, frutos do mar</li>
+        <li><strong>Pirata</strong>, ladino dos mares</li>
+      </ul>
+    </div>
+
+    <div class="class-block">
+      <h4>Refinadores</h4>
+      <ul>
+        <li><strong>Curtidor</strong>, pele bruta vira couro</li>
+        <li><strong>Tecelão</strong>, fibras viram tecido</li>
+        <li><strong>Fundidor</strong>, minério bruto vira barra</li>
+        <li><strong>Serrador</strong>, tora bruta vira tábua</li>
+        <li><strong>Moleiro</strong>, grão vira farinha</li>
+        <li><strong>Açougueiro</strong>, carcaça vira carne, ossos e miúdos</li>
+      </ul>
+    </div>
+
+    <div class="class-block">
+      <h4>Preparo / Consumível</h4>
+      <ul>
+        <li><strong>Cozinheiro</strong>, refeições com buff de combate</li>
+        <li><strong>Padeiro</strong>, pães, massas, rações de viagem</li>
+        <li><strong>Cervejeiro / Destilador</strong>, bebidas com buff arriscado</li>
+      </ul>
+    </div>
+
+    <div class="class-block">
+      <h4>Logística / Serviço</h4>
+      <ul>
+        <li><strong>Mensageiro</strong>, cargo pequeno em curta distância</li>
+        <li><strong>Caravaneiro</strong>, lote grande em rota planejada</li>
+        <li><strong>Estalajadeiro</strong>, hospedagem e rest em cidade</li>
+        <li><strong>Mercador</strong>, taxas reduzidas, abre loja física</li>
+      </ul>
+    </div>
+
+    <div class="class-block class-block-rare">
+      <h4>Incomuns</h4>
+      <ul>
+        <li><strong>Necromante</strong>, controla horda de mortos-vivos</li>
+        <li><strong>Bardo</strong>, mestre de magias incomuns, confusão e desorientação</li>
+        <li><strong>Clown</strong>, armadilhas raras e quase imperceptíveis</li>
+        <li><strong>Pantheon</strong>, fusão de lutador com ladino</li>
+        <li><strong>Dark Mage</strong>, magia de escuridão e roubo de vida</li>
+        <li><strong>Dragon Born</strong>, resistência total a fogo, reflete dano em área</li>
+        <li><strong>Bucaneiro</strong>, único com acesso a <strong>armas de fogo</strong></li>
+        <li><strong>Sieger</strong>, controle absoluto de armas de cerco</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Exclusivos por classe</h3>
+  <p>Recorte do que cada classe faz, e <strong>só ela faz</strong>. Qualquer player usa o produto. Só a classe certa produz.</p>
+
+  <div class="exclusive-grid">
+    <div class="exclusive-card"><span class="ex-class">Guerreiro</span><span class="ex-do">Declara duelo formal entre players, sem fuga, sem interferência. Vencedor leva fama bonus.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Tank</span><span class="ex-do">Taunt forçado e shield wall que protege o time inteiro por tempo limitado.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Sacerdote</span><span class="ex-do">Ressuscita player morto. Custa material raro e tira fama do ressuscitado.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Ladino</span><span class="ex-do">Pickpocket em outro player, rouba item ou ouro durante encontro.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Hunter</span><span class="ex-do">Doma feras raras ou lendárias com vínculo permanente. Mob bound, não roubável.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Ferreiro</span><span class="ex-do">Forja armas e armaduras de metal acima de tier alto. Repara sem degradar.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Arquiteto</span><span class="ex-do">Planta fundação de cidade. Sem ele, só casa simples.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Caçador</span><span class="ex-do">Único que produz e domestica animais de estimação para outros players.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Lenhador</span><span class="ex-do">Extrai resina e casca rara, ingrediente exclusivo da alquimia top.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Pirata</span><span class="ex-do">Aborda e captura navio. Combate naval e pilhagem em alto mar.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Mercador</span><span class="ex-do">Abre loja física na cidade. Sem ele, comércio entre players é só barganha.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Bucaneiro</span><span class="ex-do">Único com acesso a armas de fogo. Dano alto, frágil em tudo o mais.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Sieger</span><span class="ex-do">Opera trabuco, balista, canhão. Invasor ou defensor de cidade.</span></div>
+    <div class="exclusive-card"><span class="ex-class">Necromante</span><span class="ex-do">Invoca e controla horda de mortos-vivos sustentada em campo.</span></div>
+  </div>
+
+  <h3>Affinity, quando alinhar dá pico</h3>
+  <p>Affinity é o multiplicador quando <strong>raça + classe + ação</strong> alinham. Dois jogadores forjam o mesmo item com qualidades diferentes, dependendo do alinhamento. Itens raros carregam a assinatura de quem os criou, e o mercado diferencia. Abaixo, alguns exemplos canônicos.</p>
+
+  <div class="affinity-table-wrap">
+    <table class="affinity-table">
+      <thead>
+        <tr><th>Raça</th><th>Classe</th><th>Ação</th><th>Resultado</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Anão</td><td>Sacerdote</td><td>Forjar arma de sacerdote</td><td>Arma mais rara que qualquer outro setup produz</td></tr>
+        <tr><td>Anão</td><td>Sieger</td><td>Construir arma de cerco</td><td>Dano e durability aumentados</td></tr>
+        <tr><td>Elfo</td><td>Arqueiro</td><td>Tiro à distância</td><td>Range e precisão estendidos</td></tr>
+        <tr><td>Dark Elf</td><td>Ladino</td><td>Emboscar à noite</td><td>Bonus de stealth e crit noturnos</td></tr>
+        <tr><td>Dark Elf</td><td>Clown</td><td>Armadilha noturna</td><td>Quase imperceptível no escuro</td></tr>
+        <tr><td>Orc</td><td>Guerreiro</td><td>Atacar melee</td><td>Dano bruto extra</td></tr>
+        <tr><td>Orc de sangue</td><td>Boticário</td><td>Poção de roubo de vida</td><td>Potência aumentada</td></tr>
+        <tr><td>Halfling</td><td>Bucaneiro</td><td>Tiro de emboscada</td><td>Crit garantido no primeiro tiro, saída em stealth</td></tr>
+        <tr><td>Demônio</td><td>Mago</td><td>Magia ofensiva</td><td>Cooldown reduzido</td></tr>
+        <tr><td>Necro</td><td>Ferreiro</td><td>Forjar item rúnico</td><td>Slots de runa adicionais</td></tr>
+        <tr><td>Phibens</td><td>Pescador</td><td>Pescar em águas profundas</td><td>Drops únicos, áreas inacessíveis a outros</td></tr>
+        <tr><td>Runnics</td><td>Qualquer</td><td>Entalhar runa em si mesmo</td><td>Único acesso a buff permanente próprio</td></tr>
+        <tr><td>Nephilins</td><td>Sacerdote</td><td>Cura</td><td>HP curado bonus, somado à cura inata</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>XP é matéria, não número no nome</h3>
+  <p>O conceito de level de personagem <strong>está morto em Asteroth</strong>. Não existe lvl 1 contra lvl 500. Ninguém te humilha por ser novo. O gap entre players vem das classes destravadas, do gear acumulado, dos marcos de mastery e da fama. Nunca de um número arbitrário.</p>
+
+  <p>XP em Asteroth é <strong>objeto físico</strong>: pedra de monstro, cristal de quest, fragmento. Ocupa inventário, é transferível, é drop, é comerciável, é roubável. Quando você morre, suas pedras caem como qualquer item. Quando o killer captura um item evoluído pelo seu XP, ele pega só <strong>1/3 do XP investido</strong>, anti-abuso pra evitar farm de humilhação.</p>
+
+  <p>XP serve pra duas coisas, só duas:</p>
+  <ul>
+    <li><strong>Destravar classes</strong>. Cada nova classe custa caro, e limita multiclass abusivo.</li>
+    <li><strong>Subir level de itens</strong>. Armas, joias, armaduras, montarias, poções, alimentos e ferramentas evoluem quando você investe XP neles. Matéria-prima e lixo não evoluem.</li>
+  </ul>
+
+  <p>Item evoluído é capital móvel e <strong>perecível</strong>. Cada injeção de XP tem chance real de quebrar o item, mesma lógica de runa encrustrada. Item quebrado vira material base + pedras de XP, alimenta cadeia de reparo e refabricação. Mesmo quebrado, tem valor.</p>
+
+  <h3>Mastery por marcos de repetição</h3>
+  <p>Mastery <strong>não vem de XP</strong>. Vem literalmente de fazer. Não dá pra comprar com ouro, não dá pra atalhar. Cada ação acumula em escala granular pra manter dopamina constante: 1, 5, 10, 25, 50, 100, 250, 500, 1.000, 2.500, 5.000, 10.000, 25.000, 50.000, 100.000, 250.000, 500.000, 1.000.000. Dezoito marcos por ação. Curva com ganhos rápidos no início, marcos significativos depois.</p>
+
+  <ul>
+    <li>Construiu 1.000 estruturas, ganha -15% no tempo e bonus de durability</li>
+    <li>Construiu 1.000.000, ganha -50%, economia de material e acesso a estruturas raras</li>
+    <li>Forjou 1.000 armas, cada arma sai com bonus passivo</li>
+    <li>Abateu 1.000 mobs do mesmo tipo, drop melhor e dano contra esse tipo</li>
+    <li>Pescou 1.000 vezes, chance maior de pesca rara</li>
+  </ul>
+
+  <p>Mastery soma com affinity racial. Anão com 1M de forjas vira artilheiro. Humano com 1M de fusões de poção vira alquimista lendário. Halfling com 100k de armadilhas postadas fica invisível pro detector. <strong>O gap entre players é multidimensional</strong>: classe + gear + mastery + fama. Não comparável por número único.</p>
+
+  <h3>Fama, bônus distribuído e roubável</h3>
+  <p>A fama em Asteroth não é número decorativo. <strong>Vira bônus real distribuído nos status</strong>, é roubável em PvP, e funciona como recurso transferível. Cada ponto de fama vale <strong>0,005 ponto de bônus</strong> aplicado direto no personagem.</p>
+
+  <p>A primeira grande marca acontece em <strong>1.000 pontos</strong>, quando os bônus acumulados são distribuídos de forma <strong>única pra cada personagem</strong>. A aleatoriedade é na divisão, não na quantidade total. Por volta de <strong>10.000 pontos</strong>, o personagem fica significativamente mais forte.</p>
+
+  <p>Os bônus são aplicados em <strong>percentuais</strong> sobre o atributo base, sorteados entre nove atributos: roubo de vida, destreza, vida, defesa, dano, velocidade de movimento, velocidade de ataque, mana, velocidade de disparo de habilidades.</p>
+
+  <p>Mas a fama tem custo. Ao <strong>morrer</strong>, você perde <strong>50%</strong> da fama acumulada. Ao <strong>matar um famoso</strong>, recebe <strong>8%</strong> da fama que ele perdeu. Famoso é alvo natural, risco e recompensa de andar com fama alta.</p>
 
   <h4>Como ganhar fama</h4>
   <ul>
@@ -676,18 +867,18 @@
     <li>Combate contra bosses</li>
     <li>Participação em dungeons</li>
     <li>PvP</li>
-    <li>Prestar suporte</li>
+    <li>Prestar suporte: heal, buff, tank</li>
   </ul>
 
-  <h4>Redistribuição em PvP</h4>
-  <p>Em um confronto entre um time vitorioso composto por <strong>healer, tank e assassino</strong>, contra três DPS:</p>
+  <h4>Redistribuição em PvP por contribuição</h4>
+  <p>A fama é redistribuída entre os vencedores <strong>por contribuição real</strong>, não por quem deu o golpe final. Cenário canônico: time vitorioso com healer, tank e assassino contra três DPS.</p>
   <ul>
     <li>Os DPS perdem uma fração de sua fama ao serem derrotados.</li>
-    <li>O healer, mesmo sem causar dano, recebe uma porcentagem pelo papel de suporte.</li>
-    <li>O tank recebe fama correspondente à porcentagem de dano que infligiu.</li>
-    <li>O assassino, responsável pela maior parte do dano, arrecada a maior parte da fama.</li>
+    <li>O <strong>healer</strong>, mesmo sem causar dano, recebe porcentagem pelo papel de suporte. Manteve o time vivo.</li>
+    <li>O <strong>tank</strong> recebe fama proporcional ao dano que infligiu.</li>
+    <li>O <strong>assassino</strong>, responsável pela maior parte do dano, leva a maior parte da fama.</li>
   </ul>
-  <p>Cada papel é remunerado pela sua contribuição real.</p>
+  <p>Cada papel é remunerado pela contribuição real. Healer pelo suporte. Tank pelo dano efetivo. Assassino pela eficácia em abater. <strong>Suporte vira viável competitivamente</strong>, não é mais buff bot.</p>
 </section>
 
 <!-- CONTOS -->
