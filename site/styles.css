@@ -205,6 +205,10 @@ strong { color: var(--text); font-weight: 600; }
 .section-alt > .boss-grid,
 .section-alt > .boss-list,
 .section-alt > .worlds-grid,
+.section-alt > .identity-stack,
+.section-alt > .class-tree,
+.section-alt > .exclusive-grid,
+.section-alt > .affinity-table-wrap,
 .section-alt > .section-footer-link {
   max-width: var(--max-w);
   margin-left: auto;
@@ -504,6 +508,237 @@ blockquote {
 }
 
 /* =========================
+   GAMEPLAY · identidade em camadas
+   ========================= */
+
+.identity-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 3rem;
+}
+
+.identity-layer {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem 1.25rem;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.identity-layer:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.identity-num {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+.identity-layer h4 {
+  margin: 0.35rem 0 0.75rem;
+  color: var(--text);
+  font-size: 1.05rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+}
+
+.identity-layer p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   GAMEPLAY · hierarquia de classes
+   ========================= */
+
+.class-tree {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 3rem;
+}
+
+.class-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+}
+
+.class-block-rare {
+  border-color: rgba(192, 26, 31, 0.45);
+  background: linear-gradient(180deg, rgba(192,26,31,0.05) 0%, var(--bg-card) 100%);
+}
+
+.class-block h4 {
+  margin: 0 0 0.85rem;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.class-block-rare h4 {
+  color: var(--accent-soft);
+}
+
+.class-block ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.class-block ul li {
+  margin: 0 0 0.45rem;
+  padding-left: 0.85rem;
+  position: relative;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.class-block ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 4px;
+  height: 4px;
+  background: var(--text-mute);
+  border-radius: 50%;
+}
+
+.class-block ul ul {
+  margin: 0.5rem 0 0.25rem 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--border);
+}
+
+.class-block ul ul li {
+  font-size: 0.86rem;
+  color: var(--text-mute);
+  margin-bottom: 0.3rem;
+}
+
+.class-block ul ul li::before {
+  background: var(--gold);
+  width: 3px;
+  height: 3px;
+}
+
+.class-block ul ul li strong {
+  color: var(--text-soft);
+}
+
+/* =========================
+   GAMEPLAY · exclusivos por classe
+   ========================= */
+
+.exclusive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 3rem;
+}
+
+.exclusive-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.exclusive-card:hover {
+  border-color: var(--gold);
+  background: var(--surface-2);
+}
+
+.exclusive-card .ex-class {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: var(--accent-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.exclusive-card .ex-do {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+/* =========================
+   GAMEPLAY · tabela de affinity
+   ========================= */
+
+.affinity-table-wrap {
+  margin: 0 0 3rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.affinity-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.affinity-table thead th {
+  background: var(--surface-2);
+  color: var(--gold-soft);
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.affinity-table tbody td {
+  padding: 0.7rem 1rem;
+  color: var(--text-soft);
+  border-bottom: 1px solid rgba(42, 42, 51, 0.5);
+  vertical-align: top;
+}
+
+.affinity-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.affinity-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.affinity-table tbody td:first-child,
+.affinity-table tbody td:nth-child(2) {
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* =========================
    SPONSOR
    ========================= */
 
@@ -628,6 +863,9 @@ blockquote {
   .toc-inner { gap: 0.85rem; }
   .toc-nav a { font-size: 0.75rem; letter-spacing: 0.03em; }
   .contos-list { grid-template-columns: 1fr; }
+  .affinity-table { font-size: 0.85rem; }
+  .affinity-table thead th,
+  .affinity-table tbody td { padding: 0.55rem 0.7rem; }
 }
 
 /* =========================
