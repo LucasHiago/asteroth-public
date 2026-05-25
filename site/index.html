@@ -11,6 +11,8 @@
   <meta property="og:image" content="concepts/cover.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://asteroth.com.br" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -482,6 +484,56 @@
     <a href="https://www.patreon.com/c/Asteroth" target="_blank" rel="noopener">Patreon</a>
   </p>
 </footer>
+
+<!-- BOSS MODAL -->
+<div id="boss-modal" class="modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-overlay" data-close></div>
+  <div class="modal-content">
+    <button class="modal-close" data-close aria-label="Fechar">×</button>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const modal = document.getElementById('boss-modal');
+  const body = modal.querySelector('.modal-body');
+
+  function open(entry) {
+    body.innerHTML = entry.innerHTML;
+    modal.hidden = false;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.modal-content').scrollTop = 0;
+  }
+
+  function close() {
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    body.innerHTML = '';
+  }
+
+  document.querySelectorAll('.boss-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      const target = card.getAttribute('href');
+      if (!target || !target.startsWith('#boss-')) return;
+      const entry = document.getElementById(target.slice(1));
+      if (!entry) return;
+      e.preventDefault();
+      open(entry);
+    });
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target.hasAttribute('data-close')) close();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+})();
+</script>
 
 </body>
 </html>

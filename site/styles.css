@@ -324,7 +324,7 @@ blockquote {
 .boss-card img {
   width: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
   background: #0e0e12;
   border-radius: 4px;
   margin-bottom: 0.75rem;
@@ -369,7 +369,7 @@ blockquote {
 .boss-entry img {
   width: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
   background: #0e0e12;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -621,4 +621,114 @@ blockquote {
   .toc-inner { gap: 0.85rem; }
   .toc-nav a { font-size: 0.75rem; letter-spacing: 0.03em; }
   .contos-list { grid-template-columns: 1fr; }
+}
+
+/* =========================
+   BOSS LIST (hidden, used as data source for modal)
+   ========================= */
+
+.boss-list { display: none; }
+
+/* =========================
+   MODAL
+   ========================= */
+
+.modal[hidden] { display: none; }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 8, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 760px;
+  width: 100%;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2.5rem 2rem 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.85rem;
+  background: none;
+  border: none;
+  color: var(--text-soft);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+.modal-body { display: block; }
+
+.modal-body img {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #0e0e12;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin: 0 auto 1.5rem;
+  display: block;
+}
+
+.modal-body > div {
+  display: block;
+}
+
+.modal-body h3 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  color: var(--text);
+  margin: 0 0 0.75rem;
+  text-align: center;
+}
+
+.modal-body .epitaph {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold-soft);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.modal-body p {
+  color: var(--text-soft);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .modal { padding: 0.5rem; }
+  .modal-content { padding: 2rem 1.25rem 1.5rem; max-height: calc(100vh - 1rem); }
+  .modal-body img { max-width: 260px; }
 }
