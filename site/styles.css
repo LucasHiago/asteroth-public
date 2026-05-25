@@ -405,12 +405,18 @@ blockquote {
 }
 
 .world-card {
+  display: block;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
   transition: transform 0.15s, border-color 0.2s;
 }
+
+.world-list { display: none; }
 
 .world-card:hover {
   transform: translateY(-3px);
@@ -690,8 +696,8 @@ blockquote {
 
 .modal-body img {
   width: 100%;
-  max-width: 360px;
-  aspect-ratio: 1;
+  max-width: 560px;
+  height: auto;
   object-fit: contain;
   background: #0e0e12;
   border-radius: var(--radius);
