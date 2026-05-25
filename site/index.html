@@ -1321,8 +1321,9 @@
   const modal = document.getElementById('boss-modal');
   const body = modal.querySelector('.modal-body');
 
-  function open(entry) {
+  function open(entry, kind) {
     body.innerHTML = entry.innerHTML;
+    modal.dataset.kind = kind;
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -1334,6 +1335,7 @@
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     body.innerHTML = '';
+    delete modal.dataset.kind;
   }
 
   document.querySelectorAll('.boss-card, .world-card, .contos-list a').forEach(card => {
@@ -1343,7 +1345,10 @@
       const entry = document.getElementById(target.slice(1));
       if (!entry) return;
       e.preventDefault();
-      open(entry);
+      const kind = card.classList.contains('boss-card') ? 'boss'
+                 : card.classList.contains('world-card') ? 'world'
+                 : 'story';
+      open(entry, kind);
     });
   });
 
