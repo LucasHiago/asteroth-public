@@ -562,84 +562,155 @@ blockquote {
 
 .class-tree {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.25rem;
   margin: 0 0 3rem;
+  align-items: start;
 }
 
 .class-block {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.25rem 1.4rem;
+  padding: 1.25rem 1.4rem 1rem;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.class-block:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
 }
 
 .class-block-rare {
   border-color: rgba(192, 26, 31, 0.45);
-  background: linear-gradient(180deg, rgba(192,26,31,0.05) 0%, var(--bg-card) 100%);
+  background: linear-gradient(180deg, rgba(192,26,31,0.06) 0%, var(--bg-card) 100%);
 }
 
-.class-block h4 {
-  margin: 0 0 0.85rem;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--gold-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding-bottom: 0.5rem;
+.class-block-rare:hover {
+  border-color: var(--accent);
+}
+
+.class-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
   border-bottom: 1px solid var(--border);
 }
 
-.class-block-rare h4 {
+.class-tag {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.class-block-rare .class-tag {
   color: var(--accent-soft);
 }
 
-.class-block ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.class-block ul li {
-  margin: 0 0 0.45rem;
-  padding-left: 0.85rem;
-  position: relative;
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
-.class-block ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.7em;
-  width: 4px;
-  height: 4px;
-  background: var(--text-mute);
-  border-radius: 50%;
-}
-
-.class-block ul ul {
-  margin: 0.5rem 0 0.25rem 0.5rem;
-  padding-left: 0.5rem;
-  border-left: 1px solid var(--border);
-}
-
-.class-block ul ul li {
-  font-size: 0.86rem;
+.class-count {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.7rem;
   color: var(--text-mute);
-  margin-bottom: 0.3rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  letter-spacing: 0.05em;
 }
 
-.class-block ul ul li::before {
-  background: var(--gold);
-  width: 3px;
-  height: 3px;
+.class-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
 }
 
-.class-block ul ul li strong {
+.class-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.55rem 0.7rem;
+  background: rgba(255, 255, 255, 0.015);
+  border-radius: 4px;
+  border-left: 2px solid var(--border);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.class-item:hover {
+  border-left-color: var(--gold);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.class-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 0.98rem;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.class-desc {
+  font-size: 0.82rem;
+  color: var(--text-mute);
+  line-height: 1.45;
+}
+
+.class-item-rare {
+  border-left-color: rgba(192, 26, 31, 0.55);
+  background: rgba(192, 26, 31, 0.04);
+}
+
+.class-item-rare:hover {
+  border-left-color: var(--accent);
+  background: rgba(192, 26, 31, 0.08);
+}
+
+.class-item-rare .class-name {
+  color: var(--accent-soft);
+}
+
+.class-item-parent {
+  border-left-color: var(--gold);
+}
+
+.class-subs {
+  margin-top: 0.65rem;
+  padding: 0.65rem 0 0.15rem 0.7rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+  border-top: 1px dashed var(--border);
+}
+
+.class-sub {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.class-sub::before {
+  content: "›";
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.sub-name {
+  font-family: var(--serif);
+  font-weight: 600;
   color: var(--text-soft);
+  letter-spacing: 0.01em;
+}
+
+.sub-desc {
+  color: var(--text-mute);
 }
 
 /* =========================
@@ -736,6 +807,291 @@ blockquote {
   color: var(--text);
   font-weight: 500;
   white-space: nowrap;
+}
+
+/* =========================
+   CHANGELOG · página própria
+   ========================= */
+
+.toc-nav a.active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.changelog-hero {
+  background:
+    linear-gradient(180deg, rgba(192,26,31,0.08) 0%, rgba(10,10,13,0) 80%),
+    var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 1.5rem 4rem;
+}
+
+.changelog-hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.changelog-eyebrow {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--gold-soft);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.changelog-title {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: var(--text);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.changelog-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: var(--accent);
+  margin: 1rem auto 0;
+}
+
+.changelog-sub {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 1.02rem;
+  color: var(--text-soft);
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.changelog-sub code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+  color: var(--gold-soft);
+}
+
+.version-badge-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.version-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.7rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: left;
+  min-width: 200px;
+}
+
+.version-badge-phase {
+  border-color: rgba(201, 169, 110, 0.4);
+}
+
+.version-label {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-mute);
+  margin-bottom: 0.25rem;
+}
+
+.version-value {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent-soft);
+  letter-spacing: 0.02em;
+}
+
+.version-badge-phase .version-value {
+  color: var(--gold-soft);
+}
+
+.section-changelog {
+  padding-top: 4rem;
+}
+
+.changelog-version {
+  margin-bottom: 4rem;
+}
+
+.changelog-version-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.changelog-version-name {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  color: var(--text);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.changelog-version-name::after { content: none; }
+
+.changelog-version-tag {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-soft);
+  background: rgba(192, 26, 31, 0.1);
+  border: 1px solid rgba(192, 26, 31, 0.35);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+}
+
+.changelog-version-summary {
+  font-family: var(--sans);
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 760px;
+}
+
+.changelog-area {
+  margin-bottom: 2.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem 1.25rem;
+}
+
+.changelog-area-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem;
+}
+
+.changelog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.changelog-list li {
+  position: relative;
+  padding: 0.4rem 0 0.4rem 1.25rem;
+  border-bottom: 1px solid rgba(42, 42, 51, 0.4);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.changelog-list li:last-child {
+  border-bottom: none;
+}
+
+.changelog-list li::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+  width: 1rem;
+}
+
+.changelog-list li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.changelog-history {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.changelog-history-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--text-mute);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.changelog-history-title::after { content: none; }
+
+.changelog-history-sub {
+  color: var(--text-mute);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+}
+
+.changelog-history .changelog-list li {
+  color: var(--text-mute);
+}
+
+.changelog-history .changelog-list li strong {
+  color: var(--text-soft);
+}
+
+.changelog-history .changelog-list li::before {
+  color: var(--text-mute);
+  content: "·";
+}
+
+.changelog-footer-note {
+  margin-top: 3rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.changelog-footer-note p {
+  font-size: 0.92rem;
+  color: var(--text-mute);
+  margin-bottom: 0.5rem;
+}
+
+.changelog-footer-note p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .changelog-hero { padding: 3.5rem 1.25rem 3rem; }
+  .changelog-area { padding: 1.25rem 1.25rem 1rem; }
+  .version-badge { min-width: auto; }
 }
 
 /* =========================
