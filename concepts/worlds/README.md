@@ -18,11 +18,11 @@ Estes não substituem os [Contos dos Governantes](../../stories/), são paisagen
 | 08 | [Antes da descida](08-antes-da-descida.md) | `37797ea6-…` |
 | 09 | [O que veio com a primavera](09-o-que-veio-com-a-primavera.md) | `c44ebb64-…` |
 | 10 | [O vigia da margem](10-o-vigia-da-margem.md) | `cd8f1bf2-…` |
-| 11 | [O monge que parou de andar](11-o-monge-que-parou-de-andar.md) | `cf83d72b-…` |
+| 11 | [O velho monge Ylliel](11-o-velho-monge-ylliel.md) | `cf83d72b-…` |
 | 12 | [A ilha do contrato](12-a-ilha-do-contrato.md) | `d48500cf-…` |
 | 13 | [O vale sem nome](13-o-vale-sem-nome.md) | `e34f6baf-…` |
 | 14 | [O último entardecer](14-o-ultimo-entardecer.md) | `f24253e2-…` |
-| 15 | [O violino sobre os telhados](15-o-violino-sobre-os-telhados.md) | `fb1cfd5b-…` |
+| 15 | [O bardo insensato](15-o-bardo-insensato.md) | `fb1cfd5b-…` |
 | 16 | [A aparição sobre Mereon](16-a-aparicao-sobre-mereon.md) | `40a630a1-…` |
 | 17 | [O selo no tempo](17-o-selo-no-tempo.md) | `10f12028-…` |
 
