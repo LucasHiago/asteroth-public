@@ -1301,6 +1301,10 @@ blockquote {
   display: block;
 }
 
+.modal[data-kind="boss"] .modal-body img {
+  background: #ffffff;
+}
+
 .modal-body > div {
   display: block;
 }
