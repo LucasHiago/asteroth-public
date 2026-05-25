@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Changelog · Asteroth</title>
+  <meta name="description" content="Marcos do desenvolvimento de Asteroth. Versão atual, sistemas em construção, e o que cada um destrava." />
+  <meta name="theme-color" content="#0a0a0d" />
+  <meta property="og:title" content="Asteroth · Changelog" />
+  <meta property="og:description" content="Marcos do desenvolvimento de Asteroth, em ordem cronológica reversa." />
+  <meta property="og:image" content="concepts/cover.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://asteroth.com.br/changelog.html" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="toc-nav" aria-label="Navegação">
+  <div class="toc-inner">
+    <a href="index.html#lore">Lore</a>
+    <a href="index.html#governantes">Governantes</a>
+    <a href="index.html#mundo">O Mundo</a>
+    <a href="index.html#gameplay">Gameplay</a>
+    <a href="index.html#contos">Contos</a>
+    <a href="changelog.html" class="active">Changelog</a>
+    <a href="index.html#apoiar">Apoiar</a>
+  </div>
+</nav>
+
+<main>
+
+<header class="changelog-hero">
+  <div class="changelog-hero-inner">
+    <p class="changelog-eyebrow">Asteroth</p>
+    <h1 class="changelog-title">Changelog</h1>
+    <p class="changelog-sub">Marcos do desenvolvimento, em ordem cronológica reversa. O versionamento semântico começa no primeiro demo jogável (Fase 1). Por enquanto, tudo está sob <code>Unreleased</code>.</p>
+    <div class="version-badge-row">
+      <span class="version-badge">
+        <span class="version-label">Versão atual</span>
+        <span class="version-value">Unreleased · pré-1.0</span>
+      </span>
+      <span class="version-badge version-badge-phase">
+        <span class="version-label">Fase</span>
+        <span class="version-value">F0 · Fundação 3D</span>
+      </span>
+    </div>
+  </div>
+</header>
+
+<section class="section section-changelog">
+
+  <article class="changelog-version">
+    <header class="changelog-version-head">
+      <h2 class="changelog-version-name">Unreleased</h2>
+      <span class="changelog-version-tag">Em desenvolvimento ativo</span>
+    </header>
+    <p class="changelog-version-summary">Construção da fundação técnica e do canon público. A engine própria (C++) está sendo escrita do zero, junto com o sistema solar, o planeta esférico, o caminhar do player em gravidade radial, e a primeira camada de física, persistência e multiplayer.</p>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Física</h3>
+      <ul class="changelog-list">
+        <li><strong>Raycast no mundo.</strong> Consulta de "o que está nessa direção" pra detecção de chão, ataques diretos e queries em geral. Base pro PlayerController saber quando está pisando, e pra hit-scan de armas.</li>
+        <li><strong>Colliders de mesh estático.</strong> Estruturas complexas (árvore, prédio, qualquer mesh do mundo) ganham colisão real.</li>
+        <li><strong>PlayerController em cápsula kinemática.</strong> Personagem agora é uma cápsula física que respeita colisão, com sincronização automática entre lógica e pose visual.</li>
+        <li><strong>Cápsula, esfera estática do planeta e helpers de mutação.</strong> Vocabulário básico de formas físicas no jogo.</li>
+        <li><strong>Velocidade do player em mundo + gravidade radial.</strong> O personagem cai em direção ao centro do planeta, não pra "baixo" da tela. Funciona em qualquer ponto da esfera.</li>
+        <li><strong>Gravidade radial por corpo.</strong> Cada objeto físico responde individualmente à atração do planeta.</li>
+        <li><strong>API de corpos físicos.</strong> Vocabulário mínimo pra criar, mover e destruir entidades com física.</li>
+        <li><strong>Tick fixo 60Hz.</strong> Simulação determinística pra multiplayer não desincronizar entre clientes.</li>
+        <li><strong>Foundation da camada de física.</strong> Sistema próprio integrado ao loop principal do jogo.</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Mundo e planeta</h3>
+      <ul class="changelog-list">
+        <li><strong>Continentes maiores via camadas de ruído.</strong> Geração combina ruído continental + detalhe, produzindo massas de terra reconhecíveis.</li>
+        <li><strong>Frame visual planet-local.</strong> Render alinha eixos ao ponto onde o player está, em vez de coordenadas globais.</li>
+        <li><strong>Biome assignment + refinamento de tipo de tile.</strong> Cada tile do mundo recebe bioma e textura coerente com o entorno.</li>
+        <li><strong>Geração de mundo por seed.</strong> Mesma seed gera mesmo planeta, sempre.</li>
+        <li><strong>Modificação local de tiles.</strong> Player pode alterar o mundo: cavar, construir, derrubar.</li>
+        <li><strong>Icosphere subdivision.</strong> Geometria do planeta com triângulos distribuídos uniformemente.</li>
+        <li><strong>UV-sphere geometry.</strong> Planeta vira esfera de verdade no render (não mais cubo placeholder).</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Sistema solar e câmeras</h3>
+      <ul class="changelog-list">
+        <li><strong>Save/load do tempo orbital.</strong> Posição do planeta no sistema solar persiste entre sessões.</li>
+        <li><strong>Períodos de órbita gameplay vs cinematic.</strong> Gameplay usa 10 minutos por órbita (sombras sutis), cinematic usa 30 segundos (órbita visível em demo).</li>
+        <li><strong>Câmera close-follow.</strong> Câmera segue o personagem de perto, base do POV de gameplay.</li>
+        <li><strong>Câmera ISO local v2.</strong> Câmera isométrica alinhada ao plano tangente do planeta no ponto do player.</li>
+        <li><strong>Cinematic demo wirado.</strong> Cena com sol, planeta e órbita, base dos primeiros vídeos públicos.</li>
+        <li><strong>Reconciliação cinematic ↔ gameplay.</strong> Mesmas constantes celestes em ambos os modos.</li>
+        <li><strong>Planeta orbita o sol de verdade.</strong> Translação orbital real, não animação fake.</li>
+        <li><strong>Top-down camera + TAB switcher.</strong> Troca rápida entre câmera de jogo e câmera de mapa.</li>
+        <li><strong>Marcadores 3D pras câmeras inativas.</strong> Debug visual de onde cada câmera está apontando.</li>
+        <li><strong>Caminhar e girar na esfera.</strong> Player se move respeitando a curvatura, sem "cair" do planeta.</li>
+        <li><strong>Cena demo E3 com rotação tipo Terra.</strong> Eixo inclinado oscilante, primeira aparição visual coerente do planeta.</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Renderização e engine</h3>
+      <ul class="changelog-list">
+        <li><strong>Sistema de partículas.</strong> CPU-side, com billboards GL, suportando câmera externa.</li>
+        <li><strong>Texturas via stb_image.</strong> Carregamento de imagens em formato comum (PNG, JPG).</li>
+        <li><strong>Sistema de luz solar exponencial.</strong> Decay realista de intensidade conforme distância e ângulo.</li>
+        <li><strong>Lambert no shader padrão.</strong> Iluminação difusa básica, base de tudo que vai ter sombra.</li>
+        <li><strong>Pipeline de shader + integração câmera ↔ renderer.</strong> Vocabulário mínimo pra desenhar qualquer mesh com qualquer câmera.</li>
+        <li><strong>Depth test habilitado.</strong> Objetos atrás de outros não atravessam mais.</li>
+        <li><strong>Suporte HiDPI + resize.</strong> Janela escala corretamente em monitores Retina e ao redimensionar.</li>
+        <li><strong>Logging com file sink.</strong> Sessão grava log em disco pra análise pós-jogo.</li>
+        <li><strong>Cubo girando + animação de rotação.</strong> Primeiro frame com algo se mexendo na engine.</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">UI, inventário e áudio</h3>
+      <ul class="changelog-list">
+        <li><strong>Equip / unequip flow.</strong> Personagem veste e tira itens, com efeito no estado.</li>
+        <li><strong>UI de inventário.</strong> Primeira tela funcional do jogo.</li>
+        <li><strong>Modelo de dados de inventário.</strong> Slots, stacks, peso.</li>
+        <li><strong>Layout system + widget basics + UI rendering layer.</strong> Toolkit interno de UI, sem dependências externas.</li>
+        <li><strong>Music streaming + sound system básico.</strong> Áudio de fundo e efeitos discretos funcionando.</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Multiplayer e servidor</h3>
+      <ul class="changelog-list">
+        <li><strong>Anti-cheat foundation.</strong> Detecção de patterns suspeitos no comportamento do client.</li>
+        <li><strong>Logging de violations + validação server-side.</strong> Servidor não confia em nada que vem do client.</li>
+        <li><strong>Login flow token-based + session store.</strong> Sessões persistem em memória ou Redis, com refresh e logout.</li>
+        <li><strong>Account creation + password hashing seguro.</strong> Senhas nunca em texto puro, hash com salt.</li>
+        <li><strong>Area-of-interest por player.</strong> Cada cliente só recebe updates da região visível pra ele.</li>
+        <li><strong>Delta updates por visibility transition.</strong> Quando algo entra ou sai da área visível, só a transição é enviada.</li>
+        <li><strong>Spatial partitioning da superfície do planeta.</strong> Mundo dividido em células pra query eficiente de "quem está perto".</li>
+        <li><strong>DB layer F5 MVP + schema MVP.</strong> Primeira camada de persistência server-side.</li>
+        <li><strong>Authoritative game state.</strong> Servidor é fonte de verdade, client renderiza.</li>
+        <li><strong>Server-only build.</strong> Mesma codebase compila como servidor headless.</li>
+        <li><strong>Lobby system 2-4 players co-op.</strong> Primeira sessão multiplayer pequena.</li>
+        <li><strong>Tile modification protocol.</strong> Mudanças no mundo sincronizadas entre clientes.</li>
+        <li><strong>Conflict resolution last-write-wins server-side.</strong> Política simples e previsível pra alterações simultâneas.</li>
+        <li><strong>Multi-client interpolation + client prediction + reconciliation.</strong> Movimento de outros players suave no client local, com correção quando o servidor discorda.</li>
+        <li><strong>Connection management + message serialization.</strong> Foundation do networking.</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Persistência</h3>
+      <ul class="changelog-list">
+        <li><strong>API high-level de save/load.</strong> Salvar e carregar partida com uma chamada.</li>
+        <li><strong>Framework de migration.</strong> Saves antigos abrem em versões novas, sem perder estado.</li>
+        <li><strong>Serialização de world state e player state.</strong> Tudo que o jogo precisa pra continuar de onde parou.</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Lore e design público</h3>
+      <ul class="changelog-list">
+        <li><strong>Taxonomia de tipos de item.</strong> Catálogo seed com 21 categorias (armas, ferramentas, recipientes, consumíveis, etc).</li>
+        <li><strong>Exclusivos por classe.</strong> Cada classe ganhou pelo menos uma ação ou produção que ninguém mais consegue. Monopólio funcional pra garantir demanda real.</li>
+        <li><strong>Canon completo de fama.</strong> 9 atributos, conversão 0,005, redistribuição em PvP por contribuição, perda de 50% na morte.</li>
+        <li><strong>Concept arts: backgrounds e letras.</strong> Primeira leva de arte pública, base do branding em <a href="https://asteroth.com.br">asteroth.com.br</a>.</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Infraestrutura de projeto</h3>
+      <ul class="changelog-list">
+        <li><strong>Pre-push hook.</strong> Suite de testes roda antes de qualquer push, impede commit quebrado de subir.</li>
+        <li><strong>GitHub Project v2 "Asteroth".</strong> Tracking de épicos e issues público.</li>
+        <li><strong>Roadmap por fases.</strong> F0 Fundação 3D → F1 Cinematic demo → F2 Gameplay SP → F3 Save/UI/áudio → F4 MP pequeno → F5 MMO infra → F6+ conteúdo.</li>
+        <li><strong>Pipeline de release CI/CD.</strong> Build automatizado a cada merge.</li>
+        <li><strong>Spec coverage comprehensive em todos os épicos.</strong> Cada sistema sobe com cobertura de teste antes do próximo começar.</li>
+        <li><strong>Relatório HTML visual de specs.</strong> Resultados de teste rendezirados em painel próprio.</li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="changelog-history">
+    <h2 class="changelog-history-title">Histórico inicial (pré-changelog)</h2>
+    <p class="changelog-history-sub">Os primeiros commits da engine, antes do Keep a Changelog formal:</p>
+    <ul class="changelog-list">
+      <li><strong>Documentação do CMakeLists.</strong></li>
+      <li><strong>Refactor do triangle render pra caller pattern.</strong></li>
+      <li><strong>Documentação do main.cpp.</strong></li>
+      <li><strong>Primeira passada de documentação linha-a-linha do código.</strong></li>
+    </ul>
+  </div>
+
+  <div class="changelog-footer-note">
+    <p>Detalhe técnico completo (módulos, APIs, decisões arquiteturais, cobertura de spec) fica no <a href="https://github.com/LucasHiago/asteroth-public/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG.md no repositório público</a>. O changelog interno da engine privada não é exposto.</p>
+    <p>Roadmap detalhado: <a href="https://github.com/users/LucasHiago/projects/1" target="_blank" rel="noopener">GitHub Project v2 · Asteroth</a>.</p>
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>Asteroth · MMORPG em desenvolvimento desde 2012 · construído em engine própria, C++</p>
+  <p class="footer-links">
+    <a href="index.html">Início</a> ·
+    <a href="https://github.com/LucasHiago/asteroth-public" target="_blank" rel="noopener">GitHub</a> ·
+    <a href="https://github.com/sponsors/LucasHiago" target="_blank" rel="noopener">Sponsors</a> ·
+    <a href="https://www.patreon.com/c/Asteroth" target="_blank" rel="noopener">Patreon</a>
+  </p>
+</footer>
+
+</body>
+</html>
