@@ -69,7 +69,7 @@
   <p>Combinando seus poderes e sabedoria, <strong>Asteroth desencadeou um cataclismo</strong> que eliminou a humanidade e qualquer descendente humano do planeta. Foram três grandes ondas de energia. Ao fim, enfraquecido pelo uso de tanto poder, Asteroth buscou descanso em uma profunda cratera vulcânica.</p>
   <p>Hoje, Asteroth e o planeta são um só. Ele guarda a sabedoria da partícula, protegendo o que resta. A partir desse dia, o lar passou a ser conhecido como <strong>Asteroth, filho de Astaroth</strong>, cuja sabedoria contém as memórias da partícula e o destino das demais.</p>
 
-  <figure class="lore-figure">
+  <figure class="lore-figure" style="--art: url('concepts/worlds/6f74f502-946a-4758-90ab-82d4dca58eff.png')">
     <img src="concepts/worlds/6f74f502-946a-4758-90ab-82d4dca58eff.png" alt="A centelha de Asteroth" loading="lazy" />
     <figcaption>Fragmentos da partícula verdadeira ainda dormem sob as raízes do mundo.</figcaption>
   </figure>
@@ -80,7 +80,7 @@
   <p>Para a humanidade, Asteroth é visto como uma entidade cruel: foi ele quem quase aniquilou sua existência. Mas suas ações foram, à sua maneira, um meio de proteger o planeta.</p>
   <p>Infelizmente para os homens, <strong>Asteroth não está sozinho</strong>. Ele é apenas um entre <strong>vinte e seis governantes</strong>, ocupando posição de liderança nessa hierarquia, com Cthulhu como segundo em comando, seguido pelos demais regentes do mundo.</p>
 
-  <figure class="lore-figure">
+  <figure class="lore-figure" style="--art: url('concepts/worlds/10f12028-8075-4d0c-99e8-0cccfd1f8c1c.png')">
     <img src="concepts/worlds/10f12028-8075-4d0c-99e8-0cccfd1f8c1c.png" alt="O selo no tempo" loading="lazy" />
     <figcaption>O que dorme em Nimue não é mais um corpo. É um espírito preso, e a própria montanha o segura.</figcaption>
   </figure>
@@ -91,7 +91,7 @@
   <p>O mithril é prisão natural. Não foi feito pra conter divindades, apenas as contém, pelo simples fato de existir. Nem Astaroth, nascido direto do colapso da partícula verdadeira, nem Asteroth, seu primeiro filho, jamais conseguiram atravessar uma cordilheira de mithril sem deixar parte de si pra trás.</p>
   <p>As <strong>montanhas de Nimue</strong>, a leste do continente conhecido, são uma dessas cordilheiras. Gélidas, intransponíveis, rodeadas de veios de mithril expostos a céu aberto. Foi para o coração de Nimue que Asteroth foi descansar depois do cataclismo. Hoje, milênios passados, o que dorme ali não é mais um corpo. É um espírito preso. A cratera vulcânica original se calou e congelou. A montanha cresceu por cima. O rei do planeta está dentro, e a própria montanha o segura.</p>
 
-  <figure class="lore-figure">
+  <figure class="lore-figure" style="--art: url('concepts/worlds/40a630a1-addb-419a-83bd-4e33542fe477.png')">
     <img src="concepts/worlds/40a630a1-addb-419a-83bd-4e33542fe477.png" alt="A aparição sobre Mereon" loading="lazy" />
     <figcaption>Quando o panteão se move, o céu inteiro assiste.</figcaption>
   </figure>
@@ -1340,15 +1340,37 @@
   const modal = document.getElementById('boss-modal');
   const body = modal.querySelector('.modal-body');
 
+  const bossOrder = ['cthulhu','azazel','beelzebub','metatron','hastur','abaron','abaddon','mammon','baphomet','asratheet','astaroth','valkier','greenkir','obsien','procodile','neron','iymue','moon','zaniel','aslon','urien','echtrhos','nephile','tartarus','yemir','chronus'];
+  const BOSS_STORY = {};
+  bossOrder.forEach((slug, i) => {
+    BOSS_STORY['boss-' + slug] = 'story-' + String(i + 1).padStart(2, '0');
+  });
+
+  function storyBlock(storyEl) {
+    const div = storyEl.querySelector('div');
+    if (!div) return '';
+    const title = div.querySelector('h3');
+    const paras = Array.from(div.querySelectorAll('p')).map(p => p.outerHTML).join('');
+    return '<div class="book-story"><span class="book-story-label">Conto do despertar</span>'
+      + '<h4>' + (title ? title.textContent : '') + '</h4>' + paras + '</div>';
+  }
+
   function open(entry, kind, medallion) {
-    body.innerHTML = entry.innerHTML;
-    if (medallion) {
-      const img = document.createElement('img');
-      img.src = medallion;
-      img.alt = '';
-      img.className = 'modal-medallion';
-      body.prepend(img);
+    const art = entry.querySelector('img');
+    const content = entry.querySelector('div');
+    const artSrc = art ? art.getAttribute('src') : medallion;
+    let rightHTML = content ? content.innerHTML : entry.innerHTML;
+    if (kind === 'boss') {
+      const story = BOSS_STORY[entry.id] && document.getElementById(BOSS_STORY[entry.id]);
+      if (story) rightHTML += storyBlock(story);
     }
+    body.innerHTML =
+      '<div class="book" data-kind="' + kind + '">'
+      + '<div class="book-page book-page-art">'
+      + (artSrc ? '<img src="' + artSrc + '" alt="" />' : '')
+      + '</div>'
+      + '<div class="book-page book-page-text">' + rightHTML + '</div>'
+      + '</div>';
     modal.dataset.kind = kind;
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
