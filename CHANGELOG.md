@@ -16,6 +16,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - **Papiro de imagem única**: o pergaminho do modal deixou de ser montado em 9 fatias + tile central (que criava uma emenda retangular visível cortando a textura) e virou o `papyrus_frame` inteiro esticado numa única camada; o conteúdo é ancorado em percentuais, então rolos e bordas escalam juntos em qualquer tamanho — visual fluido, sem costura.
 
 ### Added
+- **Compêndio: leva 15 (126/517)**: abre o capítulo Construção — 10 itens revelados: Bloco de Pedra, Viga de Madeira, Prego, Bloco de Tijolo, Parede de Madeira, Parede de Pedra, Piso de Madeira, Piso de Pedra, Porta de Madeira e Porta de Ferro — descrições inéditas em tom de compêndio antigo; tooltips curtos gravados no catálogo do jogo (7 estavam vazios; 3 com tooltip legado não sobrescritos).
 - **Compêndio: leva 14 (116/517)**: fecha o capítulo Material refinado — 2 itens revelados: Argamassa e Tijolo — descrições inéditas em tom de compêndio antigo; tooltips curtos gravados no catálogo do jogo (ambos estavam vazios). Próximo capítulo: Construção.
 - **Compêndio: leva 13 (114/517)**: continua o capítulo Material refinado — 10 itens revelados: Viga, Vidro, Papel, Tinta, Cera, Óleo Refinado, Farinha, Corante, Cola e Piche — descrições inéditas em tom de compêndio antigo; tooltips curtos gravados no catálogo do jogo (todos estavam vazios).
 
