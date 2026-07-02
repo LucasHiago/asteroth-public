@@ -16,6 +16,8 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - **Papiro de imagem única**: o pergaminho do modal deixou de ser montado em 9 fatias + tile central (que criava uma emenda retangular visível cortando a textura) e virou o `papyrus_frame` inteiro esticado numa única camada; o conteúdo é ancorado em percentuais, então rolos e bordas escalam juntos em qualquer tamanho — visual fluido, sem costura.
 
 ### Added
+- **Compêndio: leva 5 (41/517)**: abre o capítulo Matéria-prima — 10 itens revelados: Minério de Ferro, Minério de Cobre, Pedra Bruta, Pele Bruta, Fibra de Algodão, Tora de Carvalho, Erva Medicinal, Cristal de Mana, Enxofre e Salitre — descrições inéditas em tom de compêndio antigo; todos já tinham tooltip legado no catálogo (não sobrescritos).
+
 - **Compêndio: leva 4 (31/517)**: ferramenta final do capítulo revelada — Balança — com descrição inédita em tom de compêndio e tooltip curto gravado no catálogo do jogo. Fecha o capítulo Ferramentas.
 
 - **Compêndio: leva 3 (30/517)**: mais 10 ferramentas reveladas — Faca, Faca de Esfolar, Cutelo, Agulha, Fuso, Pilão, Almofariz, Armadilha de Caça, Laço e Bússola de Agrimensor — com descrições inéditas em tom de compêndio; tooltips curtos gravados no catálogo do jogo.
