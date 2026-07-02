@@ -21,6 +21,8 @@
   --max-w: 1100px;
   --serif: "Cinzel", "Cormorant Garamond", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --fantasy-title: "Uncial Antiqua", "Cinzel", Georgia, serif;
+  --fantasy-text: "IM Fell English", "Cormorant Garamond", Georgia, serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -409,65 +411,89 @@ blockquote {
 }
 
 /* =========================
-   LORE · concept art full-bleed entre capítulos
+   LORE · capítulos em 2 blocos (arte | texto)
+   borda com cantos cortados, ecoando os botões (.cta)
    ========================= */
 
-.lore-figure {
-  width: 100vw;
-  margin: 3.5rem calc(50% - 50vw);
-  position: relative;
-  overflow: hidden;
-  padding: 3rem 1.5rem 2.5rem;
+.lore-blocks {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
+  gap: 2.75rem;
+  margin-top: 1rem;
 }
 
-/* backdrop: a própria arte, borrada, cobrindo a faixa — a arte nítida
-   aparece inteira (contain) por cima, sem corte */
-.lore-figure::before {
-  content: "";
-  position: absolute;
-  inset: -40px;
-  background-image: var(--art);
-  background-size: cover;
-  background-position: center;
-  filter: blur(26px) brightness(0.38) saturate(1.15);
-  transform: scale(1.12);
-}
-
-.lore-figure::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, var(--bg) 0%, rgba(10,10,13,0) 12%, rgba(10,10,13,0) 88%, var(--bg) 100%);
-}
-
-.lore-figure img {
+.lore-block {
+  --cut: 22px;
   position: relative;
-  z-index: 1;
-  width: auto;
-  max-width: min(92vw, 940px);
-  max-height: 76vh;
-  object-fit: contain;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 169, 110, 0.6) 0%,
+    rgba(201, 169, 110, 0.14) 30%,
+    rgba(192, 26, 31, 0.35) 55%,
+    rgba(201, 169, 110, 0.14) 78%,
+    rgba(201, 169, 110, 0.55) 100%
+  );
+  clip-path: polygon(
+    var(--cut) 0, 100% 0,
+    100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%,
+    0 100%, 0 var(--cut)
+  );
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+}
+
+.lore-block-inner {
+  clip-path: polygon(
+    var(--cut) 0, 100% 0,
+    100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%,
+    0 100%, 0 var(--cut)
+  );
+  background: linear-gradient(180deg, var(--surface-2) 0%, var(--bg-card) 45%);
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 2.5rem;
+  padding: 2.25rem;
+}
+
+.lore-block:nth-child(even) .lore-block-art { order: 2; }
+
+.lore-block-art {
+  align-self: start;
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.lore-block-art img {
+  width: 100%;
   border: 1px solid rgba(201, 169, 110, 0.35);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
 }
 
-.lore-figure figcaption {
-  position: relative;
-  z-index: 1;
+.lore-block-caption {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
   color: var(--gold-soft);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
   text-align: center;
-  width: min(90%, 700px);
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
+.lore-block-text h3 { margin-top: 0; }
+.lore-block-text p:last-child { margin-bottom: 0; }
+
+@media (max-width: 860px) {
+  .lore-block-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1.25rem;
+  }
+  .lore-block:nth-child(even) .lore-block-art { order: 0; }
+  .lore-block-art { position: static; }
 }
 
 /* =========================
@@ -778,6 +804,95 @@ blockquote {
   color: var(--text-mute);
   letter-spacing: 0.03em;
 }
+
+/* =========================
+   ITENS · compêndio
+   ========================= */
+
+.itens-count {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 2rem;
+}
+
+.itens-count span {
+  color: var(--gold-soft);
+  font-weight: 700;
+}
+
+.itens-count strong {
+  color: var(--gold-soft);
+  font-weight: 700;
+}
+
+.itens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.item-card {
+  --cut: 12px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  clip-path: polygon(
+    var(--cut) 0, 100% 0,
+    100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%,
+    0 100%, 0 var(--cut)
+  );
+  padding: 0.85rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.15s, border-color 0.2s, background 0.2s;
+}
+
+.item-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  background: var(--surface-2);
+}
+
+.item-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #ffffff;
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  margin-bottom: 0.65rem;
+  transition: border-color 0.2s;
+}
+
+.item-card:hover img {
+  border-color: rgba(201, 169, 110, 0.6);
+}
+
+.item-name {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text);
+  letter-spacing: 0.03em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.item-cat {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.72rem;
+  color: var(--gold-soft);
+  opacity: 0.85;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+.item-list { display: none; }
 
 /* =========================
    GAMEPLAY · identidade em camadas
@@ -1537,7 +1652,6 @@ blockquote {
   border: none;
   border-radius: 10px;
   padding: 0;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85);
 }
 
 .modal-close {
@@ -1565,34 +1679,18 @@ blockquote {
 .modal-body { display: block; }
 
 /* =========================
-   MODAL · livro aberto
+   MODAL · arte + pergaminho
+   contos/mundo: papiro com rolos · boss: folha antiga rasgada
    ========================= */
 
 .book {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.08fr;
   grid-template-rows: minmax(0, 1fr);
+  gap: 1.25rem;
   position: relative;
   height: min(720px, calc(100vh - 2rem));
-  border-radius: 10px;
-  overflow: hidden;
-  background: #f2e9d8;
-}
-
-/* lombada central */
-.book::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    rgba(60, 44, 24, 0.14) 0%, transparent 3%,
-    transparent 46.5%, rgba(60, 44, 24, 0.16) 49.4%,
-    rgba(40, 28, 14, 0.34) 50%,
-    rgba(60, 44, 24, 0.16) 50.6%, transparent 53.5%,
-    transparent 97%, rgba(60, 44, 24, 0.14) 100%
-  );
+  background: transparent;
 }
 
 .book-page {
@@ -1603,7 +1701,9 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
   background: radial-gradient(ellipse at center, #fdfaf2 0%, #f2e9d8 70%, #e8dcc2 100%);
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
 }
 
 .book-page-art img {
@@ -1623,61 +1723,81 @@ blockquote {
   box-shadow: 0 10px 30px rgba(60, 44, 24, 0.35);
 }
 
+/* página de texto = papiro com rolos (9-slice: rolos fixos, corpo estica) */
 .book-page-text {
   overflow-y: auto;
-  background: radial-gradient(ellipse at center, #f7f0e1 0%, #f2e9d8 75%, #eadec6 100%);
+  padding: 0.5rem 1rem;
+  border: solid transparent;
+  border-width: 108px 92px 94px 92px;
+  border-image: url("concepts/assets/papyrus_frame.png") 170 150 150 150 fill stretch;
+  background: transparent;
   font-size: 0.95rem;
   scrollbar-color: rgba(107, 84, 48, 0.35) transparent;
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
+}
+
+/* boss: folha antiga de bordas rasgadas, sem rolos */
+.book[data-kind="boss"] .book-page-text {
+  border-width: 58px 64px 58px 64px;
+  border-image: url("concepts/assets/paper_frame.png") 80 90 80 90 fill stretch;
 }
 
 .book-page-text::-webkit-scrollbar-thumb {
   background: rgba(107, 84, 48, 0.35);
 }
 
-.book-page-text h3 {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+.book-page-text h3,
+.scroll-solo h3 {
+  font-family: var(--fantasy-title);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
   color: #241b0f;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
 
-.book-page-text .epitaph {
-  font-family: var(--serif);
+.book-page-text .epitaph,
+.scroll-solo .epitaph {
+  font-family: var(--fantasy-text);
   font-style: italic;
-  color: #8a6d3b;
+  color: #7a5f30;
   margin-bottom: 1.4rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(138, 109, 59, 0.35);
+  border-bottom: 1px solid rgba(122, 95, 48, 0.4);
 }
 
-.book-page-text p {
-  color: #43372a;
+.book-page-text p,
+.scroll-solo p {
+  font-family: var(--fantasy-text);
+  font-size: 1.06rem;
+  color: #3b2d18;
   margin-bottom: 1rem;
-  line-height: 1.75;
+  line-height: 1.6;
 }
 
 .book-page-text p strong,
-.book-page-text p em { color: #241b0f; }
+.book-page-text p em,
+.scroll-solo p strong,
+.scroll-solo p em { color: #241b0f; }
 
 /* capitular no primeiro parágrafo do corpo */
 .book-page-text .epitaph + p::first-letter,
-.book-page-text h3 + p:not(.epitaph)::first-letter {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 3.1em;
+.book-page-text h3 + p:not(.epitaph)::first-letter,
+.scroll-solo .epitaph + p::first-letter {
+  font-family: var(--fantasy-title);
+  font-weight: 400;
+  font-size: 3em;
   float: left;
   line-height: 0.82;
-  padding: 0.06em 0.12em 0 0;
+  padding: 0.08em 0.14em 0 0;
   color: var(--accent);
 }
 
-/* conto do despertar dentro do livro */
+/* conto do despertar dentro do pergaminho */
 .book-story {
   margin-top: 2.25rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(138, 109, 59, 0.35);
+  border-top: 1px solid rgba(122, 95, 48, 0.4);
 }
 
 .book-story-label {
@@ -1687,18 +1807,59 @@ blockquote {
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #8a6d3b;
+  color: #7a5f30;
   margin-bottom: 0.35rem;
 }
 
 .book-story h4 {
-  font-family: var(--serif);
-  font-weight: 700;
+  font-family: var(--fantasy-title);
+  font-weight: 400;
   font-size: 1.25rem;
   color: #241b0f;
   margin: 0 0 1rem;
   text-transform: none;
   letter-spacing: 0.01em;
+}
+
+/* =========================
+   MODAL · item em papiro único
+   ========================= */
+
+.scroll-solo {
+  width: min(620px, 100%);
+  margin: 0 auto;
+  height: min(780px, calc(100vh - 2rem));
+  border: solid transparent;
+  border-width: 112px 96px 98px 96px;
+  border-image: url("concepts/assets/papyrus_frame.png") 170 150 150 150 fill stretch;
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
+}
+
+.scroll-solo-inner {
+  height: 100%;
+  overflow-y: auto;
+  padding: 0.25rem 1.1rem;
+  scrollbar-color: rgba(107, 84, 48, 0.35) transparent;
+}
+
+.scroll-solo-inner::-webkit-scrollbar-thumb {
+  background: rgba(107, 84, 48, 0.35);
+}
+
+.scroll-solo-art {
+  width: min(260px, 72%);
+  margin: 0 auto 1.4rem;
+  mix-blend-mode: multiply; /* funde o fundo branco do item com o papiro */
+  filter: sepia(0.15) contrast(1.03);
+}
+
+.scroll-solo h3 {
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+.scroll-solo .epitaph {
+  text-align: center;
 }
 
 @media (max-width: 860px) {
@@ -1709,11 +1870,25 @@ blockquote {
     grid-template-rows: none;
     height: auto;
   }
-  .book::after { content: none; }
   .book-page { padding: 1.75rem 1.4rem; }
-  .book-page-art { padding-bottom: 0.75rem; }
   .book-page-art img { max-height: 42vh; }
-  .book-page-text { overflow-y: visible; }
+  .book-page-text {
+    overflow-y: visible;
+    padding: 0.25rem 0.25rem;
+    border-width: 84px 58px 74px 58px;
+  }
+  .book[data-kind="boss"] .book-page-text {
+    border-width: 44px 42px 44px 42px;
+  }
+  .scroll-solo {
+    height: auto;
+    max-height: none;
+    border-width: 88px 62px 78px 62px;
+  }
+  .scroll-solo-inner {
+    height: auto;
+    overflow-y: visible;
+  }
 }
 
 /* =========================
