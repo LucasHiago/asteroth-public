@@ -1809,14 +1809,17 @@ blockquote {
   filter: sepia(0.15) contrast(1.03);
 }
 
-/* pinturas de mundo: fundem no papiro — multiply tinge como tinta sobre o
-   pergaminho e a máscara esfuma as bordas (sem retângulo cortando a textura) */
+/* pinturas de mundo: banner de iluminura no topo do pergaminho — altura
+   fixa com corte cover (retratos não engolem o papiro), multiply tinge
+   como tinta e a máscara esfuma as bordas (sem retângulo) */
 .modal[data-kind="world"] .scroll-solo-art {
   mix-blend-mode: multiply;
   filter: sepia(0.18) saturate(1.2) contrast(1.05);
-  width: min(500px, 98%);
-  -webkit-mask-image: radial-gradient(ellipse 88% 82% at center, #000 52%, rgba(0, 0, 0, 0.7) 72%, transparent 97%);
-  mask-image: radial-gradient(ellipse 88% 82% at center, #000 52%, rgba(0, 0, 0, 0.7) 72%, transparent 97%);
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  -webkit-mask-image: radial-gradient(ellipse 82% 78% at center, #000 42%, rgba(0, 0, 0, 0.6) 66%, transparent 95%);
+  mask-image: radial-gradient(ellipse 82% 78% at center, #000 42%, rgba(0, 0, 0, 0.6) 66%, transparent 95%);
 }
 
 /* seta de rolagem: pousa sobre o corpo do papiro, acima do rolo de baixo;
@@ -1886,7 +1889,7 @@ blockquote {
   .scroll-solo p { font-size: 0.96rem; }
   .scroll-solo h3 { font-size: 1.2rem; }
   .scroll-solo-art { width: min(200px, 62%); }
-  .modal[data-kind="world"] .scroll-solo-art { width: min(300px, 90%); }
+  .modal[data-kind="world"] .scroll-solo-art { width: 100%; aspect-ratio: 4 / 3; }
 }
 
 /* =========================
