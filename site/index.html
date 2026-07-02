@@ -1528,7 +1528,21 @@
       + (artSrc ? '<img class="scroll-solo-art" src="' + artSrc + '" alt="" />' : '')
       + rightHTML
       + '</div>'
+      + '<button class="scroll-hint" type="button" aria-label="Rolar o pergaminho"></button>'
       + '</div>';
+    const inner = body.querySelector('.scroll-solo-inner');
+    const hint = body.querySelector('.scroll-hint');
+    const updateHint = () => {
+      const canScroll = inner.scrollHeight - inner.clientHeight > 40;
+      const atEnd = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 60;
+      hint.classList.toggle('hidden', !canScroll || atEnd);
+    };
+    hint.addEventListener('click', () => {
+      inner.scrollBy({ top: inner.clientHeight * 0.85, behavior: 'smooth' });
+    });
+    inner.addEventListener('scroll', updateHint, { passive: true });
+    inner.querySelectorAll('img').forEach(img => img.addEventListener('load', updateHint));
+    updateHint();
     modal.dataset.kind = kind;
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
