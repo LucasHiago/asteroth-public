@@ -5205,6 +5205,12 @@
         raceInfo.setAttribute('hidden', '');
       }
 
+      if (!affRaca && !affClasse && !affTipo) {
+        if (countEl) countEl.textContent = '';
+        res.innerHTML = '<p class="aff-empty">Selecione uma raça, classe ou tipo para ver os alinhamentos.</p>';
+        return;
+      }
+
       var rows = AFFINITIES.filter(function(r) {
         return (!affRaca || r.raca === affRaca)
           && (!affClasse || r.classe === affClasse || r.classe === 'Qualquer')
@@ -5253,7 +5259,7 @@
     var classeEl = document.getElementById('aff-classe-pills');
     var tipoEl  = document.getElementById('aff-tipo-pills');
     if (racaEl && classeEl) {
-      var seen = {}, racas = [{val:'', label:'Todas'}], classes = [{val:'', label:'Todas'}];
+      var seen = {}, racas = [], classes = [];
       AFFINITIES.forEach(function(r) {
         if (!seen['r:' + r.raca])   { seen['r:' + r.raca] = 1; racas.push({val: r.raca, label: r.raca}); }
         if (r.classe !== 'Qualquer' && !seen['c:' + r.classe]) { seen['c:' + r.classe] = 1; classes.push({val: r.classe, label: r.classe}); }
@@ -5261,7 +5267,6 @@
       affMakePills(racaEl,   racas,   function() { return affRaca;   }, function(v) { affRaca   = v; });
       affMakePills(classeEl, classes, function() { return affClasse; }, function(v) { affClasse = v; });
       affMakePills(tipoEl, [
-        {val:'',          label:'Todos'},
         {val:'combate',   label:'⚔️ Combate'},
         {val:'craft',     label:'🔨 Craft'},
         {val:'passivo',   label:'✨ Passivo'},
