@@ -1810,15 +1810,18 @@ blockquote {
 }
 
 /* itens: as imagens têm fundo escuro e se perdem no tom do papiro — viram
-   placa emoldurada com passe-partout claro */
+   placa com moldura de madeira, no tom dos rolos do pergaminho */
 .modal[data-kind="item"] .scroll-solo-art {
   mix-blend-mode: normal;
   filter: none;
-  padding: 10px;
-  background: radial-gradient(ellipse at center, #fdfaf2 0%, #f2e9d8 78%, #e8dcc2 100%);
-  border: 1px solid rgba(107, 84, 48, 0.5);
+  padding: 9px;
+  background: linear-gradient(145deg, #a8763f 0%, #8a5a2b 45%, #6b4118 100%);
+  border: 1px solid #4a2c10;
   border-radius: 3px;
-  box-shadow: 0 6px 18px rgba(60, 44, 24, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 230, 180, 0.4),
+    inset 0 -1px 0 rgba(40, 22, 8, 0.5),
+    0 6px 18px rgba(60, 44, 24, 0.4);
 }
 
 /* pinturas de mundo: banner de iluminura no topo do pergaminho — altura
