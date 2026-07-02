@@ -9,6 +9,8 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- **Cards dos Governantes em folha antiga**: o retrato do boss agora é impresso na folha rasgada (`paper_frame`, blend multiply) em vez do quadrado branco — o grid inteiro ganha cara de galeria de gravuras.
+- **Pinturas fundidas no pergaminho**: nos modais de O Mundo, a concept art derrete no papiro (multiply + máscara radial esfumando as bordas + tom sépia) em vez da prancha retangular que cortava a textura.
 - **Texto do pergaminho com respiro**: margens do conteúdo recuadas pra dentro das colunas de ornamento da folha (24% laterais, 20%/18% vertical) — o texto não atropela mais os desenhos nem as bordas rasgadas.
 - **Papiro de imagem única**: o pergaminho do modal deixou de ser montado em 9 fatias + tile central (que criava uma emenda retangular visível cortando a textura) e virou o `papyrus_frame` inteiro esticado numa única camada; o conteúdo é ancorado em percentuais, então rolos e bordas escalam juntos em qualquer tamanho — visual fluido, sem costura.
 

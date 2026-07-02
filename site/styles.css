@@ -508,6 +508,7 @@ blockquote {
 }
 
 .boss-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   background: var(--bg-card);
@@ -519,6 +520,18 @@ blockquote {
   transition: transform 0.15s, border-color 0.2s, background 0.2s;
 }
 
+/* folha antiga atrás da arte — o multiply do retrato funde o fundo branco */
+.boss-card::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  aspect-ratio: 1;
+  background: url("concepts/assets/paper_frame.png") center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
 .boss-card:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
@@ -527,18 +540,19 @@ blockquote {
 }
 
 .boss-card img {
+  position: relative;
   width: 100%;
   aspect-ratio: 1;
   object-fit: contain;
-  background: #ffffff;
-  border-radius: 4px;
-  border: 1px solid rgba(201, 169, 110, 0.25);
+  padding: 8%; /* respiro dentro da folha */
   margin-bottom: 0.75rem;
-  transition: border-color 0.2s;
+  mix-blend-mode: multiply; /* funde o fundo branco com a folha do ::before */
+  filter: sepia(0.12) contrast(1.02);
+  transition: transform 0.2s;
 }
 
 .boss-card:hover img {
-  border-color: rgba(201, 169, 110, 0.6);
+  transform: scale(1.05);
 }
 
 .boss-name {
@@ -1799,14 +1813,14 @@ blockquote {
   filter: sepia(0.15) contrast(1.03);
 }
 
-/* pinturas de mundo não têm fundo branco — prancha emoldurada sobre o papiro */
+/* pinturas de mundo: fundem no papiro — multiply tinge como tinta sobre o
+   pergaminho e a máscara esfuma as bordas (sem retângulo cortando a textura) */
 .modal[data-kind="world"] .scroll-solo-art {
-  mix-blend-mode: normal;
-  filter: none;
-  width: min(460px, 92%);
-  border: 6px solid #fff;
-  outline: 1px solid rgba(107, 84, 48, 0.4);
-  box-shadow: 0 10px 30px rgba(60, 44, 24, 0.35);
+  mix-blend-mode: multiply;
+  filter: sepia(0.18) saturate(1.2) contrast(1.05);
+  width: min(500px, 98%);
+  -webkit-mask-image: radial-gradient(ellipse 88% 82% at center, #000 52%, rgba(0, 0, 0, 0.7) 72%, transparent 97%);
+  mask-image: radial-gradient(ellipse 88% 82% at center, #000 52%, rgba(0, 0, 0, 0.7) 72%, transparent 97%);
 }
 
 /* seta de rolagem: pousa sobre o corpo do papiro, acima do rolo de baixo;
