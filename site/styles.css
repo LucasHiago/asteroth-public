@@ -1679,85 +1679,10 @@ blockquote {
 .modal-body { display: block; }
 
 /* =========================
-   MODAL · arte + pergaminho
-   contos/mundo: papiro com rolos · boss: folha antiga rasgada
+   MODAL · papiro único
+   arte no topo do pergaminho, texto rolando abaixo, entre os rolos
    ========================= */
 
-.book {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-  grid-template-rows: minmax(0, 1fr);
-  gap: 1.25rem;
-  position: relative;
-  height: min(760px, calc(100vh - 2rem));
-  background: transparent;
-}
-
-.book-page {
-  padding: 2.5rem 2.4rem;
-}
-
-/* página da arte = folha antiga de bordas rasgadas */
-.book-page-art {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: solid transparent;
-  border-width: 50px 56px 50px 56px;
-  border-image: url("concepts/assets/paper_frame.png") 80 90 80 90 fill stretch;
-  background: transparent;
-  padding: 1rem;
-  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
-}
-
-.book-page-art img {
-  max-width: 100%;
-  max-height: calc(100vh - 8rem);
-  object-fit: contain;
-  mix-blend-mode: multiply; /* funde o fundo branco da arte com o papel */
-  filter: sepia(0.12) contrast(1.02);
-}
-
-/* pinturas de mundo não têm fundo branco — viram prancha emoldurada */
-.book[data-kind="world"] .book-page-art img {
-  mix-blend-mode: normal;
-  filter: none;
-  border: 6px solid #fff;
-  outline: 1px solid rgba(107, 84, 48, 0.4);
-  box-shadow: 0 10px 30px rgba(60, 44, 24, 0.35);
-}
-
-/* página de texto = papiro com rolos (9-slice: rolos fixos, corpo estica).
-   o corpo é background clipado no padding-box em vez de border-image fill —
-   o fill é composto errado pelo Chromium quando há scroll no elemento ou num
-   filho; quem scrolla é o .book-page-text-inner */
-.book-page-text {
-  padding: 0;
-  border: solid transparent;
-  border-width: 108px 92px 94px 92px;
-  border-image: url("concepts/assets/papyrus_frame.png") 170 150 150 150 stretch;
-  background: url("concepts/assets/papyrus_body.jpg") center / 100% 100% no-repeat;
-  background-clip: padding-box;
-  background-origin: padding-box;
-  font-size: 0.95rem;
-  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
-}
-
-.book-page-text-inner {
-  height: 100%;
-  overflow-y: auto;
-  padding: 0.5rem 1.25rem;
-  scrollbar-color: rgba(107, 84, 48, 0.35) transparent;
-}
-
-.book-page-text-inner::-webkit-scrollbar-thumb {
-  background: rgba(107, 84, 48, 0.35);
-}
-
-/* arte inline dentro do papiro — só aparece no mobile */
-.book-inline-art { display: none; }
-
-.book-page-text h3,
 .scroll-solo h3 {
   font-family: var(--fantasy-title);
   font-weight: 400;
@@ -1767,7 +1692,6 @@ blockquote {
   line-height: 1.25;
 }
 
-.book-page-text .epitaph,
 .scroll-solo .epitaph {
   font-family: var(--fantasy-text);
   font-style: italic;
@@ -1777,7 +1701,6 @@ blockquote {
   border-bottom: 1px solid rgba(122, 95, 48, 0.4);
 }
 
-.book-page-text p,
 .scroll-solo p {
   font-family: var(--fantasy-text);
   font-size: 1.06rem;
@@ -1786,15 +1709,12 @@ blockquote {
   line-height: 1.6;
 }
 
-.book-page-text p strong,
-.book-page-text p em,
 .scroll-solo p strong,
 .scroll-solo p em { color: #241b0f; }
 
 /* capitular no primeiro parágrafo do corpo */
-.book-page-text .epitaph + p::first-letter,
-.book-page-text h3 + p:not(.epitaph)::first-letter,
-.scroll-solo .epitaph + p::first-letter {
+.scroll-solo .epitaph + p::first-letter,
+.scroll-solo h3 + p:not(.epitaph)::first-letter {
   font-family: var(--fantasy-title);
   font-weight: 400;
   font-size: 3em;
@@ -1833,26 +1753,36 @@ blockquote {
 }
 
 /* =========================
-   MODAL · item em papiro único
+   MODAL · o papiro
+   moldura/rolos: 9-slice sem fill. corpo: .scroll-solo-bg, camada IRMÃ do
+   scroller — fill/background em elemento que scrolla (ou ancestral de um)
+   é composto deslocado em alguns Chromium
    ========================= */
 
 .scroll-solo {
-  width: min(620px, 100%);
+  position: relative;
+  width: min(760px, 100%);
   margin: 0 auto;
-  height: min(780px, calc(100vh - 2rem));
+  height: min(860px, calc(100vh - 2rem));
   border: solid transparent;
   border-width: 112px 96px 98px 96px;
   border-image: url("concepts/assets/papyrus_frame.png") 170 150 150 150 stretch;
-  background: url("concepts/assets/papyrus_body.jpg") center / 100% 100% no-repeat;
-  background-clip: padding-box;
-  background-origin: padding-box;
   filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
 }
 
+.scroll-solo-bg {
+  position: absolute;
+  inset: 0; /* padding box do papiro = área entre rolos e bordas */
+  /* tile espelhado na vertical: repete sem costura em qualquer altura,
+     sem esticar a textura (mobile fica bem alto) */
+  background: url("concepts/assets/papyrus_body.jpg") top center / 100% auto repeat-y;
+}
+
 .scroll-solo-inner {
+  position: relative;
   height: 100%;
   overflow-y: auto;
-  padding: 0.25rem 1.1rem;
+  padding: 0.25rem 1.25rem;
   scrollbar-color: rgba(107, 84, 48, 0.35) transparent;
 }
 
@@ -1861,10 +1791,20 @@ blockquote {
 }
 
 .scroll-solo-art {
-  width: min(260px, 72%);
-  margin: 0 auto 1.4rem;
-  mix-blend-mode: multiply; /* funde o fundo branco do item com o papiro */
+  width: min(300px, 74%);
+  margin: 0.25rem auto 1.5rem;
+  mix-blend-mode: multiply; /* funde o fundo branco da arte com o papiro */
   filter: sepia(0.15) contrast(1.03);
+}
+
+/* pinturas de mundo não têm fundo branco — prancha emoldurada sobre o papiro */
+.modal[data-kind="world"] .scroll-solo-art {
+  mix-blend-mode: normal;
+  filter: none;
+  width: min(460px, 92%);
+  border: 6px solid #fff;
+  outline: 1px solid rgba(107, 84, 48, 0.4);
+  box-shadow: 0 10px 30px rgba(60, 44, 24, 0.35);
 }
 
 .scroll-solo h3 {
@@ -1879,37 +1819,6 @@ blockquote {
 @media (max-width: 860px) {
   .modal { padding: 0.5rem; }
   .modal-content { max-height: calc(100vh - 1rem); }
-  .book {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    height: auto;
-  }
-  /* mobile: só o papiro — a arte entra no topo do pergaminho */
-  .book-page-art { display: none; }
-  .book-inline-art {
-    display: block;
-    width: min(230px, 68%);
-    margin: 0 auto 1.4rem;
-    mix-blend-mode: multiply;
-    filter: sepia(0.12) contrast(1.02);
-  }
-  .book[data-kind="world"] .book-inline-art {
-    mix-blend-mode: normal;
-    filter: none;
-    width: min(320px, 88%);
-    border: 5px solid #fff;
-    outline: 1px solid rgba(107, 84, 48, 0.4);
-    box-shadow: 0 8px 22px rgba(60, 44, 24, 0.35);
-  }
-  .book-page-text {
-    padding: 0;
-    border-width: 84px 58px 74px 58px;
-  }
-  .book-page-text-inner {
-    height: auto;
-    overflow-y: visible;
-    padding: 0.25rem 0.5rem;
-  }
   .scroll-solo {
     height: auto;
     max-height: none;
@@ -1918,7 +1827,10 @@ blockquote {
   .scroll-solo-inner {
     height: auto;
     overflow-y: visible;
+    padding: 0.25rem 0.5rem;
   }
+  .scroll-solo-art { width: min(230px, 70%); }
+  .modal[data-kind="world"] .scroll-solo-art { width: min(320px, 92%); }
 }
 
 /* =========================

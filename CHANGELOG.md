@@ -8,6 +8,9 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- **Modal unificado: um papiro só**: todos os modais (Governante, conto, vinheta, item) agora são um único pergaminho grande (`papyrus_frame`, até 760px) com a arte no topo — boss/item fundidos no papiro, pinturas de mundo como prancha emoldurada — e o texto rolando abaixo, entre os rolos. O corpo do papiro virou camada própria (irmã do scroller) com tile espelhado que repete sem esticar em qualquer altura; isso também elimina de vez o texto/scroll vazando pra fora do pergaminho.
+
 ### Fixed
 - **Papiro "vazado" no modal**: o corpo do papiro sumia (fundo escuro translúcido com borda aparente) em certos tamanhos de janela — bug de composição do Chromium com `border-image fill` quando há scroll no elemento ou num filho. O corpo agora é `background` clipado no padding-box (`papyrus_body.jpg`), com o 9-slice só na moldura; scroll movido pra um wrapper interno.
 
