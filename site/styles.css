@@ -1818,7 +1818,9 @@ blockquote {
   display: block;
   width: 82%;
   margin: 0.25rem auto 1.5rem;
-  padding: 14.6% 15.5% 15.9% 15%;
+  /* encaixa o ícone no interior delimitado pelo filete interno da moldura
+     (hairline ~16%/lado no PNG, escalado ×0.82) */
+  padding: 13.4% 14.4% 14.7% 13.9%;
   background: url("concepts/assets/item_border.png") center / 100% 100% no-repeat;
   filter: drop-shadow(0 6px 14px rgba(40, 24, 8, 0.45));
 }
@@ -1829,7 +1831,12 @@ blockquote {
   width: 100%;
   margin: 0;
   padding: 0;
-  border-radius: 10px;
+  /* mesmo shape octogonal do interior da moldura — o ícone respeita a borda */
+  clip-path: polygon(
+    9% 0, 91% 0, 100% 9%,
+    100% 91%, 91% 100%, 9% 100%,
+    0 91%, 0 9%
+  );
   filter: sepia(0.25) contrast(1.03);
 }
 
