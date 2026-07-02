@@ -16,6 +16,8 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - **Papiro de imagem única**: o pergaminho do modal deixou de ser montado em 9 fatias + tile central (que criava uma emenda retangular visível cortando a textura) e virou o `papyrus_frame` inteiro esticado numa única camada; o conteúdo é ancorado em percentuais, então rolos e bordas escalam juntos em qualquer tamanho — visual fluido, sem costura.
 
 ### Added
+- **Compêndio: leva 13 (114/517)**: continua o capítulo Material refinado — 10 itens revelados: Viga, Vidro, Papel, Tinta, Cera, Óleo Refinado, Farinha, Corante, Cola e Piche — descrições inéditas em tom de compêndio antigo; tooltips curtos gravados no catálogo do jogo (todos estavam vazios).
+
 - **Compêndio: leva 12 (104/517)**: continua o capítulo Material refinado — 10 itens revelados: Barra de Bronze, Barra de Estanho, Barra de Prata, Barra de Ouro, Barra de Aço, Barra de Chumbo, Couro Endurecido, Linho Tecido, Tecido de Lã e Tecido de Seda — descrições inéditas em tom de compêndio antigo; tooltips curtos gravados no catálogo do jogo (todos estavam vazios).
 
 - **Compêndio: leva 11 (94/517)**: abre o capítulo Material refinado — 10 itens revelados: Barra de Ferro, Barra de Cobre, Couro, Couro Esticado, Tecido, Linha, Tábua, Carvão, Pólvora e Corda — descrições inéditas em tom de compêndio antigo; todos tinham tooltip legado no catálogo (não sobrescritos, usados como semente das descrições longas).
