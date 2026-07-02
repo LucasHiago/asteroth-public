@@ -8,6 +8,9 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- **Modal: papel na arte, papiro no texto**: em todos os modais, a arte agora senta na folha antiga de bordas rasgadas (`paper_frame`) e o texto sempre no papiro com rolos (`papyrus_frame`) — antes o boss tinha o texto no papel e a arte num cartão branco.
+
 ### Added
 - **Modais em pergaminho + Compêndio de Itens**: texto dos modais de conto/vinheta agora vive num papiro com rolos ([`concepts/assets/papyrus_blank.png`](concepts/assets/papyrus_blank.png)) e o do Governante numa folha antiga de bordas rasgadas ([`concepts/assets/paper_blank.png`](concepts/assets/paper_blank.png)) — o conteúdo rola entre os rolos, com sensação de desenrolar o pergaminho. Tipografia de texto antigo (IM Fell English no corpo, Uncial Antiqua nos títulos). Capítulos do Lore reorganizados em blocos de 2 colunas (arte | texto) com borda de cantos cortados ecoando os botões. Nova seção **O Compêndio de Itens**: primeiros 10 registros (Ferramentas) de 517 catalogados, cada item abre num papiro único com a arte e a descrição rolando juntas; revelação em levas de 10.
 - **Modal-livro e artes do Lore sem corte**: modais de Governante/conto/vinheta viram livro aberto (arte impressa na página esquerda via blend com o papel, texto com capitular na direita; o modal do Governante inclui o conto do despertar). Concept arts do Lore agora aparecem inteiras — arte emoldurada sobre backdrop borrado dela mesma, em vez de crop widescreen.
