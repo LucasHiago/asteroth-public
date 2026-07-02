@@ -16,7 +16,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - **Papiro de imagem única**: o pergaminho do modal deixou de ser montado em 9 fatias + tile central (que criava uma emenda retangular visível cortando a textura) e virou o `papyrus_frame` inteiro esticado numa única camada; o conteúdo é ancorado em percentuais, então rolos e bordas escalam juntos em qualquer tamanho — visual fluido, sem costura.
 
 ### Added
-- **Compêndio: leva 2 (20/517)**: mais 10 ferramentas reveladas — Rede de Arrasto, Enxada, Pá, Foice, Gadanha, Regador, Martelo de Forja, Marreta, Tenaz e Cinzel — com descrições inéditas em tom de compêndio; tooltips curtos gravados no catálogo do jogo. Os ícones voltam ao original com fundo cinza (o recorte de fundo distorcia itens): o JPG agora se encaixa exatamente no miolo do slot dourado, com filtro sépia aproximando o cinza do tom do interior.
+- **Compêndio: leva 2 (20/517)**: mais 10 ferramentas reveladas — Rede de Arrasto, Enxada, Pá, Foice, Gadanha, Regador, Martelo de Forja, Marreta, Tenaz e Cinzel — com descrições inéditas em tom de compêndio; tooltips curtos gravados no catálogo do jogo. Os ícones voltam ao original com fundo cinza (o recorte de fundo distorcia itens): o JPG fica reduzido dentro do miolo do slot dourado, com cantos arredondados e um anel do interior escuro em volta, e filtro sépia aproximando o cinza do tom do slot.
 
 - **Seta de rolagem no pergaminho**: chevron pulsante pousado acima do rolo de baixo do papiro — clicar rola uma "página" do texto com animação suave; a seta some ao chegar no fim (e não aparece quando o texto cabe inteiro).
 

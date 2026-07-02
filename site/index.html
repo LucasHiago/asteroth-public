@@ -1635,7 +1635,11 @@
       '<div class="scroll-solo">'
       + '<div class="scroll-solo-bg" aria-hidden="true"></div>'
       + '<div class="scroll-solo-inner">'
-      + (artSrc ? '<img class="scroll-solo-art" src="' + artSrc + '" alt="" />' : '')
+      + (artSrc
+          ? (kind === 'item'
+              ? '<span class="item-slot"><img class="scroll-solo-art" src="' + artSrc + '" alt="" /></span>'
+              : '<img class="scroll-solo-art" src="' + artSrc + '" alt="" />')
+          : '')
       + rightHTML
       + '</div>'
       + '<button class="scroll-hint" type="button" aria-label="Rolar o pergaminho"></button>'

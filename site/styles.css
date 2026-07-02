@@ -1809,17 +1809,28 @@ blockquote {
   filter: sepia(0.15) contrast(1.03);
 }
 
-/* itens: ícone (fundo cinza do catálogo) encaixado no miolo do slot dourado
-   de inventário (item_border.png). o padding posiciona o jpg exatamente no
-   interior interno ao ouro (~16% por lado, medido do PNG; escalado por 0.82
-   porque padding % é do containing block e width=82% dele). filtro quente
-   aproxima o cinza do tom do interior do slot */
+/* itens: ícone (fundo cinza do catálogo) reduzido dentro do miolo do slot
+   dourado (item_border.png no wrapper .item-slot), com cantos arredondados
+   e um anel do interior escuro em volta. padding % é do containing block e
+   width=82% dele, por isso os valores vêm escalados por 0.82 (interior do
+   PNG ~16%/lado + folga). filtro quente aproxima o cinza do tom do slot */
+.item-slot {
+  display: block;
+  width: 82%;
+  margin: 0.25rem auto 1.5rem;
+  padding: 14.6% 15.5% 15.9% 15%;
+  background: url("concepts/assets/item_border.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 6px 14px rgba(40, 24, 8, 0.45));
+}
+
 .modal[data-kind="item"] .scroll-solo-art {
   mix-blend-mode: normal;
-  width: 82%;
-  padding: 13.1% 14.1% 14.4% 13.6%;
-  background: url("concepts/assets/item_border.png") center / 100% 100% no-repeat;
-  filter: sepia(0.25) contrast(1.03) drop-shadow(0 6px 14px rgba(40, 24, 8, 0.45));
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  filter: sepia(0.25) contrast(1.03);
 }
 
 /* pinturas de mundo: banner de iluminura no topo do pergaminho — altura
