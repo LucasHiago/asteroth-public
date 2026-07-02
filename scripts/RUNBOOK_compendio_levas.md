@@ -1,6 +1,6 @@
 # Runbook — leva do Compêndio de Itens (executar UMA leva por vez)
 
-Executa uma leva de até 10 itens do compêndio: descrições longas no site + tooltips no catálogo do jogo. Já existem 20 itens feitos servindo de referência de padrão — **sempre imitar o que já está no arquivo**.
+Executa uma leva de até 10 itens do compêndio: descrições longas no site + tooltips no catálogo do jogo. Os itens já publicados no site servem de referência de padrão — **sempre imitar o que já está no arquivo** (e NUNCA editar este runbook).
 
 ## Repos
 
