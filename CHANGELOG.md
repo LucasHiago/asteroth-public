@@ -8,6 +8,9 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- **Papiro de imagem única**: o pergaminho do modal deixou de ser montado em 9 fatias + tile central (que criava uma emenda retangular visível cortando a textura) e virou o `papyrus_frame` inteiro esticado numa única camada; o conteúdo é ancorado em percentuais, então rolos e bordas escalam juntos em qualquer tamanho — visual fluido, sem costura.
+
 ### Added
 - **Seta de rolagem no pergaminho**: chevron pulsante pousado acima do rolo de baixo do papiro — clicar rola uma "página" do texto com animação suave; a seta some ao chegar no fim (e não aparece quando o texto cabe inteiro).
 

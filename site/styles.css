@@ -1754,9 +1754,10 @@ blockquote {
 
 /* =========================
    MODAL · o papiro
-   moldura/rolos: 9-slice sem fill. corpo: .scroll-solo-bg, camada IRMÃ do
-   scroller — fill/background em elemento que scrolla (ou ancestral de um)
-   é composto deslocado em alguns Chromium
+   o papiro inteiro é UMA imagem esticada na camada .scroll-solo-bg, irmã do
+   scroller (background/fill em elemento que scrolla — ou ancestral de um —
+   é composto deslocado em alguns Chromium). o padding reserva a área dos
+   rolos/bordas pro conteúdo
    ========================= */
 
 .scroll-solo {
@@ -1764,25 +1765,26 @@ blockquote {
   width: min(760px, 100%);
   margin: 0 auto;
   height: min(860px, calc(100vh - 2rem));
-  border: solid transparent;
-  border-width: 112px 96px 98px 96px;
-  border-image: url("concepts/assets/papyrus_frame.png") 170 150 150 150 stretch;
   filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
 }
 
 .scroll-solo-bg {
   position: absolute;
-  inset: 0; /* padding box do papiro = área entre rolos e bordas */
-  /* tile espelhado na vertical: repete sem costura em qualquer altura,
-     sem esticar a textura (mobile fica bem alto) */
-  background: url("concepts/assets/papyrus_body.jpg") top center / 100% auto repeat-y;
+  inset: 0;
+  background: url("concepts/assets/papyrus_frame.png") center / 100% 100% no-repeat;
 }
 
+/* conteúdo ancorado em percentuais: a imagem estica 100%/100%, então os
+   rolos (18% do topo, 16% da base) e as bordas escalam junto — o texto
+   nunca invade os rolos, em qualquer tamanho */
 .scroll-solo-inner {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  top: 18.5%;
+  bottom: 17%;
+  left: 14%;
+  right: 14%;
   overflow-y: auto;
-  padding: 0.25rem 1.25rem;
+  padding: 0 0.5rem;
   scrollbar-color: rgba(107, 84, 48, 0.35) transparent;
 }
 
@@ -1812,7 +1814,7 @@ blockquote {
 .scroll-hint {
   position: absolute;
   left: 50%;
-  bottom: 4px;
+  bottom: 15.8%; /* encostada no topo do rolo de baixo, escala com o papiro */
   z-index: 2;
   width: 40px;
   height: 34px;
@@ -1868,19 +1870,13 @@ blockquote {
 @media (max-width: 860px) {
   .modal { padding: 0.5rem; }
   .modal-content { max-height: calc(100vh - 1rem); }
-  .scroll-solo {
-    height: auto;
-    max-height: none;
-    border-width: 88px 62px 78px 62px;
-  }
-  .scroll-solo-inner {
-    height: auto;
-    overflow-y: visible;
-    padding: 0.25rem 0.5rem;
-  }
-  .scroll-solo-art { width: min(230px, 70%); }
-  .modal[data-kind="world"] .scroll-solo-art { width: min(320px, 92%); }
-  .scroll-hint { display: none; } /* mobile: o modal inteiro scrolla, sem paginação interna */
+  /* papiro inteiro na tela, texto scrolla dentro */
+  .scroll-solo { height: calc(100vh - 1rem); }
+  .scroll-solo-inner { padding: 0 0.25rem; }
+  .scroll-solo p { font-size: 0.96rem; }
+  .scroll-solo h3 { font-size: 1.2rem; }
+  .scroll-solo-art { width: min(200px, 62%); }
+  .modal[data-kind="world"] .scroll-solo-art { width: min(300px, 90%); }
 }
 
 /* =========================
