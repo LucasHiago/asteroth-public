@@ -10,15 +10,19 @@ Executa uma leva de até 10 itens do compêndio: descrições longas no site + t
 
 ## 1. Selecionar a leva
 
+**Pendente = item que ainda não está no site** (sem `id="item-<slug>"` no `site/index.html`, slug = `id` com `_`→`-`). Atenção: ~58 itens do catálogo já tinham `description_short` preenchido antes do compêndio existir — isso NÃO conta como feito; o que conta é estar no site.
+
 ```python
-import json
+import json, re
 d = json.load(open('.../Asteroth/game_rules/items/catalog/items.json'))
-pend = [i for i in d['items'] if not i['description_short']]
+html = open('site/index.html').read()
+no_site = set(re.findall(r'article id="item-([a-z0-9-]+)"', html))
+pend = [i for i in d['items'] if i['id'].replace('_','-') not in no_site]
 ```
 
-- Categoria da leva: a **categoria em andamento** (que já tem itens descritos e ainda tem pendentes); se nenhuma, a primeira categoria na ordem do arquivo com pendentes.
+- Categoria da leva: a do **capítulo atual do site** (campo "capítulo atual" no `.itens-count`) enquanto tiver pendentes; depois, a primeira categoria na ordem do arquivo com pendentes.
 - Leva = os **próximos até 10 pendentes dessa categoria, na ordem do arquivo**. Se a categoria tem <10 pendentes, a leva é menor (fecha o capítulo; não misturar categorias na mesma leva).
-- Nº da leva = (itens já descritos ÷ 10) + 1.
+- Nº da leva = (itens no site ÷ 10) + 1 (contar os `item-card` do grid).
 
 ## 2. Imagens
 
@@ -44,7 +48,7 @@ No `.item-cat` e no epitaph usar o rótulo no singular natural ("Ferramenta", "M
 
 ## 4. Catálogo (tooltips)
 
-Pra cada item da leva, gravar `description_short`: **1–2 frases, ≤90 chars**, destilando a descrição longa (ver os 20 existentes). Editar via python (`json.dump(..., ensure_ascii=False, indent=2)` + newline final), com `assert it['description_short'] == ''` antes de gravar. Conferir `git diff --stat`: deve tocar exatamente N linhas.
+Pra cada item da leva **cujo `description_short` está vazio**, gravar: **1–2 frases, ≤90 chars**, destilando a descrição longa (ver os existentes). Se o item já tem `description_short` (legado), **não sobrescrever** — e usar o texto legado como semente/restrição da descrição longa do site (não contradizer). Editar via python (`json.dump(..., ensure_ascii=False, indent=2)` + newline final). Conferir `git diff --stat`: deve tocar exatamente o nº de tooltips novos. Se a leva não gerou tooltip novo, pular o commit no Asteroth.
 
 ## 5. CHANGELOG do site
 
