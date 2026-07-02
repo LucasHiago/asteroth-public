@@ -8,7 +8,12 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+- **Papiro "vazado" no modal**: o corpo do papiro sumia (fundo escuro translúcido com borda aparente) em certos tamanhos de janela — bug de composição do Chromium com `border-image fill` quando há scroll no elemento ou num filho. O corpo agora é `background` clipado no padding-box (`papyrus_body.jpg`), com o 9-slice só na moldura; scroll movido pra um wrapper interno.
+
 ### Changed
+- **Papiro maior, papel menor**: colunas do modal-livro em 2fr/3fr (antes ~metade/metade) — o pergaminho de texto domina.
+- **Mobile: só o papiro**: em telas pequenas a folha da arte some e o boss aparece no topo do próprio pergaminho (blend multiply; pinturas de mundo como prancha emoldurada).
 - **Modal: papel na arte, papiro no texto**: em todos os modais, a arte agora senta na folha antiga de bordas rasgadas (`paper_frame`) e o texto sempre no papiro com rolos (`papyrus_frame`) — antes o boss tinha o texto no papel e a arte num cartão branco.
 
 ### Added
