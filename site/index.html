@@ -1521,26 +1521,14 @@
       const story = BOSS_STORY[entry.id] && document.getElementById(BOSS_STORY[entry.id]);
       if (story) rightHTML += storyBlock(story);
     }
-    if (kind === 'item') {
-      body.innerHTML =
-        '<div class="scroll-solo">'
-        + '<div class="scroll-solo-inner">'
-        + (artSrc ? '<img class="scroll-solo-art" src="' + artSrc + '" alt="" />' : '')
-        + rightHTML
-        + '</div>'
-        + '</div>';
-    } else {
-      body.innerHTML =
-        '<div class="book" data-kind="' + kind + '">'
-        + '<div class="book-page book-page-art">'
-        + (artSrc ? '<img src="' + artSrc + '" alt="" />' : '')
-        + '</div>'
-        + '<div class="book-page book-page-text"><div class="book-page-text-inner">'
-        + (artSrc ? '<img class="book-inline-art" src="' + artSrc + '" alt="" />' : '')
-        + rightHTML
-        + '</div></div>'
-        + '</div>';
-    }
+    body.innerHTML =
+      '<div class="scroll-solo">'
+      + '<div class="scroll-solo-bg" aria-hidden="true"></div>'
+      + '<div class="scroll-solo-inner">'
+      + (artSrc ? '<img class="scroll-solo-art" src="' + artSrc + '" alt="" />' : '')
+      + rightHTML
+      + '</div>'
+      + '</div>';
     modal.dataset.kind = kind;
     modal.hidden = false;
     modal.setAttribute('aria-hidden', 'false');
