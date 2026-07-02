@@ -16,6 +16,8 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - **Papiro de imagem única**: o pergaminho do modal deixou de ser montado em 9 fatias + tile central (que criava uma emenda retangular visível cortando a textura) e virou o `papyrus_frame` inteiro esticado numa única camada; o conteúdo é ancorado em percentuais, então rolos e bordas escalam juntos em qualquer tamanho — visual fluido, sem costura.
 
 ### Added
+- **Compêndio: leva 9 (81/517)**: continua o capítulo Matéria-prima — 10 itens revelados: Cristal Carregado, Pedra de Faísca, Mana Bruta, Diamante Bruto, Rubi Bruto, Safira Bruta, Esmeralda Bruta, Gema Bruta, Pedra Rúnica e Minério Rúnico — descrições inéditas em tom de compêndio antigo; tooltips curtos gravados no catálogo do jogo (todos estavam vazios).
+
 - **Compêndio: leva 8 (71/517)**: continua o capítulo Matéria-prima — 10 itens revelados: Chifre, Pena, Escama, Gordura Animal, Tendão, Sangue, Água, Óleo Bruto, Energia Engarrafada e Fragmento de Energia — descrições inéditas em tom de compêndio antigo; tooltips curtos gravados no catálogo do jogo (todos estavam vazios).
 
 - **Compêndio: leva 7 (61/517)**: continua o capítulo Matéria-prima — 10 itens revelados: Areia, Pederneira, Sal-gema, Turfa, Cinza, Pele Grossa, Linho Cru, Lã Crua, Seda Crua e Osso — descrições inéditas em tom de compêndio antigo; tooltips curtos gravados no catálogo do jogo (todos estavam vazios).
