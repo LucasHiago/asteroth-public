@@ -517,7 +517,7 @@ blockquote {
 }
 
 /* o card É a folha antiga: paper_frame como background, com o retrato,
-   nome e epíteto impressos nela — sem card escuro, sem borda */
+   nome e epíteto impressos nela, sem card escuro, sem borda */
 .boss-card {
   position: relative;
   display: flex;
@@ -2083,7 +2083,7 @@ blockquote {
 /* =========================
    MODAL · o papiro
    o papiro inteiro é UMA imagem esticada na camada .scroll-solo-bg, irmã do
-   scroller (background/fill em elemento que scrolla — ou ancestral de um —
+   scroller (background/fill em elemento que scrolla, ou ancestral de um
    é composto deslocado em alguns Chromium). o padding reserva a área dos
    rolos/bordas pro conteúdo
    ========================= */
@@ -2103,7 +2103,7 @@ blockquote {
 }
 
 /* conteúdo ancorado em percentuais: a imagem estica 100%/100%, então os
-   rolos (18% do topo, 16% da base) e as bordas escalam junto — o texto
+   rolos (18% do topo, 16% da base) e as bordas escalam junto, o texto
    nunca invade os rolos, em qualquer tamanho */
 .scroll-solo-inner {
   position: absolute;
@@ -2149,7 +2149,7 @@ blockquote {
   width: 100%;
   margin: 0;
   padding: 0;
-  /* mesmo shape octogonal do interior da moldura — o ícone respeita a borda */
+  /* mesmo shape octogonal do interior da moldura, o ícone respeita a borda */
   clip-path: polygon(
     9% 0, 91% 0, 100% 9%,
     100% 91%, 91% 100%, 9% 100%,
@@ -2158,7 +2158,7 @@ blockquote {
   filter: sepia(0.25) contrast(1.03);
 }
 
-/* pinturas de mundo: banner de iluminura no topo do pergaminho — altura
+/* pinturas de mundo: banner de iluminura no topo do pergaminho, altura
    fixa com corte cover (retratos não engolem o papiro), multiply tinge
    como tinta e a máscara esfuma as bordas (sem retângulo) */
 .modal[data-kind="world"] .scroll-solo-art {
