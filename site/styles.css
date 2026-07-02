@@ -1779,12 +1779,12 @@ blockquote {
    nunca invade os rolos, em qualquer tamanho */
 .scroll-solo-inner {
   position: absolute;
-  top: 18.5%;
-  bottom: 17%;
-  left: 14%;
-  right: 14%;
+  top: 19.5%;
+  bottom: 17.5%;
+  left: 21%; /* pra dentro das colunas de ornamento da folha (~16–22%) */
+  right: 21%;
   overflow-y: auto;
-  padding: 0 0.5rem;
+  padding: 0.25rem 0.25rem;
   scrollbar-color: rgba(107, 84, 48, 0.35) transparent;
 }
 
