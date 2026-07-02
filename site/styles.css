@@ -1807,6 +1807,55 @@ blockquote {
   box-shadow: 0 10px 30px rgba(60, 44, 24, 0.35);
 }
 
+/* seta de rolagem: pousa sobre o corpo do papiro, acima do rolo de baixo;
+   clique dá uma "página" de scroll, some no fim do texto */
+.scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  z-index: 2;
+  width: 40px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.7;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+  animation: hint-bounce 2.2s ease-in-out infinite;
+}
+
+.scroll-hint::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  border-right: 3px solid #6b5430;
+  border-bottom: 3px solid #6b5430;
+  transform: rotate(45deg);
+  filter: drop-shadow(0 1px 1px rgba(244, 226, 188, 0.8));
+}
+
+.scroll-hint:hover { opacity: 1; }
+
+.scroll-hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
+}
+
+@keyframes hint-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint { animation: none; transform: translateX(-50%); }
+}
+
 .scroll-solo h3 {
   text-align: center;
   margin-bottom: 0.35rem;
@@ -1831,6 +1880,7 @@ blockquote {
   }
   .scroll-solo-art { width: min(230px, 70%); }
   .modal[data-kind="world"] .scroll-solo-art { width: min(320px, 92%); }
+  .scroll-hint { display: none; } /* mobile: o modal inteiro scrolla, sem paginação interna */
 }
 
 /* =========================
