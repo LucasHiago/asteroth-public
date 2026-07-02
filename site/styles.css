@@ -322,7 +322,7 @@ strong { color: var(--text); font-weight: 600; }
 .section-alt > .identity-stack,
 .section-alt > .class-tree,
 .section-alt > .exclusive-grid,
-.section-alt > .affinity-table-wrap,
+.section-alt > .affinity-sel,
 .section-alt > .section-footer-link {
   max-width: var(--max-w);
   margin-left: auto;
@@ -361,6 +361,15 @@ h2::after {
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.section-kicker {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--text-mute);
+  line-height: 1.55;
+  margin: -0.5rem 0 1.5rem;
 }
 
 h3 {
@@ -959,7 +968,7 @@ blockquote {
 
 .class-tree {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   margin: 0 0 3rem;
   align-items: start;
@@ -979,12 +988,19 @@ blockquote {
 }
 
 .class-block-rare {
+  grid-column: 1 / -1;
   border-color: rgba(192, 26, 31, 0.45);
   background: linear-gradient(180deg, rgba(192,26,31,0.06) 0%, var(--bg-card) 100%);
 }
 
 .class-block-rare:hover {
   border-color: var(--accent);
+}
+
+.class-block-rare .class-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.55rem;
 }
 
 .class-block-head {
@@ -1111,6 +1127,125 @@ blockquote {
 }
 
 /* =========================
+   GAMEPLAY · hierarquia linhas + pills
+   ========================= */
+
+.class-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0 0 3rem;
+}
+
+.class-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.7rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 0.2s;
+}
+
+.class-row:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.crow-label {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold-soft);
+  width: 6.5rem;
+  flex-shrink: 0;
+}
+
+.crow-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.crow-pill {
+  font-family: var(--serif);
+  font-size: 0.87rem;
+  color: var(--text-soft);
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  letter-spacing: 0.01em;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.crow-pill:hover {
+  border-color: var(--gold);
+  color: var(--text);
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.crow-pill-sub {
+  position: relative;
+  border-color: rgba(212, 175, 55, 0.35);
+  cursor: default;
+}
+
+.crow-pill-sub::after {
+  content: " ›";
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.crow-sub-tip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  white-space: nowrap;
+  background: var(--surface-2);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.crow-pill-sub:hover .crow-sub-tip,
+.crow-pill-sub:focus .crow-sub-tip {
+  display: block;
+}
+
+.crow-row-rare {
+  border-color: rgba(192, 26, 31, 0.35);
+  background: linear-gradient(90deg, rgba(192, 26, 31, 0.05) 0%, var(--bg-card) 30%);
+}
+
+.crow-row-rare:hover {
+  border-color: rgba(192, 26, 31, 0.65);
+}
+
+.crow-row-rare .crow-label {
+  color: var(--accent-soft);
+}
+
+.crow-pill-rare {
+  border-color: rgba(192, 26, 31, 0.4);
+  color: var(--accent-soft);
+}
+
+.crow-pill-rare:hover {
+  border-color: var(--accent);
+  color: #e06060;
+  background: rgba(192, 26, 31, 0.08);
+}
+
+/* =========================
    GAMEPLAY · exclusivos por classe
    ========================= */
 
@@ -1121,6 +1256,24 @@ blockquote {
   margin: 0 0 3rem;
 }
 
+.excl-cat-header {
+  grid-column: 1 / -1;
+  font-family: var(--serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-soft);
+  padding: 0.6rem 0 0.25rem;
+  border-bottom: 1px solid var(--border);
+  margin-top: 0.75rem;
+}
+
+.excl-cat-header--rare {
+  color: var(--accent-soft);
+  border-bottom-color: rgba(192, 26, 31, 0.3);
+}
+
 .exclusive-card {
   display: flex;
   flex-direction: column;
@@ -1128,12 +1281,22 @@ blockquote {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 0.9rem 1.1rem;
-  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
 }
 
 .exclusive-card:hover {
   border-color: var(--gold);
   background: var(--surface-2);
+  transform: translateY(-1px);
+}
+
+.exclusive-card--rare {
+  border-color: rgba(192, 26, 31, 0.2);
+}
+
+.exclusive-card--rare:hover {
+  border-color: var(--accent-soft);
 }
 
 .exclusive-card .ex-class {
@@ -1146,64 +1309,182 @@ blockquote {
   margin-bottom: 0.4rem;
 }
 
+.exclusive-card--rare .ex-class {
+  color: rgba(192, 26, 31, 0.75);
+}
+
 .exclusive-card .ex-do {
   font-size: 0.9rem;
   color: var(--text-soft);
   line-height: 1.55;
 }
 
+.class-modal-role {
+  color: var(--text-mute);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0.15rem 0 0.9rem;
+  line-height: 1.5;
+}
+
 /* =========================
-   GAMEPLAY · tabela de affinity
+   GAMEPLAY · seletor de affinity interativo
    ========================= */
 
-.affinity-table-wrap {
+.affinity-sel {
   margin: 0 0 3rem;
-  overflow-x: auto;
+}
+
+.affinity-sel-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--bg-card);
+  margin-bottom: 0.75rem;
 }
 
-.affinity-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.92rem;
+.affinity-filter-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.affinity-table thead th {
-  background: var(--surface-2);
+.affinity-filter-label {
+  font-family: var(--serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--gold-soft);
+  width: 4.5rem;
+  flex-shrink: 0;
+  padding-top: 0.3rem;
+}
+
+.affinity-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.aff-pill {
+  font-family: var(--serif);
+  font-size: 0.82rem;
+  color: var(--text-mute);
+  padding: 0.2rem 0.65rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.aff-pill:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  color: var(--text);
+}
+
+.aff-pill.active {
+  border-color: var(--gold);
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold-soft);
+}
+
+.affinity-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.aff-result-row {
+  display: grid;
+  grid-template-columns: 7.5rem 7rem 1fr 1.2fr;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  animation: mechFadeIn 0.15s ease;
+}
+
+.aff-col { font-size: 0.88rem; line-height: 1.4; }
+.aff-raca { color: var(--text); font-weight: 600; font-family: var(--serif); }
+.aff-classe { color: var(--gold-soft); font-family: var(--serif); }
+.aff-acao { color: var(--text-soft); }
+.aff-result { color: var(--text-mute); font-size: 0.83rem; }
+
+.aff-empty {
+  color: var(--text-mute);
+  font-size: 0.9rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* =========================
+   GAMEPLAY · seletor de mecânicas
+   ========================= */
+
+.mech-selector {
+  margin: 0 0 3rem;
+}
+
+.mech-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.mech-tab {
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-align: left;
-  padding: 0.85rem 1rem;
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
+  letter-spacing: 0.1em;
+  padding: 0.65rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-bottom: 2px solid transparent;
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: var(--text-mute);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
-.affinity-table tbody td {
-  padding: 0.7rem 1rem;
-  color: var(--text-soft);
-  border-bottom: 1px solid rgba(42, 42, 51, 0.5);
-  vertical-align: top;
-}
-
-.affinity-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.affinity-table tbody tr:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.affinity-table tbody td:first-child,
-.affinity-table tbody td:nth-child(2) {
+.mech-tab:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  border-bottom-color: rgba(212, 175, 55, 0.4);
   color: var(--text);
-  font-weight: 500;
-  white-space: nowrap;
+  background: var(--surface-2);
+}
+
+.mech-tab.active {
+  border-color: var(--border);
+  border-bottom-color: var(--gold);
+  background: var(--surface-2);
+  color: var(--gold-soft);
+  box-shadow: 0 2px 0 rgba(212, 175, 55, 0.15);
+}
+
+.mech-panel {
+  display: none;
+}
+
+.mech-panel.active {
+  display: block;
+  animation: mechFadeIn 0.18s ease;
+}
+
+@keyframes mechFadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================
@@ -1609,6 +1890,9 @@ blockquote {
 
   .cta-row { flex-direction: column; align-items: stretch; }
   .cta { text-align: center; }
+
+  .class-tree { grid-template-columns: 1fr 1fr; }
+  .mech-tab { font-size: 0.75rem; padding: 0.45rem 0.9rem; }
 }
 
 @media (max-width: 480px) {
@@ -1616,9 +1900,10 @@ blockquote {
   .toc-inner { gap: 0.85rem; }
   .toc-nav a { font-size: 0.75rem; letter-spacing: 0.03em; }
   .contos-grid { grid-template-columns: 1fr; }
-  .affinity-table { font-size: 0.85rem; }
-  .affinity-table thead th,
-  .affinity-table tbody td { padding: 0.55rem 0.7rem; }
+  .aff-result-row { grid-template-columns: 5rem 5.5rem 1fr; }
+  .aff-col.aff-result { display: none; }
+
+  .class-tree { grid-template-columns: 1fr; }
 }
 
 /* =========================
