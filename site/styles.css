@@ -1809,6 +1809,18 @@ blockquote {
   filter: sepia(0.15) contrast(1.03);
 }
 
+/* itens: as imagens têm fundo escuro e se perdem no tom do papiro — viram
+   placa emoldurada com passe-partout claro */
+.modal[data-kind="item"] .scroll-solo-art {
+  mix-blend-mode: normal;
+  filter: none;
+  padding: 10px;
+  background: radial-gradient(ellipse at center, #fdfaf2 0%, #f2e9d8 78%, #e8dcc2 100%);
+  border: 1px solid rgba(107, 84, 48, 0.5);
+  border-radius: 3px;
+  box-shadow: 0 6px 18px rgba(60, 44, 24, 0.35);
+}
+
 /* pinturas de mundo: banner de iluminura no topo do pergaminho — altura
    fixa com corte cover (retratos não engolem o papiro), multiply tinge
    como tinta e a máscara esfuma as bordas (sem retângulo) */
