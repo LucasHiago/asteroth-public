@@ -4194,115 +4194,79 @@
   <h3>Hierarquia de classes</h3>
   <p>Toda classe tem ao menos <strong>uma produção ou ação exclusiva</strong> que ninguém mais consegue. Exclusividade não é vantagem, é <strong>monopólio funcional</strong>: sem caçador ninguém tem pet, sem ferreiro não há espada acima de certo tier, sem mercador o mercado não funciona. É o que garante demanda real por cada classe.</p>
 
-  <div class="class-tree">
-    <div class="class-block">
-      <div class="class-block-head">
-        <span class="class-tag">Combate</span>
-        <span class="class-count">8</span>
-      </div>
-      <div class="class-items">
-        <div class="class-item"><span class="class-name">Guerreiro</span><span class="class-desc">DPS melee, dano sustentado</span></div>
-        <div class="class-item"><span class="class-name">Tank</span><span class="class-desc">Aguenta porrada, controle de aggro</span></div>
-        <div class="class-item"><span class="class-name">Sacerdote</span><span class="class-desc">Heal, buff, suporte de grupo</span></div>
-        <div class="class-item"><span class="class-name">Arqueiro</span><span class="class-desc">DPS físico de longe</span></div>
-        <div class="class-item"><span class="class-name">Ladino</span><span class="class-desc">Burst, stealth, mobilidade</span></div>
-        <div class="class-item class-item-parent">
-          <span class="class-name">Mago</span><span class="class-desc">DPS mágico, com cinco caminhos</span>
-          <div class="class-subs">
-            <div class="class-sub"><span class="sub-name">Rogue</span><span class="sub-desc">Roubo de vida</span></div>
-            <div class="class-sub"><span class="sub-name">Elemental</span><span class="sub-desc">Escolhe um elemento</span></div>
-            <div class="class-sub"><span class="sub-name">Sorcerer</span><span class="sub-desc">Cura ofensiva e ataque</span></div>
-            <div class="class-sub"><span class="sub-name">Druid</span><span class="sub-desc">Controla mobs, cura inferior</span></div>
-            <div class="class-sub"><span class="sub-name">Boticário</span><span class="sub-desc">Magia via poções (cura, buff, AoE)</span></div>
-          </div>
-        </div>
-        <div class="class-item"><span class="class-name">Joker</span><span class="class-desc">Armadilhas em volume</span></div>
-        <div class="class-item"><span class="class-name">Hunter</span><span class="class-desc">Doma e controla feras raras</span></div>
+  <div class="class-rows">
+    <div class="class-row">
+      <span class="crow-label">Combate</span>
+      <div class="crow-pills">
+        <span class="crow-pill">Guerreiro</span>
+        <span class="crow-pill">Tank</span>
+        <span class="crow-pill">Sacerdote</span>
+        <span class="crow-pill">Arqueiro</span>
+        <span class="crow-pill">Ladino</span>
+        <span class="crow-pill crow-pill-sub" tabindex="0">Mago<span class="crow-sub-tip">Rogue · Elemental · Sorcerer · Druid · Boticário</span></span>
+        <span class="crow-pill">Joker</span>
+        <span class="crow-pill">Hunter</span>
       </div>
     </div>
-
-    <div class="class-block">
-      <div class="class-block-head">
-        <span class="class-tag">Artesão</span>
-        <span class="class-count">5</span>
-      </div>
-      <div class="class-items">
-        <div class="class-item"><span class="class-name">Ferreiro</span><span class="class-desc">Armas e armaduras de metal</span></div>
-        <div class="class-item"><span class="class-name">Alquimista</span><span class="class-desc">Poções e consumíveis</span></div>
-        <div class="class-item"><span class="class-name">Arquiteto</span><span class="class-desc">Prédios, estruturas, defesas</span></div>
-        <div class="class-item"><span class="class-name">Artesão</span><span class="class-desc">Joalheria, marcenaria, alfaiataria</span></div>
-        <div class="class-item"><span class="class-name">Cartesiano</span><span class="class-desc">Mapas e visão global única</span></div>
+    <div class="class-row">
+      <span class="crow-label">Artesão</span>
+      <div class="crow-pills">
+        <span class="crow-pill">Ferreiro</span>
+        <span class="crow-pill">Alquimista</span>
+        <span class="crow-pill">Arquiteto</span>
+        <span class="crow-pill">Artesão</span>
+        <span class="crow-pill">Cartesiano</span>
       </div>
     </div>
-
-    <div class="class-block">
-      <div class="class-block-head">
-        <span class="class-tag">Gathering</span>
-        <span class="class-count">5</span>
-      </div>
-      <div class="class-items">
-        <div class="class-item"><span class="class-name">Caçador</span><span class="class-desc">Animais, peles, carne</span></div>
-        <div class="class-item"><span class="class-name">Lenhador</span><span class="class-desc">Madeira</span></div>
-        <div class="class-item"><span class="class-name">Minerador</span><span class="class-desc">Rocha, minério</span></div>
-        <div class="class-item"><span class="class-name">Pescador</span><span class="class-desc">Peixe, frutos do mar</span></div>
-        <div class="class-item"><span class="class-name">Pirata</span><span class="class-desc">Ladino dos mares</span></div>
+    <div class="class-row">
+      <span class="crow-label">Gathering</span>
+      <div class="crow-pills">
+        <span class="crow-pill">Caçador</span>
+        <span class="crow-pill">Lenhador</span>
+        <span class="crow-pill">Minerador</span>
+        <span class="crow-pill">Pescador</span>
+        <span class="crow-pill">Pirata</span>
       </div>
     </div>
-
-    <div class="class-block">
-      <div class="class-block-head">
-        <span class="class-tag">Refinadores</span>
-        <span class="class-count">6</span>
-      </div>
-      <div class="class-items">
-        <div class="class-item"><span class="class-name">Curtidor</span><span class="class-desc">Pele bruta vira couro</span></div>
-        <div class="class-item"><span class="class-name">Tecelão</span><span class="class-desc">Fibras viram tecido</span></div>
-        <div class="class-item"><span class="class-name">Fundidor</span><span class="class-desc">Minério vira barra</span></div>
-        <div class="class-item"><span class="class-name">Serrador</span><span class="class-desc">Tora vira tábua</span></div>
-        <div class="class-item"><span class="class-name">Moleiro</span><span class="class-desc">Grão vira farinha</span></div>
-        <div class="class-item"><span class="class-name">Açougueiro</span><span class="class-desc">Carcaça vira carne, ossos e miúdos</span></div>
+    <div class="class-row">
+      <span class="crow-label">Refinadores</span>
+      <div class="crow-pills">
+        <span class="crow-pill">Curtidor</span>
+        <span class="crow-pill">Tecelão</span>
+        <span class="crow-pill">Fundidor</span>
+        <span class="crow-pill">Serrador</span>
+        <span class="crow-pill">Moleiro</span>
+        <span class="crow-pill">Açougueiro</span>
       </div>
     </div>
-
-    <div class="class-block">
-      <div class="class-block-head">
-        <span class="class-tag">Preparo</span>
-        <span class="class-count">3</span>
-      </div>
-      <div class="class-items">
-        <div class="class-item"><span class="class-name">Cozinheiro</span><span class="class-desc">Refeições com buff de combate</span></div>
-        <div class="class-item"><span class="class-name">Padeiro</span><span class="class-desc">Pães, massas, rações de viagem</span></div>
-        <div class="class-item"><span class="class-name">Cervejeiro</span><span class="class-desc">Bebidas com buff arriscado</span></div>
+    <div class="class-row">
+      <span class="crow-label">Preparo</span>
+      <div class="crow-pills">
+        <span class="crow-pill">Cozinheiro</span>
+        <span class="crow-pill">Padeiro</span>
+        <span class="crow-pill">Cervejeiro</span>
       </div>
     </div>
-
-    <div class="class-block">
-      <div class="class-block-head">
-        <span class="class-tag">Logística</span>
-        <span class="class-count">4</span>
-      </div>
-      <div class="class-items">
-        <div class="class-item"><span class="class-name">Mensageiro</span><span class="class-desc">Cargo pequeno, curta distância</span></div>
-        <div class="class-item"><span class="class-name">Caravaneiro</span><span class="class-desc">Lote grande, rota planejada</span></div>
-        <div class="class-item"><span class="class-name">Estalajadeiro</span><span class="class-desc">Hospedagem e rest na cidade</span></div>
-        <div class="class-item"><span class="class-name">Mercador</span><span class="class-desc">Taxas reduzidas, abre loja física</span></div>
+    <div class="class-row">
+      <span class="crow-label">Logística</span>
+      <div class="crow-pills">
+        <span class="crow-pill">Mensageiro</span>
+        <span class="crow-pill">Caravaneiro</span>
+        <span class="crow-pill">Estalajadeiro</span>
+        <span class="crow-pill">Mercador</span>
       </div>
     </div>
-
-    <div class="class-block class-block-rare">
-      <div class="class-block-head">
-        <span class="class-tag">Incomuns</span>
-        <span class="class-count">8</span>
-      </div>
-      <div class="class-items">
-        <div class="class-item"><span class="class-name">Necromante</span><span class="class-desc">Controla horda de mortos-vivos</span></div>
-        <div class="class-item"><span class="class-name">Bardo</span><span class="class-desc">Magias de confusão e desorientação</span></div>
-        <div class="class-item"><span class="class-name">Clown</span><span class="class-desc">Armadilhas raras e imperceptíveis</span></div>
-        <div class="class-item"><span class="class-name">Pantheon</span><span class="class-desc">Fusão de lutador com ladino</span></div>
-        <div class="class-item"><span class="class-name">Dark Mage</span><span class="class-desc">Escuridão e roubo de vida</span></div>
-        <div class="class-item"><span class="class-name">Dragon Born</span><span class="class-desc">Imune a fogo, reflete dano em área</span></div>
-        <div class="class-item class-item-rare"><span class="class-name">Bucaneiro</span><span class="class-desc">Único com acesso a armas de fogo</span></div>
-        <div class="class-item class-item-rare"><span class="class-name">Sieger</span><span class="class-desc">Controle absoluto de armas de cerco</span></div>
+    <div class="class-row crow-row-rare">
+      <span class="crow-label">Incomuns</span>
+      <div class="crow-pills">
+        <span class="crow-pill">Necromante</span>
+        <span class="crow-pill">Bardo</span>
+        <span class="crow-pill">Clown</span>
+        <span class="crow-pill">Pantheon</span>
+        <span class="crow-pill">Dark Mage</span>
+        <span class="crow-pill">Dragon Born</span>
+        <span class="crow-pill crow-pill-rare">Bucaneiro</span>
+        <span class="crow-pill crow-pill-rare">Sieger</span>
       </div>
     </div>
   </div>
@@ -4311,104 +4275,152 @@
   <p>Recorte do que cada classe faz, e <strong>só ela faz</strong>. Qualquer player usa o produto. Só a classe certa produz.</p>
 
   <div class="exclusive-grid">
-    <div class="exclusive-card"><span class="ex-class">Guerreiro</span><span class="ex-do">Declara duelo formal entre players, sem fuga, sem interferência. Vencedor leva fama bonus.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Tank</span><span class="ex-do">Taunt forçado e shield wall que protege o time inteiro por tempo limitado.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Sacerdote</span><span class="ex-do">Ressuscita player morto. Custa material raro e tira fama do ressuscitado.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Ladino</span><span class="ex-do">Pickpocket em outro player, rouba item ou ouro durante encontro.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Hunter</span><span class="ex-do">Doma feras raras ou lendárias com vínculo permanente. Mob bound, não roubável.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Ferreiro</span><span class="ex-do">Forja armas e armaduras de metal acima de tier alto. Repara sem degradar.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Arquiteto</span><span class="ex-do">Planta fundação de cidade. Sem ele, só casa simples.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Caçador</span><span class="ex-do">Único que produz e domestica animais de estimação para outros players.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Lenhador</span><span class="ex-do">Extrai resina e casca rara, ingrediente exclusivo da alquimia top.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Pirata</span><span class="ex-do">Aborda e captura navio. Combate naval e pilhagem em alto mar.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Mercador</span><span class="ex-do">Abre loja física na cidade. Sem ele, comércio entre players é só barganha.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Bucaneiro</span><span class="ex-do">Único com acesso a armas de fogo. Dano alto, frágil em tudo o mais.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Sieger</span><span class="ex-do">Opera trabuco, balista, canhão. Invasor ou defensor de cidade.</span></div>
-    <div class="exclusive-card"><span class="ex-class">Necromante</span><span class="ex-do">Invoca e controla horda de mortos-vivos sustentada em campo.</span></div>
+    <div class="excl-cat-header">Combate</div>
+    <div class="exclusive-card" data-cat="Combate" data-role="DPS melee, duelos formais e o único que pode declarar duelo com regras."><span class="ex-class">Guerreiro</span><span class="ex-do">Declara duelo formal entre players, sem fuga, sem interferência. Vencedor leva fama bonus.</span></div>
+    <div class="exclusive-card" data-cat="Combate" data-role="Absorção de dano e proteção de time — único com taunt forçado e shield wall."><span class="ex-class">Tank</span><span class="ex-do">Taunt forçado e shield wall que protege o time inteiro por tempo limitado.</span></div>
+    <div class="exclusive-card" data-cat="Combate" data-role="Heal, buff de grupo e o único que pode ressuscitar um player morto."><span class="ex-class">Sacerdote</span><span class="ex-do">Ressuscita player morto. Custa material raro e tira fama do ressuscitado.</span></div>
+    <div class="exclusive-card" data-cat="Combate" data-role="DPS físico de longa distância, único com tiro montado sem penalidade de dano."><span class="ex-class">Arqueiro</span><span class="ex-do">Único capaz de usar arcos compostos acima de certo tier e atirar montado sem penalidade de dano.</span></div>
+    <div class="exclusive-card" data-cat="Combate" data-role="Burst, stealth e o único que pode roubar itens e ouro de outros players."><span class="ex-class">Ladino</span><span class="ex-do">Pickpocket em outro player, rouba item ou ouro durante encontro.</span></div>
+    <div class="exclusive-card" data-cat="Combate" data-role="DPS mágico de área, com cinco sub-classes de especialização única."><span class="ex-class">Mago</span><span class="ex-do">Encanta gear com magia genérica. Sub-classes exclusivas: Rogue (drain AoE), Elemental (elemento único), Sorcerer (cura ofensiva), Druid (pacificar mob), Boticário (poções-granada).</span></div>
+    <div class="exclusive-card" data-cat="Combate" data-role="Especialista em armadilhas baratas e cobertura de área em volume."><span class="ex-class">Joker</span><span class="ex-do">Único que posta armadilhas em volume — baratas, rápidas, ideais pra cercar área grande.</span></div>
+    <div class="exclusive-card" data-cat="Combate" data-role="Domador de feras raras com vínculo permanente — mob não roubável."><span class="ex-class">Hunter</span><span class="ex-do">Doma feras raras ou lendárias com vínculo permanente. Mob bound, não roubável.</span></div>
+
+    <div class="excl-cat-header">Artesão</div>
+    <div class="exclusive-card" data-cat="Artesão" data-role="Forjador de metal, único que fabrica e repara armas e armaduras de tier alto."><span class="ex-class">Ferreiro</span><span class="ex-do">Forja armas e armaduras de metal acima de tier alto. Repara sem degradar.</span></div>
+    <div class="exclusive-card" data-cat="Artesão" data-role="Produtor de poções comerciáveis com buff de horas — estocáveis e trocáveis."><span class="ex-class">Alquimista</span><span class="ex-do">Único que cria poções comerciáveis duradouras — buff de horas, estocáveis e vendíveis em loja.</span></div>
+    <div class="exclusive-card" data-cat="Artesão" data-role="Único que pode fundar cidades e erguer estruturas de grande escala."><span class="ex-class">Arquiteto</span><span class="ex-do">Planta fundação de cidade. Sem ele, só casa simples — nenhuma estrutura coletiva existe.</span></div>
+    <div class="exclusive-card" data-cat="Artesão" data-role="Joalheria e alfaiataria com slots de runa — único que fabrica acessórios encantáveis."><span class="ex-class">Artesão</span><span class="ex-do">Único que fabrica acessórios com slot de runa — anéis, colares e capas que aceitam encantamentos permanentes.</span></div>
+    <div class="exclusive-card" data-cat="Artesão" data-role="Único com visão global e capacidade de mapear qualquer área do mundo."><span class="ex-class">Cartesiano</span><span class="ex-do">Único que produz mapas legíveis com informação global — cobertura de área que nenhuma outra classe replica.</span></div>
+
+    <div class="excl-cat-header">Gathering</div>
+    <div class="exclusive-card" data-cat="Gathering" data-role="Único produtor de pets e domador de animais para outros players."><span class="ex-class">Caçador</span><span class="ex-do">Único que produz e domestica animais de estimação para outros players.</span></div>
+    <div class="exclusive-card" data-cat="Gathering" data-role="Extração de madeira e único com acesso a ingredientes raros de alquimia."><span class="ex-class">Lenhador</span><span class="ex-do">Extrai resina e casca rara, ingrediente exclusivo da alquimia de tier alto.</span></div>
+    <div class="exclusive-card" data-cat="Gathering" data-role="Extração de minério e único que alcança nós profundos com drops raros."><span class="ex-class">Minerador</span><span class="ex-do">Único capaz de minerar nós profundos — minério raro inacessível a qualquer outra classe.</span></div>
+    <div class="exclusive-card" data-cat="Gathering" data-role="Pesca e único com acesso a águas profundas com drops únicos."><span class="ex-class">Pescador</span><span class="ex-do">Pesca em águas profundas com drops únicos e acesso a áreas inacessíveis a outros.</span></div>
+    <div class="exclusive-card" data-cat="Gathering" data-role="Ladino dos mares, único que aborda e captura navios em alto mar."><span class="ex-class">Pirata</span><span class="ex-do">Aborda e captura navio. Combate naval e pilhagem em alto mar.</span></div>
+
+    <div class="excl-cat-header">Refinadores</div>
+    <div class="exclusive-card" data-cat="Refinadores" data-role="Transforma pele bruta em couro — trava toda a cadeia de couro sem ele."><span class="ex-class">Curtidor</span><span class="ex-do">Único que transforma pele bruta em couro. Sem ele, não há couro no mundo.</span></div>
+    <div class="exclusive-card" data-cat="Refinadores" data-role="Transforma fibra em tecido — trava toda a alfaiataria."><span class="ex-class">Tecelão</span><span class="ex-do">Único que transforma fibras (linho, algodão) em tecido. Trava toda a alfaiataria sem ele.</span></div>
+    <div class="exclusive-card" data-cat="Refinadores" data-role="Transforma minério em barra — ponte obrigatória entre Minerador e Ferreiro."><span class="ex-class">Fundidor</span><span class="ex-do">Único que transforma minério bruto em barra ou lingote. Ponte obrigatória entre Minerador e Ferreiro.</span></div>
+    <div class="exclusive-card" data-cat="Refinadores" data-role="Transforma tora em tábua — trava toda a construção em madeira."><span class="ex-class">Serrador</span><span class="ex-do">Único que transforma tora bruta em tábua ou viga. Trava toda construção em madeira sem ele.</span></div>
+    <div class="exclusive-card" data-cat="Refinadores" data-role="Transforma grão em farinha — trava Padeiro e Cozinheiro."><span class="ex-class">Moleiro</span><span class="ex-do">Único que transforma grão em farinha. Trava Padeiro e Cozinheiro sem ele.</span></div>
+    <div class="exclusive-card" data-cat="Refinadores" data-role="Extrai carne, ossos e miúdos separados de carcaça como recursos distintos."><span class="ex-class">Açougueiro</span><span class="ex-do">Único que separa carcaça em carne + ossos + miúdos como recursos distintos. Ossos e miúdos são ingredientes raros de alquimia.</span></div>
+
+    <div class="excl-cat-header">Preparo</div>
+    <div class="exclusive-card" data-cat="Preparo" data-role="Refeições com buff de combate duradouro — estocáveis e comerciáveis."><span class="ex-class">Cozinheiro</span><span class="ex-do">Único que produz refeições com buff de combate — estocáveis, trocáveis, duram horas sem degradar.</span></div>
+    <div class="exclusive-card" data-cat="Preparo" data-role="Rações de viagem com baixo decay — duram dias na bolsa sem perda de qualidade."><span class="ex-class">Padeiro</span><span class="ex-do">Único que produz rações de viagem com baixo decay — duram dias na bolsa sem perda de qualidade.</span></div>
+    <div class="exclusive-card" data-cat="Preparo" data-role="Bebidas com buff de risco: dano aumentado, defesa reduzida em PvP."><span class="ex-class">Cervejeiro</span><span class="ex-do">Único que produz bebidas com buff de coragem — dano aumentado, defesa reduzida. Risk/reward real em PvP.</span></div>
+
+    <div class="excl-cat-header">Logística</div>
+    <div class="exclusive-card" data-cat="Logística" data-role="Cargo pequeno com seguro anti-roubo durante trânsito."><span class="ex-class">Mensageiro</span><span class="ex-do">Único com cargo seguro — imune a roubo durante trânsito de curta distância.</span></div>
+    <div class="exclusive-card" data-cat="Logística" data-role="Move lotes grandes em rota planejada — alvo natural de raid."><span class="ex-class">Caravaneiro</span><span class="ex-do">Único capaz de mover lote grande em rota planejada. Alvo natural de raid — define a economia de rotas.</span></div>
+    <div class="exclusive-card" data-cat="Logística" data-role="Hospedagem e o único que garante rest seguro offline sem casa própria."><span class="ex-class">Estalajadeiro</span><span class="ex-do">Único que oferece hospedagem segura — player dorme irraidável sem precisar de casa própria.</span></div>
+    <div class="exclusive-card" data-cat="Logística" data-role="Abre loja física na cidade — único ponto de venda permanente entre players."><span class="ex-class">Mercador</span><span class="ex-do">Abre loja física na cidade. Sem ele, comércio entre players é só barganha direta.</span></div>
+
+    <div class="excl-cat-header excl-cat-header--rare">Incomuns</div>
+    <div class="exclusive-card exclusive-card--rare" data-cat="Incomuns" data-role="Invoca e controla horda de mortos-vivos sustentada em campo de batalha."><span class="ex-class">Necromante</span><span class="ex-do">Invoca e controla horda de mortos-vivos sustentada em campo.</span></div>
+    <div class="exclusive-card exclusive-card--rare" data-cat="Incomuns" data-role="Único com acesso a armas de fogo — dano alto, extremamente frágil ao resto."><span class="ex-class">Bucaneiro</span><span class="ex-do">Único com acesso a armas de fogo. Dano alto, frágil em tudo o mais.</span></div>
+    <div class="exclusive-card exclusive-card--rare" data-cat="Incomuns" data-role="Controle absoluto de armas de cerco — define o resultado de qualquer cerco."><span class="ex-class">Sieger</span><span class="ex-do">Opera trabuco, balista, canhão. Invasor ou defensor de cidade.</span></div>
+    <div class="exclusive-card exclusive-card--rare" data-cat="Incomuns" data-role="Magias de confusão que afetam percepção, visão e orientação dos inimigos."><span class="ex-class">Bardo</span><span class="ex-do">Desativa sons, desfoca visão e semeia confusão — único com magias de desorientação perceptual.</span></div>
+    <div class="exclusive-card exclusive-card--rare" data-cat="Incomuns" data-role="Armadilhas raras e imperceptíveis — nível acima do Joker em qualidade e ocultamento."><span class="ex-class">Clown</span><span class="ex-do">Único que posta armadilhas raras e imperceptíveis — nível acima do Joker em qualidade e ocultamento.</span></div>
+    <div class="exclusive-card exclusive-card--rare" data-cat="Incomuns" data-role="Fusão de lutador com ladino — resistência de tank, mobilidade de assassino."><span class="ex-class">Pantheon</span><span class="ex-do">Fusão de lutador com ladino: resistência de tank, mobilidade de assassino. Generalista de elite.</span></div>
+    <div class="exclusive-card exclusive-card--rare" data-cat="Incomuns" data-role="Magia de escuridão e roubo de vida como especialidade primária."><span class="ex-class">Dark Mage</span><span class="ex-do">Drena vida em AoE e invoca escuridão — roubo de vida como magia primária, não derivada.</span></div>
+    <div class="exclusive-card exclusive-card--rare" data-cat="Incomuns" data-role="Imune a fogo por natureza, reflete ataques de fogo em área ao redor."><span class="ex-class">Dragon Born</span><span class="ex-do">Imune a fogo por natureza. Todo ataque de fogo recebido é refletido em área — inimigos a combustão viram arma contra si mesmos.</span></div>
   </div>
 
   <h3>Affinity, quando alinhar dá pico</h3>
-  <p>Affinity é o multiplicador quando <strong>raça + classe + ação</strong> alinham. Dois jogadores forjam o mesmo item com qualidades diferentes, dependendo do alinhamento. Itens raros carregam a assinatura de quem os criou, e o mercado diferencia. Abaixo, alguns exemplos canônicos.</p>
+  <p>Affinity é o multiplicador quando <strong>raça × classe × ação</strong> alinham. Dois players forjam o mesmo item com qualidades diferentes, dependendo do alinhamento — e o mercado diferencia. Filtre por raça ou classe pra ver os alinhamentos documentados.</p>
 
-  <div class="affinity-table-wrap">
-    <table class="affinity-table">
-      <thead>
-        <tr><th>Raça</th><th>Classe</th><th>Ação</th><th>Resultado</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Anão</td><td>Sacerdote</td><td>Forjar arma de sacerdote</td><td>Arma mais rara que qualquer outro setup produz</td></tr>
-        <tr><td>Anão</td><td>Sieger</td><td>Construir arma de cerco</td><td>Dano e durability aumentados</td></tr>
-        <tr><td>Elfo</td><td>Arqueiro</td><td>Tiro à distância</td><td>Range e precisão estendidos</td></tr>
-        <tr><td>Dark Elf</td><td>Ladino</td><td>Emboscar à noite</td><td>Bonus de stealth e crit noturnos</td></tr>
-        <tr><td>Dark Elf</td><td>Clown</td><td>Armadilha noturna</td><td>Quase imperceptível no escuro</td></tr>
-        <tr><td>Orc</td><td>Guerreiro</td><td>Atacar melee</td><td>Dano bruto extra</td></tr>
-        <tr><td>Orc de sangue</td><td>Boticário</td><td>Poção de roubo de vida</td><td>Potência aumentada</td></tr>
-        <tr><td>Halfling</td><td>Bucaneiro</td><td>Tiro de emboscada</td><td>Crit garantido no primeiro tiro, saída em stealth</td></tr>
-        <tr><td>Demônio</td><td>Mago</td><td>Magia ofensiva</td><td>Cooldown reduzido</td></tr>
-        <tr><td>Necro</td><td>Ferreiro</td><td>Forjar item rúnico</td><td>Slots de runa adicionais</td></tr>
-        <tr><td>Phibens</td><td>Pescador</td><td>Pescar em águas profundas</td><td>Drops únicos, áreas inacessíveis a outros</td></tr>
-        <tr><td>Runnics</td><td>Qualquer</td><td>Entalhar runa em si mesmo</td><td>Único acesso a buff permanente próprio</td></tr>
-        <tr><td>Nephilins</td><td>Sacerdote</td><td>Cura</td><td>HP curado bonus, somado à cura inata</td></tr>
-      </tbody>
-    </table>
+  <div class="affinity-sel">
+    <div class="affinity-sel-filters">
+      <div class="affinity-filter-group">
+        <span class="affinity-filter-label">Raça</span>
+        <div class="affinity-filter-pills" id="aff-raca-pills"></div>
+      </div>
+      <div class="affinity-filter-group">
+        <span class="affinity-filter-label">Classe</span>
+        <div class="affinity-filter-pills" id="aff-classe-pills"></div>
+      </div>
+    </div>
+    <div class="affinity-results" id="affinity-results"></div>
   </div>
 
-  <h3>XP é matéria, não número no nome</h3>
-  <p>O conceito de level de personagem <strong>está morto em Asteroth</strong>. Não existe lvl 1 contra lvl 500. Ninguém te humilha por ser novo. O gap entre players vem das classes destravadas, do gear acumulado, dos marcos de mastery e da fama. Nunca de um número arbitrário.</p>
+  <h3>XP, Mastery, Fama &amp; PvP</h3>
+  <p class="section-kicker">Como o personagem cresce — sem número de level, sem gap arbitrário.</p>
+  <div class="mech-selector">
+    <div class="mech-tabs" role="tablist">
+      <button class="mech-tab active" data-panel="xp" role="tab">XP</button>
+      <button class="mech-tab" data-panel="mastery" role="tab">Mastery</button>
+      <button class="mech-tab" data-panel="fama" role="tab">Fama</button>
+      <button class="mech-tab" data-panel="pvp" role="tab">PvP</button>
+    </div>
 
-  <p>XP em Asteroth é <strong>objeto físico</strong>: pedra de monstro, cristal de quest, fragmento. Ocupa inventário, é transferível, é drop, é comerciável, é roubável. Quando você morre, suas pedras caem como qualquer item. Quando o killer captura um item evoluído pelo seu XP, ele pega só <strong>1/3 do XP investido</strong>, anti-abuso pra evitar farm de humilhação.</p>
+    <div class="mech-panel active" id="mech-xp" role="tabpanel">
+      <h3>XP é matéria, não número no nome</h3>
+      <p>O conceito de level de personagem <strong>está morto em Asteroth</strong>. Não existe lvl 1 contra lvl 500. Ninguém te humilha por ser novo. O gap entre players vem das classes destravadas, do gear acumulado, dos marcos de mastery e da fama. Nunca de um número arbitrário.</p>
 
-  <p>XP serve pra duas coisas, só duas:</p>
-  <ul>
-    <li><strong>Destravar classes</strong>. Cada nova classe custa caro, e limita multiclass abusivo.</li>
-    <li><strong>Subir level de itens</strong>. Armas, joias, armaduras, montarias, poções, alimentos e ferramentas evoluem quando você investe XP neles. Matéria-prima e lixo não evoluem.</li>
-  </ul>
+      <p>XP em Asteroth é <strong>objeto físico</strong>: pedra de monstro, cristal de quest, fragmento. Ocupa inventário, é transferível, é drop, é comerciável, é roubável. Quando você morre, suas pedras caem como qualquer item. Quando o killer captura um item evoluído pelo seu XP, ele pega só <strong>1/3 do XP investido</strong>, anti-abuso pra evitar farm de humilhação.</p>
 
-  <p>Item evoluído é capital móvel e <strong>perecível</strong>. Cada injeção de XP tem chance real de quebrar o item, mesma lógica de runa encrustrada. Item quebrado vira material base + pedras de XP, alimenta cadeia de reparo e refabricação. Mesmo quebrado, tem valor.</p>
+      <p>XP serve pra duas coisas, só duas:</p>
+      <ul>
+        <li><strong>Destravar classes</strong>. Cada nova classe custa caro, e limita multiclass abusivo.</li>
+        <li><strong>Subir level de itens</strong>. Armas, joias, armaduras, montarias, poções, alimentos e ferramentas evoluem quando você investe XP neles. Matéria-prima e lixo não evoluem.</li>
+      </ul>
 
-  <h3>Mastery por marcos de repetição</h3>
-  <p>Mastery <strong>não vem de XP</strong>. Vem literalmente de fazer. Não dá pra comprar com ouro, não dá pra atalhar. Cada ação acumula em escala granular pra manter dopamina constante: 1, 5, 10, 25, 50, 100, 250, 500, 1.000, 2.500, 5.000, 10.000, 25.000, 50.000, 100.000, 250.000, 500.000, 1.000.000. Dezoito marcos por ação. Curva com ganhos rápidos no início, marcos significativos depois.</p>
+      <p>Item evoluído é capital móvel e <strong>perecível</strong>. Cada injeção de XP tem chance real de quebrar o item, mesma lógica de runa encrustrada. Item quebrado vira material base + pedras de XP, alimenta cadeia de reparo e refabricação. Mesmo quebrado, tem valor.</p>
+    </div>
 
-  <ul>
-    <li>Construiu 1.000 estruturas, ganha -15% no tempo e bonus de durability</li>
-    <li>Construiu 1.000.000, ganha -50%, economia de material e acesso a estruturas raras</li>
-    <li>Forjou 1.000 armas, cada arma sai com bonus passivo</li>
-    <li>Abateu 1.000 mobs do mesmo tipo, drop melhor e dano contra esse tipo</li>
-    <li>Pescou 1.000 vezes, chance maior de pesca rara</li>
-  </ul>
+    <div class="mech-panel" id="mech-mastery" role="tabpanel">
+      <h3>Mastery por marcos de repetição</h3>
+      <p>Mastery <strong>não vem de XP</strong>. Vem literalmente de fazer. Não dá pra comprar com ouro, não dá pra atalhar. Cada ação acumula em escala granular pra manter dopamina constante: 1, 5, 10, 25, 50, 100, 250, 500, 1.000, 2.500, 5.000, 10.000, 25.000, 50.000, 100.000, 250.000, 500.000, 1.000.000. Dezoito marcos por ação. Curva com ganhos rápidos no início, marcos significativos depois.</p>
 
-  <p>Mastery soma com affinity racial. Anão com 1M de forjas vira artilheiro. Humano com 1M de fusões de poção vira alquimista lendário. Halfling com 100k de armadilhas postadas fica invisível pro detector. <strong>O gap entre players é multidimensional</strong>: classe + gear + mastery + fama. Não comparável por número único.</p>
+      <ul>
+        <li>Construiu 1.000 estruturas, ganha -15% no tempo e bonus de durability</li>
+        <li>Construiu 1.000.000, ganha -50%, economia de material e acesso a estruturas raras</li>
+        <li>Forjou 1.000 armas, cada arma sai com bonus passivo</li>
+        <li>Abateu 1.000 mobs do mesmo tipo, drop melhor e dano contra esse tipo</li>
+        <li>Pescou 1.000 vezes, chance maior de pesca rara</li>
+      </ul>
 
-  <h3>Fama, bônus distribuído e roubável</h3>
-  <p>A fama em Asteroth não é número decorativo. <strong>Vira bônus real distribuído nos status</strong>, é roubável em PvP, e funciona como recurso transferível. Cada ponto de fama vale <strong>0,005 ponto de bônus</strong> aplicado direto no personagem.</p>
+      <p>Mastery soma com affinity racial. Anão com 1M de forjas vira artilheiro. Humano com 1M de fusões de poção vira alquimista lendário. Halfling com 100k de armadilhas postadas fica invisível pro detector. <strong>O gap entre players é multidimensional</strong>: classe + gear + mastery + fama. Não comparável por número único.</p>
+    </div>
 
-  <p>A primeira grande marca acontece em <strong>1.000 pontos</strong>, quando os bônus acumulados são distribuídos de forma <strong>única pra cada personagem</strong>. A aleatoriedade é na divisão, não na quantidade total. Por volta de <strong>10.000 pontos</strong>, o personagem fica significativamente mais forte.</p>
+    <div class="mech-panel" id="mech-fama" role="tabpanel">
+      <h3>Fama, bônus distribuído e roubável</h3>
+      <p>A fama em Asteroth não é número decorativo. <strong>Vira bônus real distribuído nos status</strong>, é roubável em PvP, e funciona como recurso transferível. Cada ponto de fama vale <strong>0,005 ponto de bônus</strong> aplicado direto no personagem.</p>
 
-  <p>Os bônus são aplicados em <strong>percentuais</strong> sobre o atributo base, sorteados entre nove atributos: roubo de vida, destreza, vida, defesa, dano, velocidade de movimento, velocidade de ataque, mana, velocidade de disparo de habilidades.</p>
+      <p>A primeira grande marca acontece em <strong>1.000 pontos</strong>, quando os bônus acumulados são distribuídos de forma <strong>única pra cada personagem</strong>. A aleatoriedade é na divisão, não na quantidade total. Por volta de <strong>10.000 pontos</strong>, o personagem fica significativamente mais forte.</p>
 
-  <p>Mas a fama tem custo. Ao <strong>morrer</strong>, você perde <strong>50%</strong> da fama acumulada. Ao <strong>matar um famoso</strong>, recebe <strong>8%</strong> da fama que ele perdeu. Famoso é alvo natural, risco e recompensa de andar com fama alta.</p>
+      <p>Os bônus são aplicados em <strong>percentuais</strong> sobre o atributo base, sorteados entre nove atributos: roubo de vida, destreza, vida, defesa, dano, velocidade de movimento, velocidade de ataque, mana, velocidade de disparo de habilidades.</p>
 
-  <h4>Como ganhar fama</h4>
-  <ul>
-    <li>Coleta</li>
-    <li>Construção</li>
-    <li>Forja</li>
-    <li>Combate contra monstros</li>
-    <li>Combate contra bosses</li>
-    <li>Participação em dungeons</li>
-    <li>PvP</li>
-    <li>Prestar suporte: heal, buff, tank</li>
-  </ul>
+      <p>Mas a fama tem custo. Ao <strong>morrer</strong>, você perde <strong>50%</strong> da fama acumulada. Ao <strong>matar um famoso</strong>, recebe <strong>8%</strong> da fama que ele perdeu. Famoso é alvo natural, risco e recompensa de andar com fama alta.</p>
 
-  <h4>Redistribuição em PvP por contribuição</h4>
-  <p>A fama é redistribuída entre os vencedores <strong>por contribuição real</strong>, não por quem deu o golpe final. Cenário canônico: time vitorioso com healer, tank e assassino contra três DPS.</p>
-  <ul>
-    <li>Os DPS perdem uma fração de sua fama ao serem derrotados.</li>
-    <li>O <strong>healer</strong>, mesmo sem causar dano, recebe porcentagem pelo papel de suporte. Manteve o time vivo.</li>
-    <li>O <strong>tank</strong> recebe fama proporcional ao dano que infligiu.</li>
-    <li>O <strong>assassino</strong>, responsável pela maior parte do dano, leva a maior parte da fama.</li>
-  </ul>
-  <p>Cada papel é remunerado pela contribuição real. Healer pelo suporte. Tank pelo dano efetivo. Assassino pela eficácia em abater. <strong>Suporte vira viável competitivamente</strong>, não é mais buff bot.</p>
+      <h4>Como ganhar fama</h4>
+      <ul>
+        <li>Coleta</li>
+        <li>Construção</li>
+        <li>Forja</li>
+        <li>Combate contra monstros</li>
+        <li>Combate contra bosses</li>
+        <li>Participação em dungeons</li>
+        <li>PvP</li>
+        <li>Prestar suporte: heal, buff, tank</li>
+      </ul>
+    </div>
+
+    <div class="mech-panel" id="mech-pvp" role="tabpanel">
+      <h3>PvP — redistribuição por contribuição</h3>
+      <p>A fama é redistribuída entre os vencedores <strong>por contribuição real</strong>, não por quem deu o golpe final. Cenário canônico: time vitorioso com healer, tank e assassino contra três DPS.</p>
+      <ul>
+        <li>Os DPS perdem uma fração de sua fama ao serem derrotados.</li>
+        <li>O <strong>healer</strong>, mesmo sem causar dano, recebe porcentagem pelo papel de suporte. Manteve o time vivo.</li>
+        <li>O <strong>tank</strong> recebe fama proporcional ao dano que infligiu.</li>
+        <li>O <strong>assassino</strong>, responsável pela maior parte do dano, leva a maior parte da fama.</li>
+      </ul>
+      <p>Cada papel é remunerado pela contribuição real. Healer pelo suporte. Tank pelo dano efetivo. Assassino pela eficácia em abater. <strong>Suporte vira viável competitivamente</strong>, não é mais buff bot.</p>
+    </div>
+  </div>
 </section>
 
 
@@ -4542,7 +4554,7 @@
 
   // Scroll reveal
   const revealEls = document.querySelectorAll(
-    '.section-head, .lore-block, .boss-card, .world-card, .conto-card, .item-card, .identity-layer, .class-block, .exclusive-card, .sponsor-card'
+    '.section-head, .lore-block, .boss-card, .world-card, .conto-card, .item-card, .identity-layer, .class-row, .exclusive-card, .sponsor-card'
   );
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -4560,6 +4572,130 @@
       io.observe(el);
     });
   }
+
+  // Exclusive class card modal
+  document.querySelectorAll('.exclusive-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      var className = card.querySelector('.ex-class') ? card.querySelector('.ex-class').textContent : '';
+      var exclText = card.querySelector('.ex-do') ? card.querySelector('.ex-do').textContent : '';
+      var catText = card.dataset.cat || 'Classe';
+      var roleText = card.dataset.role || '';
+      body.innerHTML =
+        '<div class="scroll-solo">'
+        + '<div class="scroll-solo-bg" aria-hidden="true"></div>'
+        + '<div class="scroll-solo-inner">'
+        + '<p class="epitaph">' + catText + ' · Monopólio funcional</p>'
+        + '<h3>' + className + '</h3>'
+        + (roleText ? '<p class="class-modal-role">' + roleText + '</p>' : '')
+        + '<p><strong>Exclusivo:</strong> ' + exclText + '</p>'
+        + '</div>'
+        + '<button class="scroll-hint" type="button" aria-label="Rolar o pergaminho"></button>'
+        + '</div>';
+      var inner = body.querySelector('.scroll-solo-inner');
+      var hint = body.querySelector('.scroll-hint');
+      var updateHint = function() {
+        var canScroll = inner.scrollHeight - inner.clientHeight > 40;
+        var atEnd = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 60;
+        hint.classList.toggle('hidden', !canScroll || atEnd);
+      };
+      hint.addEventListener('click', function() {
+        inner.scrollBy({ top: inner.clientHeight * 0.85, behavior: 'smooth' });
+      });
+      inner.addEventListener('scroll', updateHint, { passive: true });
+      updateHint();
+      modal.dataset.kind = 'class';
+      modal.hidden = false;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.modal-content').scrollTop = 0;
+    });
+  });
+
+  // Affinity interactive selector
+  (function() {
+    var AFFINITIES = [
+      {raca:'Anão', classe:'Sacerdote', acao:'Forjar arma de sacerdote', resultado:'Arma mais rara que qualquer outro setup produz'},
+      {raca:'Anão', classe:'Sieger', acao:'Construir arma de cerco', resultado:'Dano e durability aumentados'},
+      {raca:'Elfo', classe:'Arqueiro', acao:'Tiro à distância', resultado:'Range e precisão estendidos'},
+      {raca:'Dark Elf', classe:'Ladino', acao:'Emboscar à noite', resultado:'Bonus de stealth e crit noturnos'},
+      {raca:'Dark Elf', classe:'Clown', acao:'Armadilha noturna', resultado:'Quase imperceptível no escuro'},
+      {raca:'Orc', classe:'Guerreiro', acao:'Atacar melee', resultado:'Dano bruto extra'},
+      {raca:'Orc de sangue', classe:'Boticário', acao:'Poção de roubo de vida', resultado:'Potência aumentada'},
+      {raca:'Halfling', classe:'Bucaneiro', acao:'Tiro de emboscada', resultado:'Crit garantido no primeiro tiro, saída em stealth'},
+      {raca:'Demônio', classe:'Mago', acao:'Magia ofensiva', resultado:'Cooldown reduzido'},
+      {raca:'Necro', classe:'Ferreiro', acao:'Forjar item rúnico', resultado:'Slots de runa adicionais'},
+      {raca:'Phibens', classe:'Pescador', acao:'Pescar em águas profundas', resultado:'Drops únicos, áreas inacessíveis a outros'},
+      {raca:'Runnics', classe:'Qualquer', acao:'Entalhar runa em si mesmo', resultado:'Único acesso a buff permanente próprio'},
+      {raca:'Nephilins', classe:'Sacerdote', acao:'Cura', resultado:'HP curado bonus, somado à cura inata'}
+    ];
+    var affRaca = '', affClasse = '';
+
+    function affRender() {
+      var res = document.getElementById('affinity-results');
+      if (!res) return;
+      var rows = AFFINITIES.filter(function(r) {
+        return (!affRaca || r.raca === affRaca) && (!affClasse || r.classe === affClasse || r.classe === 'Qualquer');
+      });
+      if (!rows.length) {
+        res.innerHTML = '<p class="aff-empty">Nenhum alinhamento documentado para essa combinação.</p>';
+        return;
+      }
+      res.innerHTML = rows.map(function(r) {
+        return '<div class="aff-result-row">'
+          + '<span class="aff-col aff-raca">' + r.raca + '</span>'
+          + '<span class="aff-col aff-classe">' + r.classe + '</span>'
+          + '<span class="aff-col aff-acao">' + r.acao + '</span>'
+          + '<span class="aff-col aff-result">' + r.resultado + '</span>'
+          + '</div>';
+      }).join('');
+    }
+
+    function affMakePills(el, values, getVal, setVal) {
+      if (!el) return;
+      values.forEach(function(v) {
+        var btn = document.createElement('button');
+        btn.className = 'aff-pill';
+        btn.textContent = v || 'Qualquer';
+        btn.dataset.val = v;
+        if (v === getVal()) btn.classList.add('active');
+        btn.addEventListener('click', function() {
+          var cur = getVal();
+          setVal(cur === v ? '' : v);
+          el.querySelectorAll('.aff-pill').forEach(function(b) {
+            b.classList.toggle('active', b.dataset.val === getVal());
+          });
+          affRender();
+        });
+        el.appendChild(btn);
+      });
+    }
+
+    var racaEl = document.getElementById('aff-raca-pills');
+    var classeEl = document.getElementById('aff-classe-pills');
+    if (racaEl && classeEl) {
+      var seen = {};
+      var racas = [''];
+      var classes = [''];
+      AFFINITIES.forEach(function(r) {
+        if (!seen['r:' + r.raca]) { seen['r:' + r.raca] = 1; racas.push(r.raca); }
+        if (r.classe !== 'Qualquer' && !seen['c:' + r.classe]) { seen['c:' + r.classe] = 1; classes.push(r.classe); }
+      });
+      affMakePills(racaEl, racas, function() { return affRaca; }, function(v) { affRaca = v; });
+      affMakePills(classeEl, classes, function() { return affClasse; }, function(v) { affClasse = v; });
+      affRender();
+    }
+  })();
+
+  // Mech selector tabs
+  document.querySelectorAll('.mech-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.mech-tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.mech-panel').forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var panel = document.getElementById('mech-' + tab.dataset.panel);
+      if (panel) panel.classList.add('active');
+    });
+  });
 
   modal.addEventListener('click', (e) => {
     if (e.target.hasAttribute('data-close')) close();
