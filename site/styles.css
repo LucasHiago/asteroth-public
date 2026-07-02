@@ -1697,12 +1697,16 @@ blockquote {
   padding: 2.5rem 2.4rem;
 }
 
+/* página da arte = folha antiga de bordas rasgadas */
 .book-page-art {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background: radial-gradient(ellipse at center, #fdfaf2 0%, #f2e9d8 70%, #e8dcc2 100%);
+  border: solid transparent;
+  border-width: 50px 56px 50px 56px;
+  border-image: url("concepts/assets/paper_frame.png") 80 90 80 90 fill stretch;
+  background: transparent;
+  padding: 1rem;
   filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
 }
 
@@ -1734,12 +1738,6 @@ blockquote {
   font-size: 0.95rem;
   scrollbar-color: rgba(107, 84, 48, 0.35) transparent;
   filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
-}
-
-/* boss: folha antiga de bordas rasgadas, sem rolos */
-.book[data-kind="boss"] .book-page-text {
-  border-width: 58px 64px 58px 64px;
-  border-image: url("concepts/assets/paper_frame.png") 80 90 80 90 fill stretch;
 }
 
 .book-page-text::-webkit-scrollbar-thumb {
@@ -1871,14 +1869,15 @@ blockquote {
     height: auto;
   }
   .book-page { padding: 1.75rem 1.4rem; }
+  .book-page-art {
+    padding: 0.75rem;
+    border-width: 34px 38px 34px 38px;
+  }
   .book-page-art img { max-height: 42vh; }
   .book-page-text {
     overflow-y: visible;
     padding: 0.25rem 0.25rem;
     border-width: 84px 58px 74px 58px;
-  }
-  .book[data-kind="boss"] .book-page-text {
-    border-width: 44px 42px 44px 42px;
   }
   .scroll-solo {
     height: auto;
