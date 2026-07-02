@@ -20,6 +20,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 - **Affinity seletor interativo**: substituição da tabela estática por seletor de pills (raça × classe) com filtro dinâmico — mostra todos os 13 alinhamentos por padrão, filtra em tempo real ao escolher raça e/ou classe.
 - **XP, Mastery, Fama & PvP — título de seção e mech-tabs visuais**: h3 padrão antes das tabs, kicker descritivo, abas com underline gold e fundo distinto ao ativar.
 
+- **Compêndio: leva 63 (517/517)**: fecha o capítulo Descanso & mobília e COMPLETA O COMPÊNDIO — 4 itens: Caldeirão Grande, Fogão, Poço e Fonte — todos os 517 itens do jogo revelados; 4 tooltips gravados.
 - **Compêndio: leva 62 (513/517)**: continua Descanso & mobília — 10 itens: Prateleira, Estante, Tapete, Fogueira, Lareira, Tocha, Lampião, Vela, Braseiro e Caldeirão — luz, fogo e mobiliário; 10 tooltips gravados. Restam 4 itens no capítulo.
 - **Compêndio: leva 61 (503/517)**: abre o capítulo Descanso & mobília — 10 itens revelados: Saco de Dormir, Cama Simples, Cama Confortável, Rede de Dormir, Cadeira, Banco, Banco Longo, Almofada, Mesa e Armário — tom de compêndio com ênfase em ofício, convivência e memória de objeto; todos "encontrado no mundo"; 10 tooltips gravados.
 - **Compêndio: leva 60 (493/517)**: fecha o capítulo Armazenamento — 2 itens revelados: Cesto e Caixa de Madeira — fecha a categoria com 20 itens; abre capítulo Descanso & mobília; 2 tooltips gravados.
