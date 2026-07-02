@@ -507,36 +507,32 @@ blockquote {
   margin: 0 0 5rem;
 }
 
+/* o card É a folha antiga: paper_frame como background, com o retrato,
+   nome e epíteto impressos nela — sem card escuro, sem borda */
 .boss-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1rem;
+  background: transparent;
+  border: none;
+  padding: 11% 13% 14%;
   text-decoration: none;
   color: var(--text);
-  transition: transform 0.15s, border-color 0.2s, background 0.2s;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.55));
+  transition: transform 0.15s, filter 0.2s;
 }
 
-/* folha antiga atrás da arte — o multiply do retrato funde o fundo branco */
 .boss-card::before {
   content: "";
   position: absolute;
-  top: 1rem;
-  left: 1rem;
-  right: 1rem;
-  aspect-ratio: 1;
+  inset: 0;
   background: url("concepts/assets/paper_frame.png") center / 100% 100% no-repeat;
   pointer-events: none;
 }
 
 .boss-card:hover {
   transform: translateY(-3px);
-  border-color: var(--accent);
-  background: var(--surface-2);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5), 0 0 18px rgba(192, 26, 31, 0.18);
+  filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.7)) brightness(1.05);
 }
 
 .boss-card img {
@@ -544,9 +540,8 @@ blockquote {
   width: 100%;
   aspect-ratio: 1;
   object-fit: contain;
-  padding: 8%; /* respiro dentro da folha */
-  margin-bottom: 0.75rem;
-  mix-blend-mode: multiply; /* funde o fundo branco com a folha do ::before */
+  margin-bottom: 0.5rem;
+  mix-blend-mode: multiply; /* funde o fundo branco com a folha */
   filter: sepia(0.12) contrast(1.02);
   transition: transform 0.2s;
 }
@@ -556,21 +551,22 @@ blockquote {
 }
 
 .boss-name {
+  position: relative;
   font-family: var(--serif);
   font-weight: 700;
   font-size: 1rem;
-  color: var(--text);
+  color: #241b0f;
   letter-spacing: 0.04em;
   text-align: center;
   text-transform: uppercase;
 }
 
 .boss-epithet {
+  position: relative;
   font-family: var(--serif);
   font-style: italic;
   font-size: 0.8rem;
-  color: var(--gold-soft);
-  opacity: 0.85;
+  color: #7a5f30;
   margin-top: 0.2rem;
   line-height: 1.3;
   text-align: center;
