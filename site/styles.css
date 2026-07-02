@@ -1427,6 +1427,39 @@ blockquote {
   border-radius: var(--radius);
 }
 
+/* borda colorida por tipo de afinidade */
+.aff-result-row[data-tipo="combate"]   { border-left: 2px solid rgba(180,60,60,.65); }
+.aff-result-row[data-tipo="craft"]     { border-left: 2px solid rgba(180,130,20,.65); }
+.aff-result-row[data-tipo="passivo"]   { border-left: 2px solid rgba(70,130,200,.65); }
+.aff-result-row[data-tipo="economico"] { border-left: 2px solid rgba(50,160,70,.65); }
+
+/* painel da raça selecionada */
+.aff-race-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
+  background: rgba(212,175,55,.06);
+  border: 1px solid rgba(212,175,55,.22);
+  border-radius: var(--radius);
+  margin-bottom: 0.65rem;
+}
+.aff-race-info[hidden] { display: none; }
+.aff-ri-icon { font-size: 1.5rem; line-height: 1; }
+.aff-ri-name { font-family: var(--serif); font-size: 0.95rem; font-weight: 700; color: var(--gold-soft); }
+.aff-ri-afin { font-size: 0.8rem; color: var(--text-mute); margin-top: 1px; }
+.aff-ri-afin em { font-style: normal; color: var(--text-soft); }
+
+/* contagem de resultados */
+.aff-count {
+  font-family: var(--serif);
+  font-size: 0.75rem;
+  color: var(--text-mute);
+  text-align: right;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.02em;
+}
+
 /* =========================
    GAMEPLAY · seletor de mecânicas
    ========================= */

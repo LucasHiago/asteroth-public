@@ -1086,7 +1086,7 @@
     <p class="kicker">Mais de quinhentos itens já catalogados, entre ferramentas, matérias-primas, armas, poções e artefatos. O compêndio é revelado aos poucos, dez registros por vez, conforme os escribas terminam cada página.</p>
   </div>
 
-  <div class="itens-count"><span>322</span> de <span>517</span> registros revelados · capítulo atual: <strong>Alimento</strong></div>
+  <div class="itens-count"><span>332</span> de <span>517</span> registros revelados · capítulo atual: <strong>Alimento</strong></div>
 
   <div class="itens-grid">
     <a class="item-card" href="#item-pickaxe"><img src="concepts/items/ferramenta/pickaxe-f4d9c9f4-d4e7-4a0c-b228-c38515fc5e7b.jpg" alt="Picareta" loading="lazy" /><span class="item-name">Picareta</span><span class="item-cat">Ferramenta · Mineração</span></a>
@@ -1401,6 +1401,16 @@
     <a class="item-card" href="#item-dried-meat"><img src="concepts/items/alimento/dried_meat-6b398ce8-2dd9-4884-8cf2-a2be6d064000.jpg" alt="Carne Seca" loading="lazy" /><span class="item-name">Carne Seca</span><span class="item-cat">Alimento · Carne</span></a>
     <a class="item-card" href="#item-grilled-fish"><img src="concepts/items/alimento/grilled_fish-9732a495-28e0-4db6-a78a-204261e32226.jpg" alt="Peixe Grelhado" loading="lazy" /><span class="item-name">Peixe Grelhado</span><span class="item-cat">Alimento · Peixe</span></a>
     <a class="item-card" href="#item-salted-fish"><img src="concepts/items/alimento/salted_fish-a4c84285-0399-454a-ba85-25c26476eb47.jpg" alt="Peixe Salgado" loading="lazy" /><span class="item-name">Peixe Salgado</span><span class="item-cat">Alimento · Peixe</span></a>
+    <a class="item-card" href="#item-stew"><img src="concepts/items/alimento/stew-22094b1d-8cdd-41ab-bf36-2922fd369790.jpg" alt="Ensopado" loading="lazy" /><span class="item-name">Ensopado</span><span class="item-cat">Alimento · Refeição</span></a>
+    <a class="item-card" href="#item-soup"><img src="concepts/items/alimento/soup-2fe4c689-6bbf-4065-a1df-fc9e39657512.jpg" alt="Sopa" loading="lazy" /><span class="item-name">Sopa</span><span class="item-cat">Alimento · Refeição</span></a>
+    <a class="item-card" href="#item-roast"><img src="concepts/items/alimento/roast-daf89337-8748-4a24-bc79-a824270349c7.jpg" alt="Assado" loading="lazy" /><span class="item-name">Assado</span><span class="item-cat">Alimento · Refeição</span></a>
+    <a class="item-card" href="#item-salad"><img src="concepts/items/alimento/salad-8839d3f4-09c6-4989-9fe0-3495abd69e59.jpg" alt="Salada" loading="lazy" /><span class="item-name">Salada</span><span class="item-cat">Alimento · Refeição</span></a>
+    <a class="item-card" href="#item-cheese"><img src="concepts/items/alimento/cheese-4c4c566c-040c-432a-9746-db903ea29eb1.jpg" alt="Queijo" loading="lazy" /><span class="item-name">Queijo</span><span class="item-cat">Alimento · Laticínio</span></a>
+    <a class="item-card" href="#item-butter"><img src="concepts/items/alimento/butter-09d2e756-9e76-4e79-9163-c5685ef2e35d.jpg" alt="Manteiga" loading="lazy" /><span class="item-name">Manteiga</span><span class="item-cat">Alimento · Laticínio</span></a>
+    <a class="item-card" href="#item-milk"><img src="concepts/items/alimento/milk-f1a73986-a327-4350-9408-33fe2a6cf5dd.jpg" alt="Leite" loading="lazy" /><span class="item-name">Leite</span><span class="item-cat">Alimento · Laticínio</span></a>
+    <a class="item-card" href="#item-egg"><img src="concepts/items/alimento/egg-1fff5a57-c471-4078-826b-8e25fbdd7aa2.jpg" alt="Ovo" loading="lazy" /><span class="item-name">Ovo</span><span class="item-cat">Alimento · Básico</span></a>
+    <a class="item-card" href="#item-honey"><img src="concepts/items/alimento/honey-8ed45aac-9ac1-4825-8ddc-3b902de3748a.jpg" alt="Mel" loading="lazy" /><span class="item-name">Mel</span><span class="item-cat">Alimento · Doce</span></a>
+    <a class="item-card" href="#item-jam"><img src="concepts/items/alimento/jam-850a5a70-bb32-4398-a1c6-7108452dd3be.jpg" alt="Geleia" loading="lazy" /><span class="item-name">Geleia</span><span class="item-cat">Alimento · Doce</span></a>
   </div>
 
   <p class="section-footer-link">Os próximos registros do compêndio serão revelados nas próximas expedições dos escribas.</p>
@@ -4749,7 +4759,13 @@
         <span class="affinity-filter-label">Classe</span>
         <div class="affinity-filter-pills" id="aff-classe-pills"></div>
       </div>
+      <div class="affinity-filter-group">
+        <span class="affinity-filter-label">Tipo</span>
+        <div class="affinity-filter-pills" id="aff-tipo-pills"></div>
+      </div>
     </div>
+    <div id="aff-race-info" class="aff-race-info" hidden></div>
+    <div class="aff-count" id="aff-count"></div>
     <div class="affinity-results" id="affinity-results"></div>
   </div>
 
@@ -5020,35 +5036,189 @@
 
   // Affinity interactive selector
   (function() {
-    var AFFINITIES = [
-      {raca:'Anão', classe:'Sacerdote', acao:'Forjar arma de sacerdote', resultado:'Arma mais rara que qualquer outro setup produz'},
-      {raca:'Anão', classe:'Sieger', acao:'Construir arma de cerco', resultado:'Dano e durability aumentados'},
-      {raca:'Elfo', classe:'Arqueiro', acao:'Tiro à distância', resultado:'Range e precisão estendidos'},
-      {raca:'Dark Elf', classe:'Ladino', acao:'Emboscar à noite', resultado:'Bonus de stealth e crit noturnos'},
-      {raca:'Dark Elf', classe:'Clown', acao:'Armadilha noturna', resultado:'Quase imperceptível no escuro'},
-      {raca:'Orc', classe:'Guerreiro', acao:'Atacar melee', resultado:'Dano bruto extra'},
-      {raca:'Orc de sangue', classe:'Boticário', acao:'Poção de roubo de vida', resultado:'Potência aumentada'},
-      {raca:'Halfling', classe:'Bucaneiro', acao:'Tiro de emboscada', resultado:'Crit garantido no primeiro tiro, saída em stealth'},
-      {raca:'Demônio', classe:'Mago', acao:'Magia ofensiva', resultado:'Cooldown reduzido'},
-      {raca:'Necro', classe:'Ferreiro', acao:'Forjar item rúnico', resultado:'Slots de runa adicionais'},
-      {raca:'Phibens', classe:'Pescador', acao:'Pescar em águas profundas', resultado:'Drops únicos, áreas inacessíveis a outros'},
-      {raca:'Runnics', classe:'Qualquer', acao:'Entalhar runa em si mesmo', resultado:'Único acesso a buff permanente próprio'},
-      {raca:'Nephilins', classe:'Sacerdote', acao:'Cura', resultado:'HP curado bonus, somado à cura inata'}
+    var RACES_META = [
+      {nome:'Humano',       icon:'🧑', afin:'Engenhosidade — fusão de materiais'},
+      {nome:'Anão',         icon:'⛏️', afin:'Forja / construção / artesão'},
+      {nome:'Elfo',         icon:'🏹', afin:'Visão de alcance / mira'},
+      {nome:'Dark Elf',     icon:'🌑', afin:'Visão noturna / reconhecimento no escuro'},
+      {nome:'Orc',          icon:'🗡️', afin:'Força bruta / caça'},
+      {nome:'Orc de Sangue',icon:'🩸', afin:'Roubo de vida inato'},
+      {nome:'Halfling',     icon:'🎯', afin:'Ladino / reconhecimento de armadilhas'},
+      {nome:'Demônio',      icon:'🔮', afin:'Aptidão em magia — menor cooldown'},
+      {nome:'Necro',        icon:'💀', afin:'Itens rúnicos são fortificados'},
+      {nome:'Phibens',      icon:'🐸', afin:'Respiração aquática'},
+      {nome:'Beasts',       icon:'🐾', afin:'Agilidade incomum'},
+      {nome:'Runnics',      icon:'🔷', afin:'Entalham runas em si mesmos'},
+      {nome:'Hunters',      icon:'🦅', afin:'Controlam mobs e animais raros'},
+      {nome:'Nephilins',    icon:'👼', afin:'Voo + cura inferior inata'},
     ];
-    var affRaca = '', affClasse = '';
+
+    var AFFINITIES = [
+      // ── HUMANO ──────────────────────────────────────────────────────
+      {raca:'Humano',       classe:'Alquimista',      acao:'Fundir bases de poções diferentes',           resultado:'Poção híbrida (efeitos combinados)',                            tipo:'craft'},
+      {raca:'Humano',       classe:'Ferreiro',        acao:'Forjar com 2+ metais distintos',              resultado:'Liga rara (atributo único)',                                    tipo:'craft'},
+      {raca:'Humano',       classe:'Sieger',          acao:'Craftar arma de cerco',                       resultado:'Variantes raras — engenhosidade aplicada à artilharia',         tipo:'craft'},
+      {raca:'Humano',       classe:'Artesão',         acao:'Criar acessório com materiais mistos',        resultado:'Acessório com slot extra / propriedade híbrida',                tipo:'craft'},
+      {raca:'Humano',       classe:'Arquiteto',       acao:'Construir com materiais distintos',           resultado:'Bônus duplo na estrutura (resistência + estética)',              tipo:'craft'},
+      {raca:'Humano',       classe:'Cozinheiro',      acao:'Combinar ingredientes incomuns',              resultado:'Prato com buffs combinados (ex: cura + força)',                  tipo:'craft'},
+      {raca:'Humano',       classe:'Mercador',        acao:'Negociar itens raros',                        resultado:'Margem extra em itens de alta qualidade',                       tipo:'economico'},
+      {raca:'Humano',       classe:'Cartesiano',      acao:'Mapear área nova',                            resultado:'Mapa em camadas (recursos + rotas + pontos de interesse)',      tipo:'craft'},
+      {raca:'Humano',       classe:'Fundidor',        acao:'Fundir ligas de dois metais',                 resultado:'Lingote híbrido com propriedades de ambos',                     tipo:'craft'},
+      // ── ANÃO ────────────────────────────────────────────────────────
+      {raca:'Anão',         classe:'Sacerdote',       acao:'Forjar arma de sacerdote',                    resultado:'Arma mais rara que qualquer outro setup produz',                tipo:'craft'},
+      {raca:'Anão',         classe:'Arquiteto',       acao:'Construir estrutura de pedra',                resultado:'Durability/HP da estrutura aumentados',                         tipo:'craft'},
+      {raca:'Anão',         classe:'Minerador',       acao:'Minerar nó comum',                            resultado:'Chance de extrair qualidade superior',                          tipo:'craft'},
+      {raca:'Anão',         classe:'Sieger',          acao:'Construir/operar arma de cerco',              resultado:'Dano e durability da arma aumentados',                          tipo:'craft'},
+      {raca:'Anão',         classe:'Ferreiro',        acao:'Forjar qualquer arma/armadura',               resultado:'Tier de qualidade base mais alto',                              tipo:'craft'},
+      {raca:'Anão',         classe:'Fundidor',        acao:'Fundir minério',                              resultado:'Barra de qualidade superior + menor perda de material',          tipo:'craft'},
+      {raca:'Anão',         classe:'Artesão',         acao:'Criar joia/acessório',                        resultado:'Slot de runa extra no item',                                    tipo:'craft'},
+      {raca:'Anão',         classe:'Curtidor',        acao:'Processar pele',                              resultado:'Couro de maior grade automaticamente',                          tipo:'craft'},
+      {raca:'Anão',         classe:'Lenhador',        acao:'Cortar madeira de construção',                resultado:'Tora com propriedades estruturais superiores',                  tipo:'craft'},
+      {raca:'Anão',         classe:'Alquimista',      acao:'Produzir poção com reagente mineral',         resultado:'Poção com propriedade física extra (ex: absorve golpe)',         tipo:'craft'},
+      // ── ELFO ────────────────────────────────────────────────────────
+      {raca:'Elfo',         classe:'Arqueiro',        acao:'Tiro à distância',                            resultado:'Range e precisão estendidos',                                   tipo:'combate'},
+      {raca:'Elfo',         classe:'Cartesiano',      acao:'Mapear área',                                 resultado:'Revela região maior por carta',                                 tipo:'craft'},
+      {raca:'Elfo',         classe:'Bucaneiro',       acao:'Tiro com arma de fogo',                       resultado:'Precisão e range amplificados',                                 tipo:'combate'},
+      {raca:'Elfo',         classe:'Caçador',         acao:'Rastrear presa',                              resultado:'Raio de detecção de mobs aumentado',                            tipo:'combate'},
+      {raca:'Elfo',         classe:'Ladino',          acao:'Vigiar / espionar',                           resultado:'Aviso antecipado de inimigos (radar passivo estendido)',         tipo:'combate'},
+      {raca:'Elfo',         classe:'Mago Elemental',  acao:'Feitiço de projétil',                         resultado:'Range do projétil aumentado',                                   tipo:'combate'},
+      {raca:'Elfo',         classe:'Bardo',           acao:'Magia sonora à distância',                    resultado:'Alcance da confusão sonora amplificado',                        tipo:'combate'},
+      {raca:'Elfo',         classe:'Pescador',        acao:'Pescar de longe',                             resultado:'Acesso a pontos de pesca profundos sem se aproximar',           tipo:'craft'},
+      // ── DARK ELF ────────────────────────────────────────────────────
+      {raca:'Dark Elf',     classe:'Ladino',          acao:'Emboscar à noite',                            resultado:'Bônus de stealth + crit noturnos',                              tipo:'combate'},
+      {raca:'Dark Elf',     classe:'Caçador',         acao:'Caçar à noite',                               resultado:'Drops melhores em caça noturna',                                tipo:'combate'},
+      {raca:'Dark Elf',     classe:'Dark Mage',       acao:'Magia das sombras / roubo de vida',           resultado:'Potência amplificada à noite',                                  tipo:'combate'},
+      {raca:'Dark Elf',     classe:'Bucaneiro',       acao:'Tiro noturno de emboscada',                   resultado:'Invisibilidade extra antes do tiro',                            tipo:'combate'},
+      {raca:'Dark Elf',     classe:'Clown',           acao:'Armadilha noturna',                           resultado:'Armadilha quase imperceptível no escuro',                       tipo:'combate'},
+      {raca:'Dark Elf',     classe:'Necromante',      acao:'Invocar mortos-vivos à noite',                resultado:'Horda maior e mais forte à noite',                              tipo:'combate'},
+      {raca:'Dark Elf',     classe:'Bardo',           acao:'Confusão visual no escuro',                   resultado:'Inimigos sem visão noturna ficam completamente desorientados',  tipo:'combate'},
+      {raca:'Dark Elf',     classe:'Joker',           acao:'Criar armadilha à noite',                     resultado:'Armadilha com tier de ocultamento acima do normal',             tipo:'combate'},
+      {raca:'Dark Elf',     classe:'Minerador',       acao:'Minerar à noite',                             resultado:'Detecta nós raros sem tocha (visão noturna passiva)',           tipo:'craft'},
+      // ── ORC ─────────────────────────────────────────────────────────
+      {raca:'Orc',          classe:'Guerreiro',       acao:'Atacar melee',                                resultado:'Dano bruto extra',                                              tipo:'combate'},
+      {raca:'Orc',          classe:'Açougueiro',      acao:'Processar carcaça',                           resultado:'Mais carne/material por animal',                                tipo:'craft'},
+      {raca:'Orc',          classe:'Pantheon',        acao:'Combate híbrido (lutador + ladino)',           resultado:'Dano bruto + resistência amplificados',                         tipo:'combate'},
+      {raca:'Orc',          classe:'Dragon Born',     acao:'Absorver/refletir fogo',                      resultado:'Reflexo de fogo em AoE maior',                                  tipo:'combate'},
+      {raca:'Orc',          classe:'Tank',            acao:'Absorver dano',                               resultado:'Resistência física aumentada (brute toughness)',                tipo:'combate'},
+      {raca:'Orc',          classe:'Minerador',       acao:'Minerar',                                     resultado:'Extrai mais minério por golpe (força aplicada)',                tipo:'craft'},
+      {raca:'Orc',          classe:'Lenhador',        acao:'Cortar árvore',                               resultado:'Corte mais rápido + madeira extra por tora',                    tipo:'craft'},
+      {raca:'Orc',          classe:'Caçador',         acao:'Abater animal grande',                        resultado:'Dano amplificado em feras de grande porte',                    tipo:'combate'},
+      {raca:'Orc',          classe:'Cervejeiro',      acao:'Beber bebida de coragem',                     resultado:'Efeito de bônus de força dobrado vs outros',                    tipo:'combate'},
+      // ── ORC DE SANGUE ───────────────────────────────────────────────
+      {raca:'Orc de Sangue',classe:'Guerreiro',         acao:'Atacar melee',                              resultado:'Life steal passivo no hit',                                     tipo:'combate'},
+      {raca:'Orc de Sangue',classe:'Boticário',         acao:'Lançar poção de roubo de vida',             resultado:'Potência aumentada',                                            tipo:'combate'},
+      {raca:'Orc de Sangue',classe:'Dark Mage',         acao:'Magia de roubo de vida',                    resultado:'Life steal amplificado',                                        tipo:'combate'},
+      {raca:'Orc de Sangue',classe:'Pantheon',          acao:'Combate hit-and-run',                       resultado:'Life steal + resistência somados',                              tipo:'combate'},
+      {raca:'Orc de Sangue',classe:'Sorcerer',          acao:'Cura ofensiva',                             resultado:'Drena mais vida + cura mais por dreno',                         tipo:'combate'},
+      {raca:'Orc de Sangue',classe:'Necromante',        acao:'Invocar mortos-vivos',                      resultado:'Mortos-vivos têm life steal passivo',                           tipo:'combate'},
+      {raca:'Orc de Sangue',classe:'Ladino',            acao:'Hit furtivo',                               resultado:'Life steal no burst inicial (recupera HP antes de ser detectado)',tipo:'combate'},
+      {raca:'Orc de Sangue',classe:'Rogue (sub-mago)',  acao:'Drain em AoE',                              resultado:'Mais alvos drenam pra ele simultaneamente',                     tipo:'combate'},
+      // ── HALFLING ────────────────────────────────────────────────────
+      {raca:'Halfling',     classe:'Ladino',          acao:'Desarmar/criar armadilha',                    resultado:'Auto-detecção + crit em emboscada',                             tipo:'combate'},
+      {raca:'Halfling',     classe:'Joker',           acao:'Criar armadilha',                             resultado:'Armadilha mais letal/oculta',                                   tipo:'combate'},
+      {raca:'Halfling',     classe:'Clown',           acao:'Criar armadilha quase imperceptível',         resultado:'Chance de não ser detectada + radius maior',                    tipo:'combate'},
+      {raca:'Halfling',     classe:'Bucaneiro',       acao:'Tiro de emboscada',                           resultado:'Crit garantido no primeiro tiro / saída em stealth',            tipo:'combate'},
+      {raca:'Halfling',     classe:'Mensageiro',      acao:'Entregar cargo',                              resultado:'Menor chance de ser interceptado (tamanho dificulta detecção)', tipo:'economico'},
+      {raca:'Halfling',     classe:'Caçador',         acao:'Criar armadilha de caça',                     resultado:'Armadilhas de caça com maior taxa de captura',                  tipo:'craft'},
+      {raca:'Halfling',     classe:'Pescador',        acao:'Pescar em área estreita',                     resultado:'Acesso a pontos de pesca inacessíveis a raças maiores',         tipo:'craft'},
+      {raca:'Halfling',     classe:'Ladino',          acao:'Emboscar à noite',                            resultado:'Tamanho reduz silhueta — invisibilidade natural',               tipo:'combate'},
+      // ── DEMÔNIO ─────────────────────────────────────────────────────
+      {raca:'Demônio',      classe:'Mago',            acao:'Magia ofensiva',                              resultado:'Cooldown reduzido',                                             tipo:'combate'},
+      {raca:'Demônio',      classe:'Sorcerer',        acao:'Magia de cura',                               resultado:'HP curado extra',                                               tipo:'combate'},
+      {raca:'Demônio',      classe:'Dark Mage',       acao:'Magia ofensiva / roubo de vida',              resultado:'Dano e life steal amplificados',                                tipo:'combate'},
+      {raca:'Demônio',      classe:'Dragon Born',     acao:'Combate em chamas',                           resultado:'Resistência total + dano de fogo extra',                        tipo:'combate'},
+      {raca:'Demônio',      classe:'Bardo',           acao:'Magia de confusão (visão/som)',               resultado:'Área e duração estendidas',                                     tipo:'combate'},
+      {raca:'Demônio',      classe:'Elemental',       acao:'Magia elemental',                             resultado:'Cooldown reduzido + dano do elemento amplificado',              tipo:'combate'},
+      {raca:'Demônio',      classe:'Necromante',      acao:'Invocar mortos-vivos',                        resultado:'Mais mortos-vivos por invocação (cooldown menor)',               tipo:'combate'},
+      {raca:'Demônio',      classe:'Rogue (sub-mago)',acao:'Drain em AoE',                                resultado:'Área de drain maior + mais alvos simultâneos',                  tipo:'combate'},
+      {raca:'Demônio',      classe:'Boticário',       acao:'Poção-magia como granada',                    resultado:'Efeito amplificado no lançamento',                              tipo:'combate'},
+      {raca:'Demônio',      classe:'Druid',           acao:'Pacificar mob',                               resultado:'Duração e raio estendidos',                                     tipo:'combate'},
+      // ── NECRO ───────────────────────────────────────────────────────
+      {raca:'Necro',        classe:'Ferreiro',        acao:'Forjar item rúnico',                          resultado:'Slots de runa adicionais',                                      tipo:'craft'},
+      {raca:'Necro',        classe:'Necromante',      acao:'Invocar/controlar horda',                     resultado:'Tamanho da horda aumentado',                                    tipo:'combate'},
+      {raca:'Necro',        classe:'Dark Mage',       acao:'Magia escura',                                resultado:'Potência extra',                                                tipo:'combate'},
+      {raca:'Necro',        classe:'Qualquer',        acao:'Usar item rúnico equipado',                   resultado:'Bônus passivo extra',                                           tipo:'passivo'},
+      {raca:'Necro',        classe:'Artesão',         acao:'Criar acessório rúnico',                      resultado:'Acessório com efeito de runa permanente (built-in)',             tipo:'craft'},
+      {raca:'Necro',        classe:'Mago',            acao:'Magia com item rúnico equipado',              resultado:'Runa amplifica o feitiço lançado',                              tipo:'combate'},
+      {raca:'Necro',        classe:'Sieger',          acao:'Gravar runa em arma de cerco',                resultado:'Arma de cerco com efeito mágico ativo por disparo',             tipo:'craft'},
+      {raca:'Necro',        classe:'Tank',            acao:'Equipar armadura rúnica',                     resultado:'Bônus de resistência das runas dobrado',                        tipo:'combate'},
+      // ── PHIBENS ─────────────────────────────────────────────────────
+      {raca:'Phibens',      classe:'Pescador',        acao:'Pescar em águas profundas',                   resultado:'Drops únicos / áreas inacessíveis a outros',                   tipo:'craft'},
+      {raca:'Phibens',      classe:'Pirata',          acao:'Combate naval / abordagem',                   resultado:'Bônus em combate marítimo',                                     tipo:'combate'},
+      {raca:'Phibens',      classe:'Caçador',         acao:'Caçar criaturas aquáticas',                   resultado:'Acesso a mobs aquáticos raros',                                 tipo:'combate'},
+      {raca:'Phibens',      classe:'Minerador',       acao:'Minerar depósitos subaquáticos',              resultado:'Acesso a minérios subaquáticos exclusivos',                     tipo:'craft'},
+      {raca:'Phibens',      classe:'Ladino',          acao:'Stealth em ambiente aquático',                resultado:'Fuga subaquática (inimigos não nadam — perseguição impossível)', tipo:'combate'},
+      {raca:'Phibens',      classe:'Alquimista',      acao:'Coletar reagentes aquáticos',                 resultado:'Ingredientes de fundo de mar para alquimia de ponta',           tipo:'craft'},
+      {raca:'Phibens',      classe:'Cartesiano',      acao:'Mapear leito oceânico',                       resultado:'Cartas de fundo de mar (recursos + rotas subaquáticas)',        tipo:'craft'},
+      // ── BEASTS ──────────────────────────────────────────────────────
+      {raca:'Beasts',       classe:'Ladino',          acao:'Mobilidade / kiting',                         resultado:'Velocidade superior',                                           tipo:'combate'},
+      {raca:'Beasts',       classe:'Hunter',          acao:'Domar fera',                                  resultado:'Vínculo fera-fera (afinidade racial extra)',                     tipo:'combate'},
+      {raca:'Beasts',       classe:'Pantheon',        acao:'Combate ágil hit-and-run',                    resultado:'Mobilidade + dano híbrido',                                     tipo:'combate'},
+      {raca:'Beasts',       classe:'Dragon Born',     acao:'Combate em chamas',                           resultado:'Dano de fogo + mobilidade extra',                               tipo:'combate'},
+      {raca:'Beasts',       classe:'Guerreiro',       acao:'Combate melee',                               resultado:'Hits múltiplos por burst (agilidade converte em DPS)',           tipo:'combate'},
+      {raca:'Beasts',       classe:'Caçador',         acao:'Rastrear presa',                              resultado:'Velocidade de rastreamento superior',                           tipo:'combate'},
+      {raca:'Beasts',       classe:'Arqueiro',        acao:'Tiro em movimento',                           resultado:'Sem penalidade de dano ao atirar correndo',                     tipo:'combate'},
+      {raca:'Beasts',       classe:'Ladino',          acao:'Sair de combate',                             resultado:'Velocidade de fuga impossível de perseguir',                    tipo:'combate'},
+      // ── RUNNICS ─────────────────────────────────────────────────────
+      {raca:'Runnics',      classe:'Qualquer',        acao:'Entalhar runa em si mesmo',                   resultado:'Único acesso a buff permanente próprio',                        tipo:'passivo'},
+      {raca:'Runnics',      classe:'Mago',            acao:'Magia rúnica',                                resultado:'Potência extra via runas gravadas no corpo',                    tipo:'combate'},
+      {raca:'Runnics',      classe:'Sieger',          acao:'Gravar runa em arma de cerco',                resultado:'Arma de cerco com efeito mágico ativo',                         tipo:'craft'},
+      {raca:'Runnics',      classe:'Ferreiro',        acao:'Forjar usando runas próprias',                resultado:'Runas corporais transferíveis para itens forjados',              tipo:'craft'},
+      {raca:'Runnics',      classe:'Artesão',         acao:'Criar acessório com runa corporal',           resultado:'Acessório com propriedade rúnica exclusiva desse artesão',      tipo:'craft'},
+      {raca:'Runnics',      classe:'Necromante',      acao:'Runa de invocação gravada em si',             resultado:'Horda com bônus passivo das runas do conjurador',               tipo:'combate'},
+      {raca:'Runnics',      classe:'Tank',            acao:'Runa defensiva própria',                      resultado:'Escudo mágico adicional além do gear',                          tipo:'combate'},
+      {raca:'Runnics',      classe:'Dark Mage',       acao:'Runa de escuridão no corpo',                  resultado:'Magia de escuridão com custo de mana reduzido',                 tipo:'combate'},
+      // ── HUNTERS ─────────────────────────────────────────────────────
+      {raca:'Hunters',      classe:'Hunter',          acao:'Domar mob raro',                              resultado:'Único acesso a certas feras lendárias',                         tipo:'combate'},
+      {raca:'Hunters',      classe:'Caçador',         acao:'Abater alvo raro',                            resultado:'Drops únicos de alvo raro',                                     tipo:'combate'},
+      {raca:'Hunters',      classe:'Druid',           acao:'Pacificar mob raro',                          resultado:'Mob raro fica neutro permanentemente (não temporário)',          tipo:'combate'},
+      {raca:'Hunters',      classe:'Bardo',           acao:'Confundir mob raro',                          resultado:'Mob raro fica vulnerável a controle',                           tipo:'combate'},
+      {raca:'Hunters',      classe:'Necromante',      acao:'Invocar forma morta de mob raro',             resultado:'Fera rara morta volta como morto-vivo único',                   tipo:'combate'},
+      {raca:'Hunters',      classe:'Mago Elemental',  acao:'Atrair mob com elemento',                     resultado:'Mob elementar é atraído e susceptível a domar',                 tipo:'combate'},
+      // ── NEPHILINS ───────────────────────────────────────────────────
+      {raca:'Nephilins',    classe:'Sacerdote',       acao:'Cura',                                        resultado:'HP curado bônus (somado à cura inata)',                         tipo:'combate'},
+      {raca:'Nephilins',    classe:'Arqueiro',        acao:'Tiro aproveitando voo',                       resultado:'Posicionamento único + range vertical',                         tipo:'combate'},
+      {raca:'Nephilins',    classe:'Bardo',           acao:'Magia de confusão sonora em área',            resultado:'Cobertura amplificada por posição aérea',                       tipo:'combate'},
+      {raca:'Nephilins',    classe:'Ladino',          acao:'Stealth aéreo',                               resultado:'Difícil de detectar — acima do nível visual comum',             tipo:'combate'},
+      {raca:'Nephilins',    classe:'Cartesiano',      acao:'Mapear do ar',                                resultado:'Mapas mais precisos e amplos + visão de recursos em altitude',  tipo:'craft'},
+      {raca:'Nephilins',    classe:'Mago',            acao:'Lançar magia do ar',                          resultado:'Sem interrupção por dano melee durante cast',                   tipo:'combate'},
+      {raca:'Nephilins',    classe:'Sorcerer',        acao:'Cura ofensiva do ar',                         resultado:'Drena inimigo sem risco de contra-ataque corpo-a-corpo',        tipo:'combate'},
+    ];
+
+    var affRaca = '', affClasse = '', affTipo = '';
 
     function affRender() {
       var res = document.getElementById('affinity-results');
+      var countEl = document.getElementById('aff-count');
+      var raceInfo = document.getElementById('aff-race-info');
       if (!res) return;
+
+      if (affRaca && raceInfo) {
+        var rm = RACES_META.find(function(x) { return x.nome === affRaca; });
+        if (rm) {
+          raceInfo.removeAttribute('hidden');
+          raceInfo.innerHTML = '<span class="aff-ri-icon">' + rm.icon + '</span>'
+            + '<div><div class="aff-ri-name">' + rm.nome + '</div>'
+            + '<div class="aff-ri-afin">Afinidade inata: <em>' + rm.afin + '</em></div></div>';
+        }
+      } else if (raceInfo) {
+        raceInfo.setAttribute('hidden', '');
+      }
+
       var rows = AFFINITIES.filter(function(r) {
-        return (!affRaca || r.raca === affRaca) && (!affClasse || r.classe === affClasse || r.classe === 'Qualquer');
+        return (!affRaca || r.raca === affRaca)
+          && (!affClasse || r.classe === affClasse || r.classe === 'Qualquer')
+          && (!affTipo || r.tipo === affTipo);
       });
+
+      if (countEl) countEl.textContent = rows.length + ' alinhamento' + (rows.length !== 1 ? 's' : '');
+
       if (!rows.length) {
         res.innerHTML = '<p class="aff-empty">Nenhum alinhamento documentado para essa combinação.</p>';
         return;
       }
       res.innerHTML = rows.map(function(r) {
-        return '<div class="aff-result-row">'
+        return '<div class="aff-result-row" data-tipo="' + (r.tipo || '') + '">'
           + '<span class="aff-col aff-raca">' + r.raca + '</span>'
           + '<span class="aff-col aff-classe">' + r.classe + '</span>'
           + '<span class="aff-col aff-acao">' + r.acao + '</span>'
@@ -5057,17 +5227,19 @@
       }).join('');
     }
 
-    function affMakePills(el, values, getVal, setVal) {
+    function affMakePills(el, items, getVal, setVal) {
       if (!el) return;
-      values.forEach(function(v) {
+      items.forEach(function(item) {
+        var val   = typeof item === 'object' ? item.val   : item;
+        var label = typeof item === 'object' ? item.label : (item || 'Todas');
         var btn = document.createElement('button');
         btn.className = 'aff-pill';
-        btn.textContent = v || 'Qualquer';
-        btn.dataset.val = v;
-        if (v === getVal()) btn.classList.add('active');
+        btn.textContent = label;
+        btn.dataset.val = val;
+        if (val === getVal()) btn.classList.add('active');
         btn.addEventListener('click', function() {
           var cur = getVal();
-          setVal(cur === v ? '' : v);
+          setVal(cur === val ? '' : val);
           el.querySelectorAll('.aff-pill').forEach(function(b) {
             b.classList.toggle('active', b.dataset.val === getVal());
           });
@@ -5077,18 +5249,24 @@
       });
     }
 
-    var racaEl = document.getElementById('aff-raca-pills');
+    var racaEl  = document.getElementById('aff-raca-pills');
     var classeEl = document.getElementById('aff-classe-pills');
+    var tipoEl  = document.getElementById('aff-tipo-pills');
     if (racaEl && classeEl) {
-      var seen = {};
-      var racas = [''];
-      var classes = [''];
+      var seen = {}, racas = [{val:'', label:'Todas'}], classes = [{val:'', label:'Todas'}];
       AFFINITIES.forEach(function(r) {
-        if (!seen['r:' + r.raca]) { seen['r:' + r.raca] = 1; racas.push(r.raca); }
-        if (r.classe !== 'Qualquer' && !seen['c:' + r.classe]) { seen['c:' + r.classe] = 1; classes.push(r.classe); }
+        if (!seen['r:' + r.raca])   { seen['r:' + r.raca] = 1; racas.push({val: r.raca, label: r.raca}); }
+        if (r.classe !== 'Qualquer' && !seen['c:' + r.classe]) { seen['c:' + r.classe] = 1; classes.push({val: r.classe, label: r.classe}); }
       });
-      affMakePills(racaEl, racas, function() { return affRaca; }, function(v) { affRaca = v; });
+      affMakePills(racaEl,   racas,   function() { return affRaca;   }, function(v) { affRaca   = v; });
       affMakePills(classeEl, classes, function() { return affClasse; }, function(v) { affClasse = v; });
+      affMakePills(tipoEl, [
+        {val:'',          label:'Todos'},
+        {val:'combate',   label:'⚔️ Combate'},
+        {val:'craft',     label:'🔨 Craft'},
+        {val:'passivo',   label:'✨ Passivo'},
+        {val:'economico', label:'💰 Econômico'},
+      ], function() { return affTipo; }, function(v) { affTipo = v; });
       affRender();
     }
   })();
