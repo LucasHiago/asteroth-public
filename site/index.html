@@ -1597,6 +1597,40 @@
     <a class="item-card" href="#item-well"><img src="concepts/items/descanso/well-209bb331-57fd-4ee2-9546-f70d229fb31a.jpg" alt="Poço" loading="lazy" /><span class="item-name">Poço</span><span class="item-cat">Descanso &amp; mobília · Utilidade</span></a>
     <a class="item-card" href="#item-fountain"><img src="concepts/items/descanso/fountain-255dd41e-b6f7-4921-8965-3ba937b4c9a9.jpg" alt="Fonte" loading="lazy" /><span class="item-name">Fonte</span><span class="item-cat">Descanso &amp; mobília · Decoração</span></a>
   </div>
+  <script>
+  (function() {
+    var grid = document.querySelector('.itens-grid');
+    if (!grid) return;
+    var cards = Array.from(grid.querySelectorAll('.item-card'));
+    if (!cards.length) return;
+    cards.forEach(function(c) {
+      var nm = c.querySelector('.item-name');
+      if (nm) c.title = nm.textContent.trim();
+    });
+    var groups = new Map();
+    cards.forEach(function(c) {
+      var el = c.querySelector('.item-cat');
+      var raw = el ? el.textContent : '';
+      var cat = raw.split('·')[0].trim() || 'Outros';
+      if (!groups.has(cat)) groups.set(cat, []);
+      groups.get(cat).push(c);
+    });
+    grid.innerHTML = '';
+    groups.forEach(function(items, cat) {
+      var sec = document.createElement('div');
+      sec.className = 'ic-section';
+      var h = document.createElement('h3');
+      h.className = 'ic-section-title';
+      h.innerHTML = cat + ' <span class="ic-section-count">(' + items.length + ')</span>';
+      var row = document.createElement('div');
+      row.className = 'ic-row';
+      items.forEach(function(c) { row.appendChild(c); });
+      sec.appendChild(h);
+      sec.appendChild(row);
+      grid.appendChild(sec);
+    });
+  })();
+  </script>
 
   <p class="section-footer-link">Os próximos registros do compêndio serão revelados nas próximas expedições dos escribas.</p>
 
