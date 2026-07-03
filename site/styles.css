@@ -853,16 +853,12 @@ blockquote {
 /* tab bar de categorias — linha única scrollável */
 .ic-tabbar {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0;
-  overflow-x: auto;
   border-bottom: 1px solid rgba(201,169,110,0.2);
   margin-bottom: 1.25rem;
   padding-bottom: 0;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
-.ic-tabbar::-webkit-scrollbar { display: none; }
 
 .ic-tab {
   font-family: var(--serif);
