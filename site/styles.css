@@ -281,6 +281,9 @@ strong { color: var(--text); font-weight: 600; }
 }
 
 .toc-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   font-family: var(--sans);
   font-weight: 500;
   font-size: 0.92rem;
@@ -290,6 +293,15 @@ strong { color: var(--text); font-weight: 600; }
   padding: 0.35rem 0;
   border-bottom: 1px solid transparent;
 }
+.toc-nav a svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  stroke-width: 2;
+  opacity: 0.75;
+  transition: opacity 0.15s;
+}
+.toc-nav a:hover svg { opacity: 1; }
 
 .toc-nav a:hover {
   color: var(--text);
@@ -879,12 +891,24 @@ blockquote {
 }
 .ic-filter-trigger:hover,
 .ic-filter-trigger.open { border-color: var(--gold); }
+.ic-filter-trigger svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
 
 .ic-filter-arrow {
-  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
   opacity: 0.6;
   transition: transform 0.15s;
   margin-left: 0.15rem;
+}
+.ic-filter-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.5;
 }
 .ic-filter-trigger.open .ic-filter-arrow { transform: rotate(180deg); }
 
