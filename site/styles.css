@@ -863,16 +863,16 @@ blockquote {
 .ic-filter-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   font-family: var(--serif);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--gold);
   background: transparent;
-  border: 1px solid rgba(201,169,110,0.35);
-  padding: 0.5rem 1rem 0.55rem;
+  border: 1px solid rgba(201,169,110,0.45);
+  padding: 0.65rem 1.4rem 0.7rem;
   cursor: pointer;
   transition: border-color 0.15s;
   line-height: 1;
@@ -881,81 +881,70 @@ blockquote {
 .ic-filter-trigger.open { border-color: var(--gold); }
 
 .ic-filter-arrow {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   opacity: 0.6;
   transition: transform 0.15s;
-  margin-left: 0.2rem;
+  margin-left: 0.15rem;
 }
 .ic-filter-trigger.open .ic-filter-arrow { transform: rotate(180deg); }
 
 .ic-filter-panel {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 200;
   background: #fff;
-  border: 1px solid rgba(201,169,110,0.45);
-  min-width: 230px;
-  max-height: 340px;
+  border: 1px solid rgba(201,169,110,0.5);
+  min-width: 280px;
+  max-height: 380px;
   overflow-y: auto;
-  padding: 0.3rem 0;
+  padding: 0.5rem 0;
   scrollbar-width: thin;
   scrollbar-color: rgba(201,169,110,0.4) transparent;
 }
-.ic-filter-panel::-webkit-scrollbar { width: 4px; }
-.ic-filter-panel::-webkit-scrollbar-thumb { background: rgba(201,169,110,0.4); }
+.ic-filter-panel::-webkit-scrollbar { width: 5px; }
+.ic-filter-panel::-webkit-scrollbar-thumb { background: rgba(201,169,110,0.4); border-radius: 2px; }
 .ic-filter-panel[hidden] { display: none; }
 
 .ic-option {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.38rem 1rem;
+  gap: 0.75rem;
+  padding: 0.55rem 1.25rem;
   cursor: pointer;
   font-family: var(--serif);
-  font-size: 0.72rem;
+  font-size: 0.88rem;
   color: #3a2a10;
-  letter-spacing: 0.03em;
-  transition: color 0.1s, background 0.1s;
+  letter-spacing: 0.02em;
+  transition: background 0.1s;
   user-select: none;
 }
-.ic-option:hover {
-  color: #1a0f00;
-  background: rgba(201,169,110,0.14);
-}
+.ic-option:hover { background: rgba(201,169,110,0.12); }
+
 .ic-option input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
-  width: 11px;
-  height: 11px;
-  border: 1px solid rgba(201,169,110,0.4);
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(160,120,40,0.5);
+  border-radius: 50%;
   background: transparent;
   flex-shrink: 0;
   cursor: pointer;
   position: relative;
-  transition: background 0.1s, border-color 0.1s;
+  transition: background 0.12s, border-color 0.12s;
 }
 .ic-option input[type="checkbox"]:checked {
-  background: var(--gold);
-  border-color: var(--gold);
+  background: #c8a050;
+  border-color: #c8a050;
 }
-.ic-option input[type="checkbox"]:checked::after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  left: 3px;
-  width: 3px;
-  height: 7px;
-  border: 1.5px solid #080603;
-  border-top: none;
-  border-left: none;
-  transform: rotate(45deg);
-}
+.ic-option input[type="checkbox"]:checked::after { display: none; }
+
 .ic-option-all {
   border-bottom: 1px solid rgba(201,169,110,0.25);
-  margin-bottom: 0.25rem;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  padding-bottom: 0.6rem;
   color: #7a5a10;
   font-weight: 700;
 }
