@@ -1442,6 +1442,159 @@ blockquote {
 }
 
 /* =========================
+   GAMEPLAY · hierarquia de classes (icon grid)
+   ========================= */
+
+.chr-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: 0 0 3rem;
+}
+
+.chr-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.chr-section-label {
+  font-family: var(--serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-soft);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.chr-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 82px;
+  padding: 0.8rem 0.4rem 0.65rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.chr-card:hover {
+  border-color: var(--gold);
+  background: var(--surface-2);
+  transform: translateY(-2px);
+}
+
+.chr-card img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 3px rgba(201,169,110,0.15));
+  transition: opacity 0.2s, filter 0.2s;
+}
+
+.chr-card:hover img {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px rgba(201,169,110,0.55));
+}
+
+.chr-name {
+  font-family: var(--serif);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-mute);
+  text-align: center;
+  line-height: 1.2;
+  transition: color 0.15s;
+}
+
+.chr-card:hover .chr-name {
+  color: var(--gold);
+}
+
+.chr-card-sub::after {
+  content: "›";
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  font-size: 0.6rem;
+  color: var(--gold);
+  opacity: 0.55;
+}
+
+.chr-sub-panel {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface-2);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  white-space: nowrap;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.chr-sub-panel span {
+  display: block;
+  font-family: var(--serif);
+  font-size: 0.73rem;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.chr-card-sub:hover .chr-sub-panel,
+.chr-card-sub:focus .chr-sub-panel {
+  display: block;
+}
+
+.chr-section-rare .chr-section-label {
+  color: var(--accent-soft);
+  border-bottom-color: rgba(192,26,31,0.3);
+}
+
+.chr-section-rare .chr-card {
+  border-color: rgba(192,26,31,0.18);
+}
+
+.chr-section-rare .chr-card:hover {
+  border-color: var(--accent-soft);
+  background: rgba(192,26,31,0.04);
+}
+
+.chr-section-rare .chr-card:hover .chr-name {
+  color: var(--accent-soft);
+}
+
+.chr-card-rare {
+  border-color: rgba(192,26,31,0.35) !important;
+}
+
+.chr-card-rare img {
+  filter: drop-shadow(0 0 3px rgba(192,26,31,0.2));
+}
+
+.chr-card-rare:hover img {
+  filter: drop-shadow(0 0 8px rgba(192,26,31,0.55));
+}
+
+/* =========================
    GAMEPLAY · exclusivos por classe
    ========================= */
 
