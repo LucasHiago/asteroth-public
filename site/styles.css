@@ -850,43 +850,46 @@ blockquote {
 
 .itens-grid { display: block; }
 
-/* tab bar de categorias */
+/* tab bar de categorias — linha única scrollável */
 .ic-tabbar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 1.4rem;
+  flex-wrap: nowrap;
+  gap: 0;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(201,169,110,0.2);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.ic-tabbar::-webkit-scrollbar { display: none; }
 
 .ic-tab {
   font-family: var(--serif);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gold-soft);
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 0.28rem 0.55rem;
+  letter-spacing: 0.07em;
+  color: rgba(201,169,110,0.5);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 0.45rem 0.8rem 0.5rem;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.13s, border-color 0.13s, color 0.13s;
-  line-height: 1.4;
+  transition: color 0.13s, border-color 0.13s;
+  line-height: 1;
 }
-.ic-tab:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
+.ic-tab:hover { color: var(--gold-soft); }
 .ic-tab.active {
-  background: rgba(201,169,110,0.14);
-  border-color: var(--gold);
   color: var(--gold);
+  border-bottom-color: var(--gold);
 }
 .ic-tab-count {
   font-weight: 400;
-  opacity: 0.6;
-  font-size: 0.62rem;
+  opacity: 0.55;
+  font-size: 0.6rem;
   margin-left: 0.2rem;
 }
 
@@ -954,8 +957,8 @@ blockquote {
 /* icon card — compêndio com borda item_border.png do modal */
 .itens-grid .item-card {
   display: block;
-  width: 90px;
-  height: 90px;
+  width: 68px;
+  height: 68px;
   /* padding espelha o .item-slot do modal — enquadra a arte no interior da moldura */
   padding: 13.4% 14.4% 14.7% 13.9%;
   background:
