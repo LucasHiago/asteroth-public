@@ -1596,6 +1596,16 @@
     <a class="item-card" href="#item-stove"><img src="concepts/items/descanso/stove-42c0dc91-66eb-4033-984b-0e9b9e68927f.jpg" alt="Fogão" loading="lazy" /><span class="item-name">Fogão</span><span class="item-cat">Descanso &amp; mobília · Cozinha</span></a>
     <a class="item-card" href="#item-well"><img src="concepts/items/descanso/well-209bb331-57fd-4ee2-9546-f70d229fb31a.jpg" alt="Poço" loading="lazy" /><span class="item-name">Poço</span><span class="item-cat">Descanso &amp; mobília · Utilidade</span></a>
     <a class="item-card" href="#item-fountain"><img src="concepts/items/descanso/fountain-255dd41e-b6f7-4921-8965-3ba937b4c9a9.jpg" alt="Fonte" loading="lazy" /><span class="item-name">Fonte</span><span class="item-cat">Descanso &amp; mobília · Decoração</span></a>
+    <a class="item-card" href="#item-ruby"><img src="concepts/items/material_raro/ruby-b7172514-e7bc-4685-8166-1630e3ffed2c.jpg" alt="Rubi" loading="lazy" /><span class="item-name">Rubi</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-sapphire"><img src="concepts/items/material_raro/sapphire-300ba891-82e0-4acf-a902-2a28e7a8d555.jpg" alt="Safira" loading="lazy" /><span class="item-name">Safira</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-emerald"><img src="concepts/items/material_raro/emerald-3f507ebf-1b3c-451a-8c94-4192898a4e87.jpg" alt="Esmeralda" loading="lazy" /><span class="item-name">Esmeralda</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-diamond"><img src="concepts/items/material_raro/diamond-d90ad9d0-fdb0-46b9-8322-d0fcae8da9a9.jpg" alt="Diamante" loading="lazy" /><span class="item-name">Diamante</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-amethyst"><img src="concepts/items/material_raro/amethyst-8f939d6e-35b2-43c4-bd08-924ae47105a0.jpg" alt="Ametista" loading="lazy" /><span class="item-name">Ametista</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-topaz"><img src="concepts/items/material_raro/topaz-beeaed09-f1cc-47bf-8605-fe4ad9ab9fa6.jpg" alt="Topázio" loading="lazy" /><span class="item-name">Topázio</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-opal"><img src="concepts/items/material_raro/opal-6e1c6137-50c1-41be-9d65-b0a419a829b4.jpg" alt="Opala" loading="lazy" /><span class="item-name">Opala</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-garnet"><img src="concepts/items/material_raro/garnet-ccd1ac7a-b80e-4c57-a597-736642e17c16.jpg" alt="Granada" loading="lazy" /><span class="item-name">Granada</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-deep-amber"><img src="concepts/items/material_raro/deep_amber-a282295e-2faa-4f7c-b46f-ca6c0bd8ca2b.jpg" alt="Âmbar Profundo" loading="lazy" /><span class="item-name">Âmbar Profundo</span><span class="item-cat">Material raro · Gema</span></a>
+    <a class="item-card" href="#item-abyssal-pearl"><img src="concepts/items/material_raro/abyssal_pearl-1df671e5-7013-45fb-9387-0e8f7f35ff51.jpg" alt="Pérola Abissal" loading="lazy" /><span class="item-name">Pérola Abissal</span><span class="item-cat">Material raro · Gema</span></a>
   </div>
   <script>
   (function() {
@@ -1654,7 +1664,7 @@
     allOpt.className = 'ic-option ic-option-all';
     var allCb = document.createElement('input');
     allCb.type = 'checkbox';
-    allCb.checked = true;
+    allCb.checked = false;
     var allSp = document.createElement('span');
     allSp.textContent = 'Todas';
     var allCnt = document.createElement('span');
@@ -1671,7 +1681,7 @@
       opt.className = 'ic-option';
       var cb = document.createElement('input');
       cb.type = 'checkbox';
-      cb.checked = false;
+      cb.checked = (cat === 'Arma');
       var sp = document.createElement('span');
       sp.textContent = cat;
       var cnt = document.createElement('span');
@@ -1710,6 +1720,7 @@
 
     allCb.addEventListener('change', function() {
       if (allCb.checked) checkboxes.forEach(function(cb) { cb.checked = false; });
+      else if (!selected().length) allCb.checked = true;
       update();
     });
 
