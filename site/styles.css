@@ -958,8 +958,8 @@ blockquote {
 .itens-grid .item-card {
   display: block;
   position: relative;
-  width: 68px;
-  height: 68px;
+  width: 56px;
+  height: 56px;
   padding: 0;
   background:
     url("concepts/assets/item_border.png") center / 100% 100% no-repeat,
@@ -970,22 +970,44 @@ blockquote {
   box-shadow: none;
   overflow: visible;
   flex-shrink: 0;
-  transition: transform 0.13s, filter 0.15s;
+  transition: transform 0.12s;
+}
+.itens-grid .item-card::after {
+  content: attr(title);
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background: rgba(10, 8, 4, 0.95);
+  border: 1px solid rgba(201,169,110,0.5);
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 8px 4px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 20;
+  transition: opacity 0.1s;
 }
 .itens-grid .item-card:hover {
-  transform: scale(1.1);
-  filter: brightness(1.18) drop-shadow(0 2px 8px rgba(201,169,110,0.55));
-  z-index: 2;
+  transform: scale(1.08);
+  z-index: 10;
   position: relative;
+}
+.itens-grid .item-card:hover::after {
+  opacity: 1;
 }
 .itens-grid .item-card img {
   position: absolute;
-  top: 9px;
-  left: 9px;
-  right: 9px;
-  bottom: 9px;
-  width: calc(100% - 18px);
-  height: calc(100% - 18px);
+  top: 7px;
+  left: 7px;
+  right: 7px;
+  bottom: 7px;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
   object-fit: cover;
   display: block;
   margin: 0;
