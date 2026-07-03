@@ -3,8 +3,8 @@ SCRIPTS := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 ROOT    := $(SCRIPTS)../
 
 # variáveis com defaults sobrescrevíveis
-SRC       ?= .
-OUT       ?= $(ROOT)site/concepts/classes/
+SRC       ?= $(ROOT)concepts/classes
+OUT       ?= $(ROOT)concepts/classes/treated
 THRESHOLD ?= 160
 ITEMS_SRC ?= $(ROOT)site/concepts/items/
 
@@ -16,7 +16,7 @@ help:
 	@echo "  make cut-classes  [SRC=<pasta|arquivo>] [OUT=<pasta>] [THRESHOLD=160]"
 	@echo "      recorta silhueta preta de imagens GPT Image 2"
 	@echo "      gera <nome>_black.png e <nome>_white.png em OUT"
-	@echo "      padrão: SRC=.  OUT=$(ROOT)site/concepts/classes/"
+	@echo "      padrão: SRC=$(ROOT)concepts/classes  OUT=$(ROOT)concepts/classes/treated"
 	@echo ""
 	@echo "  make cut-items    [ITEMS_SRC=<pasta>]"
 	@echo "      recorta fundo cinza dos ícones do compêndio"
