@@ -9,6 +9,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- **Compêndio — grade de ícones com borda e tabs corrigida**: ícone do item agora aparece dentro do slot dourado (`item_border.png`) nos cards de 68px — fix do bug onde `padding: 13.4%` calculava em relação à largura do `.ic-row` (~880px) e não dos 68px do card, colapsando a área de conteúdo para 0px e escondendo a arte; substituído por `position: absolute; inset: 9px` (pixels fixos) na `<img>`.
 - **Item no slot de inventário**: no modal do Compêndio, o ícone agora flutua dentro do slot dourado do jogo ([`item_border.png`](concepts/assets/item_border.png)); os 10 ícones foram recortados do fundo cinza (PNG com alpha, [`scripts/cut_item_bg.py`](scripts/cut_item_bg.py)) — no grid também ficam limpos, sem tile cinza.
 - **Cards dos Governantes em folha antiga**: o card inteiro agora É a folha rasgada (`paper_frame` como background) — retrato em blend multiply, nome em tinta escura e epíteto em sépia impressos no papel; sem card escuro nem borda. O grid vira uma parede de gravuras.
 - **Pinturas fundidas no pergaminho**: nos modais de O Mundo, a concept art derrete no papiro (multiply + máscara radial esfumando as bordas + tom sépia) em vez da prancha retangular que cortava a textura; a arte vira um banner de iluminura de altura fixa (corte cover 16:10) — retratos altos não engolem mais o pergaminho, título e texto aparecem já na primeira dobra.
