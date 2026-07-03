@@ -958,8 +958,8 @@ blockquote {
 .itens-grid .item-card {
   display: block;
   position: relative;
-  width: 56px;
-  height: 56px;
+  width: 96px;
+  height: 96px;
   padding: 0;
   background:
     url("concepts/assets/item_border.png") center / 100% 100% no-repeat,
@@ -1002,12 +1002,12 @@ blockquote {
 }
 .itens-grid .item-card img {
   position: absolute;
-  top: 7px;
-  left: 7px;
-  right: 7px;
-  bottom: 7px;
-  width: calc(100% - 14px);
-  height: calc(100% - 14px);
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
   object-fit: cover;
   display: block;
   margin: 0;
