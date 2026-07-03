@@ -1618,14 +1618,10 @@
       groups.get(cat).push(c);
     });
 
-    var tabBar = document.createElement('div');
-    tabBar.className = 'ic-tabbar';
-
     var sections = new Map();
     groups.forEach(function(items, cat) {
       var sec = document.createElement('div');
       sec.className = 'ic-section';
-      sec.hidden = true;
       var row = document.createElement('div');
       row.className = 'ic-row';
       items.forEach(function(c) { row.appendChild(c); });
@@ -1633,30 +1629,112 @@
       sections.set(cat, sec);
     });
 
-    var activeTab = null;
+    /* --- filtro multi-select --- */
+    var filter = document.createElement('div');
+    filter.className = 'ic-filter';
+
+    var trigger = document.createElement('button');
+    trigger.className = 'ic-filter-trigger';
+    trigger.type = 'button';
+    var lbl = document.createElement('span');
+    lbl.className = 'ic-filter-label';
+    lbl.textContent = 'Todas as categorias';
+    var arrow = document.createElement('span');
+    arrow.className = 'ic-filter-arrow';
+    arrow.textContent = '▾';
+    trigger.appendChild(lbl);
+    trigger.appendChild(arrow);
+
+    var panel = document.createElement('div');
+    panel.className = 'ic-filter-panel';
+    panel.hidden = true;
+
+    /* opção "Todas" */
+    var allOpt = document.createElement('label');
+    allOpt.className = 'ic-option ic-option-all';
+    var allCb = document.createElement('input');
+    allCb.type = 'checkbox';
+    allCb.checked = true;
+    var allSp = document.createElement('span');
+    allSp.textContent = 'Todas';
+    var allCnt = document.createElement('span');
+    allCnt.className = 'ic-opt-count';
+    allCnt.textContent = cards.length;
+    allOpt.appendChild(allCb);
+    allOpt.appendChild(allSp);
+    allOpt.appendChild(allCnt);
+    panel.appendChild(allOpt);
+
+    var checkboxes = new Map();
     groups.forEach(function(items, cat) {
-      var btn = document.createElement('button');
-      btn.className = 'ic-tab';
-      btn.type = 'button';
-      btn.innerHTML = cat + '<span class="ic-tab-count"> ' + items.length + '</span>';
-      btn.addEventListener('click', function() {
-        if (activeTab) activeTab.classList.remove('active');
-        sections.forEach(function(s) { s.hidden = true; });
-        btn.classList.add('active');
-        sections.get(cat).hidden = false;
-        activeTab = btn;
-      });
-      if (!activeTab) {
-        btn.classList.add('active');
-        sections.get(cat).hidden = false;
-        activeTab = btn;
-      }
-      tabBar.appendChild(btn);
+      var opt = document.createElement('label');
+      opt.className = 'ic-option';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.checked = false;
+      var sp = document.createElement('span');
+      sp.textContent = cat;
+      var cnt = document.createElement('span');
+      cnt.className = 'ic-opt-count';
+      cnt.textContent = items.length;
+      opt.appendChild(cb);
+      opt.appendChild(sp);
+      opt.appendChild(cnt);
+      panel.appendChild(opt);
+      checkboxes.set(cat, cb);
     });
 
+    filter.appendChild(trigger);
+    filter.appendChild(panel);
+
+    function selected() {
+      var s = [];
+      checkboxes.forEach(function(cb, cat) { if (cb.checked) s.push(cat); });
+      return s;
+    }
+
+    function update() {
+      var sel = selected();
+      var all = sel.length === 0 || allCb.checked;
+      sections.forEach(function(sec, cat) {
+        sec.hidden = !all && sel.indexOf(cat) === -1;
+      });
+      if (all) {
+        lbl.textContent = 'Todas as categorias';
+      } else if (sel.length === 1) {
+        lbl.textContent = sel[0];
+      } else {
+        lbl.textContent = sel.length + ' categorias';
+      }
+    }
+
+    allCb.addEventListener('change', function() {
+      if (allCb.checked) checkboxes.forEach(function(cb) { cb.checked = false; });
+      update();
+    });
+
+    checkboxes.forEach(function(cb) {
+      cb.addEventListener('change', function() {
+        if (cb.checked) allCb.checked = false;
+        if (!selected().length) allCb.checked = true;
+        update();
+      });
+    });
+
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      panel.hidden = !panel.hidden;
+      trigger.classList.toggle('open', !panel.hidden);
+    });
+    document.addEventListener('click', function() {
+      if (!panel.hidden) { panel.hidden = true; trigger.classList.remove('open'); }
+    });
+    panel.addEventListener('click', function(e) { e.stopPropagation(); });
+
     grid.innerHTML = '';
-    grid.appendChild(tabBar);
+    grid.appendChild(filter);
     sections.forEach(function(sec) { grid.appendChild(sec); });
+    update();
   })();
   </script>
 
