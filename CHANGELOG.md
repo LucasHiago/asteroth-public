@@ -11,6 +11,8 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 ### Added
 - **Gameplay — ícones de classe nos cards de exclusivos**: cada um dos 39 cards de classe na seção "Exclusivos por classe" exibe agora o ícone branco em silhueta (`concepts/classes/treated/*_white.png`) acima do nome da classe; opacidade 0.7 em repouso → 1 no hover com brilho dourado sutil.
 - **Gameplay — hierarquia de classes redesenhada com icon grid**: substituição das linhas de pills de texto por um grid de cards visuais (82×~110px) agrupados por categoria (Combate, Artesão, Gathering, Refinadores, Preparo, Logística, Incomuns); cada card mostra o ícone branco da classe + nome; hover com borda gold, glow e nome dourado; Incomuns com tint vermelho; Mago com tooltip de sub-classes.
+- **Gameplay — modal de classe ao clicar no card de hierarquia**: clicar em qualquer chr-card abre o modal papiro com ícone grande (80px), categoria, nome, papel resumido, descrição da classe e exclusivo; 39 descrições criadas, uma por classe.
+- **Gameplay — cards de hierarquia com largura flexível**: `.chr-card` passou de largura fixa 82px para `auto / min 80px / max 108px`, acomodando nomes longos como Estalajadeiro, Caravaneiro, Dragon Born.
 
 ### Changed
 - **Compêndio — grade de ícones com borda e tabs corrigida**: ícone do item agora aparece dentro do slot dourado (`item_border.png`) nos cards de 68px — fix do bug onde `padding: 13.4%` calculava em relação à largura do `.ic-row` (~880px) e não dos 68px do card, colapsando a área de conteúdo para 0px e escondendo a arte; substituído por `position: absolute; inset: 9px` (pixels fixos) na `<img>`.

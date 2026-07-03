@@ -1480,8 +1480,10 @@ blockquote {
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  width: 82px;
-  padding: 0.8rem 0.4rem 0.65rem;
+  width: auto;
+  min-width: 80px;
+  max-width: 108px;
+  padding: 0.8rem 0.7rem 0.7rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1686,6 +1688,20 @@ blockquote {
   font-style: italic;
   margin: 0.15rem 0 0.9rem;
   line-height: 1.5;
+}
+
+.chr-modal-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.chr-modal-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 12px rgba(201,169,110,0.4));
 }
 
 /* =========================

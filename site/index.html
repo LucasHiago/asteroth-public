@@ -7280,6 +7280,110 @@
     });
   });
 
+  // Class hierarchy (chr-grid) card modal
+  (function() {
+    var CHR_DESC = {
+      'Guerreiro': 'O Guerreiro vive do embate direto e da fama que ele produz. A classe de pressão contínua, duelo declarado e confronto sem fuga — cada vitória registrada aumenta o nome, cada derrota pública cobra o dobro. Em Asteroth, Guerreiro não é quem mais sobrevive, é quem mais é lembrado.',
+      'Tank': 'O Tank absorve o que outras classes não conseguem. Com taunt forçado e a capacidade de erguer um escudo coletivo sobre o time, ele define onde o combate acontece e quem chega ao encontro de carne. Indispensável em qualquer operação que exige linha de frente sustentada.',
+      'Sacerdote': 'O Sacerdote cura, abençoa e devolve os mortos ao campo. Ressuscitar um player custa material raro e reduz a fama do ressuscitado — o preço de uma segunda chance em Asteroth nunca é zero. Sem Sacerdote, morte é permanente até o próximo spawn.',
+      'Arqueiro': 'O Arqueiro domina a distância. Arcos compostos de alto tier só respondem a ele, e montar a cavalo sem penalidade de dano é privilégio exclusivo. Em campo aberto, define o alcance do confronto antes que qualquer lâmina se cruze.',
+      'Ladino': 'O Ladino rouba antes de combater. Pickpocket em encontro ativo, invisibilidade seletiva e burst de dano fazem dele a classe de extração — de itens, de ouro, de informação, de oportunidades. A classe que atua onde as outras não olham.',
+      'Mago': 'O Mago opera no espectro completo da magia ofensiva. Cinco sub-classes ampliam esse alcance: Rogue drena vida em AoE, Elemental especializa em um único elemento, Sorcerer converte cura em ofensiva, Druid pacifica mobs, Boticário transforma poções em granadas de campo.',
+      'Joker': 'O Joker não mata — controla espaço. Armadilhas em volume, baratas e rápidas de instalar, transformam qualquer área em terreno hostil. Ideal para cercos, rotas de fuga e coberturas que outras classes não conseguem sustentar em escala.',
+      'Hunter': 'O Hunter doma o que outros não capturam. Feras raras e lendárias ficam vinculadas permanentemente — mob bound, intransferível. O pet não é ferramenta descartável: é extensão de combate com identidade própria.',
+      'Ferreiro': 'O Ferreiro forja o que ninguém mais forja. Armas e armaduras de metal acima de certo tier saem só das suas mãos, e o serviço de reparo sem degradação coloca todo portador de equipamento pesado na sua dependência permanente.',
+      'Alquimista': 'O Alquimista produz o que se guarda e se vende. Poções de buff com duração de horas, estocáveis e comerciáveis, não expiram na bolsa — isso as diferencia de tudo que qualquer outra classe improvisa em campo.',
+      'Arquiteto': 'O Arquiteto funda. Sem a planta de fundação dele, nenhuma estrutura coletiva existe em Asteroth — não há cidade, não há mercado físico, não há defesa organizada. A escala do que qualquer servidor consegue construir passa pela disponibilidade de um Arquiteto.',
+      'Artesão': 'O Artesão fabrica os slots. Anéis, colares e capas com encaixe de runa saem só das suas mãos — e sem runa permanente, encantamento de alto tier não existe. A joalheria de Asteroth depende do Artesão como fundação de toda a cadeia encantada.',
+      'Cartesiano': 'O Cartesiano mapeia o que existe. Mapas com cobertura global e informação de área não podem ser replicados por outras classes — quem quer navegar, explorar ou planejar em escala depende do que o Cartesiano produz e decide vender.',
+      'Caçador': 'O Caçador domestica. Pets para outros players saem só do processo de domesticação que ele domina — e animal selvagem que qualquer classe abate se torna recurso, mas animal que vira companheiro de outro player só passa pelo Caçador.',
+      'Lenhador': 'O Lenhador extrai o que a floresta guarda além da tora. Resina e casca rara, ingredientes que a alquimia de alto tier exige, só aparecem no processo de extração especializada — nenhuma outra classe acessa esses subprodutos.',
+      'Minerador': 'O Minerador vai fundo. Nós de minério em camadas profundas — onde os drops raros estão — só respondem às ferramentas e à habilidade dele. A cadeia inteira de metal começa no que o Minerador decide minerar e onde decide ir.',
+      'Pescador': 'O Pescador acessa o que está abaixo. Águas profundas com drops únicos e zonas inacessíveis a outros definem o que ele coleta — e parte do que os Alquimistas de alto tier usam vem especificamente dessas capturas que só o Pescador alcança.',
+      'Pirata': 'O Pirata opera no alto mar sem lei. Abordar e capturar navios é exclusividade dele — o combate naval como modo de jogo, a pilhagem de carga como economia paralela. Rotas marítimas em Asteroth são território do Pirata enquanto ele decidir que são.',
+      'Curtidor': 'O Curtidor transforma pele em material. Pele bruta de qualquer animal abatido não vira couro sem passar pelas mãos dele — e sem couro, armaduras leves, alfaiataria e toda cadeia que usa esse material fica parada.',
+      'Tecelão': 'O Tecelão converte fibra em estrutura. Linho e algodão saem do campo como matéria bruta e chegam ao Tecelão como ponto de partida — sem ele, não existe tecido, e sem tecido, a alfaiataria inteira de Asteroth não produz nada.',
+      'Fundidor': 'O Fundidor é a ponte obrigatória. Minério bruto extraído pelo Minerador vira barra ou lingote só pelas mãos do Fundidor — e sem barra, o Ferreiro não forja. É o elo que conecta extração e fabricação de metal em toda a cadeia produtiva.',
+      'Serrador': 'O Serrador processa a tora. Madeira bruta do Lenhador não vira tábua ou viga sem passar pela serraria — e construção em madeira, desde estruturas simples até edificações do Arquiteto, depende do que o Serrador entrega.',
+      'Moleiro': 'O Moleiro converte grão em farinha. Trigo, milho e outros grãos saem do campo e chegam ao moinho — sem farinha, Padeiro e Cozinheiro não produzem nada que use cereal como base. A alimentação processada de Asteroth passa pelo Moleiro.',
+      'Açougueiro': 'O Açougueiro separa o que outras classes descartam. Uma carcaça inteira vira carne, ossos e miúdos como recursos distintos — ossos e miúdos são ingredientes raros de alquimia que nenhuma outra classe extrai como recursos separados.',
+      'Cozinheiro': 'O Cozinheiro produz buff de combate que dura horas. Refeições estocáveis e comerciáveis não se degradam na bolsa — e o efeito em stat de combate coloca o Cozinheiro como fornecedor regular de qualquer grupo que opera em campo por tempo prolongado.',
+      'Padeiro': 'O Padeiro resolve o problema de viagem. Rações com baixo decay duram dias na bolsa sem perda de qualidade — o que nenhuma outra classe de preparo consegue replicar. Expedições longas dependem do estoque do Padeiro antes de partir.',
+      'Cervejeiro': 'O Cervejeiro vende risco calculado. Bebidas com buff de coragem aumentam dano e reduzem defesa — e quem compra sabe o contrato. Em PvP, quem entra com a bebida do Cervejeiro escolheu pressão sobre proteção.',
+      'Mensageiro': 'O Mensageiro move com garantia. Cargo pequeno em trânsito de curta distância fica imune a roubo — uma segurança que nenhuma outra classe oferece. Em rotas urbanas e entre pontos próximos, é o transporte que não precisa de escolta.',
+      'Caravaneiro': 'O Caravaneiro move volume. Lotes grandes em rota planejada — o que nenhum player carrega sozinho sem virar alvo natural. Raid de caravana é conteúdo em Asteroth, e o Caravaneiro é quem define quando e onde esse confronto acontece.',
+      'Estalajadeiro': 'O Estalajadeiro oferece segurança offline. Player que dorme em estalagem fica irraidável sem precisar de casa própria — o serviço que transforma um passante sem base em alguém que pode descansar onde quer que esteja.',
+      'Mercador': 'O Mercador abre loja física. Comércio fixo entre players — com estoque permanente e ponto de encontro — só existe onde tem Mercador. Sem ele, troca é só barganha direta entre quem se encontra no momento certo.',
+      'Necromante': 'O Necromante comanda os mortos. Horda sustentada em campo, com controle ativo de múltiplas unidades, é o tipo de pressão de área que nenhuma classe comum replica. Cada invocação é um combatente que o inimigo não escolheu enfrentar.',
+      'Bardo': 'O Bardo desorienita sem atacar. Desativa sons, desfoca visão e semeia confusão — e quem está confuso toma decisões erradas. Em combate onde percepção define sobrevivência, o Bardo é a classe que retira a informação antes do golpe.',
+      'Clown': 'O Clown coloca armadilhas que ninguém vê. Nível acima do Joker em qualidade e ocultamento, as armadilhas do Clown ficam ativas onde o Joker seria detectado. A invisibilidade do mecanismo é o que diferencia as duas classes.',
+      'Pantheon': 'O Pantheon é a fusão que não deveria existir. Resistência de tank com mobilidade de assassino — e a capacidade de transitar entre os dois modos em combate ativo. Generalista de elite que obriga o inimigo a escolher qual das duas ameaças endereçar primeiro.',
+      'Dark Mage': 'O Dark Mage drena e escurece. Roubo de vida em AoE e invocação de escuridão são magia primária, não derivada — o que diferencia do sub-Mago vampiro. Em campo, a escuridão projetada afeta percepção e mira de todos na área.',
+      'Dragon Born': 'O Dragon Born não queima — reflete. Imunidade a fogo inata transforma todo ataque de fogo recebido em dano de área ao redor, convertendo o inimigo que escolheu fogo como ferramenta em combustível para o próprio ataque.',
+      'Bucaneiro': 'O Bucaneiro carrega fogo e pólvora. Único acesso a armas de fogo em Asteroth — dano alto, frágil em tudo o mais. O kit é uma aposta: quem acertar primeiro e manter distância vence; quem for alcançado perde.',
+      'Sieger': 'O Sieger decide cercos. Trabuco, balista, canhão — armas de cerco que só ele opera, como invasor ou defensor de cidade. Em qualquer cerco de escala em Asteroth, a presença ou ausência de um Sieger no lado certo é o fator que determina o resultado antes de começar.'
+    };
+
+    // Build lookup: class name → {cat, role, exclusive, icon}
+    var CHR_DATA = {};
+    document.querySelectorAll('.exclusive-card').forEach(function(card) {
+      var nm = card.querySelector('.ex-class');
+      var doEl = card.querySelector('.ex-do');
+      var iconEl = card.querySelector('.ex-icon');
+      if (nm) {
+        CHR_DATA[nm.textContent.trim()] = {
+          cat: card.dataset.cat || '',
+          role: card.dataset.role || '',
+          exclusive: doEl ? doEl.textContent.trim() : '',
+          icon: iconEl ? iconEl.getAttribute('src') : ''
+        };
+      }
+    });
+
+    document.querySelectorAll('.chr-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        var nameEl = card.querySelector('.chr-name');
+        if (!nameEl) return;
+        var cls = nameEl.textContent.trim();
+        var imgEl = card.querySelector('img');
+        var iconSrc = imgEl ? imgEl.getAttribute('src') : '';
+        var data = CHR_DATA[cls] || {};
+        var desc = CHR_DESC[cls] || '';
+        var catText = data.cat || 'Classe';
+        body.innerHTML =
+          '<div class="scroll-solo">'
+          + '<div class="scroll-solo-bg" aria-hidden="true"></div>'
+          + '<div class="scroll-solo-inner">'
+          + (iconSrc ? '<div class="chr-modal-icon"><img src="' + iconSrc + '" alt=""></div>' : '')
+          + '<p class="epitaph">' + catText + '</p>'
+          + '<h3>' + cls + '</h3>'
+          + (data.role ? '<p class="class-modal-role">' + data.role + '</p>' : '')
+          + (desc ? '<p>' + desc + '</p>' : '')
+          + (data.exclusive ? '<p><strong>Exclusivo:</strong> ' + data.exclusive + '</p>' : '')
+          + '</div>'
+          + '<button class="scroll-hint" type="button" aria-label="Rolar o pergaminho"></button>'
+          + '</div>';
+        var inner = body.querySelector('.scroll-solo-inner');
+        var hint = body.querySelector('.scroll-hint');
+        var updateHint = function() {
+          var canScroll = inner.scrollHeight - inner.clientHeight > 40;
+          var atEnd = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 60;
+          hint.classList.toggle('hidden', !canScroll || atEnd);
+        };
+        hint.addEventListener('click', function() {
+          inner.scrollBy({ top: inner.clientHeight * 0.85, behavior: 'smooth' });
+        });
+        inner.addEventListener('scroll', updateHint, { passive: true });
+        updateHint();
+        modal.dataset.kind = 'class';
+        modal.hidden = false;
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        modal.querySelector('.modal-content').scrollTop = 0;
+      });
+    });
+  })();
+
   // Affinity interactive selector
   (function() {
     var RACES_META = [
