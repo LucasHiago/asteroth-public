@@ -1088,12 +1088,12 @@ blockquote {
 }
 .itens-grid .item-card img {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
-  width: calc(100% - 28px);
-  height: calc(100% - 28px);
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  width: calc(100% - 36px);
+  height: calc(100% - 36px);
   object-fit: cover;
   display: block;
   margin: 0;
