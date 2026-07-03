@@ -1603,10 +1603,12 @@
     if (!grid) return;
     var cards = Array.from(grid.querySelectorAll('.item-card'));
     if (!cards.length) return;
+
     cards.forEach(function(c) {
       var nm = c.querySelector('.item-name');
       if (nm) c.title = nm.textContent.trim();
     });
+
     var groups = new Map();
     cards.forEach(function(c) {
       var el = c.querySelector('.item-cat');
@@ -1615,20 +1617,46 @@
       if (!groups.has(cat)) groups.set(cat, []);
       groups.get(cat).push(c);
     });
-    grid.innerHTML = '';
+
+    var tabBar = document.createElement('div');
+    tabBar.className = 'ic-tabbar';
+
+    var sections = new Map();
     groups.forEach(function(items, cat) {
       var sec = document.createElement('div');
       sec.className = 'ic-section';
-      var h = document.createElement('h3');
-      h.className = 'ic-section-title';
-      h.innerHTML = cat + ' <span class="ic-section-count">(' + items.length + ')</span>';
+      sec.hidden = true;
       var row = document.createElement('div');
       row.className = 'ic-row';
       items.forEach(function(c) { row.appendChild(c); });
-      sec.appendChild(h);
       sec.appendChild(row);
-      grid.appendChild(sec);
+      sections.set(cat, sec);
     });
+
+    var activeTab = null;
+    groups.forEach(function(items, cat) {
+      var btn = document.createElement('button');
+      btn.className = 'ic-tab';
+      btn.type = 'button';
+      btn.innerHTML = cat + '<span class="ic-tab-count"> ' + items.length + '</span>';
+      btn.addEventListener('click', function() {
+        if (activeTab) activeTab.classList.remove('active');
+        sections.forEach(function(s) { s.hidden = true; });
+        btn.classList.add('active');
+        sections.get(cat).hidden = false;
+        activeTab = btn;
+      });
+      if (!activeTab) {
+        btn.classList.add('active');
+        sections.get(cat).hidden = false;
+        activeTab = btn;
+      }
+      tabBar.appendChild(btn);
+    });
+
+    grid.innerHTML = '';
+    grid.appendChild(tabBar);
+    sections.forEach(function(sec) { grid.appendChild(sec); });
   })();
   </script>
 

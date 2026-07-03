@@ -850,35 +850,54 @@ blockquote {
 
 .itens-grid { display: block; }
 
-/* categoria section */
-.ic-section { margin-bottom: 2.25rem; }
-
-.ic-section-title {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--gold);
-  border-bottom: 1px solid rgba(201,169,110,0.22);
-  padding-bottom: 0.4rem;
-  margin: 0 0 0.6rem;
+/* tab bar de categorias */
+.ic-tabbar {
   display: flex;
-  align-items: baseline;
-  gap: 0.45rem;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.4rem;
 }
 
-.ic-section-count {
-  font-weight: 400;
-  font-size: 0.68rem;
+.ic-tab {
+  font-family: var(--serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--gold-soft);
-  opacity: 0.65;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.28rem 0.55rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.13s, border-color 0.13s, color 0.13s;
+  line-height: 1.4;
 }
+.ic-tab:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.ic-tab.active {
+  background: rgba(201,169,110,0.14);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.ic-tab-count {
+  font-weight: 400;
+  opacity: 0.6;
+  font-size: 0.62rem;
+  margin-left: 0.2rem;
+}
+
+/* section de itens (uma visível por vez) */
+.ic-section { display: block; }
+.ic-section[hidden] { display: none; }
 
 .ic-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 5px;
 }
 
 /* item-card fora do compêndio (teaser mundo) — estilo original */
@@ -932,30 +951,30 @@ blockquote {
   text-align: center;
 }
 
-/* icon card — compêndio (dentro do .itens-grid, reorganizado em .ic-row) */
+/* icon card — compêndio com borda item_border.png do modal */
 .itens-grid .item-card {
   display: block;
-  width: 76px;
-  height: 76px;
-  padding: 0;
-  background: #100f0c;
-  border: 2px solid rgba(201,169,110,0.42);
-  border-radius: 5px;
+  width: 90px;
+  height: 90px;
+  /* padding espelha o .item-slot do modal — enquadra a arte no interior da moldura */
+  padding: 13.4% 14.4% 14.7% 13.9%;
+  background:
+    url("concepts/assets/item_border.png") center / 100% 100% no-repeat,
+    #0d0c09;
+  border: none;
+  border-radius: 0;
   clip-path: none;
-  box-shadow:
-    inset 0 0 12px rgba(0,0,0,0.75),
-    inset 0 0 0 1px rgba(255,255,255,0.04);
-  overflow: hidden;
+  box-shadow: none;
+  overflow: visible;
   flex-shrink: 0;
-  transition: transform 0.13s, border-color 0.15s, box-shadow 0.15s;
+  transition: transform 0.13s, filter 0.15s;
 }
 .itens-grid .item-card:hover {
   transform: scale(1.1);
-  border-color: var(--gold);
-  background: #100f0c;
-  box-shadow:
-    inset 0 0 12px rgba(0,0,0,0.75),
-    0 0 10px rgba(201,169,110,0.45);
+  filter: brightness(1.18) drop-shadow(0 2px 8px rgba(201,169,110,0.55));
+  background-color: #0d0c09;
+  border: none;
+  box-shadow: none;
   z-index: 2;
   position: relative;
 }
@@ -966,8 +985,10 @@ blockquote {
   display: block;
   margin: 0;
   border: none;
-  background: #100f0c;
+  background: transparent;
   aspect-ratio: unset;
+  clip-path: polygon(9% 0, 91% 0, 100% 9%, 100% 91%, 91% 100%, 9% 100%, 0 91%, 0 9%);
+  filter: sepia(0.25) contrast(1.03);
   transition: none;
 }
 .itens-grid .item-card:hover img { border-color: transparent; }
