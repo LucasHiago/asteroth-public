@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=IM+Fell+English:ital@0;1&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -38,14 +39,14 @@
 <nav class="toc-nav" aria-label="Navegação">
   <div class="toc-inner">
     <a class="toc-brand" href="#">Asteroth</a>
-    <a href="#lore">Lore</a>
-    <a href="#governantes">Governantes</a>
-    <a href="#mundo">O Mundo</a>
-    <a href="#contos">Contos</a>
-    <a href="#itens">Itens</a>
-    <a href="#gameplay">Gameplay</a>
-    <a href="changelog.html">Changelog</a>
-    <a href="#apoiar">Apoiar</a>
+    <a href="#lore"><i data-lucide="book-open"></i>Lore</a>
+    <a href="#governantes"><i data-lucide="crown"></i>Governantes</a>
+    <a href="#mundo"><i data-lucide="globe"></i>O Mundo</a>
+    <a href="#contos"><i data-lucide="feather"></i>Contos</a>
+    <a href="#itens"><i data-lucide="package"></i>Itens</a>
+    <a href="#gameplay"><i data-lucide="swords"></i>Gameplay</a>
+    <a href="changelog.html"><i data-lucide="history"></i>Changelog</a>
+    <a href="#apoiar"><i data-lucide="heart"></i>Apoiar</a>
   </div>
 </nav>
 
@@ -1646,12 +1647,17 @@
     var trigger = document.createElement('button');
     trigger.className = 'ic-filter-trigger';
     trigger.type = 'button';
+    var trigIco = document.createElement('i');
+    trigIco.dataset.lucide = 'sliders-horizontal';
     var lbl = document.createElement('span');
     lbl.className = 'ic-filter-label';
     lbl.textContent = 'Todas as categorias';
     var arrow = document.createElement('span');
     arrow.className = 'ic-filter-arrow';
-    arrow.textContent = '▾';
+    var arrowIco = document.createElement('i');
+    arrowIco.dataset.lucide = 'chevron-down';
+    arrow.appendChild(arrowIco);
+    trigger.appendChild(trigIco);
     trigger.appendChild(lbl);
     trigger.appendChild(arrow);
 
@@ -1746,6 +1752,7 @@
     grid.appendChild(filter);
     sections.forEach(function(sec) { grid.appendChild(sec); });
     update();
+    if (window.lucide) window.lucide.createIcons();
   })();
   </script>
 
