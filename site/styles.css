@@ -975,9 +975,9 @@ blockquote {
 .itens-grid .item-card::after {
   content: attr(title);
   position: absolute;
-  left: calc(100% + 8px);
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
   white-space: nowrap;
   background: rgba(10, 8, 4, 0.95);
   border: 1px solid rgba(201,169,110,0.5);
