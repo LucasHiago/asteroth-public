@@ -8,6 +8,9 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- **Gameplay — ícones de classe nos cards de exclusivos**: cada um dos 39 cards de classe na seção "Exclusivos por classe" exibe agora o ícone branco em silhueta (`concepts/classes/treated/*_white.png`) acima do nome da classe; opacidade 0.7 em repouso → 1 no hover com brilho dourado sutil.
+
 ### Changed
 - **Compêndio — grade de ícones com borda e tabs corrigida**: ícone do item agora aparece dentro do slot dourado (`item_border.png`) nos cards de 68px — fix do bug onde `padding: 13.4%` calculava em relação à largura do `.ic-row` (~880px) e não dos 68px do card, colapsando a área de conteúdo para 0px e escondendo a arte; substituído por `position: absolute; inset: 9px` (pixels fixos) na `<img>`.
 - **Item no slot de inventário**: no modal do Compêndio, o ícone agora flutua dentro do slot dourado do jogo ([`item_border.png`](concepts/assets/item_border.png)); os 10 ícones foram recortados do fundo cinza (PNG com alpha, [`scripts/cut_item_bg.py`](scripts/cut_item_bg.py)) — no grid também ficam limpos, sem tile cinza.
