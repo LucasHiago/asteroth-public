@@ -7341,6 +7341,17 @@
     });
 
     document.querySelectorAll('.chr-card').forEach(function(card) {
+      var nameEl = card.querySelector('.chr-name');
+      if (nameEl && !card.querySelector('.chr-role')) {
+        var cls = nameEl.textContent.trim();
+        var role = (CHR_DATA[cls] || {}).role || '';
+        if (role) {
+          var roleEl = document.createElement('span');
+          roleEl.className = 'chr-role';
+          roleEl.textContent = role;
+          nameEl.insertAdjacentElement('afterend', roleEl);
+        }
+      }
       card.addEventListener('click', function() {
         var nameEl = card.querySelector('.chr-name');
         if (!nameEl) return;
