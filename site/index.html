@@ -7632,11 +7632,20 @@
       } else {
         html += rows.map(function(r) {
           var ic = classIcon(r.classe);
+          var rmRow = RACES_META.find(function(x) { return x.nome === r.raca; });
           var pleno = r.classe !== 'Qualquer';
+          function ctxPill(icon, label) {
+            return '<span class="aff-ctx-pill">'
+              + (icon ? '<span class="aff-ctx-badge"><img src="' + icon + '" alt="" loading="lazy"></span>' : '')
+              + label + '</span>';
+          }
           return '<div class="aff-syn" data-tipo="' + (r.tipo || '') + '">'
             + (showCtx
-                ? '<div class="aff-syn-ctx">' + r.raca + ' · '
-                  + (ic ? '<img src="' + ic + '" alt="" loading="lazy">' : '') + r.classe + '</div>'
+                ? '<div class="aff-syn-ctx">'
+                  + ctxPill(rmRow ? rmRow.icon : '', r.raca)
+                  + '<span class="aff-ctx-x">×</span>'
+                  + ctxPill(ic, r.classe)
+                  + '</div>'
                 : '')
             + '<div class="aff-syn-label">Faz</div>'
             + '<div class="aff-syn-faz">' + r.acao + '</div>'
