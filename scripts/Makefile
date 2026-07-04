@@ -9,9 +9,19 @@ THRESHOLD ?= 160
 ITEMS_SRC ?= $(ROOT)site/concepts/items/
 
 .DEFAULT_GOAL := help
-.PHONY: help cut-classes cut-items remove-bg
+.PHONY: help cut cut-classes cut-items remove-bg
+
+# quando OUT vem da linha de comando, repassa como -o; senão o script
+# salva os PNGs na mesma pasta do arquivo de entrada
+ifeq ($(origin OUT),command line)
+CUT_OUT = -o "$(OUT)"
+endif
 
 help:
+	@echo ""
+	@echo "  make cut          FILE=<imagem> [OUT=<pasta>] [THRESHOLD=160]"
+	@echo "      recorta silhueta de UM arquivo só"
+	@echo "      gera <nome>_black.png e <nome>_white.png ao lado do original (ou em OUT)"
 	@echo ""
 	@echo "  make cut-classes  [SRC=<pasta|arquivo>] [OUT=<pasta>] [THRESHOLD=160]"
 	@echo "      recorta silhueta preta de imagens GPT Image 2"
@@ -26,6 +36,12 @@ help:
 	@echo "      remove fundo por chroma key (cantos como referência)"
 	@echo "      salva PNG no mesmo diretório da entrada"
 	@echo ""
+
+cut:
+ifndef FILE
+	$(error uso: make cut FILE=<imagem> [OUT=<pasta>] [THRESHOLD=160])
+endif
+	$(PYTHON) $(SCRIPTS)cut_class_symbols.py "$(FILE)" $(CUT_OUT) -t $(THRESHOLD)
 
 cut-classes:
 	$(PYTHON) $(SCRIPTS)cut_class_symbols.py $(SRC) -o $(OUT) -t $(THRESHOLD)
