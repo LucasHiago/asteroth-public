@@ -1877,7 +1877,7 @@ blockquote {
 
 .aff-panel:not(.collapsed) .aff-pill--icon {
   background: transparent;
-  border-color: rgba(0, 0, 0, 0.3);
+  border-color: transparent;
 }
 
 .aff-panel:not(.collapsed) .aff-pill--icon img {
