@@ -6996,23 +6996,24 @@
   <p>Affinity é o multiplicador quando <strong>raça × classe × ação</strong> alinham. Dois players forjam o mesmo item com qualidades diferentes, dependendo do alinhamento, e o mercado diferencia. Filtre por raça ou classe pra ver os alinhamentos documentados.</p>
 
   <div class="affinity-sel">
-    <div class="affinity-sel-filters">
-      <div class="affinity-filter-group">
-        <span class="affinity-filter-label">Raça</span>
-        <div class="affinity-filter-pills" id="aff-raca-pills"></div>
+    <div class="aff-layout">
+      <div class="aff-side">
+        <div class="aff-panel">
+          <div class="aff-panel-head"><span>Raça</span><span class="aff-panel-status" id="aff-raca-status"></span></div>
+          <div class="aff-panel-grid" id="aff-raca-pills"></div>
+        </div>
+        <div class="aff-panel">
+          <div class="aff-panel-head"><span>Classe</span><span class="aff-panel-status" id="aff-classe-status"></span></div>
+          <input class="aff-search" id="aff-classe-search" type="text" placeholder="Buscar classe...">
+          <div class="aff-panel-grid aff-panel-grid--scroll" id="aff-classe-pills"></div>
+        </div>
+        <div class="aff-panel">
+          <div class="aff-panel-head"><span>Tipo</span><span class="aff-panel-status" id="aff-tipo-status"></span></div>
+          <div class="aff-panel-grid" id="aff-tipo-pills"></div>
+        </div>
       </div>
-      <div class="affinity-filter-group">
-        <span class="affinity-filter-label">Classe</span>
-        <div class="affinity-filter-pills" id="aff-classe-pills"></div>
-      </div>
-      <div class="affinity-filter-group">
-        <span class="affinity-filter-label">Tipo</span>
-        <div class="affinity-filter-pills" id="aff-tipo-pills"></div>
-      </div>
+      <div class="aff-hero" id="aff-hero"></div>
     </div>
-    <div id="aff-race-info" class="aff-race-info" hidden></div>
-    <div class="aff-count" id="aff-count"></div>
-    <div class="affinity-results" id="affinity-results"></div>
   </div>
 
   <h3>XP, Mastery, Fama &amp; PvP</h3>
@@ -7567,40 +7568,33 @@
 
     var affRaca = '', affClasse = '', affTipo = '';
 
-    function affRender() {
-      var res = document.getElementById('affinity-results');
-      var countEl = document.getElementById('aff-count');
-      var raceInfo = document.getElementById('aff-race-info');
-      if (!res) return;
+    var TIPO_LABELS = {combate:'Combate', craft:'Craft', passivo:'Passivo', economico:'Econômico'};
 
-      if ((affRaca || affClasse) && raceInfo) {
-        var rm = affRaca ? RACES_META.find(function(x) { return x.nome === affRaca; }) : null;
-        var clsIcon = affClasse ? classIcon(affClasse) : '';
-        raceInfo.removeAttribute('hidden');
-        raceInfo.innerHTML =
-          '<div class="aff-loadout">'
-          + '<div class="aff-slot">'
-          + (rm
-              ? '<img src="' + rm.icon + '" alt=""><div><div class="aff-ri-name">' + rm.nome + '</div>'
-                + '<div class="aff-ri-afin"><em>' + rm.afin + '</em></div></div>'
-              : '<span class="aff-slot-empty">?</span><div class="aff-ri-afin">Escolha uma raça</div>')
-          + '</div>'
-          + '<span class="aff-x">×</span>'
-          + '<div class="aff-slot">'
-          + (affClasse
-              ? (clsIcon ? '<img src="' + clsIcon + '" alt="">' : '')
-                + '<div><div class="aff-ri-name">' + affClasse + '</div>'
-                + '<div class="aff-ri-afin"><em>Classe selecionada</em></div></div>'
-              : '<span class="aff-slot-empty">?</span><div class="aff-ri-afin">Escolha uma classe</div>')
-          + '</div>'
-          + '</div>';
-      } else if (raceInfo) {
-        raceInfo.setAttribute('hidden', '');
-      }
+    function affSetStatus(id, text, selected) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = text;
+      el.classList.toggle('has-sel', !!selected);
+    }
+
+    function affHeroSlot(icon, name, sub) {
+      return '<div class="aff-hero-slot">'
+        + (icon ? '<img src="' + icon + '" alt="">' : '<span class="aff-slot-empty">?</span>')
+        + '<div class="aff-hero-name">' + name + '</div>'
+        + '<div class="aff-hero-sub">' + sub + '</div>'
+        + '</div>';
+    }
+
+    function affRender() {
+      var hero = document.getElementById('aff-hero');
+      if (!hero) return;
+
+      affSetStatus('aff-raca-status',   affRaca   ? affRaca + ' ✓'   : RACES_META.length + ' raças', affRaca);
+      affSetStatus('aff-classe-status', affClasse ? affClasse + ' ✓' : affClasseTotal + ' opções · busca', affClasse);
+      affSetStatus('aff-tipo-status',   affTipo   ? TIPO_LABELS[affTipo] + ' ✓' : 'a definir', affTipo);
 
       if (!affRaca && !affClasse && !affTipo) {
-        if (countEl) countEl.textContent = '';
-        res.innerHTML = '<p class="aff-empty">Selecione uma raça, classe ou tipo para ver os alinhamentos.</p>';
+        hero.innerHTML = '<p class="aff-empty">Selecione raça, classe ou tipo para ver a sinergia resultante.</p>';
         return;
       }
 
@@ -7610,23 +7604,44 @@
           && (!affTipo || r.tipo === affTipo);
       });
 
-      if (countEl) countEl.textContent = rows.length + ' alinhamento' + (rows.length !== 1 ? 's' : '');
+      var rm = affRaca ? RACES_META.find(function(x) { return x.nome === affRaca; }) : null;
+      var showCtx = !(affRaca && affClasse);
+
+      var html = '<div class="aff-hero-title">Sinergia resultante</div>'
+        + '<div class="aff-hero-slots">'
+        + (rm
+            ? affHeroSlot(rm.icon, rm.nome, rm.afin)
+            : affHeroSlot('', 'Raça', 'Escolha uma raça'))
+        + '<span class="aff-x">×</span>'
+        + (affClasse
+            ? affHeroSlot(classIcon(affClasse), affClasse, 'Classe selecionada')
+            : affHeroSlot('', 'Classe', 'Escolha uma classe'))
+        + '</div>'
+        + '<div class="aff-hero-count">' + rows.length + ' alinhamento' + (rows.length !== 1 ? 's' : '') + ' documentado' + (rows.length !== 1 ? 's' : '') + '</div>'
+        + '<hr class="aff-hero-divider">';
 
       if (!rows.length) {
-        res.innerHTML = '<p class="aff-empty">Nenhum alinhamento documentado para essa combinação.</p>';
-        return;
+        html += '<p class="aff-empty">Nenhum alinhamento documentado para essa combinação.</p>';
+      } else {
+        html += rows.map(function(r) {
+          var ic = classIcon(r.classe);
+          var pleno = r.classe !== 'Qualquer';
+          return '<div class="aff-syn" data-tipo="' + (r.tipo || '') + '">'
+            + (showCtx
+                ? '<div class="aff-syn-ctx">' + r.raca + ' · '
+                  + (ic ? '<img src="' + ic + '" alt="" loading="lazy">' : '') + r.classe + '</div>'
+                : '')
+            + '<div class="aff-syn-label">Faz</div>'
+            + '<div class="aff-syn-faz">' + r.acao + '</div>'
+            + '<div class="aff-syn-res-label">↓ resulta em</div>'
+            + '<div class="aff-syn-res">' + r.resultado + '</div>'
+            + '<div class="aff-syn-meter"><span class="aff-syn-meter-label">Alinhamento</span>'
+            + '<span class="aff-syn-bar"><i style="width:' + (pleno ? 100 : 55) + '%"></i></span></div>'
+            + '</div>';
+        }).join('');
       }
-      res.innerHTML = rows.map(function(r) {
-        var ic = classIcon(r.classe);
-        return '<div class="aff-result-row" data-tipo="' + (r.tipo || '') + '">'
-          + '<span class="aff-col aff-raca">' + r.raca + '</span>'
-          + '<span class="aff-col aff-classe">'
-          + (ic ? '<img class="aff-row-icon" src="' + ic + '" alt="" loading="lazy">' : '')
-          + r.classe + '</span>'
-          + '<span class="aff-col aff-acao">' + r.acao + '</span>'
-          + '<span class="aff-col aff-result">' + r.resultado + '</span>'
-          + '</div>';
-      }).join('');
+
+      hero.innerHTML = html;
     }
 
     function affMakePills(el, items, getVal, setVal) {
@@ -7666,6 +7681,7 @@
     var racaEl  = document.getElementById('aff-raca-pills');
     var classeEl = document.getElementById('aff-classe-pills');
     var tipoEl  = document.getElementById('aff-tipo-pills');
+    var affClasseTotal = 0;
     if (racaEl && classeEl) {
       var seen = {}, racas = [], classes = [];
       AFFINITIES.forEach(function(r) {
@@ -7680,8 +7696,18 @@
         }
       });
       classes.sort(function(a, b) { return a.label.localeCompare(b.label, 'pt'); });
+      affClasseTotal = classes.length;
       affMakePills(racaEl,   racas,   function() { return affRaca;   }, function(v) { affRaca   = v; });
       affMakePills(classeEl, classes, function() { return affClasse; }, function(v) { affClasse = v; });
+      var searchEl = document.getElementById('aff-classe-search');
+      if (searchEl) {
+        searchEl.addEventListener('input', function() {
+          var q = searchEl.value.trim().toLowerCase();
+          classeEl.querySelectorAll('.aff-pill').forEach(function(b) {
+            b.style.display = (!q || b.dataset.val.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
+          });
+        });
+      }
       affMakePills(tipoEl, [
         {val:'combate',   label:'Combate',   icon:'concepts/classes/treated/combate_white.png'},
         {val:'craft',     label:'Craft',     icon:'concepts/classes/treated/artesao_white.png'},
