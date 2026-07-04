@@ -36,6 +36,10 @@
   <a class="hero-scroll" href="#lore" aria-label="Rolar para o conteúdo"></a>
 </header>
 
+<button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
+<div class="nav-scrim" hidden></div>
 <nav class="toc-nav" aria-label="Navegação">
   <div class="toc-inner">
     <a class="toc-brand" href="#">Asteroth</a>
@@ -7735,6 +7739,29 @@
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.hidden) close();
+  });
+})();
+
+// Sidebar nav toggle (mobile)
+(function() {
+  var nav = document.querySelector('.toc-nav');
+  var toggle = document.querySelector('.nav-toggle');
+  var scrim = document.querySelector('.nav-scrim');
+  if (!nav || !toggle) return;
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    if (scrim) scrim.hidden = !open;
+  }
+  toggle.addEventListener('click', function() { setOpen(!nav.classList.contains('open')); });
+  if (scrim) scrim.addEventListener('click', function() { setOpen(false); });
+  nav.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() { setOpen(false); });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') setOpen(false);
   });
 })();
 </script>

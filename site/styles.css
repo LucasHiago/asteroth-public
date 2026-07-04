@@ -245,57 +245,65 @@ strong { color: var(--text); font-weight: 600; }
 }
 
 /* =========================
-   TOC NAV
+   TOC NAV · sidebar fixa
    ========================= */
 
+body {
+  padding-left: 212px;
+}
+
 .toc-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  bottom: 0;
+  width: 212px;
   z-index: 100;
-  background: rgba(10,10,13,0.92);
+  background: rgba(10,10,13,0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .toc-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0.85rem 1.5rem;
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
+  padding: 1.5rem 1rem;
 }
 
 .toc-brand {
   font-family: var(--serif);
   font-weight: 900;
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold-soft) !important;
   border-bottom: none !important;
-  margin-right: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.9rem;
 }
 
 .toc-nav a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.55rem;
   font-family: var(--sans);
   font-weight: 500;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text-soft);
-  padding: 0.35rem 0;
-  border-bottom: 1px solid transparent;
+  padding: 0.5rem 0.6rem;
+  border-radius: 4px;
+  border-left: 2px solid transparent;
 }
 .toc-nav a svg {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
   stroke-width: 2;
   opacity: 0.75;
@@ -305,7 +313,61 @@ strong { color: var(--text); font-weight: 600; }
 
 .toc-nav a:hover {
   color: var(--text);
-  border-bottom-color: var(--accent);
+  background: rgba(255, 255, 255, 0.04);
+  border-left-color: var(--accent);
+}
+
+/* hambúrguer (mobile) */
+.nav-toggle {
+  display: none;
+  position: fixed;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 120;
+  width: 42px;
+  height: 42px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(10,10,13,0.92);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--gold-soft);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 99;
+}
+
+.nav-scrim[hidden] { display: none; }
+
+@media (max-width: 900px) {
+  body { padding-left: 0; }
+  .nav-toggle { display: flex; }
+  .toc-nav {
+    width: 240px;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+  .toc-nav.open { transform: translateX(0); }
+  .toc-inner { padding-top: 4.2rem; }
 }
 
 /* =========================
@@ -1900,8 +1962,8 @@ blockquote {
   padding: 1.4rem 1.5rem;
   min-height: 340px;
   position: sticky;
-  top: 80px;
-  max-height: calc(100vh - 100px);
+  top: 20px;
+  max-height: calc(100vh - 40px);
   overflow-y: auto;
   scrollbar-width: thin;
 }
@@ -2163,7 +2225,8 @@ blockquote {
 
 .toc-nav a.active {
   color: var(--text);
-  border-bottom-color: var(--accent);
+  background: rgba(255, 255, 255, 0.03);
+  border-left-color: var(--accent);
 }
 
 .changelog-hero {
@@ -2535,8 +2598,6 @@ blockquote {
 @media (max-width: 768px) {
   body { font-size: 16px; }
   .section { padding: 4rem 1.25rem; }
-  .toc-inner { gap: 1rem; padding: 0.75rem 1rem; }
-  .toc-nav a { font-size: 0.82rem; }
   .hero-content { padding: 2rem 1rem 4rem; }
 
   .boss-entry {
@@ -2567,8 +2628,6 @@ blockquote {
 
 @media (max-width: 480px) {
   h2 { font-size: 1.75rem; }
-  .toc-inner { gap: 0.85rem; }
-  .toc-nav a { font-size: 0.75rem; letter-spacing: 0.03em; }
   .contos-grid { grid-template-columns: 1fr; }
   .aff-panel-grid { grid-template-columns: repeat(3, 1fr); }
 
