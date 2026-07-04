@@ -1876,8 +1876,31 @@ blockquote {
 }
 
 .aff-panel:not(.collapsed) .aff-pill--icon {
-  background: var(--bg-card);
-  border-color: rgba(0, 0, 0, 0.35);
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+.aff-panel:not(.collapsed) .aff-pill--icon img {
+  filter: invert(1);
+  opacity: 0.75;
+}
+
+.aff-panel:not(.collapsed) .aff-pill--icon span {
+  color: #14100a;
+}
+
+.aff-panel:not(.collapsed) .aff-pill--icon:hover img {
+  opacity: 1;
+}
+
+.aff-panel:not(.collapsed) .aff-pill--icon.active {
+  border-color: #14100a;
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: none;
+}
+
+.aff-panel:not(.collapsed) .aff-pill--icon.active img {
+  opacity: 1;
 }
 
 .aff-panel-head > span:first-child {
