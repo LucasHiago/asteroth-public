@@ -7683,10 +7683,10 @@
       affMakePills(racaEl,   racas,   function() { return affRaca;   }, function(v) { affRaca   = v; });
       affMakePills(classeEl, classes, function() { return affClasse; }, function(v) { affClasse = v; });
       affMakePills(tipoEl, [
-        {val:'combate',   label:'⚔️ Combate'},
-        {val:'craft',     label:'🔨 Craft'},
-        {val:'passivo',   label:'✨ Passivo'},
-        {val:'economico', label:'💰 Econômico'},
+        {val:'combate',   label:'Combate',   icon:'concepts/classes/treated/combate_white.png'},
+        {val:'craft',     label:'Craft',     icon:'concepts/classes/treated/artesao_white.png'},
+        {val:'passivo',   label:'Passivo',   icon:'concepts/classes/treated/runnics_white.png'},
+        {val:'economico', label:'Econômico', icon:'concepts/classes/treated/mercador_white.png'},
       ], function() { return affTipo; }, function(v) { affTipo = v; });
       affRender();
     }
