@@ -2988,6 +2988,37 @@ blockquote {
   }
 }
 
+@media (max-width: 560px) {
+  .prog-grid--4 {
+    grid-template-columns: 1fr;
+  }
+  /* escala vira chips que quebram linha em vez de trilho scrollável */
+  .prog-scale {
+    overflow-x: visible;
+  }
+  .prog-scale-track {
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.55rem 1rem;
+    padding-top: 0;
+  }
+  .prog-scale-track::before {
+    display: none;
+  }
+  .prog-scale-mark {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .prog-scale-mark b {
+    transform: none;
+  }
+  .prog-split-seg {
+    font-size: 0.6rem;
+  }
+}
+
 /* =========================
    GAMEPLAY · seletor de mecânicas
    ========================= */
