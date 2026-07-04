@@ -1815,19 +1815,23 @@ blockquote {
 
 .aff-panel-head {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: 0.6rem;
   margin-bottom: 0.65rem;
   cursor: pointer;
   user-select: none;
 }
 
-.aff-panel-head::after {
-  content: "▾";
-  font-size: 0.7rem;
-  color: var(--gold-soft);
+.aff-panel-head > span:first-child {
+  margin-right: auto;
+}
+
+.aff-panel-chevron {
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
+  stroke-width: 2.2;
+  color: var(--gold-soft);
   transition: transform 0.2s;
 }
 
@@ -1835,13 +1839,45 @@ blockquote {
   margin-bottom: 0;
 }
 
-.aff-panel.collapsed .aff-panel-head::after {
+.aff-panel.collapsed .aff-panel-chevron {
   transform: rotate(-90deg);
 }
 
 .aff-panel.collapsed .aff-panel-grid,
 .aff-panel.collapsed .aff-search {
   display: none;
+}
+
+/* painel expandido — fundo dourado, título e status pretos */
+.aff-panel:not(.collapsed) {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.aff-panel:not(.collapsed) .aff-panel-head > span:first-child,
+.aff-panel:not(.collapsed) .aff-panel-status,
+.aff-panel:not(.collapsed) .aff-panel-status.has-sel,
+.aff-panel:not(.collapsed) .aff-panel-chevron {
+  color: #14100a;
+}
+
+.aff-panel:not(.collapsed) .aff-search {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.3);
+  color: #14100a;
+}
+
+.aff-panel:not(.collapsed) .aff-search::placeholder {
+  color: rgba(20, 16, 10, 0.55);
+}
+
+.aff-panel:not(.collapsed) .aff-search:focus {
+  border-color: rgba(0, 0, 0, 0.55);
+}
+
+.aff-panel:not(.collapsed) .aff-pill--icon {
+  background: var(--bg-card);
+  border-color: rgba(0, 0, 0, 0.35);
 }
 
 .aff-panel-head > span:first-child {

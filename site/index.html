@@ -7003,16 +7003,16 @@
     <div class="aff-layout">
       <div class="aff-side">
         <div class="aff-panel">
-          <div class="aff-panel-head"><span>Raça</span><span class="aff-panel-status" id="aff-raca-status"></span></div>
+          <div class="aff-panel-head"><span>Raça</span><span class="aff-panel-status" id="aff-raca-status"></span><i data-lucide="chevron-down" class="aff-panel-chevron"></i></div>
           <div class="aff-panel-grid" id="aff-raca-pills"></div>
         </div>
-        <div class="aff-panel">
-          <div class="aff-panel-head"><span>Classe</span><span class="aff-panel-status" id="aff-classe-status"></span></div>
+        <div class="aff-panel collapsed">
+          <div class="aff-panel-head"><span>Classe</span><span class="aff-panel-status" id="aff-classe-status"></span><i data-lucide="chevron-down" class="aff-panel-chevron"></i></div>
           <input class="aff-search" id="aff-classe-search" type="text" placeholder="Buscar classe...">
           <div class="aff-panel-grid aff-panel-grid--scroll" id="aff-classe-pills"></div>
         </div>
-        <div class="aff-panel">
-          <div class="aff-panel-head"><span>Tipo</span><span class="aff-panel-status" id="aff-tipo-status"></span></div>
+        <div class="aff-panel collapsed">
+          <div class="aff-panel-head"><span>Tipo</span><span class="aff-panel-status" id="aff-tipo-status"></span><i data-lucide="chevron-down" class="aff-panel-chevron"></i></div>
           <div class="aff-panel-grid" id="aff-tipo-pills"></div>
         </div>
       </div>
@@ -7715,10 +7715,15 @@
           });
         });
       }
-      document.querySelectorAll('.aff-panel-head').forEach(function(head) {
+      var affPanels = document.querySelectorAll('.aff-panel');
+      affPanels.forEach(function(panel) {
+        var head = panel.querySelector('.aff-panel-head');
+        if (!head) return;
         head.addEventListener('click', function(e) {
           if (e.target.tagName === 'INPUT') return;
-          head.parentElement.classList.toggle('collapsed');
+          var willOpen = panel.classList.contains('collapsed');
+          affPanels.forEach(function(p) { p.classList.add('collapsed'); });
+          if (willOpen) panel.classList.remove('collapsed');
         });
       });
       affMakePills(tipoEl, [
@@ -7773,6 +7778,8 @@
     if (e.key === 'Escape') setOpen(false);
   });
 })();
+
+if (window.lucide) window.lucide.createIcons();
 </script>
 
 </body>
