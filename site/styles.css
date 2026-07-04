@@ -2356,15 +2356,13 @@ blockquote {
 .prog-art {
   display: block;
   width: 100%;
-  object-fit: cover;
-  background: #000;
+  object-fit: contain;
 }
 
 .prog-art--hero {
   height: 100%;
   min-height: 280px;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
 }
 
 .prog-card .prog-art {
@@ -2376,7 +2374,6 @@ blockquote {
   height: 100%;
   min-height: 200px;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
 }
 
 .prog-grid {
@@ -2787,6 +2784,12 @@ blockquote {
 .prog-gain-grid .prog-ph {
   min-height: 80px;
   padding: 1rem;
+}
+
+.prog-gain-grid .prog-art {
+  height: 120px;
+  object-fit: contain;
+  padding: 0.7rem;
 }
 
 .prog-gain-grid .prog-card-title {
