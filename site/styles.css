@@ -2370,6 +2370,12 @@ blockquote {
   border-bottom: 1px solid var(--border);
 }
 
+.prog-card .prog-art--coin {
+  height: 140px;
+  object-fit: contain;
+  padding: 0.9rem;
+}
+
 .prog-art--wide {
   height: 100%;
   min-height: 200px;
