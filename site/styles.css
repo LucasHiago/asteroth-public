@@ -1819,6 +1819,29 @@ blockquote {
   align-items: baseline;
   gap: 0.6rem;
   margin-bottom: 0.65rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.aff-panel-head::after {
+  content: "▾";
+  font-size: 0.7rem;
+  color: var(--gold-soft);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.aff-panel.collapsed .aff-panel-head {
+  margin-bottom: 0;
+}
+
+.aff-panel.collapsed .aff-panel-head::after {
+  transform: rotate(-90deg);
+}
+
+.aff-panel.collapsed .aff-panel-grid,
+.aff-panel.collapsed .aff-search {
+  display: none;
 }
 
 .aff-panel-head > span:first-child {
@@ -1952,6 +1975,16 @@ blockquote {
   font-size: 0.9rem;
   padding: 3rem 1.5rem;
   text-align: center;
+}
+
+.aff-empty-icon {
+  display: block;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 1.2rem;
+  opacity: 0.45;
+  filter: drop-shadow(0 0 14px rgba(201,169,110,0.35));
 }
 
 /* painel hero — sinergia resultante */

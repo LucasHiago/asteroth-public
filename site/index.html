@@ -7598,7 +7598,10 @@
       affSetStatus('aff-tipo-status',   affTipo   ? TIPO_LABELS[affTipo] + ' ✓' : 'a definir', affTipo);
 
       if (!affRaca && !affClasse && !affTipo) {
-        hero.innerHTML = '<p class="aff-empty">Selecione raça, classe ou tipo para ver a sinergia resultante.</p>';
+        hero.innerHTML = '<div class="aff-empty">'
+          + '<img class="aff-empty-icon" src="concepts/assets/classes_white.png" alt="" loading="lazy">'
+          + '<p>Selecione raça, classe ou tipo para ver a sinergia resultante.</p>'
+          + '</div>';
         return;
       }
 
@@ -7712,6 +7715,12 @@
           });
         });
       }
+      document.querySelectorAll('.aff-panel-head').forEach(function(head) {
+        head.addEventListener('click', function(e) {
+          if (e.target.tagName === 'INPUT') return;
+          head.parentElement.classList.toggle('collapsed');
+        });
+      });
       affMakePills(tipoEl, [
         {val:'combate',   label:'Combate',   icon:'concepts/classes/treated/combate_white.png'},
         {val:'craft',     label:'Craft',     icon:'concepts/classes/treated/artesao_white.png'},
