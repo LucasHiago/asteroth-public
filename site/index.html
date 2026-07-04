@@ -7398,21 +7398,40 @@
   // Affinity interactive selector
   (function() {
     var RACES_META = [
-      {nome:'Humano',       icon:'🧑', afin:'Engenhosidade, fusão de materiais'},
-      {nome:'Anão',         icon:'⛏️', afin:'Forja / construção / artesão'},
-      {nome:'Elfo',         icon:'🏹', afin:'Visão de alcance / mira'},
-      {nome:'Dark Elf',     icon:'🌑', afin:'Visão noturna / reconhecimento no escuro'},
-      {nome:'Orc',          icon:'🗡️', afin:'Força bruta / caça'},
-      {nome:'Orc de Sangue',icon:'🩸', afin:'Roubo de vida inato'},
-      {nome:'Halfling',     icon:'🎯', afin:'Ladino / reconhecimento de armadilhas'},
-      {nome:'Demônio',      icon:'🔮', afin:'Aptidão em magia, menor cooldown'},
-      {nome:'Necro',        icon:'💀', afin:'Itens rúnicos são fortificados'},
-      {nome:'Phibens',      icon:'🐸', afin:'Respiração aquática'},
-      {nome:'Beasts',       icon:'🐾', afin:'Agilidade incomum'},
-      {nome:'Runnics',      icon:'🔷', afin:'Entalham runas em si mesmos'},
-      {nome:'Hunters',      icon:'🦅', afin:'Controlam mobs e animais raros'},
-      {nome:'Nephilins',    icon:'👼', afin:'Voo + cura inferior inata'},
+      {nome:'Humano',       icon:'concepts/classes/treated/human_white.png',         afin:'Engenhosidade, fusão de materiais'},
+      {nome:'Anão',         icon:'concepts/classes/treated/anao_white.png',          afin:'Forja / construção / artesão'},
+      {nome:'Elfo',         icon:'concepts/classes/treated/elfo_white.png',          afin:'Visão de alcance / mira'},
+      {nome:'Dark Elf',     icon:'concepts/classes/treated/dark_elfo_white.png',     afin:'Visão noturna / reconhecimento no escuro'},
+      {nome:'Orc',          icon:'concepts/classes/treated/orc_white.png',           afin:'Força bruta / caça'},
+      {nome:'Orc de Sangue',icon:'concepts/classes/treated/orc_de_sangue_white.png', afin:'Roubo de vida inato'},
+      {nome:'Halfling',     icon:'concepts/classes/treated/halfling_white.png',      afin:'Ladino / reconhecimento de armadilhas'},
+      {nome:'Demônio',      icon:'concepts/classes/treated/demonio_white.png',       afin:'Aptidão em magia, menor cooldown'},
+      {nome:'Necro',        icon:'concepts/classes/treated/necro_white.png',         afin:'Itens rúnicos são fortificados'},
+      {nome:'Phibens',      icon:'concepts/classes/treated/phibens_white.png',       afin:'Respiração aquática'},
+      {nome:'Beasts',       icon:'concepts/classes/treated/beasts_white.png',        afin:'Agilidade incomum'},
+      {nome:'Runnics',      icon:'concepts/classes/treated/runnics_white.png',       afin:'Entalham runas em si mesmos'},
+      {nome:'Hunters',      icon:'concepts/classes/treated/hunters_white.png',       afin:'Controlam mobs e animais raros'},
+      {nome:'Nephilins',    icon:'concepts/classes/treated/nephilins_white.png',     afin:'Voo + cura inferior inata'},
     ];
+
+    var CLASS_ICONS = {
+      'Açougueiro':'acougueiro', 'Alquimista':'alquimista', 'Arqueiro':'arqueiro',
+      'Arquiteto':'arquiteto', 'Artesão':'artesao_classe', 'Bardo':'bardo',
+      'Boticário':'mago_boticario', 'Bucaneiro':'bucaneiro', 'Caçador':'cacador',
+      'Cartesiano':'cartesiano', 'Cervejeiro':'cervejeiro', 'Clown':'clown',
+      'Cozinheiro':'cozinheiro', 'Curtidor':'curtidor', 'Dark Mage':'dark_mago',
+      'Dragon Born':'dragon_born', 'Druid':'mago_druida', 'Elemental':'mago_fogo',
+      'Ferreiro':'ferreiro', 'Fundidor':'fundidor', 'Guerreiro':'guerreiro',
+      'Hunter':'hunter_combate', 'Joker':'joker', 'Ladino':'ladino',
+      'Lenhador':'lenhador', 'Mago':'mago', 'Mago Elemental':'mago_raio',
+      'Mensageiro':'mensageiro', 'Mercador':'mercador', 'Minerador':'minerador',
+      'Necromante':'necromante', 'Pantheon':'pantheon', 'Pescador':'pescador',
+      'Pirata':'pirata', 'Rogue (sub-mago)':'mago_vampiro', 'Sacerdote':'mago_sacerdote',
+      'Sieger':'sieger', 'Sorcerer':'mago_agua', 'Tank':'tank'
+    };
+    function classIcon(cls) {
+      return CLASS_ICONS[cls] ? 'concepts/classes/treated/' + CLASS_ICONS[cls] + '_white.png' : '';
+    }
 
     var AFFINITIES = [
       // ── HUMANO ──────────────────────────────────────────────────────
@@ -7554,14 +7573,27 @@
       var raceInfo = document.getElementById('aff-race-info');
       if (!res) return;
 
-      if (affRaca && raceInfo) {
-        var rm = RACES_META.find(function(x) { return x.nome === affRaca; });
-        if (rm) {
-          raceInfo.removeAttribute('hidden');
-          raceInfo.innerHTML = '<span class="aff-ri-icon">' + rm.icon + '</span>'
-            + '<div><div class="aff-ri-name">' + rm.nome + '</div>'
-            + '<div class="aff-ri-afin">Afinidade inata: <em>' + rm.afin + '</em></div></div>';
-        }
+      if ((affRaca || affClasse) && raceInfo) {
+        var rm = affRaca ? RACES_META.find(function(x) { return x.nome === affRaca; }) : null;
+        var clsIcon = affClasse ? classIcon(affClasse) : '';
+        raceInfo.removeAttribute('hidden');
+        raceInfo.innerHTML =
+          '<div class="aff-loadout">'
+          + '<div class="aff-slot">'
+          + (rm
+              ? '<img src="' + rm.icon + '" alt=""><div><div class="aff-ri-name">' + rm.nome + '</div>'
+                + '<div class="aff-ri-afin"><em>' + rm.afin + '</em></div></div>'
+              : '<span class="aff-slot-empty">?</span><div class="aff-ri-afin">Escolha uma raça</div>')
+          + '</div>'
+          + '<span class="aff-x">×</span>'
+          + '<div class="aff-slot">'
+          + (affClasse
+              ? (clsIcon ? '<img src="' + clsIcon + '" alt="">' : '')
+                + '<div><div class="aff-ri-name">' + affClasse + '</div>'
+                + '<div class="aff-ri-afin"><em>Classe selecionada</em></div></div>'
+              : '<span class="aff-slot-empty">?</span><div class="aff-ri-afin">Escolha uma classe</div>')
+          + '</div>'
+          + '</div>';
       } else if (raceInfo) {
         raceInfo.setAttribute('hidden', '');
       }
@@ -7585,9 +7617,12 @@
         return;
       }
       res.innerHTML = rows.map(function(r) {
+        var ic = classIcon(r.classe);
         return '<div class="aff-result-row" data-tipo="' + (r.tipo || '') + '">'
           + '<span class="aff-col aff-raca">' + r.raca + '</span>'
-          + '<span class="aff-col aff-classe">' + r.classe + '</span>'
+          + '<span class="aff-col aff-classe">'
+          + (ic ? '<img class="aff-row-icon" src="' + ic + '" alt="" loading="lazy">' : '')
+          + r.classe + '</span>'
           + '<span class="aff-col aff-acao">' + r.acao + '</span>'
           + '<span class="aff-col aff-result">' + r.resultado + '</span>'
           + '</div>';
@@ -7599,9 +7634,21 @@
       items.forEach(function(item) {
         var val   = typeof item === 'object' ? item.val   : item;
         var label = typeof item === 'object' ? item.label : (item || 'Todas');
+        var icon  = typeof item === 'object' ? item.icon  : '';
         var btn = document.createElement('button');
-        btn.className = 'aff-pill';
-        btn.textContent = label;
+        btn.className = icon ? 'aff-pill aff-pill--icon' : 'aff-pill';
+        if (icon) {
+          var img = document.createElement('img');
+          img.src = icon;
+          img.alt = '';
+          img.loading = 'lazy';
+          var sp = document.createElement('span');
+          sp.textContent = label;
+          btn.appendChild(img);
+          btn.appendChild(sp);
+        } else {
+          btn.textContent = label;
+        }
         btn.dataset.val = val;
         if (val === getVal()) btn.classList.add('active');
         btn.addEventListener('click', function() {
@@ -7622,9 +7669,17 @@
     if (racaEl && classeEl) {
       var seen = {}, racas = [], classes = [];
       AFFINITIES.forEach(function(r) {
-        if (!seen['r:' + r.raca])   { seen['r:' + r.raca] = 1; racas.push({val: r.raca, label: r.raca}); }
-        if (r.classe !== 'Qualquer' && !seen['c:' + r.classe]) { seen['c:' + r.classe] = 1; classes.push({val: r.classe, label: r.classe}); }
+        if (!seen['r:' + r.raca]) {
+          seen['r:' + r.raca] = 1;
+          var rm = RACES_META.find(function(x) { return x.nome === r.raca; });
+          racas.push({val: r.raca, label: r.raca, icon: rm ? rm.icon : ''});
+        }
+        if (r.classe !== 'Qualquer' && !seen['c:' + r.classe]) {
+          seen['c:' + r.classe] = 1;
+          classes.push({val: r.classe, label: r.classe, icon: classIcon(r.classe)});
+        }
       });
+      classes.sort(function(a, b) { return a.label.localeCompare(b.label, 'pt'); });
       affMakePills(racaEl,   racas,   function() { return affRaca;   }, function(v) { affRaca   = v; });
       affMakePills(classeEl, classes, function() { return affClasse; }, function(v) { affClasse = v; });
       affMakePills(tipoEl, [
