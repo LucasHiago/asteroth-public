@@ -1041,6 +1041,18 @@ blockquote {
   font-weight: 400;
 }
 
+/* filtros do bestiário — dois selects lado a lado */
+.mob-filters {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.mob-filters .ic-filter { margin-bottom: 0; }
+.itens-grid .item-card[hidden] { display: none; }
+
 /* sections de itens */
 .ic-section { display: block; }
 .ic-section[hidden] { display: none; }
