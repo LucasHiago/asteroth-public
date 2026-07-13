@@ -8,6 +8,9 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+- **Bestiário — fundo e estado inicial dos filtros**: seção sem o fundo alternado escuro (`section-alt` removido — ficava estranho entre Itens e Gameplay); filtros abrem pré-marcados com **todos os domínios** e **as 3 primeiras patentes** (Governante, Marechal, General) — o grid começa mostrando os 28 líderes dos exércitos em vez das 326 criaturas de uma vez.
+
 ### Added
 - **Bestiário COMPLETO (326/326)**: todas as 316 criaturas restantes reveladas de uma vez — os sete exércitos completos (Vulcânico, Pântano, Necrópole, Tundra, Deserto, Picos, Floresta: 37 criaturas cada, do Governante aos mini mobs), Fauna Livre (61: animais comuns, aves, grande porte, marinhos e famílias raras) e Slimes (6); cada criatura com descrição longa em 2 parágrafos no tom de bestiário antigo; contador vira "326 de 326 · bestiário completo", kicker e rodapé da seção atualizados; 316 imagens copiadas pra `concepts/mobs/<domínio>/`; o runbook de levas (`scripts/RUNBOOK_bestiario_levas.md`) fica obsoleto — mantido só como registro.
 - **Bestiário: seção nova + leva 1 (10/326)**: nova seção "O Bestiário" no site, no mesmo padrão do Compêndio de Itens — contador de criaturas reveladas, grid de cards com modal papiro e **dois filtros multi-select** (Domínio e Patente); leva 1 abre o capítulo Domínio Vulcânico com 10 criaturas: Ignarok, o Devorador de Cinzas (Governante), Pyrrhax, a Asa-de-Forja (Marechal), Calderath, o Uivo da Cratera e Magmor, o Coração Basáltico (Generais), Cinzarra, Vulkhan, Fornalha e Ashveil (Grand Monsters), Brasúrio e Cinerax (Mini Bosses); link "Bestiário" no menu de navegação; runbook das levas em [`scripts/RUNBOOK_bestiario_levas.md`](scripts/RUNBOOK_bestiario_levas.md).

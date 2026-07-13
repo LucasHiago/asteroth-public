@@ -6819,7 +6819,7 @@
 </section>
 
 <!-- BESTIÁRIO -->
-<section id="bestiario" class="section section-alt">
+<section id="bestiario" class="section">
   <div class="section-head">
     <h2>O Bestiário</h2>
     <p class="kicker">Trezentas e vinte e seis criaturas catalogadas, entre os exércitos dos sete governantes e a fauna livre do mundo. Dos governantes que ninguém enfrentou e sobrou para contar até a caça miúda das estradas — o bestiário completo, registrado pelos caçadores que voltaram.</p>
@@ -7186,11 +7186,14 @@
       });
     }
 
-    function makeFilter(attr, icon, allLabel, plural, order, labelMap) {
+    function makeFilter(attr, icon, allLabel, plural, order, labelMap, preSelected) {
       var values = [];
       order.forEach(function(v) {
         var n = cards.filter(function(c) { return c.dataset[attr] === v; }).length;
         if (n) values.push({ value: v, count: n });
+      });
+      preSelected = (preSelected || []).filter(function(v) {
+        return values.some(function(x) { return x.value === v; });
       });
 
       var root = document.createElement('div');
@@ -7221,7 +7224,7 @@
       allOpt.className = 'ic-option ic-option-all';
       var allCb = document.createElement('input');
       allCb.type = 'checkbox';
-      allCb.checked = true;
+      allCb.checked = !preSelected.length;
       var allSp = document.createElement('span');
       allSp.textContent = 'Todos';
       var allCnt = document.createElement('span');
@@ -7238,7 +7241,7 @@
         opt.className = 'ic-option';
         var cb = document.createElement('input');
         cb.type = 'checkbox';
-        cb.checked = false;
+        cb.checked = preSelected.indexOf(v.value) !== -1;
         var sp = document.createElement('span');
         sp.textContent = labelMap[v.value] || v.value;
         var cnt = document.createElement('span');
@@ -7262,7 +7265,7 @@
 
       function updateLabel() {
         var sel = selected();
-        if (sel.length === 0 || allCb.checked) {
+        if (sel.length === 0 || allCb.checked || sel.length === values.length) {
           lbl.textContent = allLabel;
         } else if (sel.length === 1) {
           lbl.textContent = labelMap[sel[0]] || sel[0];
@@ -7307,11 +7310,12 @@
       });
       panel.addEventListener('click', function(e) { e.stopPropagation(); });
 
+      updateLabel();
       return filter;
     }
 
-    filters.push(makeFilter('domain', 'mountain', 'Todos os domínios', 'domínios', DOMAIN_ORDER, DOMAIN_LABEL));
-    filters.push(makeFilter('rank', 'crown', 'Todas as patentes', 'patentes', RANK_ORDER, RANK_LABEL));
+    filters.push(makeFilter('domain', 'mountain', 'Todos os domínios', 'domínios', DOMAIN_ORDER, DOMAIN_LABEL, DOMAIN_ORDER));
+    filters.push(makeFilter('rank', 'crown', 'Todas as patentes', 'patentes', RANK_ORDER, RANK_LABEL, RANK_ORDER.slice(0, 3)));
 
     document.addEventListener('click', function() { closeOthers(null); });
 
