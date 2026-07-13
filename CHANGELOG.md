@@ -9,6 +9,7 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- **PvP — arte no bloco de fogo amigo**: o ícone de silhueta branca (`fire-friendly_white.png`) deu lugar à ilustração cavaleiro × orc (`fight_cut.png`, 210px): recorte do fundo preto por flood-fill conectado à borda + remoção do bolsão interno de preto puro (script one-off; original preservado em `concepts/assets/fight.png`); glow vermelho mantido, agora acompanhando a silhueta dos personagens.
 - **changelog.html atualizado**: área "Lore e design público" reflete o Compêndio de Itens completo (517/517) e o Bestiário completo (326/326); nav da página ganha os links Itens e Bestiário, alinhado ao nav do index.
 - **Bestiário — fundo e estado inicial dos filtros**: seção sem o fundo alternado escuro (`section-alt` removido — ficava estranho entre Itens e Gameplay); filtros abrem pré-marcados com **todos os domínios** e **as 3 primeiras patentes** (Governante, Marechal, General) — o grid começa mostrando os 28 líderes dos exércitos em vez das 326 criaturas de uma vez.
 
