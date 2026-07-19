@@ -3946,12 +3946,14 @@ h3.prog-header-title {
 
 .forja-slot-wrap { text-align:center; }
 .forja-slot-cap { font-size:0.64rem; letter-spacing:0.16em; text-transform:uppercase; color:#8a7550; margin-bottom:0.5rem; }
-.forja-slot { width:112px; height:112px; margin:0 auto; border-radius:12px; border:2px solid var(--tc,rgba(122,95,48,.6)); background:rgba(20,14,9,.7); display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative; transition:all .15s; box-shadow:inset 0 0 24px rgba(0,0,0,.5); }
+.forja-slot { width:160px; height:160px; margin:0 auto; border-radius:12px; border:2px solid var(--tc,rgba(122,95,48,.6)); background:rgba(20,14,9,.7); display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative; transition:all .15s; box-shadow:inset 0 0 24px rgba(0,0,0,.5); }
 .forja-slot:hover { border-color:#e0a020; box-shadow:inset 0 0 24px rgba(0,0,0,.5), 0 0 16px rgba(224,160,32,.3); }
-.forja-slot img { width:82%; height:82%; object-fit:contain; filter:drop-shadow(0 3px 6px rgba(0,0,0,.6)); }
+.forja-slot img { object-fit:contain; filter:drop-shadow(0 3px 6px rgba(0,0,0,.6)); }
 .forja-slot .forja-slot-empty { color:#5a4a30; font-size:1.6rem; }
 .forja-item-name { margin-top:0.6rem; color:#f2e6ce; font-weight:600; font-size:0.9rem; }
-.forja-item-rarity { font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--tc,#e0a020); margin-top:0.15rem; }
+.forja-item-rarity { font-family:inherit; background:none; border:1px solid transparent; border-radius:6px; padding:0.14rem 0.45rem; margin-top:0.25rem; font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--tc,#e0a020); cursor:pointer; transition:all .12s; }
+.forja-item-rarity:hover { border-color:var(--tc,#e0a020); background:rgba(224,160,32,.08); }
+.forja-rarity-caret { opacity:.55; font-size:0.8em; margin-left:0.1em; }
 
 .forja-center { display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
 .forja-panels { display:flex; gap:1rem; width:100%; }
@@ -4002,11 +4004,17 @@ h3.prog-header-title {
 /* slot com moldura de tier */
 .forja-slot { position:relative; overflow:visible; background:rgba(20,14,9,.55); border:none; box-shadow:none; }
 .forja-slot:hover { box-shadow:0 0 16px rgba(224,160,32,.25); }
-.forja-frame { position:absolute; inset:-6px; width:calc(100% + 12px); height:calc(100% + 12px); object-fit:contain; pointer-events:none; }
-.forja-art { position:relative; z-index:1; width:64%; height:64%; object-fit:contain; filter:drop-shadow(0 3px 6px rgba(0,0,0,.6)); }
-.forja-roman { position:absolute; bottom:-2px; right:2px; z-index:2; font-size:0.7rem; font-weight:700; color:var(--tc,#e0a020); text-shadow:0 1px 3px #000; letter-spacing:0.03em; }
-.forja-stars { display:flex; gap:0.15rem; justify-content:center; margin-top:0.4rem; }
-.forja-star { width:15px; height:15px; }
+.forja-frame { position:absolute; inset:0; width:calc(100% + 12px); height:calc(100% + 12px); object-fit:contain; pointer-events:none; }
+.forja-art { position:relative; z-index:1; width:50%; height:50%; object-fit:contain; filter:drop-shadow(0 3px 6px rgba(0,0,0,.6));transform: translateY(6px); }
+.forja-slot img.forja-roman { position:absolute; top:17px; z-index:2; width:auto; height:8px; object-fit:contain; filter:drop-shadow(0 1px 2px #000); pointer-events:none; }
+.forja-stars { display:flex; gap:0.2rem; justify-content:center; margin-top:0.4rem; }
+.forja-star { width:17px; height:17px; cursor:pointer; transition:transform .1s; }
+.forja-star:hover { transform:scale(1.25); }
+.forja-hint { text-align:center; font-size:0.72rem; color:#8a7550; max-width:38rem; margin:0 auto 2rem; line-height:1.5; }
+.forja-opt-roman { padding:0.2rem 0; }
+.forja-opt-roman img { max-height:48px; width:auto; }
+.forja-opt-tier.on { border-color:var(--tc,#e0a020); box-shadow:0 0 12px rgba(224,160,32,.28); }
+.forja-opt-tier .forja-opt-name { color:var(--tc,#f2e6ce); }
 .forja-panel-ico { width:40px; height:40px; object-fit:contain; margin:0.4rem auto 0.1rem; display:block; }
 .forja-panel-skill { font-size:0.72rem; color:#cdb06a; margin-top:0.4rem; }
 .forja-setlevel { color:#e0a020; font-weight:600; }
