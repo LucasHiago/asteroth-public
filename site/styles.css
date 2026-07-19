@@ -3931,7 +3931,7 @@ h3.prog-header-title {
 /* ============================================================
    FORJA DE EQUIPAMENTO — builder de loadout (aba #forja)
    ============================================================ */
-#forja.forja { background: radial-gradient(120% 90% at 50% 0%, #241a12 0%, #16100b 60%, #0d0906 100%); }
+#forja.forja { background: radial-gradient(120% 90% at 50% 0%, #14141a 0%, var(--bg) 62%); }
 .forja-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.5rem; }
 .forja-title { display:flex; align-items:center; gap:0.9rem; }
 .forja-crest { font-size:2rem; filter:drop-shadow(0 0 8px rgba(224,160,32,.4)); }
