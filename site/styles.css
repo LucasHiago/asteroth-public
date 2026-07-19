@@ -3683,6 +3683,34 @@ h3.prog-header-title {
   letter-spacing: 0.01em;
 }
 
+/* bloco de habilidades do conjunto no modal papiro (aba Sets) */
+.set-skills {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(122, 95, 48, 0.4);
+}
+.set-skills-label {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7a5f30;
+  margin-bottom: 0.7rem;
+}
+.set-skill {
+  margin: 0 0 0.7rem;
+  line-height: 1.55;
+  color: #2b2113;
+}
+.set-skill b {
+  font-family: var(--fantasy-title);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: #241b0f;
+}
+
 /* =========================
    MODAL · o papiro
    o papiro inteiro é UMA imagem esticada na camada .scroll-solo-bg, irmã do
