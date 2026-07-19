@@ -3927,3 +3927,74 @@ h3.prog-header-title {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+/* ============================================================
+   FORJA DE EQUIPAMENTO — builder de loadout (aba #forja)
+   ============================================================ */
+#forja.forja { background: radial-gradient(120% 90% at 50% 0%, #241a12 0%, #16100b 60%, #0d0906 100%); }
+.forja-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.5rem; }
+.forja-title { display:flex; align-items:center; gap:0.9rem; }
+.forja-crest { font-size:2rem; filter:drop-shadow(0 0 8px rgba(224,160,32,.4)); }
+.forja-title h2 { margin:0; font-family:var(--fantasy-title,serif); letter-spacing:0.06em; color:#f2d9a8; }
+.forja-title .kicker { margin:0; font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; color:#a08a5c; }
+.forja-title .kicker { color:#a08a5c; }
+.forja-ready { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:#cdebc0; border:1px solid rgba(120,200,120,.35); background:rgba(40,70,40,.3); padding:0.6rem 1.1rem; border-radius:8px; }
+.forja-ready::before { content:'●'; color:#5cd65c; margin-right:0.5rem; }
+
+.forja-tier-bar { display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:center; margin-bottom:2rem; }
+.forja-tier { font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.4rem 0.7rem; border-radius:6px; border:1px solid rgba(122,95,48,.5); background:rgba(30,22,14,.6); color:#a08a5c; cursor:pointer; transition:all .15s; }
+.forja-tier:hover { border-color:#e0a020; color:#f2d9a8; }
+.forja-tier.on { border-color:var(--tc,#e0a020); color:#fff; background:color-mix(in srgb, var(--tc,#e0a020) 22%, transparent); box-shadow:0 0 12px color-mix(in srgb, var(--tc,#e0a020) 40%, transparent); }
+
+.forja-board { display:grid; grid-template-columns:1fr 1.4fr 1fr; gap:2rem; align-items:start; }
+.forja-col { display:flex; flex-direction:column; gap:1.4rem; }
+.forja-col-label, .forja-skills-label { display:block; text-align:center; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:#a08a5c; margin-bottom:0.3rem; position:relative; }
+.forja-col-label::before, .forja-col-label::after { content:''; position:absolute; top:50%; width:22%; height:1px; background:linear-gradient(90deg,transparent,rgba(160,138,92,.5)); }
+.forja-col-label::before { left:0; } .forja-col-label::after { right:0; transform:scaleX(-1); }
+
+.forja-slot-wrap { text-align:center; }
+.forja-slot-cap { font-size:0.64rem; letter-spacing:0.16em; text-transform:uppercase; color:#8a7550; margin-bottom:0.5rem; }
+.forja-slot { width:112px; height:112px; margin:0 auto; border-radius:12px; border:2px solid var(--tc,rgba(122,95,48,.6)); background:rgba(20,14,9,.7); display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative; transition:all .15s; box-shadow:inset 0 0 24px rgba(0,0,0,.5); }
+.forja-slot:hover { border-color:#e0a020; box-shadow:inset 0 0 24px rgba(0,0,0,.5), 0 0 16px rgba(224,160,32,.3); }
+.forja-slot img { width:82%; height:82%; object-fit:contain; filter:drop-shadow(0 3px 6px rgba(0,0,0,.6)); }
+.forja-slot .forja-slot-empty { color:#5a4a30; font-size:1.6rem; }
+.forja-item-name { margin-top:0.6rem; color:#f2e6ce; font-weight:600; font-size:0.9rem; }
+.forja-item-rarity { font-size:0.64rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--tc,#e0a020); margin-top:0.15rem; }
+
+.forja-center { display:flex; flex-direction:column; align-items:center; gap:1.5rem; }
+.forja-panels { display:flex; gap:1rem; width:100%; }
+.forja-panel { flex:1; border:1px solid rgba(122,95,48,.5); border-radius:10px; background:rgba(24,17,11,.6); padding:1rem; text-align:center; cursor:pointer; transition:all .15s; }
+.forja-panel:hover { border-color:#e0a020; }
+.forja-panel-cap { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:#8a7550; }
+.forja-panel-name { font-family:var(--fantasy-title,serif); font-size:1.35rem; color:#f2d9a8; margin:0.4rem 0 0.2rem; }
+.forja-panel-sub { font-size:0.75rem; font-style:italic; color:#9a855c; }
+.forja-hero { text-align:center; }
+.forja-hero-orb { width:220px; height:220px; margin:0 auto 1rem; border-radius:50%; border:1px solid rgba(160,138,92,.35); display:flex; align-items:center; justify-content:center; background:radial-gradient(circle,rgba(40,30,18,.9),rgba(14,9,6,.9)); box-shadow:inset 0 0 40px rgba(0,0,0,.7), 0 0 30px rgba(224,160,32,.12); font-size:3rem; }
+.forja-hero-name { font-family:var(--fantasy-title,serif); font-size:1.9rem; letter-spacing:0.05em; color:#f2d9a8; margin:0; }
+.forja-hero-sub { font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase; color:#9a855c; margin-top:0.4rem; }
+
+.forja-skills { margin-top:2.5rem; text-align:center; }
+.forja-skillbar { display:inline-flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; padding:1rem 1.2rem; border:1px solid rgba(122,95,48,.4); border-radius:12px; background:rgba(18,12,8,.6); margin-top:0.6rem; }
+.forja-skill { width:60px; height:60px; border-radius:8px; border:1px solid rgba(122,95,48,.55); background:rgba(24,17,11,.8); display:flex; align-items:center; justify-content:center; position:relative; }
+.forja-skill img { width:74%; height:74%; object-fit:contain; }
+.forja-skill.pas { border-color:rgba(90,200,210,.5); }
+.forja-skill .forja-skill-badge { position:absolute; top:2px; left:3px; font-size:0.5rem; color:#5ac8d2; letter-spacing:0.05em; }
+.forja-skill .forja-skill-num { position:absolute; bottom:1px; right:3px; font-size:0.6rem; color:#8a7550; }
+.forja-skill.empty { opacity:.4; }
+
+/* picker modal */
+.forja-picker { position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; }
+.forja-picker.open { display:flex; }
+.forja-picker-back { position:absolute; inset:0; background:rgba(6,4,2,.82); backdrop-filter:blur(3px); }
+.forja-picker-panel { position:relative; width:min(880px,92vw); max-height:82vh; overflow:auto; background:linear-gradient(160deg,#241a12,#16100b); border:1px solid rgba(122,95,48,.6); border-radius:14px; padding:1.6rem; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+.forja-picker-title { font-family:var(--fantasy-title,serif); color:#f2d9a8; margin:0 0 1rem; letter-spacing:0.06em; }
+.forja-picker-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:0.7rem; }
+.forja-opt { border:1px solid rgba(122,95,48,.4); border-radius:10px; background:rgba(20,14,9,.7); padding:0.8rem; cursor:pointer; text-align:center; transition:all .12s; }
+.forja-opt:hover { border-color:#e0a020; background:rgba(40,28,16,.7); }
+.forja-opt.on { border-color:#e0a020; box-shadow:0 0 12px rgba(224,160,32,.3); }
+.forja-opt-img { width:64px; height:64px; margin:0 auto 0.5rem; display:flex; align-items:center; justify-content:center; }
+.forja-opt-img img { max-width:100%; max-height:100%; object-fit:contain; filter:drop-shadow(0 2px 4px rgba(0,0,0,.5)); }
+.forja-opt-name { color:#f2e6ce; font-size:0.82rem; font-weight:600; }
+.forja-opt-desc { color:#9a855c; font-size:0.7rem; margin-top:0.25rem; line-height:1.35; }
+.forja-picker-x { position:absolute; top:1rem; right:1.1rem; background:none; border:none; color:#a08a5c; font-size:1.4rem; cursor:pointer; }
+@media (max-width:820px){ .forja-board{ grid-template-columns:1fr; } }
