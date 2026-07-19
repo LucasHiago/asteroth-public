@@ -3931,15 +3931,7 @@ h3.prog-header-title {
 /* ============================================================
    FORJA DE EQUIPAMENTO — builder de loadout (aba #forja)
    ============================================================ */
-#forja.forja { background: radial-gradient(120% 90% at 50% 0%, #14141a 0%, var(--bg) 62%); }
-.forja-head { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.5rem; }
-.forja-title { display:flex; align-items:center; gap:0.9rem; }
-.forja-crest { font-size:2rem; filter:drop-shadow(0 0 8px rgba(224,160,32,.4)); }
-.forja-title h2 { margin:0; font-family:var(--fantasy-title,serif); letter-spacing:0.06em; color:#f2d9a8; }
-.forja-title .kicker { margin:0; font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; color:#a08a5c; }
-.forja-title .kicker { color:#a08a5c; }
-.forja-ready { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:#cdebc0; border:1px solid rgba(120,200,120,.35); background:rgba(40,70,40,.3); padding:0.6rem 1.1rem; border-radius:8px; }
-.forja-ready::before { content:'●'; color:#5cd65c; margin-right:0.5rem; }
+/* header da Forja usa o .section-head padrão do site (h2 serif centralizado + kicker) */
 
 .forja-tier-bar { display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:center; margin-bottom:2rem; }
 .forja-tier { font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; padding:0.4rem 0.7rem; border-radius:6px; border:1px solid rgba(122,95,48,.5); background:rgba(30,22,14,.6); color:#a08a5c; cursor:pointer; transition:all .15s; }
