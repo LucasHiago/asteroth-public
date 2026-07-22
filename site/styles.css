@@ -11,7 +11,7 @@
   --border: #2a2a33;
   --text: #e8e8ea;
   --text-soft: #b0b0b8;
-  --text-mute: #777782;
+  --text-mute: #8f8f9a;
   --accent: #c01a1f;
   --accent-soft: #d54a4f;
   --gold: #c9a96e;
@@ -65,6 +65,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-bg { animation: none; }
+  .hero-video { display: none; }
+  .hero-bg--fallback { display: block; }
   .hero-scroll { animation: none; }
   .hero-status .pulse { animation: none; }
 }
@@ -101,6 +103,10 @@ strong { color: var(--text); font-weight: 600; }
   animation: hero-drift 38s ease-in-out infinite alternate;
   will-change: transform;
 }
+
+/* o vídeo já tem movimento de câmera próprio — não aplica o drift */
+video.hero-bg { animation: none; }
+.hero-bg--fallback { display: none; }
 
 @keyframes hero-drift {
   from { transform: scale(1); }
@@ -155,6 +161,20 @@ strong { color: var(--text); font-weight: 600; }
   padding: 0.45rem 1.1rem;
   margin-bottom: 2.5rem;
   clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.hero-release {
+  font-family: var(--fantasy-title);
+  font-weight: 400;
+  font-size: clamp(3.6rem, 9vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: 0.06em;
+  margin: 1.7rem 0 2.6rem;
+  background: linear-gradient(180deg, #ff5647 0%, #e11d22 50%, #a5121a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 3px 20px rgba(224, 28, 34, 0.5));
 }
 
 .hero-status .pulse {
@@ -484,7 +504,7 @@ ul li, ol li {
 }
 
 blockquote {
-  border-left: 3px solid var(--accent);
+  border-left: 2px solid rgba(213, 74, 79, 0.5);
   padding: 0.5rem 1.5rem;
   margin: 1.5rem 0;
   font-family: var(--serif);
@@ -624,7 +644,7 @@ blockquote {
   aspect-ratio: 1;
   object-fit: contain;
   margin-bottom: 0.5rem;
-  mix-blend-mode: multiply; /* funde o fundo branco com a folha */
+  mix-blend-mode: hard-light; /* funde o fundo branco com a folha */
   filter: sepia(0.12) contrast(1.02);
   transition: transform 0.2s;
 }
@@ -772,14 +792,16 @@ blockquote {
 .world-card h4::before {
   content: "";
   display: block;
-  width: 28px;
+  width: 52px;
   height: 2px;
   background: var(--gold);
   margin-bottom: 0.55rem;
-  transition: width 0.25s ease;
+  transform: scaleX(0.538);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
-.world-card:hover h4::before { width: 52px; }
+.world-card:hover h4::before { transform: scaleX(1); }
 
 @media (min-width: 720px) {
   .worlds-grid > .world-card:first-child {
@@ -859,14 +881,9 @@ blockquote {
 
 .conto-medallion {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
-  background: #ffffff;
-  border: 2px solid rgba(201, 169, 110, 0.4);
-  box-shadow: 0 0 0 3px rgba(10, 10, 13, 0.9), 0 4px 12px rgba(0, 0, 0, 0.5);
-  transition: border-color 0.25s, transform 0.25s;
 }
 
 .conto-card:hover .conto-medallion {
@@ -3300,8 +3317,7 @@ h3.prog-header-title {
 .changelog-area {
   margin-bottom: 2.25rem;
   background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
+  border: 1px solid rgba(201, 169, 110, 0.16);
   border-radius: var(--radius);
   padding: 1.5rem 1.75rem 1.25rem;
 }
@@ -3784,6 +3800,10 @@ h3.prog-header-title {
   filter: sepia(0.15) contrast(1.03);
 }
 
+.scroll-solo-art.governante {
+  mix-blend-mode: normal;
+}
+
 /* itens: ícone (fundo cinza do catálogo) reduzido dentro do miolo do slot
    dourado (item_border.png no wrapper .item-slot), com cantos arredondados
    e um anel do interior escuro em volta. padding % é do containing block e
@@ -3946,8 +3966,7 @@ h3.prog-header-title {
 
 .forja-slot-wrap { text-align:center; }
 .forja-slot-cap { font-size:0.64rem; letter-spacing:0.16em; text-transform:uppercase; color:#8a7550; margin-bottom:0.5rem; }
-.forja-slot { width:160px; height:160px; margin:0 auto; border-radius:12px; border:2px solid var(--tc,rgba(122,95,48,.6)); background:rgba(20,14,9,.7); display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative; transition:all .15s; box-shadow:inset 0 0 24px rgba(0,0,0,.5); }
-.forja-slot:hover { border-color:#e0a020; box-shadow:inset 0 0 24px rgba(0,0,0,.5), 0 0 16px rgba(224,160,32,.3); }
+.forja-slot { width:160px; height:160px; margin:0 auto; border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; position:relative; transition:all .15s; box-shadow:inset 0 0 24px rgba(0,0,0,.5); }
 .forja-slot img { object-fit:contain; filter:drop-shadow(0 3px 6px rgba(0,0,0,.6)); }
 .forja-slot .forja-slot-empty { color:#5a4a30; font-size:1.6rem; }
 .forja-item-name { margin-top:0.6rem; color:#f2e6ce; font-weight:600; font-size:0.9rem; }
@@ -4002,13 +4021,101 @@ h3.prog-header-title {
 .forja-qstar { width:26px; height:26px; cursor:pointer; opacity:.9; transition:transform .1s; }
 .forja-qstar:hover { transform:scale(1.15); }
 /* slot com moldura de tier */
-.forja-slot { position:relative; overflow:visible; background:rgba(20,14,9,.55); border:none; box-shadow:none; }
-.forja-slot:hover { box-shadow:0 0 16px rgba(224,160,32,.25); }
+.forja-slot { position:relative; overflow:visible; border:none; box-shadow:none; }
 .forja-frame { position:absolute; inset:0; width:calc(100% + 12px); height:calc(100% + 12px); object-fit:contain; pointer-events:none; }
 .forja-art { position:relative; z-index:1; width:50%; height:50%; object-fit:contain; filter:drop-shadow(0 3px 6px rgba(0,0,0,.6));transform: translateY(6px); }
-.forja-slot img.forja-roman { position:absolute; top:17px; z-index:2; width:auto; height:8px; object-fit:contain; filter:drop-shadow(0 1px 2px #000); pointer-events:none; }
-.forja-stars { display:flex; gap:0.2rem; justify-content:center; margin-top:0.4rem; }
-.forja-star { width:17px; height:17px; cursor:pointer; transition:transform .1s; }
+.forja-slot img.forja-roman {
+    position: absolute;
+    /* left: calc(50% + 6px); */
+    top: 21px;
+    /* transform: translateX(-50%); */
+    z-index: 2;
+    width: auto;
+    height: 9px;
+    object-fit: contain;
+    pointer-events: none;
+    filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, .95));
+    width: 100%;
+}
+
+.forja-slot.forja-tier-baixa img.forja-roman, .forja-slot.forja-tier-reg img.forja-roman {
+  top: 19px;
+}
+
+.forja-slot.forja-tier-infer img.forja-roman {
+  top: 22px;
+}
+
+.forja-slot.forja-tier-alta img.forja-roman {
+  top: 20px;
+}
+
+.forja-slot.forja-tier-rara img.forja-roman {
+  top: 27px;
+}
+
+/* nível do item — vai sobre o círculo do canto superior esquerdo da moldura.
+   posição base; ajuste fino por tier com .forja-slot.forja-tier-<slug> .forja-level */
+.forja-slot .forja-level {
+  position: absolute;
+  left: 22px;
+  top: 27px;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  min-width: 14px;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  color: #f2e6ce;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .95);
+  cursor: pointer;
+}
+.forja-slot .forja-level:hover { color: #fff; }
+
+/* ajuste fino do nível por tier (centro do círculo varia em cada moldura) */
+.forja-slot.forja-tier-infer .forja-level { left: 23px; top: 28px; }
+.forja-slot.forja-tier-baixa .forja-level { left: 19px; top: 25px; }
+.forja-slot.forja-tier-reg   .forja-level { left: 20px; top: 26px; }
+.forja-slot.forja-tier-media .forja-level { left: 19px; top: 29px; }
+.forja-slot.forja-tier-boa   .forja-level { left: 23px; top: 26px; }
+.forja-slot.forja-tier-alta  .forja-level { left: 18px; top: 28px; }
+.forja-slot.forja-tier-super .forja-level { left: 18px; top: 25px; }
+.forja-slot.forja-tier-excel .forja-level { left: 22px; top: 28px; }
+.forja-slot.forja-tier-rara  .forja-level { left: 18px; top: 32px; }
+.forja-slot.forja-tier-obra  .forja-level { left: 20px; top: 30px; }
+.forja-slot.forja-tier-prism .forja-level { left: 19px; top: 25px; }
+
+.forja-slot.forja-tier-obra img.forja-roman {
+  top: 28px;
+}
+
+.forja-slot.forja-tier-prism img.forja-roman {
+  top: 26px;
+  filter: none;
+}
+
+.forja-slot.forja-tier-super img.forja-roman {
+  top: 23px;
+  filter: none;
+}
+
+.forja-slot.forja-tier-media img.forja-roman, .forja-slot.forja-tier-boa img.forja-roman {
+  top: 24px;
+}
+
+.forja-stars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+    margin-top: 0.4rem;
+    position: absolute;
+    bottom: 40px;
+    right: 33px;
+    z-index: 2;
+}
+.forja-star { width:10px; height:10px; cursor:pointer; transition:transform .1s; }
 .forja-star:hover { transform:scale(1.25); }
 .forja-hint { text-align:center; font-size:0.72rem; color:#8a7550; max-width:38rem; margin:0 auto 2rem; line-height:1.5; }
 .forja-opt-roman { padding:0.2rem 0; }
@@ -4016,6 +4123,7 @@ h3.prog-header-title {
 .forja-opt-tier.on { border-color:var(--tc,#e0a020); box-shadow:0 0 12px rgba(224,160,32,.28); }
 .forja-opt-tier .forja-opt-name { color:var(--tc,#f2e6ce); }
 .forja-panel-ico { width:40px; height:40px; object-fit:contain; margin:0.4rem auto 0.1rem; display:block; }
+.forja-panel-emoji { font-size:34px; line-height:40px; text-align:center; }
 .forja-panel-skill { font-size:0.72rem; color:#cdb06a; margin-top:0.4rem; }
 .forja-setlevel { color:#e0a020; font-weight:600; }
 

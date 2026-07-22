@@ -26,13 +26,35 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Prepare deploy directory
+        env:
+          # Defina a variável de repositório ASSET_HOST (Settings > Secrets and variables
+          # > Actions > Variables) com a URL do backend de assets, ex.:
+          # https://assets.asteroth.com.br  (o backend serve em /assets/concepts/...).
+          # VAZIO = comportamento atual: empacota concepts/ (1.3GB) no bundle do Pages.
+          # SETADO = imagens vêm do host; concepts/ não é empacotado e as refs são reescritas.
+          ASSET_HOST: ${{ vars.ASSET_HOST }}
         run: |
+          set -e
           mkdir -p _deploy
           cp -r site/. _deploy/
-          # Remove the local-dev symlink (site/concepts -> ../concepts) before
-          # copying the real concepts/ folder into the deploy bundle
+          # Remove o symlink de dev (site/concepts -> ../../asteroth-assets/concepts)
           rm -rf _deploy/concepts
-          cp -r concepts _deploy/concepts
+          if [ -n "$ASSET_HOST" ]; then
+            echo ">> ASSET_HOST=$ASSET_HOST — imagens do host; concepts/ NAO empacotado."
+            # 1) reescreve refs estaticas: "concepts/... e url(...concepts/...) -> $ASSET_HOST/assets/concepts/...
+            find _deploy -type f \( -name '*.html' -o -name '*.css' \) -print0 \
+              | xargs -0 sed -i \
+                  -e "s#\"concepts/#\"${ASSET_HOST}/assets/concepts/#g" \
+                  -e "s#url(\"concepts/#url(\"${ASSET_HOST}/assets/concepts/#g" \
+                  -e "s#url('concepts/#url('${ASSET_HOST}/assets/concepts/#g" \
+                  -e "s#url(concepts/#url(${ASSET_HOST}/assets/concepts/#g"
+            # 2) injeta window.ASTEROTH_API (grids governantes/sub-gov + icones do afinidades em prod)
+            find _deploy -maxdepth 1 -name '*.html' -print0 \
+              | xargs -0 sed -i "s#<head>#<head><script>window.ASTEROTH_API=\"${ASSET_HOST}\";</script>#"
+          else
+            echo ">> ASSET_HOST vazio — comportamento atual: empacotando concepts/ (1.3GB)."
+            cp -r concepts _deploy/concepts
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
