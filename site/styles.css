@@ -3770,7 +3770,6 @@ h3.prog-header-title {
   width: min(760px, 100%);
   margin: 0 auto;
   height: min(860px, calc(100vh - 2rem));
-  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.7));
 }
 
 .scroll-solo-bg {
