@@ -17,6 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -27,15 +28,19 @@
 <nav class="toc-nav" aria-label="Navegação">
   <div class="toc-inner">
     <a class="toc-brand" href="index.html">Asteroth</a>
-    <a href="index.html#lore">Lore</a>
-    <a href="index.html#governantes">Governantes</a>
-    <a href="index.html#mundo">O Mundo</a>
-    <a href="index.html#contos">Contos</a>
-    <a href="index.html#itens">Itens</a>
-    <a href="index.html#bestiario">Bestiário</a>
-    <a href="index.html#gameplay">Gameplay</a>
-    <a href="changelog.html" class="active">Changelog</a>
-    <a href="index.html#apoiar">Apoiar</a>
+    <a href="index.html#lore"><i data-lucide="book-open"></i>Lore</a>
+    <a href="index.html#governantes"><i data-lucide="crown"></i>Governantes</a>
+    <a href="index.html#mundo"><i data-lucide="globe"></i>O Mundo</a>
+    <a href="index.html#contos"><i data-lucide="feather"></i>Contos</a>
+    <a href="index.html#itens"><i data-lucide="package"></i>Itens</a>
+    <a href="index.html#bestiario"><i data-lucide="skull"></i>Bestiário</a>
+    <a href="index.html#forja"><i data-lucide="anvil"></i>Forja</a>
+    <a href="index.html#skills"><i data-lucide="sparkles"></i>Habilidades</a>
+    <a href="index.html#afinidades"><i data-lucide="git-merge"></i>Afinidades</a>
+    <a href="afinidades-grafo.html"><i data-lucide="share-2"></i>Grafo</a>
+    <a href="index.html#gameplay"><i data-lucide="swords"></i>Gameplay</a>
+    <a href="changelog.html" class="active"><i data-lucide="history"></i>Changelog</a>
+    <a href="index.html#apoiar"><i data-lucide="heart"></i>Apoiar</a>
   </div>
 </nav>
 
@@ -53,7 +58,7 @@
       </span>
       <span class="version-badge version-badge-phase">
         <span class="version-label">Fase</span>
-        <span class="version-value">F0 · Fundação 3D</span>
+        <span class="version-value">F7+ · Conteúdo, escala e polimento</span>
       </span>
     </div>
   </div>
@@ -66,7 +71,39 @@
       <h2 class="changelog-version-name">Unreleased</h2>
       <span class="changelog-version-tag">Em desenvolvimento ativo</span>
     </header>
-    <p class="changelog-version-summary">Construção da fundação técnica e do canon público. A engine própria (C++) está sendo escrita do zero, junto com o sistema solar, o planeta esférico, o caminhar do player em gravidade radial, e a primeira camada de física, persistência e multiplayer.</p>
+    <p class="changelog-version-summary">A fundação está de pé: engine própria em C++, sistema solar, planeta esférico, gravidade radial, física, persistência e a primeira camada de multiplayer. O trabalho agora é dar ao planeta o tamanho e a matéria de um planeta — escala real, oceanos em que se nada, subsolo que se escava, atmosfera que separa o dia da noite — e ao personagem um corpo que pisa nele.</p>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">Terreno, água e subsolo</h3>
+      <ul class="changelog-list">
+        <li><strong>O planeta ganhou tamanho de planeta.</strong> O raio passou de 20 para 2 000 alturas de personagem. Antes a volta a pé levava um minuto e a montanha mais alta batia na cintura do player; agora existe relevo que se enxerga de longe e se escala de perto.</li>
+        <li><strong>70% de água.</strong> Era 3,3%. A fração vale para qualquer seed, então todo mundo gerado nasce com oceano de verdade, e não com poças.</li>
+        <li><strong>Água em que se nada.</strong> A água virou três coisas que ela não era: leito próprio abaixo do nível do mar, casca na superfície e empuxo. Antes o player caminhava sobre o mar.</li>
+        <li><strong>Água translúcida.</strong> Dentro dela dá para ver o leito e o que está sobre ele, que é justamente quando isso passa a importar.</li>
+        <li><strong>Túnel virou vão de verdade.</strong> Escavação horizontal, teto e parede que desaparece entre vizinhos: dois tiles cavados lado a lado formam corredor, não dois poços com uma parede no meio.</li>
+        <li><strong>O player entra no subsolo.</strong> Havia um chão intransponível segurando todo mundo na superfície, o que fazia do túnel, da tocha e da câmera subterrânea cenário decorativo por baixo dele.</li>
+        <li><strong>Escavação na altura certa.</strong> Um golpe abria um pé-direito de 20 alturas de personagem, e o resultado era uma laje. Agora são 2, então degrau, rampa e câmara com altura legível passam a existir.</li>
+        <li><strong>Tile na escala do jogador.</strong> De 18,8 para 9,4 alturas de personagem por tile: "placa tectônica" era descrição literal, não figura de linguagem.</li>
+        <li><strong>Material do tile com efeito medível.</strong> O tipo de terreno deixou de ser só cor e passou a afetar movimento, escavação e o que cai ao cavar.</li>
+        <li><strong>Crosta, manto e núcleo.</strong> As camadas do subsolo deixaram de ser paleta de parede e ganharam efeito real: descer fundo passou a custar.</li>
+        <li><strong>Linha de árvores.</strong> A densidade de vegetação passou a ter eixo de altitude, então a montanha deixa de ser pedra do sopé ao pico.</li>
+        <li><strong>Pedra solta e galho no chão, coletáveis.</strong> A camada pequena que faz um chão parecer habitado, ligada ao inventário: coletar virou ação de verdade.</li>
+        <li><strong>Props na escala do mundo.</strong> Árvore e pedregulho eram dimensionados como fração do raio do planeta; com o planeta cem vezes maior viraram pedras gigantes, no sentido literal.</li>
+        <li><strong>Batimetria.</strong> O leito afunda de verdade abaixo do nível do mar, em vez de ficar rente à casca.</li>
+      </ul>
+    </div>
+
+    <div class="changelog-area">
+      <h3 class="changelog-area-title">O personagem</h3>
+      <ul class="changelog-list">
+        <li><strong>Corpo low-poly feito à mão.</strong> 472 triângulos, malha fechada e simétrica, no lugar do modelo gerado por IA, que carregava túnica aberta e defeito de superfície.</li>
+        <li><strong>Personagem chega pintado no jogo.</strong> O carregador de modelo passou a ler cor por vértice, então a arte sai do Blender e entra na engine sem passo intermediário.</li>
+        <li><strong>Encara a direção do movimento.</strong> Quatro cardeais e quatro diagonais.</li>
+        <li><strong>Ancorado no chão de verdade.</strong> Fim da flutuação sobre relevo: a altura do player passou a ser lida da mesma malha que se vê.</li>
+        <li><strong>Colisão com o cenário.</strong> Árvore, arbusto, cogumelo e pedregulho viraram obstáculo sólido; no pedregulho dá para subir.</li>
+        <li><strong>Pulo na escala certa.</strong> Subia 640 alturas de personagem, porque a altura do salto estava sendo multiplicada pelo raio do planeta.</li>
+      </ul>
+    </div>
 
     <div class="changelog-area">
       <h3 class="changelog-area-title">Física</h3>
@@ -99,6 +136,13 @@
     <div class="changelog-area">
       <h3 class="changelog-area-title">Sistema solar e câmeras</h3>
       <ul class="changelog-list">
+        <li><strong>A noite voltou a ser noite.</strong> O brilho do céu passou a sair da elevação do sol, com crepúsculo contínuo, em vez de um valor fixo escolhido pelo modo de câmera. A sensação de dia e noite estava sumindo justamente no modo de jogo.</li>
+        <li><strong>Luas com atmosfera e cor de rocha.</strong> No lugar do disco chapado que ficava inteiro preto, branco, laranja ou azul.</li>
+        <li><strong>Atmosfera com mais glow.</strong> Halo largo e quente abraçando o limbo iluminado, mais perto da referência astronômica: em caminho rasante o azul se extingue primeiro e sobra o laranja, que é a mesma conta do pôr do sol.</li>
+        <li><strong>Iluminação e atmosfera seguem o enquadramento, não o modo de câmera.</strong> Afastar no modo de jogo até ver o planeta inteiro passou a render a mesma imagem que o modo cinematic.</li>
+        <li><strong>Zoom sem limite.</strong> O limite tinha sido calibrado quando o planeta era cem vezes menor, e impedia afastar o bastante para enxergar o relevo novo.</li>
+        <li><strong>O céu cobre a tela.</strong> Fim do disco escuro de borda dura que aparecia na vista de espaço, e que estava centrado na câmera em vez de no planeta.</li>
+        <li><strong>Biomas em cores, vistos do espaço.</strong> O passe de nuvens saturava o planeta de branco e granulava a imagem.</li>
         <li><strong>Save/load do tempo orbital.</strong> Posição do planeta no sistema solar persiste entre sessões.</li>
         <li><strong>Períodos de órbita gameplay vs cinematic.</strong> Gameplay usa 10 minutos por órbita (sombras sutis), cinematic usa 30 segundos (órbita visível em demo).</li>
         <li><strong>Câmera close-follow.</strong> Câmera segue o personagem de perto, base do POV de gameplay.</li>
@@ -116,6 +160,14 @@
     <div class="changelog-area">
       <h3 class="changelog-area-title">Renderização e engine</h3>
       <ul class="changelog-list">
+        <li><strong>Resolução dinâmica.</strong> A escala de render se ajusta sozinha para caber no orçamento de 16,6 ms por quadro, em vez de derrubar o FPS quando a cena aperta.</li>
+        <li><strong>Upscaler FSR 1.0.</strong> Alternativa viável ao DLSS dentro de OpenGL 3.3, para quem joga em GPU modesta.</li>
+        <li><strong>Anti-aliasing SMAA.</strong> Serrilhado tratado em pós-processo.</li>
+        <li><strong>Presets de qualidade Low, Med e High.</strong> O jogo passa a ter o que oferecer a máquina fraca sem virar outro jogo.</li>
+        <li><strong>Tela de configurações no jogo (F10), com persistência.</strong> A escolha sobrevive ao fechar.</li>
+        <li><strong>Janela de log em tempo real.</strong> Segunda janela de observabilidade, com arquivo e linha de cada evento, para diagnosticar sem parar a sessão.</li>
+        <li><strong>Busca de tile em tempo constante.</strong> Consumia 30% do quadro (974 µs por chamada, cinco vezes por quadro); agora custa 0,56 µs. É o que tornou possível diminuir o tile.</li>
+        <li><strong>Cor por vértice no carregador de modelos.</strong> O OBJ passou a carregar a pintura junto com a geometria.</li>
         <li><strong>Sistema de partículas.</strong> CPU-side, com billboards GL, suportando câmera externa.</li>
         <li><strong>Texturas via stb_image.</strong> Carregamento de imagens em formato comum (PNG, JPG).</li>
         <li><strong>Sistema de luz solar exponencial.</strong> Decay realista de intensidade conforme distância e ângulo.</li>
@@ -172,6 +224,13 @@
     <div class="changelog-area">
       <h3 class="changelog-area-title">Lore e design público</h3>
       <ul class="changelog-list">
+        <li><strong>Forja de Equipamento.</strong> Monte o loadout inteiro numa tela: elmo, peitoral, botas, arma e mochila, 187 itens jogáveis, os 11 tiers com moldura e numeral aplicados ao vivo, qualidade em estrelas, raça e classe, e a barra de habilidades derivada do que está equipado. Assume o lugar do grid estático de Conjuntos, cujos 31 conjuntos passaram a ser montáveis peça a peça.</li>
+        <li><strong>As Habilidades (326/326).</strong> Catálogo completo das habilidades inatas, com filtros por origem (afinidade, classe, raça) e por tipo (passiva, ativa), cada uma com efeito e proveniência.</li>
+        <li><strong>As Afinidades (280).</strong> O mapa raça × classe: a liga rara do anão ferreiro, a granada dupla do boticário humano, o mergulho do phibens. Inclui o sistema elemental do Mago e as afinidades que só valem sob condição de ambiente (noite, submerso, subterrâneo).</li>
+        <li><strong>Os 24 Sub-governantes.</strong> A camada da hierarquia que faltava: seres não-humanoides que servem, ou espreitam, sob os Governantes.</li>
+        <li><strong>Compêndio reaberto (520/809).</strong> O catálogo do jogo cresceu de 517 para 809 itens (sementes, itens de trapper, culinária, refino), então o Compêndio deixou de estar completo e volta a revelar em levas.</li>
+        <li><strong>O topo do site virou title sequence.</strong> A cover estática deu lugar a um vídeo curto: o viajante caminha até a margem do lago e se agacha olhando a paisagem, com a logo se dissolvendo no meio do plano.</li>
+        <li><strong>Arte recortada em todo o site.</strong> As 846 imagens de item e criatura e os 26 Governantes trocaram o fundo cinza por versões transparentes: cada retrato virou gravura sobre a folha, sem a caixa atrás.</li>
         <li><strong>Taxonomia de tipos de item.</strong> Catálogo seed com 21 categorias (armas, ferramentas, recipientes, consumíveis, etc).</li>
         <li><strong>Exclusivos por classe.</strong> Cada classe ganhou pelo menos uma ação ou produção que ninguém mais consegue. Monopólio funcional pra garantir demanda real.</li>
         <li><strong>Canon completo de fama.</strong> 9 atributos, conversão 0,005, redistribuição em PvP por contribuição, perda de 50% na morte.</li>
@@ -184,12 +243,13 @@
     <div class="changelog-area">
       <h3 class="changelog-area-title">Infraestrutura de projeto</h3>
       <ul class="changelog-list">
+        <li><strong>Pipeline de arte low-poly local.</strong> Uma imagem de referência entra, um modelo texturizado sai, tudo numa GPU doméstica. Gerar as peças do catálogo por serviço pago de image-to-3D era inviável no custo, e o gargalo de arte deixou de depender de crédito de API.</li>
         <li><strong>Pre-push hook.</strong> Suite de testes roda antes de qualquer push, impede commit quebrado de subir.</li>
         <li><strong>GitHub Project v2 "Asteroth".</strong> Tracking de épicos e issues público.</li>
-        <li><strong>Roadmap por fases.</strong> F0 Fundação 3D → F1 Cinematic demo → F2 Gameplay SP → F3 Save/UI/áudio → F4 MP pequeno → F5 MMO infra → F6+ conteúdo.</li>
+        <li><strong>Roadmap por fases.</strong> F0 Fundação 3D → F1 Cinematic demo → F2 Gameplay SP → F3 Save/UI/áudio → F4 MP pequeno → F5 MMO infra → F6 Canon do planeta e lobby → F7+ conteúdo, escala e polimento.</li>
         <li><strong>Pipeline de release CI/CD.</strong> Build automatizado a cada merge.</li>
         <li><strong>Spec coverage comprehensive em todos os épicos.</strong> Cada sistema sobe com cobertura de teste antes do próximo começar.</li>
-        <li><strong>Relatório HTML visual de specs.</strong> Resultados de teste rendezirados em painel próprio.</li>
+        <li><strong>Relatório HTML visual de specs.</strong> Resultados de teste renderizados em painel próprio.</li>
       </ul>
     </div>
   </article>
@@ -245,6 +305,7 @@
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') setOpen(false);
   });
+  if (window.lucide) window.lucide.createIcons();
 })();
 </script>
 
