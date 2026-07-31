@@ -41,13 +41,18 @@ jobs:
           rm -rf _deploy/concepts
           if [ -n "$ASSET_HOST" ]; then
             echo ">> ASSET_HOST=$ASSET_HOST — imagens do host; concepts/ NAO empacotado."
-            # 1) reescreve refs estaticas: "concepts/... e url(...concepts/...) -> $ASSET_HOST/assets/concepts/...
+            # 1) reescreve refs estaticas: "concepts/..., 'concepts/... e url(...concepts/...)
+            #    -> $ASSET_HOST/assets/concepts/...
+            #    A regra de aspas simples pega os caminhos montados em JS (icones de raca/classe
+            #    do seletor de afinidades, pills de tipo, UI da forja) que antes ficavam
+            #    relativos e quebravam, ja que concepts/ nao vai no bundle.
             find _deploy -type f \( -name '*.html' -o -name '*.css' \) -print0 \
               | xargs -0 sed -i \
                   -e "s#\"concepts/#\"${ASSET_HOST}/assets/concepts/#g" \
                   -e "s#url(\"concepts/#url(\"${ASSET_HOST}/assets/concepts/#g" \
                   -e "s#url('concepts/#url('${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#url(concepts/#url(${ASSET_HOST}/assets/concepts/#g"
+                  -e "s#url(concepts/#url(${ASSET_HOST}/assets/concepts/#g" \
+                  -e "s#'concepts/#'${ASSET_HOST}/assets/concepts/#g"
             # 2) injeta window.ASTEROTH_API (grids governantes/sub-gov + icones do afinidades em prod)
             find _deploy -maxdepth 1 -name '*.html' -print0 \
               | xargs -0 sed -i "s#<head>#<head><script>window.ASTEROTH_API=\"${ASSET_HOST}\";</script>#"
