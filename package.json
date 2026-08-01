@@ -4,7 +4,8 @@
   "private": true,
   "description": "Site estático de Asteroth (GitHub Pages). Sem build — dev com browser-sync (live-reload).",
   "scripts": {
-    "dev": "browser-sync start --server site --files \"site/**/*\" --no-notify --port 3000"
+    "dev": "browser-sync start --server site --files \"site/**/*\" --no-notify --port 3000",
+    "sitemap": "bash scripts/gen-sitemap.sh"
   },
   "devDependencies": {
     "browser-sync": "^3.0.4"

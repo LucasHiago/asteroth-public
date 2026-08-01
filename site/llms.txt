@@ -1,0 +1,50 @@
+# Asteroth
+
+> MMORPG isométrico ambientado em um planeta esférico de verdade, gerado a partir de uma seed. O mundo nasce vazio: não há cidades pré-fabricadas nem estruturas imutáveis. Toda civilização é construída pelos jogadores — e tudo que é construído pode ser destruído ou pilhado.
+
+Asteroth é um projeto independente em desenvolvimento desde 2012, construído em engine própria em C++, sem publisher e sem investidor. Lançamento previsto para **2028**. Site oficial: https://asteroth.com.br
+
+O jogo é **free-to-play**: jogar é gratuito, e a venda de itens dentro do jogo é o que custeia os servidores. Não existe compra de entrada.
+
+O ciclo do jogo: explorar → coletar → construir → defender → ser invadido → reconstruir. As influências declaradas são **Albion Online** (MMO isométrico, mundo persistente, economia 100% conduzida por jogadores) e **Rust** (destruição, raid, full-loot, ausência de safe zones absolutas). O diferencial é o planeta esférico: horizonte curvo, o sol nasce e se põe, duas luas cruzam o céu.
+
+## O que existe hoje no site
+
+- [Página principal](https://asteroth.com.br/): lore, panteão, mundo, contos, compêndio de itens, bestiário, forja, habilidades, afinidades e gameplay — tudo em uma página só, navegável por âncoras.
+- [Changelog público](https://asteroth.com.br/changelog.html): marcos de desenvolvimento em ordem cronológica reversa.
+- [Grafo das afinidades](https://asteroth.com.br/afinidades-grafo.html): visualização interativa das 280 afinidades raça × classe.
+
+## Números do mundo
+
+- **26 Governantes** — o panteão que divide o domínio do planeta (Cthulhu, Azazel, Beelzebub, Metatron, Hastur, Abaron, Abaddon, Mammon, Baphomet, Asratheet, Astaroth, Valkier, Greenkir, Obsien, Procodile, Neron, Iymue, Moon, Zaniel, Aslon, Urien, Echtrhos, Nephile, Tartarus, Yemir, Chronus). Cada um tem sua própria condição de despertar.
+- **24 Sub-governantes** — seres não-humanoides que servem, ou espreitam, sob os Governantes.
+- **14 raças** e **39 classes** jogáveis.
+- **280 afinidades** raça × classe, mais o sistema elemental do Mago e afinidades por condição de ambiente.
+- **326 habilidades** inatas catalogadas (280 de afinidade, 32 de classe, 14 de raça).
+- **326 criaturas** no bestiário, distribuídas em sete exércitos de domínio (Vulcânico, Pântano, Necrópole, Tundra, Deserto, Picos, Floresta), fauna livre e slimes.
+- **809 itens** no catálogo do jogo, dos quais 520 já revelados no Compêndio.
+- **31 conjuntos** de equipamento e uma forja interativa com 187 itens jogáveis distribuídos em 5 slots (elmo, peitoral, botas, arma, mochila) e 11 tiers.
+
+## Como o jogo funciona
+
+**Identidade em quatro camadas.** O personagem é uma pilha: (1) **Raça**, escolhida no spawn, inata e permanente, dá afinidades naturais; (2) **Classe**, define onde você é mais forte sem restringir — limite de duas classes ativas, trocar a primária custa 50% do XP guardado mais ouro e tem cooldown de 72h, e a habilidade principal da primeira classe escolhida fica com você para sempre; (3) **Affinity**, a interseção raça × classe × ação, que escala raridade, qualidade ou eficácia quando alinha; (4) **Gear**, que carrega item skills. Nada tranca o jogador em arquétipo, mas alinhar as camadas é onde o jogo entrega o raríssimo.
+
+**Exclusividade de classe.** Toda classe tem ao menos uma produção ou ação exclusiva que ninguém mais consegue — monopólio funcional, não vantagem. Sem caçador ninguém tem pet, sem ferreiro não há espada acima de certo tier, sem mercador o mercado não funciona.
+
+**Fama.** Substitui o nível tradicional como eixo de progressão. Cada ponto de fama vale 0,005 pontos de bônus aplicados diretamente aos status, distribuídos aleatoriamente (roubo de vida, destreza, vida, defesa, dano, velocidade de movimento, de ataque, mana, disparo de habilidades). A primeira grande marca é em 1.000 pontos; por volta de 10.000 a diferença é significativa. Ganha-se fama com coleta, construção, forja, combate contra monstros e bosses, dungeons, PvP e suporte. Fama pode ser roubada, e uma porção se perde na morte — em PvP ela é redistribuída entre os vencedores conforme a contribuição real de cada um, inclusive a do healer.
+
+## Como apoiar
+
+O projeto é financiado diretamente por apoiadores:
+
+- GitHub Sponsors: https://github.com/sponsors/LucasHiago
+- Patreon: https://www.patreon.com/c/Asteroth
+- Repositório público (lore, changelog, contos): https://github.com/LucasHiago/asteroth-public
+
+## Autor
+
+Lucas Hiago — desenvolvedor solo, engine própria em C++, projeto tocado desde 2012.
+
+## In English
+
+Asteroth is an isometric MMORPG set on a real spherical planet generated from a seed. The world starts empty — every city, road and fortress is built by players, and anything built can be destroyed or looted. Full loot, no absolute safe zones, player-driven economy. Free-to-play, funded by in-game item sales that pay for the servers. Solo-developed in a custom C++ engine since 2012, no publisher; target release **2028**. Portuguese-language site: https://asteroth.com.br

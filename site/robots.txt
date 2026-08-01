@@ -1,0 +1,82 @@
+# robots.txt — asteroth.com.br
+# Site publico do Asteroth (MMORPG isometrico em um planeta esferico).
+# Tudo aqui e material de divulgacao: queremos ser indexado e citado.
+
+# ---------------------------------------------------------------------------
+# Buscadores tradicionais
+# ---------------------------------------------------------------------------
+User-agent: *
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Crawlers de IA / respostas geradas (GEO)
+# Liberados de proposito: ser citado no ChatGPT, Claude, Perplexity, Gemini e
+# nas respostas de IA do Google/Bing e canal de descoberta tao relevante
+# quanto o resultado azul.
+# ---------------------------------------------------------------------------
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Sinais de conteudo (Content Signals / Cloudflare)
+# search   = indexar e devolver links e trechos
+# ai-input = usar como fonte em resposta de IA (RAG, grounding)
+# ai-train = treinar modelo
+# ---------------------------------------------------------------------------
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+Sitemap: https://asteroth.com.br/sitemap.xml
