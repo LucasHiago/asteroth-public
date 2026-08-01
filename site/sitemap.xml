@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap de asteroth.com.br
+  Regenere as datas com: npm run sitemap  (usa a data do ultimo commit de cada arquivo)
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://asteroth.com.br/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://asteroth.com.br/assets/og-cover.jpg</image:loc>
+      <image:title>Asteroth — MMORPG isométrico em um planeta esférico</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://asteroth.com.br/changelog.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://asteroth.com.br/afinidades-grafo.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

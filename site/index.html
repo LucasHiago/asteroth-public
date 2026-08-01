@@ -3,21 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Asteroth · MMORPG em um planeta</title>
-  <meta name="description" content="Asteroth é um MMORPG que acontece em um planeta. Tudo que existe é construído, e pode ser destruído, pelos players." />
+  <title>Asteroth · MMORPG isométrico em um planeta esférico</title>
+  <meta name="description" content="MMORPG isométrico num planeta esférico onde tudo é construído — e destruído — pelos jogadores. Free-to-play, full loot, economia player-driven. Lançamento 2028." />
+  <link rel="canonical" href="https://asteroth.com.br/" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Lucas Hiago" />
+  <meta name="keywords" content="Asteroth, MMORPG, MMORPG isométrico, MMO sandbox, planeta esférico, full loot, PvP, mundo persistente, jogo brasileiro, MMORPG indie, economia player-driven" />
   <meta name="theme-color" content="#0a0a0d" />
-  <meta property="og:title" content="Asteroth" />
-  <meta property="og:description" content="Asteroth é um MMORPG que acontece em um planeta. Tudo que existe é construído, e pode ser destruído, pelos players." />
-  <meta property="og:image" content="concepts/cover.png" />
+  <meta property="og:site_name" content="Asteroth" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Asteroth · MMORPG isométrico em um planeta esférico" />
+  <meta property="og:description" content="Um planeta de verdade, gerado de uma seed. O mundo nasce vazio: toda civilização é construída pelos jogadores — e tudo que se ergue pode ruir. Lançamento 2028." />
+  <meta property="og:image" content="https://asteroth.com.br/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Um viajante às margens de um lago, sob montanhas, com a marca Asteroth ao centro" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://asteroth.com.br" />
+  <meta property="og:url" content="https://asteroth.com.br/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Asteroth · MMORPG isométrico em um planeta esférico" />
+  <meta name="twitter:description" content="Um planeta de verdade, gerado de uma seed. O mundo nasce vazio: toda civilização é construída pelos jogadores — e tudo que se ergue pode ruir. Lançamento 2028." />
+  <meta name="twitter:image" content="https://asteroth.com.br/assets/og-cover.jpg" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="alternate" type="text/plain" href="https://asteroth.com.br/llms.txt" title="Resumo do site em texto (llms.txt)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=IM+Fell+English:ital@0;1&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- === DADOS ESTRUTURADOS (schema.org) ===================================
+       Descreve o jogo, o site, o autor e o FAQ para buscadores e para os
+       crawlers de IA. As perguntas abaixo espelham, palavra por palavra, a
+       seção #faq da página — se editar uma, edite a outra. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://asteroth.com.br/#autor",
+        "name": "Lucas Hiago",
+        "jobTitle": "Desenvolvedor de jogos",
+        "url": "https://github.com/LucasHiago",
+        "sameAs": [
+          "https://github.com/LucasHiago",
+          "https://github.com/sponsors/LucasHiago",
+          "https://www.patreon.com/c/Asteroth"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://asteroth.com.br/#site",
+        "url": "https://asteroth.com.br/",
+        "name": "Asteroth",
+        "description": "Site oficial de Asteroth, MMORPG isométrico em um planeta esférico.",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "https://asteroth.com.br/#autor" }
+      },
+      {
+        "@type": "VideoGame",
+        "@id": "https://asteroth.com.br/#jogo",
+        "name": "Asteroth",
+        "url": "https://asteroth.com.br/",
+        "description": "MMORPG isométrico ambientado em um planeta esférico de verdade, gerado a partir de uma seed. O mundo nasce vazio: toda civilização é construída pelos jogadores, e tudo que é construído pode ser destruído ou pilhado. Economia conduzida por jogadores, full loot e ausência de safe zones absolutas.",
+        "image": "https://asteroth.com.br/assets/og-cover.jpg",
+        "inLanguage": "pt-BR",
+        "genre": ["MMORPG", "Sandbox", "Isométrico", "Mundo aberto", "PvP"],
+        "playMode": "MultiPlayer",
+        "isAccessibleForFree": true,
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL",
+          "description": "Free-to-play: jogar é gratuito. A venda de itens dentro do jogo custeia os servidores."
+        },
+        "author": { "@id": "https://asteroth.com.br/#autor" },
+        "creator": { "@id": "https://asteroth.com.br/#autor" },
+        "publisher": { "@id": "https://asteroth.com.br/#autor" },
+        "sameAs": ["https://github.com/LucasHiago/asteroth-public"],
+        "additionalProperty": [
+          { "@type": "PropertyValue", "name": "Modelo", "value": "Free-to-play, com venda de itens no jogo para custear os servidores" },
+          { "@type": "PropertyValue", "name": "Lançamento previsto", "value": "2028" },
+          { "@type": "PropertyValue", "name": "Em desenvolvimento desde", "value": "2012" },
+          { "@type": "PropertyValue", "name": "Engine", "value": "Engine própria, escrita em C++" },
+          { "@type": "PropertyValue", "name": "Governantes", "value": "26 governantes e 24 sub-governantes" },
+          { "@type": "PropertyValue", "name": "Raças jogáveis", "value": "14" },
+          { "@type": "PropertyValue", "name": "Classes jogáveis", "value": "39" },
+          { "@type": "PropertyValue", "name": "Afinidades raça × classe", "value": "280" },
+          { "@type": "PropertyValue", "name": "Criaturas no bestiário", "value": "326" },
+          { "@type": "PropertyValue", "name": "Itens catalogados", "value": "809" }
+        ]
+      },
+      {
+        "@type": ["WebPage", "FAQPage"],
+        "@id": "https://asteroth.com.br/#pagina",
+        "url": "https://asteroth.com.br/",
+        "name": "Asteroth · MMORPG isométrico em um planeta esférico",
+        "isPartOf": { "@id": "https://asteroth.com.br/#site" },
+        "about": { "@id": "https://asteroth.com.br/#jogo" },
+        "primaryImageOfPage": "https://asteroth.com.br/assets/og-cover.jpg",
+        "inLanguage": "pt-BR",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "O que é Asteroth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Asteroth é um MMORPG isométrico ambientado em um planeta esférico de verdade, gerado a partir de uma seed. O mundo nasce vazio: não há cidades pré-fabricadas nem estruturas imutáveis. Toda civilização que existir nele é construída pelos jogadores, e tudo que é construído pode ser destruído ou pilhado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quando Asteroth vai ser lançado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O lançamento previsto é 2028. O desenvolvimento é aberto: cada marco público sai no changelog do site, e o projeto está hoje na Fase 0, Fundação 3D, o pipeline de renderização."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Asteroth é pago ou gratuito?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Asteroth é free-to-play: jogar é gratuito. Vão existir itens à venda dentro do jogo, e é isso que custeia os servidores. Não há caixa a comprar para entrar no mundo."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quem desenvolve Asteroth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lucas Hiago, sozinho, desde 2012, em uma engine própria escrita em C++. Sem publisher, sem investidor e sem prazo imposto: o projeto é financiado direto por apoiadores no GitHub Sponsors e no Patreon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que torna o mundo de Asteroth diferente de outros MMOs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O mundo não é um mapa plano, é um planeta esférico. Você caminha em volta da esfera, o horizonte é curvo, o sol nasce e se põe e duas luas atravessam o céu. Como não existe conteúdo pré-construído, a economia, as cidades e as rotas são inteiramente obra dos jogadores."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Asteroth tem PvP e full loot?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tem. A pegada mistura Albion Online, pelo MMO isométrico de mundo persistente e economia conduzida por jogadores, e Rust, pela destruição, raid, full loot e ausência de safe zones absolutas. O ciclo do jogo é explorar, coletar, construir, defender, ser invadido e reconstruir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funciona a progressão do personagem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Por fama, não por nível. Cada ponto de fama vale 0,005 ponto de bônus aplicado direto aos status, sorteado entre atributos como vida, dano, defesa e velocidade. A primeira grande marca chega em 1.000 pontos. Ganha-se fama coletando, construindo, forjando, caçando, em dungeons, no PvP e dando suporte, e ela pode ser roubada: parte se perde na morte."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quantas raças e classes Asteroth tem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "São 14 raças e 39 classes. Dá para manter duas classes ativas; trocar a primária custa 50% do XP guardado mais ouro, com cooldown de 72 horas. A habilidade principal da primeira classe escolhida fica com o personagem para sempre."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que são as afinidades?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Afinidade é a interseção entre raça, classe e ação: quando as três alinham, o resultado escala em raridade, qualidade ou eficácia. O anão ferreiro tira uma liga que ninguém mais tira. São 280 afinidades mapeadas, navegáveis no grafo de afinidades do site."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quem são os Governantes de Asteroth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "São 26 entidades que dividem o domínio do planeta, entre elas Cthulhu, Azazel, Beelzebub, Metatron, Hastur, Abaddon, Mammon e Baphomet, cada uma com sua própria condição de despertar. Abaixo delas há ainda 24 sub-governantes, seres não-humanoides que servem, ou espreitam."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como acompanhar ou apoiar o desenvolvimento?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O changelog público registra cada marco do projeto. O apoio direto acontece pelo GitHub Sponsors e pelo Patreon, e o repositório público reúne lore, contos e conceitos visuais do mundo."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://asteroth.com.br/#secoes",
+        "name": "Seções do site de Asteroth",
+        "itemListElement": [
+          { "@type": "SiteNavigationElement", "position": 1,  "name": "Lore",           "description": "A origem cosmogônica das partículas e o planeta.",              "url": "https://asteroth.com.br/#lore" },
+          { "@type": "SiteNavigationElement", "position": 2,  "name": "Governantes",    "description": "Os 26 governantes e os 24 sub-governantes.",                  "url": "https://asteroth.com.br/#governantes" },
+          { "@type": "SiteNavigationElement", "position": 3,  "name": "O Mundo",        "description": "Conceitos visuais e paisagens do planeta.",                    "url": "https://asteroth.com.br/#mundo" },
+          { "@type": "SiteNavigationElement", "position": 4,  "name": "Contos",         "description": "Contos do despertar de cada governante.",                      "url": "https://asteroth.com.br/#contos" },
+          { "@type": "SiteNavigationElement", "position": 5,  "name": "Compêndio de Itens", "description": "Catálogo dos itens do jogo, revelado em levas.",           "url": "https://asteroth.com.br/#itens" },
+          { "@type": "SiteNavigationElement", "position": 6,  "name": "Bestiário",      "description": "As 326 criaturas dos sete domínios.",                          "url": "https://asteroth.com.br/#bestiario" },
+          { "@type": "SiteNavigationElement", "position": 7,  "name": "Forja",          "description": "Builder de loadout com tiers, qualidade e habilidades.",       "url": "https://asteroth.com.br/#forja" },
+          { "@type": "SiteNavigationElement", "position": 8,  "name": "Habilidades",    "description": "As 326 habilidades inatas de raça, classe e afinidade.",       "url": "https://asteroth.com.br/#skills" },
+          { "@type": "SiteNavigationElement", "position": 9,  "name": "Afinidades",     "description": "As 280 afinidades raça × classe.",                             "url": "https://asteroth.com.br/#afinidades" },
+          { "@type": "SiteNavigationElement", "position": 10, "name": "Gameplay",       "description": "Identidade em quatro camadas, classes, fama e PvP.",           "url": "https://asteroth.com.br/#gameplay" },
+          { "@type": "SiteNavigationElement", "position": 11, "name": "Perguntas frequentes", "description": "O que é, quando lança, como funciona.",                  "url": "https://asteroth.com.br/#faq" },
+          { "@type": "SiteNavigationElement", "position": 12, "name": "Changelog",      "description": "Marcos públicos do desenvolvimento.",                          "url": "https://asteroth.com.br/changelog.html" },
+          { "@type": "SiteNavigationElement", "position": 13, "name": "Grafo das afinidades", "description": "Visualização interativa das 280 afinidades.",            "url": "https://asteroth.com.br/afinidades-grafo.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -29,7 +230,7 @@
   <img src="assets/hero_lake_poster.jpg" alt="" class="hero-bg hero-bg--fallback" aria-hidden="true" />
   <div class="hero-vignette" aria-hidden="true"></div>
   <div class="hero-content">
-    <img src="concepts/letters.png" alt="Asteroth" class="wordmark" />
+    <h1 class="hero-h1"><img src="concepts/letters.png" alt="Asteroth" class="wordmark" /><span class="sr-only">Asteroth — MMORPG isométrico em um planeta esférico</span></h1>
     <p class="tagline">Vinte e seis governantes dividem o planeta. O resto é dos jogadores: economia, cidades, o que se ergue e o que rui. Faça parte deste novo mundo.</p>
     <p class="hero-release">2028</p>
     <div class="cta-row">
@@ -54,6 +255,7 @@
     <a href="#itens"><i data-lucide="package"></i>Itens</a>
     <a href="#bestiario"><i data-lucide="skull"></i>Bestiário</a><a href="#forja"><i data-lucide="anvil"></i>Forja</a><a href="#skills"><i data-lucide="sparkles"></i>Habilidades</a><a href="#afinidades"><i data-lucide="git-merge"></i>Afinidades</a><a href="afinidades-grafo.html"><i data-lucide="share-2"></i>Grafo</a>
     <a href="#gameplay"><i data-lucide="swords"></i>Gameplay</a>
+    <a href="#faq"><i data-lucide="help-circle"></i>FAQ</a>
     <a href="changelog.html"><i data-lucide="history"></i>Changelog</a>
     <a href="#apoiar"><i data-lucide="heart"></i>Apoiar</a>
   </div>
@@ -13663,6 +13865,392 @@
     </div>
   </div>
 
+  <!-- Tabela completa em HTML estático: o seletor acima é montado em JavaScript,
+       então esta é a versão que buscadores e crawlers de IA conseguem ler.
+       Gerada a partir do mesmo array AFFINITIES no fim do arquivo. -->
+  <details class="aff-static">
+    <summary>Ver a tabela completa · 280 afinidades, 14 raças</summary>
+    <div class="aff-static-body">
+      <h4>Humano <span class="aff-static-count">26 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Alquimista</th><td>Fundir bases de poções diferentes</td><td>Poção híbrida (efeitos combinados)</td><td>Craft</td></tr>
+          <tr><th scope="row">Ferreiro</th><td>Forjar com 2+ metais distintos</td><td>Liga rara (atributo único)</td><td>Craft</td></tr>
+          <tr><th scope="row">Sieger</th><td>Craftar arma de cerco</td><td>Variantes raras (engenhosidade aplicada à artilharia)</td><td>Craft</td></tr>
+          <tr><th scope="row">Artesão</th><td>Criar acessório com materiais mistos</td><td>Acessório com slot extra / propriedade híbrida</td><td>Craft</td></tr>
+          <tr><th scope="row">Arquiteto</th><td>Construir estrutura com materiais distintos</td><td>Estrutura com bônus duplo (resistência + estética)</td><td>Craft</td></tr>
+          <tr><th scope="row">Cozinheiro</th><td>Combinar ingredientes incomuns</td><td>Prato com buffs combinados (ex: cura + força)</td><td>Craft</td></tr>
+          <tr><th scope="row">Mercador</th><td>Negociar itens raros</td><td>Margem extra em itens de alta qualidade</td><td>Econômico</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Mapear área nova</td><td>Mapa em camadas (recursos + rotas + pontos de interesse)</td><td>Craft</td></tr>
+          <tr><th scope="row">Fundidor</th><td>Fundir ligas de dois metais</td><td>Lingote híbrido com propriedades de ambos</td><td>Craft</td></tr>
+          <tr><th scope="row">Tecelão</th><td>Tecer fibras de origens distintas</td><td>Tecido híbrido com duas propriedades (ex: leve + antichama)</td><td>Craft</td></tr>
+          <tr><th scope="row">Cervejeiro</th><td>Misturar fermentados distintos</td><td>Bebida híbrida com buff duplo</td><td>Craft</td></tr>
+          <tr><th scope="row">Boticário</th><td>Combinar poções-magia em uma granada</td><td>Granada com efeito duplo combinado</td><td>Combate</td></tr>
+          <tr><th scope="row">Caravaneiro</th><td>Planejar rota com cargas mistas</td><td>Caravana otimizada — mais tipos de carga sem penalidade</td><td>Econômico</td></tr>
+          <tr><th scope="row">Estalajadeiro</th><td>Combinar hospedagem + comida + bebida</td><td>Pacote de descanso com buff combinado estendido</td><td>Econômico</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Alternar estilos de luta</td><td>Troca de postura/arma em combate sem penalidade</td><td>Combate</td></tr>
+          <tr><th scope="row">Mago</th><td>Encadear escolas de magia diferentes</td><td>Combo arcano — segunda magia de escola distinta ganha bônus</td><td>Combate</td></tr>
+          <tr><th scope="row">Sacerdote</th><td>Realizar rito sincrético</td><td>Cura + buff menor no mesmo cast</td><td>Combate</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Fabricar flechas híbridas</td><td>Flechas com dois efeitos (ex: fogo + farpa)</td><td>Craft</td></tr>
+          <tr><th scope="row">Bardo</th><td>Tocar instrumento híbrido</td><td>Música com dois efeitos simultâneos</td><td>Combate</td></tr>
+          <tr><th scope="row">Joker</th><td>Montar armadilha de componentes mistos</td><td>Armadilha com efeito duplo (dano + lentidão)</td><td>Combate</td></tr>
+          <tr><th scope="row">Curtidor</th><td>Curtir com taninos mistos</td><td>Couro versátil — aceita qualquer tingimento/encanto</td><td>Craft</td></tr>
+          <tr><th scope="row">Serrador</th><td>Laminar madeiras distintas</td><td>Tábua compensada (leve + resistente)</td><td>Craft</td></tr>
+          <tr><th scope="row">Moleiro</th><td>Moer grãos distintos juntos</td><td>Farinha mista — base pra receitas híbridas</td><td>Craft</td></tr>
+          <tr><th scope="row">Açougueiro</th><td>Aproveitamento total da carcaça</td><td>Subprodutos extras (sebo, tripa, ossos utilizáveis)</td><td>Craft</td></tr>
+          <tr><th scope="row">Padeiro</th><td>Assar massa multigrão</td><td>Pão com buff duplo</td><td>Craft</td></tr>
+          <tr><th scope="row">Pescador</th><td>Montar isca híbrida</td><td>Isca atrai múltiplas espécies</td><td>Craft</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Anão <span class="aff-static-count">22 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Sacerdote</th><td>Forjar arma de sacerdote</td><td>Arma mais rara</td><td>Craft</td></tr>
+          <tr><th scope="row">Arquiteto</th><td>Construir estrutura de pedra</td><td>Durability/HP da estrutura aumentados</td><td>Craft</td></tr>
+          <tr><th scope="row">Minerador</th><td>Minerar nó comum</td><td>Chance de extrair qualidade superior</td><td>Craft</td></tr>
+          <tr><th scope="row">Sieger</th><td>Construir/operar arma de cerco</td><td>Dano e durability da arma aumentados</td><td>Craft</td></tr>
+          <tr><th scope="row">Ferreiro</th><td>Forjar qualquer arma/armadura</td><td>Tier de qualidade base mais alto</td><td>Craft</td></tr>
+          <tr><th scope="row">Fundidor</th><td>Fundir minério</td><td>Barra de qualidade superior + menor perda de material</td><td>Craft</td></tr>
+          <tr><th scope="row">Artesão</th><td>Criar joia/acessório</td><td>Slot de runa extra no item</td><td>Craft</td></tr>
+          <tr><th scope="row">Curtidor</th><td>Processar pele</td><td>Couro de maior grade automaticamente</td><td>Craft</td></tr>
+          <tr><th scope="row">Lenhador</th><td>Cortar madeira de construção</td><td>Tora com propriedades estruturais superiores</td><td>Craft</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Produzir poção com reagente mineral</td><td>Poção com propriedade física extra (ex: absorve golpe)</td><td>Craft</td></tr>
+          <tr><th scope="row">Serrador</th><td>Serrar viga de construção</td><td>Viga com tolerância estrutural superior (encaixe perfeito)</td><td>Craft</td></tr>
+          <tr><th scope="row">Tecelão</th><td>Tecer com precisão artesanal</td><td>Tecido de grade superior (base pra armadura leve reforçada)</td><td>Craft</td></tr>
+          <tr><th scope="row">Tank</th><td>Vestir armadura de metal</td><td>Penalidade de peso reduzida (familiaridade de forjador)</td><td>Combate</td></tr>
+          <tr><th scope="row">Cervejeiro</th><td>Fabricar cerveja de tradição anã</td><td>Buff de resistência física acima do normal</td><td>Craft</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Lutar com arma que ele mesmo forjou</td><td>Dano bônus com arma de fabricação própria</td><td>Combate</td></tr>
+          <tr><th scope="row">Mago</th><td>Encantar item de metal</td><td>Encantamento em metal dura mais</td><td>Craft</td></tr>
+          <tr><th scope="row">Mercador</th><td>Avaliar metal e gema</td><td>Nunca é enganado no valor de metais e joias</td><td>Econômico</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Mapear subterrâneo</td><td>Mapas de cavernas e túneis com precisão única</td><td>Craft</td></tr>
+          <tr><th scope="row">Moleiro</th><td>Construir e operar moinho de pedra</td><td>Moinho com durability superior — rende mais farinha</td><td>Craft</td></tr>
+          <tr><th scope="row">Padeiro</th><td>Assar em forno de pedra anão</td><td>Assa em lote sem perder qualidade</td><td>Craft</td></tr>
+          <tr><th scope="row">Joker</th><td>Montar armadilha mecânica</td><td>Armadilha de engrenagem reutilizável — não quebra ao disparar</td><td>Combate</td></tr>
+          <tr><th scope="row">Estalajadeiro</th><td>Manter taverna anã</td><td>Hospedagem com cerveja inclusa — descanso + resistência</td><td>Econômico</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Elfo <span class="aff-static-count">20 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Arqueiro</th><td>Tiro à distância</td><td>Range e precisão estendidos</td><td>Combate</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Mapear área</td><td>Revela região maior por carta</td><td>Craft</td></tr>
+          <tr><th scope="row">Bucaneiro</th><td>Tiro com arma de fogo</td><td>Precisão e range amplificados</td><td>Combate</td></tr>
+          <tr><th scope="row">Caçador</th><td>Rastrear presa</td><td>Raio de detecção de mobs aumentado</td><td>Combate</td></tr>
+          <tr><th scope="row">Ladino</th><td>Vigiar / espionar</td><td>Aviso antecipado de inimigos (radar passivo estendido)</td><td>Combate</td></tr>
+          <tr><th scope="row">Mago Elemental</th><td>Feitiço de projétil</td><td>Range do projétil aumentado</td><td>Combate</td></tr>
+          <tr><th scope="row">Bardo</th><td>Magia sonora à distância</td><td>Alcance da confusão sonora amplificado</td><td>Combate</td></tr>
+          <tr><th scope="row">Pescador</th><td>Pescar de longe</td><td>Acesso a pontos de pesca profundos sem se aproximar</td><td>Craft</td></tr>
+          <tr><th scope="row">Sieger</th><td>Operar arma de cerco</td><td>Precisão de disparo a longa distância aumentada</td><td>Combate</td></tr>
+          <tr><th scope="row">Hunter</th><td>Avistar fera rara</td><td>Detecta feras raras a distância muito maior</td><td>Combate</td></tr>
+          <tr><th scope="row">Mensageiro</th><td>Rota com pontos de observação</td><td>Avista interceptadores antes de virarem ameaça</td><td>Econômico</td></tr>
+          <tr><th scope="row">Druid</th><td>Pacificar a distância</td><td>Range do encanto de pacificação ampliado</td><td>Combate</td></tr>
+          <tr><th scope="row">Mago</th><td>Mirar feitiço em ponto fraco</td><td>Chance de crítico mágico à distância</td><td>Combate</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Ler o movimento do oponente</td><td>Esquiva contra ataques telegrafados</td><td>Combate</td></tr>
+          <tr><th scope="row">Lenhador</th><td>Avaliar árvore de longe</td><td>Identifica madeira nobre antes de cortar — colhe só o melhor</td><td>Craft</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Identificar ervas à distância</td><td>Coleta seletiva — só reagentes de qualidade</td><td>Craft</td></tr>
+          <tr><th scope="row">Artesão</th><td>Trabalho de detalhe fino</td><td>Joias com acabamento superior (bônus de valor)</td><td>Craft</td></tr>
+          <tr><th scope="row">Joker</th><td>Calibrar gatilho de precisão</td><td>Armadilha ignora criaturas pequenas — só dispara no alvo certo</td><td>Combate</td></tr>
+          <tr><th scope="row">Mercador</th><td>Avaliar item à vista</td><td>Identifica tier de qualidade sem inspecionar</td><td>Econômico</td></tr>
+          <tr><th scope="row">Caravaneiro</th><td>Bater a rota da própria caravana</td><td>Avista emboscadas a quilômetros</td><td>Econômico</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Dark Elf <span class="aff-static-count">21 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Ladino</th><td>Emboscar à noite</td><td>Bônus de stealth + crit noturnos</td><td>Combate</td></tr>
+          <tr><th scope="row">Caçador</th><td>Caçar à noite</td><td>Drops melhores em caça noturna</td><td>Combate</td></tr>
+          <tr><th scope="row">Dark Mage</th><td>Magia das sombras / roubo de vida</td><td>Potência amplificada à noite</td><td>Combate</td></tr>
+          <tr><th scope="row">Bucaneiro</th><td>Tiro noturno de emboscada</td><td>Invisibilidade extra antes do tiro</td><td>Combate</td></tr>
+          <tr><th scope="row">Clown</th><td>Armadilha noturna</td><td>Armadilha quase imperceptível no escuro</td><td>Combate</td></tr>
+          <tr><th scope="row">Necromante</th><td>Invocar mortos-vivos à noite</td><td>Horda maior e mais forte à noite</td><td>Combate</td></tr>
+          <tr><th scope="row">Bardo</th><td>Confusão visual no escuro</td><td>Inimigos sem visão noturna ficam completamente desorientados</td><td>Combate</td></tr>
+          <tr><th scope="row">Joker</th><td>Criar armadilha à noite</td><td>Armadilha com tier de ocultamento acima do normal</td><td>Combate</td></tr>
+          <tr><th scope="row">Minerador</th><td>Minerar à noite</td><td>Detecta nós raros sem tocha (visão noturna passiva)</td><td>Craft</td></tr>
+          <tr><th scope="row">Pescador</th><td>Pescar à noite</td><td>Acesso a espécies noturnas exclusivas</td><td>Craft</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Colher reagentes noturnos</td><td>Plantas que só abrem à noite — reagentes exclusivos</td><td>Craft</td></tr>
+          <tr><th scope="row">Mensageiro</th><td>Entrega noturna</td><td>Rota noturna sem penalidade — intercepção quase impossível</td><td>Econômico</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Combate no escuro</td><td>Sem penalidade de acerto no escuro (inimigos têm)</td><td>Combate</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Tiro noturno</td><td>Mira perfeita no escuro — origem do tiro indetectável</td><td>Combate</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Cartografar no escuro</td><td>Mapeia cavernas e rotas noturnas sem luz</td><td>Craft</td></tr>
+          <tr><th scope="row">Hunter</th><td>Domar criatura noturna</td><td>Acesso a feras que só aparecem de madrugada</td><td>Combate</td></tr>
+          <tr><th scope="row">Druid</th><td>Pacificar criatura noturna</td><td>Criaturas da noite o tratam como um dos seus</td><td>Combate</td></tr>
+          <tr><th scope="row">Rogue (sub-mago)</th><td>Drenar alvo cego pela escuridão</td><td>Drain amplificado em quem não enxerga</td><td>Combate</td></tr>
+          <tr><th scope="row">Boticário</th><td>Lançar granada de escuridão</td><td>Poção-magia que apaga luzes e cega em área</td><td>Combate</td></tr>
+          <tr><th scope="row">Mercador</th><td>Negociar no mercado noturno</td><td>Margem melhor em transações noturnas</td><td>Econômico</td></tr>
+          <tr><th scope="row">Caravaneiro</th><td>Conduzir caravana noturna</td><td>Viaja de noite sem penalidade — rota que ninguém patrulha</td><td>Econômico</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Orc <span class="aff-static-count">21 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Guerreiro</th><td>Atacar melee</td><td>Dano bruto extra</td><td>Combate</td></tr>
+          <tr><th scope="row">Açougueiro</th><td>Processar carcaça</td><td>Mais carne/material por animal</td><td>Craft</td></tr>
+          <tr><th scope="row">Pantheon</th><td>Combate híbrido (lutador + ladino)</td><td>Dano bruto + resistência amplificados</td><td>Combate</td></tr>
+          <tr><th scope="row">Dragon Born</th><td>Absorver/refletir fogo</td><td>Reflexo de fogo em AoE maior</td><td>Combate</td></tr>
+          <tr><th scope="row">Tank</th><td>Absorver dano</td><td>Resistência física aumentada (brute toughness)</td><td>Combate</td></tr>
+          <tr><th scope="row">Minerador</th><td>Minerar</td><td>Extrai mais minério por golpe (força aplicada)</td><td>Craft</td></tr>
+          <tr><th scope="row">Lenhador</th><td>Cortar árvore</td><td>Corte mais rápido + madeira extra por tora</td><td>Craft</td></tr>
+          <tr><th scope="row">Caçador</th><td>Abater animal grande</td><td>Dano de caça amplificado em feras de grande porte</td><td>Combate</td></tr>
+          <tr><th scope="row">Cervejeiro</th><td>Beber bebida de coragem</td><td>Efeito de bônus de força dobrado vs outros</td><td>Combate</td></tr>
+          <tr><th scope="row">Curtidor</th><td>Raspar/esticar pele de grande porte</td><td>Processa peles grandes inteiras (couro sem emendas)</td><td>Craft</td></tr>
+          <tr><th scope="row">Serrador</th><td>Serrar tora</td><td>Mais tábuas por tora (corte de força)</td><td>Craft</td></tr>
+          <tr><th scope="row">Sieger</th><td>Operar aríete</td><td>Dano de impacto do aríete ampliado</td><td>Combate</td></tr>
+          <tr><th scope="row">Ferreiro</th><td>Martelar na bigorna</td><td>Forja mais rápida — menos golpes por peça</td><td>Craft</td></tr>
+          <tr><th scope="row">Moleiro</th><td>Girar a mó pesada manualmente</td><td>Produção de farinha em volume sem animal de tração</td><td>Craft</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Puxar arco pesado</td><td>Usa arcos de tração acima do limite comum (mais dano)</td><td>Combate</td></tr>
+          <tr><th scope="row">Fundidor</th><td>Alimentar a fornalha sem parar</td><td>Funde em volume — mais barras por fornada</td><td>Craft</td></tr>
+          <tr><th scope="row">Arquiteto</th><td>Erguer estrutura na força</td><td>Constrói sem andaime — carrega blocos sozinho</td><td>Craft</td></tr>
+          <tr><th scope="row">Pirata</th><td>Abordagem violenta</td><td>Quebra defesas de convés no impacto</td><td>Combate</td></tr>
+          <tr><th scope="row">Hunter</th><td>Domar pela dominância</td><td>Feras agressivas demais pra outros respeitam sua força</td><td>Combate</td></tr>
+          <tr><th scope="row">Pescador</th><td>Pesca de arpão</td><td>Arpoa criaturas aquáticas de grande porte</td><td>Craft</td></tr>
+          <tr><th scope="row">Caravaneiro</th><td>Puxar a própria carga</td><td>Caravana leva mais peso</td><td>Econômico</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Orc de Sangue <span class="aff-static-count">19 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Guerreiro</th><td>Atacar melee</td><td>Life steal passivo no hit</td><td>Combate</td></tr>
+          <tr><th scope="row">Boticário</th><td>Lançar poção de roubo de vida</td><td>Potência aumentada</td><td>Combate</td></tr>
+          <tr><th scope="row">Dark Mage</th><td>Magia de roubo de vida</td><td>Life steal amplificado</td><td>Combate</td></tr>
+          <tr><th scope="row">Pantheon</th><td>Combate hit-and-run</td><td>Life steal + resistência somados</td><td>Combate</td></tr>
+          <tr><th scope="row">Sorcerer</th><td>Cura ofensiva</td><td>Drena mais vida + cura mais por dreno</td><td>Combate</td></tr>
+          <tr><th scope="row">Necromante</th><td>Invocar mortos-vivos</td><td>Mortos-vivos têm life steal passivo</td><td>Combate</td></tr>
+          <tr><th scope="row">Ladino</th><td>Hit furtivo</td><td>Life steal no burst inicial (recupera HP antes de ser detectado)</td><td>Combate</td></tr>
+          <tr><th scope="row">Rogue (sub-mago)</th><td>Drain em AoE</td><td>Mais alvos drenam pra ele simultaneamente</td><td>Combate</td></tr>
+          <tr><th scope="row">Açougueiro</th><td>Processar carcaça</td><td>Coleta sangue como reagente extra (hemo-derivados)</td><td>Craft</td></tr>
+          <tr><th scope="row">Caçador</th><td>Ferir presa</td><td>Presa sangra visível — rastreio garantido até a morte</td><td>Combate</td></tr>
+          <tr><th scope="row">Cervejeiro</th><td>Destilar licor de sangue</td><td>Bebida com life steal temporário</td><td>Craft</td></tr>
+          <tr><th scope="row">Tank</th><td>Segurar linha em melee</td><td>Recupera vida ao ser golpeado em melee (retaliação vampírica)</td><td>Combate</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Praticar hemo-alquimia</td><td>Poções à base de sangue com efeitos únicos</td><td>Craft</td></tr>
+          <tr><th scope="row">Hunter</th><td>Firmar vínculo de sangue</td><td>Fera domada compartilha life steal com o dono</td><td>Combate</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Atirar flecha farpada</td><td>Alvo sangra (DoT) e a distância ainda cura o atirador</td><td>Combate</td></tr>
+          <tr><th scope="row">Sacerdote</th><td>Realizar rito de sangue</td><td>Converte a própria vida em cura potente pra aliado</td><td>Combate</td></tr>
+          <tr><th scope="row">Bardo</th><td>Entoar canto de frenesi</td><td>Aliados ganham life steal temporário em área</td><td>Combate</td></tr>
+          <tr><th scope="row">Pirata</th><td>Abordagem sangrenta</td><td>Cada abate na abordagem recupera vida</td><td>Combate</td></tr>
+          <tr><th scope="row">Curtidor</th><td>Curtir couro com sangue</td><td>Couro rubro — base de armadura leve com life steal menor</td><td>Craft</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Halfling <span class="aff-static-count">20 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Ladino</th><td>Desarmar/criar armadilha</td><td>Auto-detecção + crit em emboscada</td><td>Combate</td></tr>
+          <tr><th scope="row">Joker</th><td>Criar armadilha</td><td>Armadilha mais letal/oculta</td><td>Combate</td></tr>
+          <tr><th scope="row">Clown</th><td>Criar armadilha quase imperceptível</td><td>Chance de não ser detectada + radius maior</td><td>Combate</td></tr>
+          <tr><th scope="row">Bucaneiro</th><td>Tiro de emboscada</td><td>Crit garantido no primeiro tiro / saída em stealth</td><td>Combate</td></tr>
+          <tr><th scope="row">Mensageiro</th><td>Entregar cargo</td><td>Menor chance de ser interceptado (tamanho dificulta detecção)</td><td>Econômico</td></tr>
+          <tr><th scope="row">Caçador</th><td>Criar armadilha de caça</td><td>Armadilhas de caça com maior taxa de captura</td><td>Craft</td></tr>
+          <tr><th scope="row">Pescador</th><td>Pescar em área estreita</td><td>Acesso a pontos de pesca inacessíveis a raças maiores</td><td>Craft</td></tr>
+          <tr><th scope="row">Ladino ✦</th><td>Emboscar à noite</td><td>Tamanho reduz silhueta — invisibilidade natural</td><td>Combate</td></tr>
+          <tr><th scope="row">Cozinheiro</th><td>Preparar porções</td><td>Rende mais porções por ingrediente</td><td>Craft</td></tr>
+          <tr><th scope="row">Mercador</th><td>Inspecionar mercadoria</td><td>Detecta itens falsificados/adulterados (armadilha comercial)</td><td>Econômico</td></tr>
+          <tr><th scope="row">Minerador</th><td>Explorar fendas estreitas</td><td>Acessa veios onde raças maiores não entram</td><td>Craft</td></tr>
+          <tr><th scope="row">Joker</th><td>Esconder armadilha em passagem estreita</td><td>Posiciona armadilhas em pontos que só ele alcança</td><td>Combate</td></tr>
+          <tr><th scope="row">Estalajadeiro</th><td>Hospitalidade halfling</td><td>Buff de descanso superior — conforto lendário</td><td>Econômico</td></tr>
+          <tr><th scope="row">Padeiro</th><td>Confeitaria minuciosa</td><td>Doces com buffs que ninguém replica</td><td>Craft</td></tr>
+          <tr><th scope="row">Cervejeiro</th><td>Destilar bebida leve</td><td>Buff sem ressaca (sem debuff posterior)</td><td>Craft</td></tr>
+          <tr><th scope="row">Artesão</th><td>Trabalhar com mãos pequenas e precisas</td><td>Mecanismos miniatura — fechaduras, gatilhos finos, relógios</td><td>Craft</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Dosagem exata</td><td>Mais doses por lote de poção</td><td>Craft</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Atirar com silhueta mínima</td><td>Difícil de acertar enquanto atira (esquiva passiva)</td><td>Combate</td></tr>
+          <tr><th scope="row">Bardo</th><td>Contar história cativante</td><td>Plateia distraída — aliados ladinos ganham janela de furto</td><td>Combate</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Mapear passagens estreitas</td><td>Mapas com rotas de fuga que só pequenos usam</td><td>Craft</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Demônio <span class="aff-static-count">21 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Mago</th><td>Magia ofensiva</td><td>Cooldown reduzido</td><td>Combate</td></tr>
+          <tr><th scope="row">Sorcerer</th><td>Magia de cura</td><td>HP curado extra</td><td>Combate</td></tr>
+          <tr><th scope="row">Dark Mage</th><td>Magia ofensiva / roubo de vida</td><td>Dano e life steal amplificados</td><td>Combate</td></tr>
+          <tr><th scope="row">Dragon Born</th><td>Combate em chamas</td><td>Resistência total + dano de fogo extra</td><td>Combate</td></tr>
+          <tr><th scope="row">Bardo</th><td>Magia de confusão (visão/som)</td><td>Área e duração estendidas</td><td>Combate</td></tr>
+          <tr><th scope="row">Elemental</th><td>Magia elemental</td><td>Cooldown reduzido + dano do elemento amplificado</td><td>Combate</td></tr>
+          <tr><th scope="row">Necromante</th><td>Invocar mortos-vivos</td><td>Mais mortos-vivos por invocação (cooldown menor)</td><td>Combate</td></tr>
+          <tr><th scope="row">Rogue (sub-mago)</th><td>Drain em AoE</td><td>Área de drain maior + mais alvos simultâneos</td><td>Combate</td></tr>
+          <tr><th scope="row">Boticário</th><td>Poção-magia como granada</td><td>Efeito amplificado no lançamento</td><td>Combate</td></tr>
+          <tr><th scope="row">Druid</th><td>Pacificar mob</td><td>Duração e raio estendidos</td><td>Combate</td></tr>
+          <tr><th scope="row">Ferreiro</th><td>Forjar com chama própria</td><td>Forja sem combustível (fogo infernal inato)</td><td>Craft</td></tr>
+          <tr><th scope="row">Cozinheiro</th><td>Cozinhar com calor controlado</td><td>Cozimento perfeito — nunca queima, buff estendido</td><td>Craft</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Destilar sob calor preciso</td><td>Poções voláteis (fogo) estáveis — só ele produz</td><td>Craft</td></tr>
+          <tr><th scope="row">Padeiro</th><td>Assar com chama infernal controlada</td><td>Pão perfeito — buffs de comida com duração estendida</td><td>Craft</td></tr>
+          <tr><th scope="row">Fundidor</th><td>Fundir com chama própria</td><td>Funde minérios raros que exigem calor extremo</td><td>Craft</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Imbuir arma na chama</td><td>Arma melee com dano mágico adicional</td><td>Combate</td></tr>
+          <tr><th scope="row">Tank</th><td>Emanar aura de calor</td><td>Atacantes melee sofrem dano de calor passivo</td><td>Combate</td></tr>
+          <tr><th scope="row">Sieger</th><td>Disparar projétil incendiário</td><td>Disparo de cerco com fogo mágico — queima estruturas</td><td>Combate</td></tr>
+          <tr><th scope="row">Hunter</th><td>Domar por intimidação</td><td>Presença infernal — feras se submetem por medo</td><td>Combate</td></tr>
+          <tr><th scope="row">Joker</th><td>Armar armadilha arcana</td><td>Armadilha mágica sem mecanismo físico</td><td>Combate</td></tr>
+          <tr><th scope="row">Cervejeiro</th><td>Produzir destilado flamejante</td><td>Bebida que concede fôlego de fogo momentâneo</td><td>Craft</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Necro <span class="aff-static-count">18 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Ferreiro</th><td>Forjar item rúnico</td><td>Slots de runa adicionais</td><td>Craft</td></tr>
+          <tr><th scope="row">Necromante</th><td>Invocar/controlar horda</td><td>Tamanho da horda aumentado</td><td>Combate</td></tr>
+          <tr><th scope="row">Dark Mage</th><td>Magia escura</td><td>Potência extra</td><td>Combate</td></tr>
+          <tr><th scope="row">Qualquer</th><td>Usar item rúnico equipado</td><td>Bônus passivo extra</td><td>Passivo</td></tr>
+          <tr><th scope="row">Artesão</th><td>Criar acessório rúnico</td><td>Acessório com efeito de runa permanente (built-in)</td><td>Craft</td></tr>
+          <tr><th scope="row">Mago</th><td>Magia com item rúnico</td><td>Runa amplifica o feitiço lançado</td><td>Combate</td></tr>
+          <tr><th scope="row">Sieger</th><td>Gravar runa em arma de cerco</td><td>Arma de cerco com efeito mágico ativo por disparo</td><td>Craft</td></tr>
+          <tr><th scope="row">Tank</th><td>Equipar armadura rúnica</td><td>Bônus de resistência das runas dobrado</td><td>Combate</td></tr>
+          <tr><th scope="row">Curtidor</th><td>Tratar couro com runas</td><td>Couro rúnico — base pra armadura leve encantável</td><td>Craft</td></tr>
+          <tr><th scope="row">Boticário</th><td>Envasar em frasco rúnico</td><td>Duração do efeito da poção-magia prolongada</td><td>Craft</td></tr>
+          <tr><th scope="row">Mercador</th><td>Avaliar item rúnico</td><td>Identifica runas ocultas e valor real de itens rúnicos</td><td>Econômico</td></tr>
+          <tr><th scope="row">Arquiteto</th><td>Gravar runas na fundação</td><td>Estrutura com proteção mágica passiva</td><td>Craft</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Empunhar arma rúnica</td><td>Efeito da runa amplificado pelo corpo ósseo</td><td>Combate</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Atirar flechas rúnicas</td><td>Encanto não se perde ao errar — flechas recuperáveis</td><td>Combate</td></tr>
+          <tr><th scope="row">Minerador</th><td>Sentir pedra rúnica</td><td>Detecta veios rúnicos que outros ignoram</td><td>Craft</td></tr>
+          <tr><th scope="row">Fundidor</th><td>Fundir liga rúnica</td><td>Metal com afinidade natural a gravação de runas</td><td>Craft</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Desenhar com tinta rúnica</td><td>Mapa criptografado — só quem ele autorizar consegue ler</td><td>Craft</td></tr>
+          <tr><th scope="row">Joker</th><td>Armar armadilha rúnica</td><td>Sem mecanismo físico — indetectável por ladinos comuns</td><td>Combate</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Phibens <span class="aff-static-count">19 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Pescador</th><td>Pescar em águas profundas</td><td>Drops únicos / áreas inacessíveis a outros</td><td>Craft</td></tr>
+          <tr><th scope="row">Pirata</th><td>Combate naval / abordagem</td><td>Bônus em combate marítimo</td><td>Combate</td></tr>
+          <tr><th scope="row">Caçador</th><td>Caçar criaturas aquáticas</td><td>Acesso a mobs aquáticos raros</td><td>Combate</td></tr>
+          <tr><th scope="row">Minerador</th><td>Minerar depósitos subaquáticos</td><td>Acesso a minérios subaquáticos exclusivos</td><td>Craft</td></tr>
+          <tr><th scope="row">Ladino</th><td>Stealth em ambiente aquático</td><td>Fuga subaquática (inimigos não nadam — perseguição impossível)</td><td>Combate</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Coletar reagentes aquáticos</td><td>Ingredientes de fundo de mar para alquimia de ponta</td><td>Craft</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Mapear leito oceânico</td><td>Cartas de fundo de mar (recursos + rotas subaquáticas)</td><td>Craft</td></tr>
+          <tr><th scope="row">Tecelão</th><td>Tecer fibras de algas</td><td>Tecido impermeável (roupas que não pesam molhadas)</td><td>Craft</td></tr>
+          <tr><th scope="row">Cozinheiro</th><td>Preparar frutos do mar frescos</td><td>Pratos com buff de natação/respiração pra aliados</td><td>Craft</td></tr>
+          <tr><th scope="row">Mensageiro</th><td>Rota fluvial/submersa</td><td>Atalhos aquáticos em linha reta — rotas que só ele usa</td><td>Econômico</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Atirar semi-submerso</td><td>Ataca da água com só os olhos fora (quase indetectável)</td><td>Combate</td></tr>
+          <tr><th scope="row">Elemental</th><td>Escolher o elemento água</td><td>Sinergia inata — bônus do elemento amplificado</td><td>Combate</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Lutar submerso</td><td>Combate na água sem penalidade — inimigos lutam lentos</td><td>Combate</td></tr>
+          <tr><th scope="row">Druid</th><td>Pacificar criatura aquática</td><td>Criaturas do fundo o tratam como um dos seus</td><td>Combate</td></tr>
+          <tr><th scope="row">Hunter</th><td>Domar criatura aquática</td><td>Montaria/companheiro aquático exclusivo</td><td>Combate</td></tr>
+          <tr><th scope="row">Curtidor</th><td>Processar pele escamada</td><td>Couro impermeável de criatura aquática</td><td>Craft</td></tr>
+          <tr><th scope="row">Arquiteto</th><td>Construir sobre e sob a água</td><td>Estruturas anfíbias com fundação firme</td><td>Craft</td></tr>
+          <tr><th scope="row">Mercador</th><td>Comércio portuário</td><td>Margem melhor em portos e mercadoria marítima</td><td>Econômico</td></tr>
+          <tr><th scope="row">Caravaneiro</th><td>Carga por rota fluvial</td><td>Transporta por rio — evita estradas perigosas</td><td>Econômico</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Beasts <span class="aff-static-count">19 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Ladino</th><td>Mobilidade / kiting</td><td>Velocidade superior</td><td>Combate</td></tr>
+          <tr><th scope="row">Hunter</th><td>Domar fera</td><td>Vínculo fera-fera (afinidade racial extra)</td><td>Combate</td></tr>
+          <tr><th scope="row">Pantheon</th><td>Combate ágil hit-and-run</td><td>Mobilidade + dano híbrido</td><td>Combate</td></tr>
+          <tr><th scope="row">Dragon Born</th><td>Combate em chamas</td><td>Dano de fogo + mobilidade extra</td><td>Combate</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Combate melee</td><td>Hits múltiplos por burst (agilidade converte em DPS)</td><td>Combate</td></tr>
+          <tr><th scope="row">Caçador</th><td>Rastrear presa</td><td>Velocidade de rastreamento superior</td><td>Combate</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Tiro em movimento</td><td>Sem penalidade de dano ao atirar correndo</td><td>Combate</td></tr>
+          <tr><th scope="row">Ladino ✦</th><td>Sair de combate</td><td>Velocidade de fuga impossível de perseguir</td><td>Combate</td></tr>
+          <tr><th scope="row">Mensageiro</th><td>Correr com o cargo</td><td>Velocidade de entrega recorde</td><td>Econômico</td></tr>
+          <tr><th scope="row">Lenhador</th><td>Escalar árvores</td><td>Colhe galhos/frutos/resina no alto sem derrubar a árvore</td><td>Craft</td></tr>
+          <tr><th scope="row">Pirata</th><td>Abordagem de navio</td><td>Salta entre embarcações — primeiro a abordar</td><td>Combate</td></tr>
+          <tr><th scope="row">Joker</th><td>Armar armadilha em combate</td><td>Arma armadilhas instantaneamente (sem canalização)</td><td>Combate</td></tr>
+          <tr><th scope="row">Druid</th><td>Empatia selvagem</td><td>Mobs animais hesitam em atacá-lo</td><td>Combate</td></tr>
+          <tr><th scope="row">Tank</th><td>Reflexo defensivo</td><td>Apara/esquiva mesmo de armadura pesada</td><td>Combate</td></tr>
+          <tr><th scope="row">Pescador</th><td>Pescar com as mãos</td><td>Pesca sem vara em águas rasas (reflexo animal)</td><td>Craft</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Explorar em velocidade</td><td>Mapeia áreas em metade do tempo</td><td>Craft</td></tr>
+          <tr><th scope="row">Açougueiro</th><td>Farejar corte nobre</td><td>Separa cortes de qualidade superior por instinto</td><td>Craft</td></tr>
+          <tr><th scope="row">Bucaneiro</th><td>Recarga ágil</td><td>Recarrega arma de fogo em movimento</td><td>Combate</td></tr>
+          <tr><th scope="row">Clown</th><td>Instalar em locais impossíveis</td><td>Armadilhas em árvores, tetos e paredes</td><td>Combate</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Runnics <span class="aff-static-count">19 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Qualquer</th><td>Entalhar runa em si mesmo</td><td>Único acesso a buff permanente próprio</td><td>Passivo</td></tr>
+          <tr><th scope="row">Mago</th><td>Magia rúnica</td><td>Potência extra via runas gravadas no corpo</td><td>Combate</td></tr>
+          <tr><th scope="row">Sieger</th><td>Gravar runa em arma de cerco</td><td>Arma de cerco com efeito mágico ativo</td><td>Craft</td></tr>
+          <tr><th scope="row">Ferreiro</th><td>Forjar usando runas próprias</td><td>Runas corporais transferíveis para itens forjados</td><td>Craft</td></tr>
+          <tr><th scope="row">Artesão</th><td>Criar acessório com runa corporal</td><td>Acessório com propriedade rúnica exclusiva desse artesão</td><td>Craft</td></tr>
+          <tr><th scope="row">Necromante</th><td>Runa de invocação gravada em si</td><td>Horda com bônus passivo das runas do conjurador</td><td>Combate</td></tr>
+          <tr><th scope="row">Tank</th><td>Runa defensiva própria</td><td>Escudo mágico adicional além do gear</td><td>Combate</td></tr>
+          <tr><th scope="row">Dark Mage</th><td>Runa de escuridão no corpo</td><td>Magia de escuridão com custo de mana reduzido</td><td>Combate</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Runa de precisão nas mãos</td><td>Mistura sem falha — zero chance de poção falhar</td><td>Craft</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Runa de orientação gravada</td><td>Posição própria sempre exata nos mapas que desenha</td><td>Craft</td></tr>
+          <tr><th scope="row">Sacerdote</th><td>Runa de fé gravada</td><td>Cura com custo de mana reduzido</td><td>Combate</td></tr>
+          <tr><th scope="row">Minerador</th><td>Runa de vigor no braço</td><td>Ferramenta desgasta menos (runa absorve o impacto)</td><td>Craft</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Runa de força no braço</td><td>Golpes com dano rúnico adicional</td><td>Combate</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Runa de mira no olho</td><td>A runa corrige o tiro — precisão amplificada</td><td>Combate</td></tr>
+          <tr><th scope="row">Ladino</th><td>Runa de silêncio nos pés</td><td>Passos sem som — stealth rúnico</td><td>Combate</td></tr>
+          <tr><th scope="row">Bardo</th><td>Runa de voz na garganta</td><td>Música alcança mais longe e não pode ser silenciada</td><td>Combate</td></tr>
+          <tr><th scope="row">Elemental</th><td>Runa elemental gravada</td><td>Resiste ao próprio elemento sem depender de gear</td><td>Combate</td></tr>
+          <tr><th scope="row">Hunter</th><td>Gravar runa na fera domada</td><td>Fera com buff rúnico permanente</td><td>Combate</td></tr>
+          <tr><th scope="row">Caravaneiro</th><td>Runa de vigor pra estrada</td><td>Viaja mais tempo sem descanso</td><td>Econômico</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Hunters <span class="aff-static-count">18 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Hunter</th><td>Domar mob raro</td><td>Único acesso a certas feras lendárias</td><td>Combate</td></tr>
+          <tr><th scope="row">Caçador</th><td>Abater alvo raro</td><td>Drops únicos de alvo raro</td><td>Combate</td></tr>
+          <tr><th scope="row">Druid</th><td>Pacificar mob raro</td><td>Mob raro fica neutro permanentemente (não temporário)</td><td>Combate</td></tr>
+          <tr><th scope="row">Bardo</th><td>Confundir mob raro</td><td>Mob raro fica vulnerável a controle</td><td>Combate</td></tr>
+          <tr><th scope="row">Necromante</th><td>Invocar forma morta de mob raro</td><td>Fera rara morta volta como morto-vivo único</td><td>Combate</td></tr>
+          <tr><th scope="row">Mago Elemental</th><td>Atrair mob com elemento</td><td>Mob elementar é atraído e mais susceptível a domar</td><td>Combate</td></tr>
+          <tr><th scope="row">Caravaneiro</th><td>Atrelar fera rara à caravana</td><td>Caravana mais rápida e com mais carga</td><td>Econômico</td></tr>
+          <tr><th scope="row">Curtidor</th><td>Curtir pele de fera rara</td><td>Couro lendário que só ele processa sem estragar</td><td>Craft</td></tr>
+          <tr><th scope="row">Açougueiro</th><td>Processar mob raro</td><td>Separa partes raras intactas (materiais exclusivos)</td><td>Craft</td></tr>
+          <tr><th scope="row">Pescador</th><td>Pescar com criatura companheira</td><td>Criatura aquática domada guia até cardumes raros</td><td>Craft</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Lutar em dupla com a fera</td><td>Ataques coordenados — flanqueio automático</td><td>Combate</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Caça coordenada</td><td>Fera encurrala, tiro ganha bônus em alvo imobilizado</td><td>Combate</td></tr>
+          <tr><th scope="row">Ladino</th><td>Usar fera como distração</td><td>Stealth garantido enquanto a fera chama atenção</td><td>Combate</td></tr>
+          <tr><th scope="row">Mensageiro</th><td>Enviar fera mensageira</td><td>Entrega remota por fera treinada</td><td>Econômico</td></tr>
+          <tr><th scope="row">Mercador</th><td>Comércio de criaturas</td><td>Único que negocia feras domadas com segurança</td><td>Econômico</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Mapear habitats</td><td>Mapas com spawns de criaturas raras marcados</td><td>Craft</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Extrair reagente de criatura rara</td><td>Poções com efeitos exclusivos de mob raro</td><td>Craft</td></tr>
+          <tr><th scope="row">Cozinheiro</th><td>Preparar carne de caça rara</td><td>Pratos com buffs únicos</td><td>Craft</td></tr>
+        </tbody>
+      </table>
+
+      <h4>Nephilins <span class="aff-static-count">17 afinidades</span></h4>
+      <table class="aff-static-table">
+        <thead><tr><th>Classe</th><th>Ação</th><th>Resultado</th><th>Tipo</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Sacerdote</th><td>Cura</td><td>HP curado bônus (somado à cura inata)</td><td>Combate</td></tr>
+          <tr><th scope="row">Arqueiro</th><td>Tiro aproveitando voo</td><td>Posicionamento único + range vertical</td><td>Combate</td></tr>
+          <tr><th scope="row">Bardo</th><td>Magia de confusão sonora em área</td><td>Cobertura amplificada por posição aérea</td><td>Combate</td></tr>
+          <tr><th scope="row">Ladino</th><td>Stealth aéreo</td><td>Difícil de detectar — acima do nível visual comum</td><td>Combate</td></tr>
+          <tr><th scope="row">Cartesiano</th><td>Mapear do ar</td><td>Mapas mais precisos e amplos + visão de recursos em altitude</td><td>Craft</td></tr>
+          <tr><th scope="row">Mago</th><td>Lançar magia do ar</td><td>Sem interrupção por dano melee durante cast</td><td>Combate</td></tr>
+          <tr><th scope="row">Sorcerer</th><td>Cura ofensiva do ar</td><td>Drena inimigo em terra sem risco de contra-ataque corpo-a-corpo</td><td>Combate</td></tr>
+          <tr><th scope="row">Mensageiro</th><td>Voar com o cargo</td><td>Rota aérea direta — ignora terreno e emboscadas</td><td>Econômico</td></tr>
+          <tr><th scope="row">Caçador</th><td>Avistar do alto</td><td>Localiza presas em área muito maior</td><td>Combate</td></tr>
+          <tr><th scope="row">Druid</th><td>Pacificar do ar</td><td>Pacifica sem entrar no aggro range do mob</td><td>Combate</td></tr>
+          <tr><th scope="row">Guerreiro</th><td>Ataque em mergulho</td><td>Dano de impacto amplificado ao cair do voo</td><td>Combate</td></tr>
+          <tr><th scope="row">Hunter</th><td>Domar criatura voadora</td><td>Único vínculo ar-ar — feras aladas</td><td>Combate</td></tr>
+          <tr><th scope="row">Pescador</th><td>Pesca de mergulho</td><td>Captura peixes de superfície como ave de rapina</td><td>Craft</td></tr>
+          <tr><th scope="row">Alquimista</th><td>Colher flora de altitude</td><td>Reagentes de picos e falésias inacessíveis</td><td>Craft</td></tr>
+          <tr><th scope="row">Sieger</th><td>Observação aérea</td><td>Corrige mira de armas de cerco do alto (spotter)</td><td>Combate</td></tr>
+          <tr><th scope="row">Elemental</th><td>Conjurar raio em altitude</td><td>Magia de raio lançada do céu atinge área maior</td><td>Combate</td></tr>
+          <tr><th scope="row">Caravaneiro</th><td>Bater rota como batedor aéreo</td><td>Caravana avisada de ameaças com muita antecedência</td><td>Econômico</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
   <p class="prog-header-eyebrow">Asteroth · Sistema de progressão</p>
   <h3 class="prog-header-title">XP, Mastery, Fama &amp; PvP</h3>
   <p class="section-kicker">Como o personagem cresce, sem número de level, sem gap arbitrário.</p>
@@ -13943,6 +14531,73 @@
 
 
 <!-- APOIAR -->
+<!-- FAQ -->
+<section id="faq" class="section section-alt">
+  <div class="section-head">
+    <h2>Perguntas frequentes</h2>
+    <p class="kicker">O que é, quando lança, como funciona. As respostas curtas, para quem chegou agora.</p>
+  </div>
+
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary><h3>O que é Asteroth?</h3></summary>
+      <p>Asteroth é um MMORPG isométrico ambientado em um planeta esférico de verdade, gerado a partir de uma seed. O mundo nasce vazio: não há cidades pré-fabricadas nem estruturas imutáveis. Toda civilização que existir nele é construída pelos jogadores, e tudo que é construído pode ser destruído ou pilhado.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>Quando Asteroth vai ser lançado?</h3></summary>
+      <p>O lançamento previsto é 2028. O desenvolvimento é aberto: cada marco público sai no <a href="changelog.html">changelog do site</a>, e o projeto está hoje na Fase 0, Fundação 3D, o pipeline de renderização.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>Asteroth é pago ou gratuito?</h3></summary>
+      <p>Asteroth é free-to-play: jogar é gratuito. Vão existir itens à venda dentro do jogo, e é isso que custeia os servidores. Não há caixa a comprar para entrar no mundo.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>Quem desenvolve Asteroth?</h3></summary>
+      <p>Lucas Hiago, sozinho, desde 2012, em uma engine própria escrita em C++. Sem publisher, sem investidor e sem prazo imposto: o projeto é financiado direto por apoiadores no <a href="https://github.com/sponsors/LucasHiago" target="_blank" rel="noopener">GitHub Sponsors</a> e no <a href="https://www.patreon.com/c/Asteroth" target="_blank" rel="noopener">Patreon</a>.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>O que torna o mundo de Asteroth diferente de outros MMOs?</h3></summary>
+      <p>O mundo não é um mapa plano, é um planeta esférico. Você caminha em volta da esfera, o horizonte é curvo, o sol nasce e se põe e duas luas atravessam o céu. Como não existe conteúdo pré-construído, a economia, as cidades e as rotas são inteiramente obra dos jogadores.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>Asteroth tem PvP e full loot?</h3></summary>
+      <p>Tem. A pegada mistura Albion Online, pelo MMO isométrico de mundo persistente e economia conduzida por jogadores, e Rust, pela destruição, raid, full loot e ausência de safe zones absolutas. O ciclo do jogo é explorar, coletar, construir, defender, ser invadido e reconstruir.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>Como funciona a progressão do personagem?</h3></summary>
+      <p>Por fama, não por nível. Cada ponto de fama vale 0,005 ponto de bônus aplicado direto aos status, sorteado entre atributos como vida, dano, defesa e velocidade. A primeira grande marca chega em 1.000 pontos. Ganha-se fama coletando, construindo, forjando, caçando, em dungeons, no PvP e dando suporte, e ela pode ser roubada: parte se perde na morte. <a href="#gameplay">Ver a seção de gameplay</a>.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>Quantas raças e classes Asteroth tem?</h3></summary>
+      <p>São 14 raças e 39 classes. Dá para manter duas classes ativas; trocar a primária custa 50% do XP guardado mais ouro, com cooldown de 72 horas. A habilidade principal da primeira classe escolhida fica com o personagem para sempre.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>O que são as afinidades?</h3></summary>
+      <p>Afinidade é a interseção entre raça, classe e ação: quando as três alinham, o resultado escala em raridade, qualidade ou eficácia. O anão ferreiro tira uma liga que ninguém mais tira. São 280 afinidades mapeadas, navegáveis no <a href="afinidades-grafo.html">grafo de afinidades</a>.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>Quem são os Governantes de Asteroth?</h3></summary>
+      <p>São 26 entidades que dividem o domínio do planeta, entre elas Cthulhu, Azazel, Beelzebub, Metatron, Hastur, Abaddon, Mammon e Baphomet, cada uma com sua própria condição de despertar. Abaixo delas há ainda 24 sub-governantes, seres não-humanoides que servem, ou espreitam. <a href="#governantes">Ver o panteão</a>.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary><h3>Como acompanhar ou apoiar o desenvolvimento?</h3></summary>
+      <p>O <a href="changelog.html">changelog público</a> registra cada marco do projeto. O apoio direto acontece pelo GitHub Sponsors e pelo Patreon, e o <a href="https://github.com/LucasHiago/asteroth-public" target="_blank" rel="noopener">repositório público</a> reúne lore, contos e conceitos visuais do mundo.</p>
+    </details>
+
+  </div>
+</section>
+
 <section id="apoiar" class="section section-sponsor">
   <div class="section-head">
     <h2>Apoie o projeto</h2>
@@ -13968,7 +14623,16 @@
 </main>
 
 <footer class="footer">
-  <p>Asteroth · MMORPG em desenvolvimento desde 2012 · construído em engine própria, C++</p>
+  <p>Asteroth · MMORPG isométrico em um planeta esférico · em desenvolvimento desde 2012, em engine própria, C++ · lançamento previsto para 2028</p>
+  <p class="footer-links">
+    <a href="#lore">Lore</a> ·
+    <a href="#governantes">Governantes</a> ·
+    <a href="#bestiario">Bestiário</a> ·
+    <a href="#gameplay">Gameplay</a> ·
+    <a href="#faq">Perguntas frequentes</a> ·
+    <a href="changelog.html">Changelog</a> ·
+    <a href="afinidades-grafo.html">Grafo das afinidades</a>
+  </p>
   <p class="footer-links">
     <a href="https://github.com/LucasHiago/asteroth-public" target="_blank" rel="noopener">GitHub</a> ·
     <a href="https://github.com/sponsors/LucasHiago" target="_blank" rel="noopener">Sponsors</a> ·
