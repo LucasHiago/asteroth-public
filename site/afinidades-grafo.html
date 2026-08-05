@@ -148,12 +148,13 @@
     function tlabel(t){ return (typeById[t]&&typeById[t].label)||t; }
 
     var ASTEROTH_API=(window.ASTEROTH_API||'http://localhost:4080');
-    var BASE='concepts/classes/treated/';   // relativo em dev (symlink site/concepts); o deploy reescreve pra $ASSET_HOST/assets/concepts/...
-    function imgFallback(el){ el.onerror=null; el.src=el.src.replace(ASTEROTH_API+'/assets/',''); } // se a API cair, volta pro caminho local
+    var BASE='concepts/classes/treated/';   // relativo em dev (symlink site/concepts); o deploy reescreve pra $ASSET_HOST/assets/site/concepts/...
+    var ICON_W=192;                        // icone pequeno: o ?w= faz o backend mandar a derivada, nao o PNG de 1024
+    function imgFallback(el){ el.onerror=null; el.src=el.src.replace(ASTEROTH_API+'/assets/site/','').replace(ASTEROTH_API+'/assets/',''); } // se a API cair, volta pro caminho local
     var RACE_ART={humano:'human',anao:'anao',elfo:'elfo',dark_elf:'dark_elfo',orc:'orc',orc_sangue:'orc_de_sangue',halfling:'halfling',demonio:'demonio',necro:'necro',phibens:'phibens',beasts:'beasts',runnics:'runnics',hunters:'hunters',nephilins:'nephilins'};
     var CLASS_ART={'Açougueiro':'acougueiro','Alquimista':'alquimista','Arqueiro':'arqueiro','Arquiteto':'arquiteto','Artesão':'artesao_classe','Bardo':'bardo','Boticário':'mago_boticario','Bucaneiro':'bucaneiro','Caçador':'cacador','Cartesiano':'cartesiano','Cervejeiro':'cervejeiro','Clown':'clown','Cozinheiro':'cozinheiro','Curtidor':'curtidor','Dark Mage':'dark_mago','Dragon Born':'dragon_born','Druid':'mago_druida','Elemental':'mago_fogo','Ferreiro':'ferreiro','Fundidor':'fundidor','Guerreiro':'guerreiro','Hunter':'hunter_combate','Joker':'joker','Ladino':'ladino','Lenhador':'lenhador','Mago':'mago','Mago Elemental':'mago_raio','Mensageiro':'mensageiro','Mercador':'mercador','Minerador':'minerador','Necromante':'necromante','Pantheon':'pantheon','Pescador':'pescador','Pirata':'pirata','Rogue (sub-mago)':'mago_vampiro','Sacerdote':'mago_sacerdote','Sieger':'sieger','Sorcerer':'mago_agua','Tank':'tank','Caravaneiro':'caravaneiro','Estalajadeiro':'estalajadeiro','Moleiro':'moleiro','Padeiro':'padeiro','Serrador':'serrador','Tecelão':'tecelao','Ladino ✦':'ladino'};
-    function raceArt(id){ return RACE_ART[id]?BASE+RACE_ART[id]+'_white.png':''; }
-    function classArt(c){ return CLASS_ART[c]?BASE+CLASS_ART[c]+'_white.png':''; }
+    function raceArt(id){ return RACE_ART[id]?BASE+RACE_ART[id]+'_white.png?w='+ICON_W:''; }
+    function classArt(c){ return CLASS_ART[c]?BASE+CLASS_ART[c]+'_white.png?w='+ICON_W:''; }
     function typeRank(t){ var o={combat:0,craft:1,passive:2,economic:3}; return (t in o)?o[t]:9; }
 
     // ---- build edges (dedup race|cls, keep list of affinities) ----

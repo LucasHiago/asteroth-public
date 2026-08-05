@@ -63,6 +63,29 @@ Um recorte da coleção em [`concepts/worlds/`](concepts/worlds/). Cada arte aco
 
 Ver os 17 em [`concepts/worlds/`](concepts/worlds/).
 
+## Imagens do site
+
+A arte do `concepts/` é PNG de 1024×1024. O site mostra quase tudo bem menor — o card do
+compêndio, por exemplo, tem 96 px e a arte dentro dele 60 px. Servir o original ali é
+mandar ~10× mais pixel do que a tela usa, e em 4G a página deixa de abrir.
+
+Por isso nenhuma `<img>` aponta pro PNG cru: todas carregam `?w=N`, e o backend
+(`asteroth-back`, rota `/assets/site/<path>?w=N`) devolve a derivada redimensionada em
+WebP. O `deploy.yml` reescreve o prefixo `concepts/` pra `$ASSET_HOST/assets/site/concepts/`
+na hora de publicar. **Em dev nada muda**: o browser ignora a query e o symlink
+`site/concepts` entrega o PNG de sempre, sem backend nenhum rodando.
+
+**Ao somar arte nova ao HTML, rode:**
+
+```bash
+python3 scripts/add_srcset.py            # aplica    (--check só relata)
+```
+
+Ele dimensiona cada `<img>` pelo tamanho em que ela realmente aparece (os números vêm do
+`styles.css`) e é idempotente — `<img>` que já tem `?w=` é pulada. Caminhos montados em
+JS não passam por ele: a forja usa o helper `url(p, w)` e o grafo de afinidades usa
+`ICON_W`, e nos dois a largura vai à mão no ponto de uso.
+
 ## Status
 
 Em desenvolvimento ativo. Atualmente na **Fase 0: Fundação 3D** (pipeline de renderização: cubo girando em isométrico, depth test, sistema de mesh). O roadmap segue até MMO infra (Fase 5) e conteúdo (Fase 6+). Marcos públicos vão aparecendo aqui no [`CHANGELOG.md`](CHANGELOG.md).

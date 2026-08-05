@@ -29,7 +29,7 @@ jobs:
         env:
           # Defina a variável de repositório ASSET_HOST (Settings > Secrets and variables
           # > Actions > Variables) com a URL do backend de assets, ex.:
-          # https://assets.asteroth.com.br  (o backend serve em /assets/concepts/...).
+          # https://assets.asteroth.com.br  (o backend serve em /assets/site/concepts/...).
           # VAZIO = comportamento atual: empacota concepts/ (1.3GB) no bundle do Pages.
           # SETADO = imagens vêm do host; concepts/ não é empacotado e as refs são reescritas.
           ASSET_HOST: ${{ vars.ASSET_HOST }}
@@ -42,18 +42,27 @@ jobs:
           if [ -n "$ASSET_HOST" ]; then
             echo ">> ASSET_HOST=$ASSET_HOST — imagens do host; concepts/ NAO empacotado."
             # 1) reescreve refs estaticas: "concepts/..., 'concepts/... e url(...concepts/...)
-            #    -> $ASSET_HOST/assets/concepts/...
+            #    -> $ASSET_HOST/assets/site/concepts/...
             #    A regra de aspas simples pega os caminhos montados em JS (icones de raca/classe
             #    do seletor de afinidades, pills de tipo, UI da forja) que antes ficavam
             #    relativos e quebravam, ja que concepts/ nao vai no bundle.
+            #
+            #    /assets/site/ (e nao /assets/) e' o que entrega a derivada leve: as refs ja
+            #    carregam ?w=N (scripts/add_srcset.py + helper url() da forja), e so essa rota
+            #    olha pro ?w=. Apontar pro /assets/ puro ignoraria a query e mandaria o PNG de
+            #    1024 de volta — o bug some do olho e volta na conta do 4G.
             find _deploy -type f \( -name '*.html' -o -name '*.css' \) -print0 \
               | xargs -0 sed -i \
-                  -e "s#\"concepts/#\"${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#url(\"concepts/#url(\"${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#url('concepts/#url('${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#url(concepts/#url(${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#'concepts/#'${ASSET_HOST}/assets/concepts/#g"
-            # 2) injeta window.ASTEROTH_API (grids governantes/sub-gov + icones do afinidades em prod)
+                  -e "s#\"concepts/#\"${ASSET_HOST}/assets/site/concepts/#g" \
+                  -e "s#url(\"concepts/#url(\"${ASSET_HOST}/assets/site/concepts/#g" \
+                  -e "s#url('concepts/#url('${ASSET_HOST}/assets/site/concepts/#g" \
+                  -e "s#url(concepts/#url(${ASSET_HOST}/assets/site/concepts/#g" \
+                  -e "s#'concepts/#'${ASSET_HOST}/assets/site/concepts/#g"
+            # 2) o srcset tem varias refs por atributo, separadas por virgula — a regra de
+            #    aspas so alcanca a primeira. Reescreve as demais (", concepts/" -> host).
+            find _deploy -type f -name '*.html' -print0 \
+              | xargs -0 sed -i -e "s#, concepts/#, ${ASSET_HOST}/assets/site/concepts/#g"
+            # 3) injeta window.ASTEROTH_API (grids governantes/sub-gov + icones do afinidades em prod)
             find _deploy -maxdepth 1 -name '*.html' -print0 \
               | xargs -0 sed -i "s#<head>#<head><script>window.ASTEROTH_API=\"${ASSET_HOST}\";</script>#"
           else
