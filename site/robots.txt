@@ -1,11 +1,28 @@
 # robots.txt — asteroth.com.br
 # Site publico do Asteroth (MMORPG isometrico em um planeta esferico).
 # Tudo aqui e material de divulgacao: queremos ser indexado e citado.
+#
+# ATENCAO: o arquivo servido em producao NAO e este. O Cloudflare injeta um
+# bloco "managed content" ANTES deste conteudo (repo ~1.8 KB -> servido ~3.7 KB)
+# que faz Disallow: / para ClaudeBot, GPTBot, CCBot, Google-Extended,
+# Applebot-Extended, meta-externalagent e Amazonbot -- o oposto do que este
+# arquivo declara -- e anuncia Content-Signal: ai-train=no.
+# Para o que esta aqui valer de fato, e preciso desligar a gestao automatica do
+# robots.txt no painel do Cloudflare (zona asteroth.com.br, area de AI Crawl
+# Control). Nenhum commit neste repo remove aquele bloco.
+# Conferir sempre com `curl https://asteroth.com.br/robots.txt`, nunca so lendo
+# este arquivo.
 
 # ---------------------------------------------------------------------------
 # Buscadores tradicionais
 # ---------------------------------------------------------------------------
+# Content-Signal vale para o grupo em que esta declarado, igual a Allow/Disallow
+# -- por isso fica aqui dentro, e nao solto no fim do arquivo.
+#   search   = indexar e devolver links e trechos
+#   ai-input = usar como fonte em resposta de IA (RAG, grounding)
+#   ai-train = treinar modelo
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 # ---------------------------------------------------------------------------
@@ -70,13 +87,5 @@ Allow: /
 
 User-agent: YouBot
 Allow: /
-
-# ---------------------------------------------------------------------------
-# Sinais de conteudo (Content Signals / Cloudflare)
-# search   = indexar e devolver links e trechos
-# ai-input = usar como fonte em resposta de IA (RAG, grounding)
-# ai-train = treinar modelo
-# ---------------------------------------------------------------------------
-Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 Sitemap: https://asteroth.com.br/sitemap.xml
