@@ -26,54 +26,74 @@
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .mm-wrap{max-width:1180px;margin:0 auto;padding:clamp(1.5rem,4vw,3rem) clamp(1rem,3vw,2rem)}
-    .mm-eyebrow{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.7rem;
-      letter-spacing:.18em;text-transform:uppercase;opacity:.6;margin:0 0 .5rem}
-    .mm-wrap h1{font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.06;margin:0 0 .7rem;text-wrap:balance}
-    .mm-lede{max-width:62ch;opacity:.78;margin:0 0 2rem}
-    .mm-plate{border:1px solid rgba(255,255,255,.14);border-radius:3px;overflow:hidden;
-      background:#06131a}
-    .mm-vp{position:relative;width:100%;aspect-ratio:2/1;overflow:hidden;cursor:grab;touch-action:none}
+    /* Carta de Asteroth. O layout do site continua; o que muda é o TRATAMENTO
+       da carta em si, que é pergaminho e tinta e não instrumento de telemetria. */
+    .mm-wrap{max-width:1200px;margin:0 auto;padding:clamp(1.5rem,4vw,3rem) clamp(1rem,3vw,2rem)}
+    .mm-eyebrow{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.68rem;
+      letter-spacing:.22em;text-transform:uppercase;opacity:.55;margin:0 0 .6rem}
+    .mm-wrap h1{font-family:ui-serif,"Iowan Old Style","Hoefler Text",Georgia,serif;
+      font-weight:600;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.05;margin:0 0 .7rem;
+      text-wrap:balance;letter-spacing:-.005em}
+    .mm-lede{max-width:60ch;opacity:.78;margin:0 0 2rem}
+
+    /* moldura: dupla linha, como borda de carta gravada */
+    .mm-plate{position:relative;background:#E6D8BA;
+      border:1px solid #6B5636;box-shadow:0 0 0 4px #E6D8BA,0 0 0 5px #6B5636,
+      0 18px 40px -18px rgba(0,0,0,.8)}
+    .mm-vp{position:relative;width:100%;aspect-ratio:2000/845;overflow:hidden;
+      cursor:grab;touch-action:none;background:#E6D8BA}
     .mm-vp.dragging{cursor:grabbing}
     .mm-stack{position:absolute;inset:0;transform-origin:0 0;will-change:transform}
-    .mm-stack img{position:absolute;inset:0;width:100%;height:100%;display:block;transition:opacity .18s}
+    .mm-stack img{position:absolute;inset:0;width:100%;height:100%;display:block;transition:opacity .2s}
     .mm-stack img.off{opacity:0}
-    .mm-grat{position:absolute;inset:0;pointer-events:none;opacity:.26;
-      background-image:repeating-linear-gradient(to right,rgba(255,255,255,.5) 0 1px,transparent 1px 12.5%),
-                       repeating-linear-gradient(to bottom,rgba(255,255,255,.5) 0 1px,transparent 1px 25%)}
-    .mm-rail{display:flex;flex-wrap:wrap;gap:.5rem;padding:.75rem;
-      border-top:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)}
+    /* graticulado fino, em tinta sépia */
+    .mm-grat{position:absolute;inset:0;pointer-events:none;opacity:.28;
+      background-image:repeating-linear-gradient(to right,rgba(62,45,27,.55) 0 1px,transparent 1px 8.3333%),
+                       repeating-linear-gradient(to bottom,rgba(62,45,27,.55) 0 1px,transparent 1px 20%)}
+    .mm-rosa{position:absolute;right:2.2%;bottom:5%;width:min(13%,116px);opacity:.62;
+      pointer-events:none;filter:drop-shadow(0 1px 0 rgba(255,255,255,.35))}
+    .mm-cart{position:absolute;left:2.2%;top:5%;pointer-events:none;
+      font-family:ui-serif,"Iowan Old Style",Georgia,serif;color:#3E2D1B;opacity:.72}
+    .mm-cart b{display:block;font-size:clamp(.95rem,2.2vw,1.4rem);font-weight:600;letter-spacing:.02em}
+    .mm-cart i{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-style:normal;opacity:.75}
+
+    .mm-rail{display:flex;flex-wrap:wrap;gap:.5rem;padding:.7rem .8rem;
+      border-top:1px solid #6B5636;background:#DCCDA9}
     .mm-chip{display:inline-flex;align-items:center;gap:.5rem;background:transparent;
-      border:1px solid rgba(255,255,255,.18);color:inherit;opacity:.62;border-radius:2px;
-      padding:.4rem .7rem;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:.68rem;
-      letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:opacity .15s,border-color .15s}
-    .mm-chip:hover{opacity:1}
-    .mm-chip:focus-visible{outline:2px solid #2E86B8;outline-offset:2px}
-    .mm-chip[aria-pressed="true"]{opacity:1;border-color:currentColor;color:var(--c,#2E86B8)}
-    .mm-dot{width:9px;height:9px;border-radius:50%;background:var(--c,#2E86B8);flex:none}
+      border:1px solid rgba(62,45,27,.35);color:#3E2D1B;opacity:.62;border-radius:1px;
+      padding:.38rem .7rem;font-family:ui-serif,Georgia,serif;font-size:.8rem;
+      letter-spacing:.06em;cursor:pointer;transition:opacity .15s,border-color .15s,background .15s}
+    .mm-chip:hover{opacity:1;background:rgba(62,45,27,.06)}
+    .mm-chip:focus-visible{outline:2px solid #6B5636;outline-offset:2px}
+    .mm-chip[aria-pressed="true"]{opacity:1;border-color:#3E2D1B;background:rgba(62,45,27,.10)}
+    .mm-dot{width:8px;height:8px;border-radius:50%;background:var(--c,#3E2D1B);flex:none}
     .mm-spacer{flex:1}
-    .mm-zoom{align-self:center;font-family:ui-monospace,Menlo,monospace;font-size:.65rem;
-      letter-spacing:.08em;opacity:.6;text-transform:uppercase}
-    .mm-verdict{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin:2.5rem 0 .6rem;
+    .mm-zoom{align-self:center;font-family:ui-serif,Georgia,serif;font-size:.78rem;
+      color:#3E2D1B;opacity:.65}
+
+    .mm-verdict{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin:2.6rem 0 .6rem;
       padding-bottom:.9rem;border-bottom:1px solid rgba(255,255,255,.14)}
-    .mm-verdict b{font-size:clamp(2.2rem,6vw,3.4rem);line-height:1;color:#5BC98A;font-weight:600;
+    .mm-verdict b{font-family:ui-serif,"Iowan Old Style",Georgia,serif;
+      font-size:clamp(2.2rem,6vw,3.4rem);line-height:1;color:#C9A227;font-weight:600;
       font-variant-numeric:tabular-nums}
-    .mm-verdict span{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;letter-spacing:.14em;
+    .mm-verdict span{font-family:ui-monospace,Menlo,monospace;font-size:.7rem;letter-spacing:.16em;
       text-transform:uppercase;opacity:.65}
     .mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;
       background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);margin:1.5rem 0 2.5rem}
     .mm-cell{background:#0a0a0d;padding:1rem 1.1rem}
-    .mm-cell dt{font-family:ui-monospace,Menlo,monospace;font-size:.65rem;letter-spacing:.13em;
-      text-transform:uppercase;opacity:.6;margin:0 0 .35rem}
-    .mm-cell dd{margin:0;font-family:ui-monospace,Menlo,monospace;font-size:1.1rem;
+    .mm-cell dt{font-family:ui-monospace,Menlo,monospace;font-size:.63rem;letter-spacing:.15em;
+      text-transform:uppercase;opacity:.55;margin:0 0 .35rem}
+    .mm-cell dd{margin:0;font-family:ui-serif,Georgia,serif;font-size:1.2rem;
       font-variant-numeric:tabular-nums}
+    .mm-wrap h2{font-family:ui-serif,"Iowan Old Style",Georgia,serif;font-weight:600;
+      margin:2.4rem 0 .7rem;text-wrap:balance}
     .mm-tbl{overflow-x:auto;border:1px solid rgba(255,255,255,.14);margin:1.2rem 0}
     .mm-tbl table{border-collapse:collapse;width:100%;min-width:380px}
     .mm-tbl th,.mm-tbl td{padding:.55rem .9rem;text-align:left;
       border-bottom:1px solid rgba(255,255,255,.10);font-size:.9rem}
-    .mm-tbl th{font-family:ui-monospace,Menlo,monospace;font-size:.64rem;letter-spacing:.13em;
-      text-transform:uppercase;opacity:.6;font-weight:400}
-    .mm-tbl td.n{text-align:right;font-family:ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+    .mm-tbl th{font-family:ui-monospace,Menlo,monospace;font-size:.62rem;letter-spacing:.15em;
+      text-transform:uppercase;opacity:.55;font-weight:400}
+    .mm-tbl td.n{text-align:right;font-family:ui-serif,Georgia,serif;font-variant-numeric:tabular-nums}
     .mm-tbl tr:last-child td{border-bottom:none}
     @media (prefers-reduced-motion:reduce){*{transition:none!important}}
   </style>
@@ -82,25 +102,35 @@
 <main class="mm-wrap">
   <p class="mm-eyebrow">Asteroth · levantamento do planeta</p>
   <h1>Mapa-múndi da primeira seed oficial</h1>
-  <p class="mm-lede">O planeta inteiro, gerado fora do motor a partir da seed que hoje é canônica.
-    Cada ponto é um recurso realmente colocado — não uma amostra.
+  <p class="mm-lede">Levantada do próprio mundo: cada bosque e cada campo de pedra desta carta é
+    coisa que existe no planeta, na posição em que existe. Nada aqui é enfeite.
     <strong>Arraste para mover, role para aproximar.</strong></p>
 
   <div class="mm-plate">
     <div class="mm-vp" id="mmvp">
       <div class="mm-stack" id="mmstack">
-        <img id="mm-terreno" alt="Terreno: oceano por profundidade, terra por altitude" />
-        <img id="mm-arvores" class="off" alt="Densidade de árvores" />
-        <img id="mm-pedras"  class="off" alt="Densidade de pedras" />
-        <img id="mm-tudo"    alt="Densidade de todos os recursos" />
+        <img id="mm-terreno" alt="Carta de Asteroth: continentes em pergaminho, mar hachurado" />
+        <img id="mm-arvores" class="off" alt="Bosques, em tinta verde" />
+        <img id="mm-pedras"  class="off" alt="Campos de pedra, em umbra" />
         <div class="mm-grat"></div>
+        <div class="mm-cart"><b>Asteroth</b><i>seed 0xA57E40F</i></div>
+        <svg class="mm-rosa" viewBox="0 0 100 100" aria-hidden="true">
+          <g fill="none" stroke="#3E2D1B" stroke-width="1.1">
+            <circle cx="50" cy="50" r="34"/><circle cx="50" cy="50" r="27"/>
+          </g>
+          <path d="M50 8 L57 44 L50 50 L43 44 Z" fill="#3E2D1B"/>
+          <path d="M50 92 L43 56 L50 50 L57 56 Z" fill="#3E2D1B" opacity=".45"/>
+          <path d="M8 50 L44 43 L50 50 L44 57 Z" fill="#3E2D1B" opacity=".45"/>
+          <path d="M92 50 L56 57 L50 50 L56 43 Z" fill="#3E2D1B" opacity=".45"/>
+          <text x="50" y="6" text-anchor="middle" font-size="11"
+                font-family="ui-serif,Georgia,serif" fill="#3E2D1B">N</text>
+        </svg>
       </div>
     </div>
     <div class="mm-rail">
-      <button class="mm-chip" style="--c:#2E86B8" aria-pressed="true"  data-l="terreno"><span class="mm-dot"></span>Terreno</button>
-      <button class="mm-chip" style="--c:#4F8B3B" aria-pressed="false" data-l="arvores"><span class="mm-dot"></span>Árvores</button>
-      <button class="mm-chip" style="--c:#C98A2E" aria-pressed="false" data-l="pedras"><span class="mm-dot"></span>Pedras</button>
-      <button class="mm-chip" style="--c:#C7442F" aria-pressed="true"  data-l="tudo"><span class="mm-dot"></span>Tudo</button>
+      <button class="mm-chip" style="--c:#6B5636" aria-pressed="true"  data-l="terreno"><span class="mm-dot"></span>Terras e mares</button>
+      <button class="mm-chip" style="--c:#284C2E" aria-pressed="false" data-l="arvores"><span class="mm-dot"></span>Bosques</button>
+      <button class="mm-chip" style="--c:#5A4227" aria-pressed="false" data-l="pedras"><span class="mm-dot"></span>Pedras</button>
       <span class="mm-spacer"></span>
       <span class="mm-zoom" id="mmzoom">1,0×</span>
       <button class="mm-chip" id="mmreset"><span class="mm-dot"></span>Reenquadrar</button>
@@ -131,8 +161,8 @@
 (function(){
   var API=(window.ASTEROTH_API||'https://api.asteroth.com.br').replace(/\/$/,'');
   var ID=(new URLSearchParams(location.search)).get('snapshot')||'A57E40F-s6';
-  var LOCAL={terreno:'assets/mapa/terreno.png',arvores:'assets/mapa/arvores.png',
-             pedras:'assets/mapa/pedras.png',tudo:'assets/mapa/tudo.png'};
+  var LOCAL={terreno:'assets/mapa/carta.png',arvores:'assets/mapa/carta-bosques.png',
+             pedras:'assets/mapa/carta-pedras.png'};
   var nf=new Intl.NumberFormat('pt-BR');
 
   // Camadas locais primeiro: a página tem que abrir mesmo com a API fora.
@@ -141,7 +171,9 @@
   fetch(API+'/world/snapshots/'+encodeURIComponent(ID)+'?layers=1')
     .then(function(r){ if(!r.ok) throw 0; return r.json(); })
     .then(function(s){
-      var m={terrain:'terreno',trees:'arvores',rocks:'pedras',all:'tudo'};
+      // As camadas da carta são as locais: o snapshot da API guarda a versão de
+      // trabalho, em cores de dado, e a carta é tratamento de arte por cima dela.
+      var m={};
       if(s.layers) Object.keys(m).forEach(function(k){
         if(s.layers[k]) document.getElementById('mm-'+m[k]).src=s.layers[k]; });
       if(s.planetSeed)   document.getElementById('mm-seed').textContent=s.planetSeed;

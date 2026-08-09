@@ -219,6 +219,24 @@
     ]
   }
   </script>
+
+<style>
+  /* A carta do mundo, no bloco de O Mundo. Moldura dupla como carta gravada —
+     o resto da página segue o layout do site. */
+  .mundo-carta{display:block;position:relative;margin:0 0 2rem;text-decoration:none;color:inherit;
+    border:1px solid #6B5636;box-shadow:0 0 0 4px #E6D8BA,0 0 0 5px #6B5636;
+    background:#E6D8BA;overflow:hidden;transition:box-shadow .2s,transform .2s}
+  .mundo-carta:hover{transform:translateY(-2px);
+    box-shadow:0 0 0 4px #E6D8BA,0 0 0 5px #6B5636,0 16px 36px -16px rgba(0,0,0,.75)}
+  .mundo-carta:focus-visible{outline:2px solid #C9A227;outline-offset:6px}
+  .mundo-carta img{display:block;width:100%;height:auto}
+  .mundo-carta-txt{padding:1rem 1.2rem 1.2rem;background:#DCCDA9;color:#3E2D1B;
+    border-top:1px solid #6B5636}
+  .mundo-carta-txt h3{margin:0 0 .3rem;font-family:ui-serif,"Iowan Old Style",Georgia,serif;
+    font-size:1.25rem;font-weight:600}
+  .mundo-carta-txt p{margin:0;max-width:70ch;font-size:.92rem;opacity:.85}
+  @media (prefers-reduced-motion:reduce){.mundo-carta{transition:none}}
+</style>
 </head>
 <body>
 
@@ -610,6 +628,18 @@
     <h2>O Mundo</h2>
     <p class="kicker">Dezessete vinhetas curtas, uma para cada concept art. Paisagens habitadas, momentos avulsos, fragmentos do que a vida diária em Asteroth se parece quando o panteão está em silêncio.</p>
   </div>
+
+  <!-- A carta do planeta. Não é ilustração: sai do próprio mundo gerado, e é por
+       isso que ela mora aqui e não na galeria de concept art. -->
+  <a class="mundo-carta" href="mapa-mundi.html" aria-label="Abrir a carta de Asteroth em tela cheia">
+    <img src="assets/mapa/carta.png" alt="Carta de Asteroth: os continentes da primeira seed oficial, em pergaminho, com o mar hachurado" loading="lazy" />
+    <div class="mundo-carta-txt">
+      <h3>A carta de Asteroth</h3>
+      <p>O planeta inteiro da primeira seed oficial, levantado do mundo gerado — 81.920 tiles,
+         69,8% de água e cada bosque na posição em que existe. Abrir a carta →</p>
+    </div>
+  </a>
+
 
   <div class="worlds-grid">
     <a class="world-card" href="#world-01"><img src="concepts/worlds/0bc15ba7-143c-4350-9ebb-b7d81d50986c.png" alt="" loading="lazy" /><h4>O herdeiro do vale</h4></a>
