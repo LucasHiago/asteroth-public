@@ -221,21 +221,64 @@
   </script>
 
 <style>
-  /* A carta do mundo, no bloco de O Mundo. Moldura dupla como carta gravada —
-     o resto da página segue o layout do site. */
-  .mundo-carta{display:block;position:relative;margin:0 0 2rem;text-decoration:none;color:inherit;
-    border:1px solid #6B5636;box-shadow:0 0 0 4px #E6D8BA,0 0 0 5px #6B5636;
-    background:#E6D8BA;overflow:hidden;transition:box-shadow .2s,transform .2s}
-  .mundo-carta:hover{transform:translateY(-2px);
-    box-shadow:0 0 0 4px #E6D8BA,0 0 0 5px #6B5636,0 16px 36px -16px rgba(0,0,0,.75)}
-  .mundo-carta:focus-visible{outline:2px solid #C9A227;outline-offset:6px}
-  .mundo-carta img{display:block;width:100%;height:auto}
-  .mundo-carta-txt{padding:1rem 1.2rem 1.2rem;background:#DCCDA9;color:#3E2D1B;
-    border-top:1px solid #6B5636}
-  .mundo-carta-txt h3{margin:0 0 .3rem;font-family:ui-serif,"Iowan Old Style",Georgia,serif;
-    font-size:1.25rem;font-weight:600}
-  .mundo-carta-txt p{margin:0;max-width:70ch;font-size:.92rem;opacity:.85}
-  @media (prefers-reduced-motion:reduce){.mundo-carta{transition:none}}
+  /* O mapa de Asteroth, dentro de O Mundo. Sem tipografia própria de propósito:
+     a fonte é a do site, e o que muda aqui é só o comportamento do mapa. */
+  /* Sangria total: a carta é 2,7× mais larga que alta, então dentro da coluna do
+     site ela nunca fica alta E inteira ao mesmo tempo. Escapando pra largura da
+     janela, ela cabe toda em escala 1 e fica o maior possível. */
+  /* A área útil começa DEPOIS do sidebar fixo (212px). Sangrar em 100vw fazia
+     o mapa passar por baixo dele e vazar do outro lado. */
+  .mundo-mapa{--barra:212px;
+    position:relative;width:calc(100vw - var(--barra));left:50%;transform:translateX(-50%);
+    margin-top:0;margin-bottom:2rem;border-top:1px solid rgba(201,169,110,.28);
+    border-bottom:1px solid rgba(201,169,110,.28);background:#14100a;overflow:hidden}
+  /* Mais alto que a proporção da imagem: a carta transborda na horizontal e se
+     percorre arrastando, em vez de encolher pra caber. */
+  /* A proporção é a da própria carta: assim ela entra inteira, sem corte e sem
+     precisar arrastar pra ver o mundo todo. O zoom serve pra detalhe, não pra
+     alcançar o que ficou de fora. */
+  .mundo-mapa-vp{position:relative;width:100%;aspect-ratio:2400/880;overflow:hidden;
+    cursor:grab;touch-action:none}
+
+  /* Abaixo de 900px o sidebar vira gaveta e sai do fluxo: a largura volta a ser
+     a da janela inteira. */
+  @media (max-width:900px){ .mundo-mapa{--barra:0px} }
+
+  /* No celular a carta inteira daria uma faixa de ~140px de altura, ilegível.
+     Aqui ela ganha altura e transborda na horizontal — percorre-se arrastando,
+     que é o gesto natural na tela pequena. */
+  @media (max-width:700px){
+    .mundo-mapa-vp{aspect-ratio:5/4}
+    .mundo-mapa-img{inset:auto;top:0;left:0;height:100%;width:auto;max-width:none}
+    .mundo-mapa-hud{gap:.5rem;padding:.5rem .6rem}
+    .mundo-mapa-hud .dica{font-size:.72rem;flex-basis:100%;order:-1}
+    .mundo-mapa-legenda{gap:.65rem;font-size:.74rem;padding:.6rem}
+  }
+  .mundo-mapa-vp.dragging{cursor:grabbing}
+  .mundo-mapa-img{position:absolute;inset:0;width:100%;height:100%;display:block;
+    transform-origin:0 0;will-change:transform;image-rendering:auto}
+  .mundo-mapa-hud{position:absolute;left:0;right:0;bottom:0;display:flex;flex-wrap:wrap;
+    align-items:center;gap:.75rem;padding:.6rem .9rem;
+    background:linear-gradient(to top,rgba(10,10,13,.88),rgba(10,10,13,0));
+    pointer-events:none}
+  .mundo-mapa-hud .dica{font-size:.8rem;opacity:.8}
+  .mundo-mapa-hud .sep{flex:1}
+  .mundo-mapa-btn{pointer-events:auto;background:rgba(10,10,13,.82);color:#e6d3a6;
+    border:1px solid rgba(201,169,110,.45);padding:0 .8rem;height:32px;line-height:30px;
+    font:inherit;font-size:.82rem;letter-spacing:.02em;cursor:pointer;border-radius:2px;
+    transition:background .15s,border-color .15s,color .15s}
+  .mundo-mapa-btn.icone{width:32px;padding:0;font-size:1.05rem;line-height:28px;text-align:center}
+  .mundo-mapa-btn:hover{background:rgba(201,169,110,.16);border-color:#c9a96e;color:#f2e0b4}
+  .mundo-mapa-btn:focus-visible{outline:2px solid #c9a96e;outline-offset:2px}
+  .mundo-mapa-btn[disabled]{opacity:.38;cursor:default}
+  .mundo-mapa-btn[disabled]:hover{background:rgba(10,10,13,.82);border-color:rgba(201,169,110,.45);color:#e6d3a6}
+  .mundo-mapa-esc{font-variant-numeric:tabular-nums;font-size:.8rem;color:#c9a96e;
+    min-width:3.2em;text-align:right}
+  .mundo-mapa-legenda{display:flex;flex-wrap:wrap;gap:1.1rem;padding:.7rem .9rem;
+    border-top:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.03);font-size:.82rem}
+  .mundo-mapa-legenda i{display:inline-block;width:10px;height:10px;border-radius:2px;
+    margin-right:.4rem;vertical-align:baseline}
+  @media (prefers-reduced-motion:reduce){.mundo-mapa-img{transition:none}}
 </style>
 </head>
 <body>
@@ -626,19 +669,33 @@
 <section id="mundo" class="section">
   <div class="section-head">
     <h2>O Mundo</h2>
-    <p class="kicker">Dezessete vinhetas curtas, uma para cada concept art. Paisagens habitadas, momentos avulsos, fragmentos do que a vida diária em Asteroth se parece quando o panteão está em silêncio.</p>
+    <p class="kicker">Os contos do mundo de Asteroth. O que sobra quando o panteão se cala: uma estrada ao entardecer, uma forja que não apaga, alguém atravessando o vale sem saber que é história. O mapa abaixo é esse mesmo mundo, visto de cima.</p>
   </div>
 
-  <!-- A carta do planeta. Não é ilustração: sai do próprio mundo gerado, e é por
-       isso que ela mora aqui e não na galeria de concept art. -->
-  <a class="mundo-carta" href="mapa-mundi.html" aria-label="Abrir a carta de Asteroth em tela cheia">
-    <img src="assets/mapa/carta.png" alt="Carta de Asteroth: os continentes da primeira seed oficial, em pergaminho, com o mar hachurado" loading="lazy" />
-    <div class="mundo-carta-txt">
-      <h3>A carta de Asteroth</h3>
-      <p>O planeta inteiro da primeira seed oficial, levantado do mundo gerado — 81.920 tiles,
-         69,8% de água e cada bosque na posição em que existe. Abrir a carta →</p>
+  <!-- O mapa do planeta. Não é ilustração: sai do mundo gerado, com cada bosque
+       e cada campo de pedra na posição em que existe. Por isso mora aqui, e não
+       na galeria de concept art. -->
+  <div class="mundo-mapa">
+    <div class="mundo-mapa-vp" id="mapa-vp">
+      <img class="mundo-mapa-img" id="mapa-img" src="assets/mapa/asteroth.jpg"
+           alt="Mapa de Asteroth: os continentes da primeira seed oficial, com bosques, serras e campos de pedra" loading="lazy" />
+      <div class="mundo-mapa-hud">
+        <span class="dica">Role para aproximar · arraste para percorrer o detalhe</span>
+        <span class="sep"></span>
+        <span class="mundo-mapa-esc" id="mapa-esc">1,0×</span>
+        <button type="button" class="mundo-mapa-btn icone" id="mapa-menos" aria-label="Afastar" disabled>−</button>
+        <button type="button" class="mundo-mapa-btn icone" id="mapa-mais" aria-label="Aproximar">+</button>
+        <button type="button" class="mundo-mapa-btn" id="mapa-reset" disabled>Reenquadrar</button>
+      </div>
     </div>
-  </a>
+    <div class="mundo-mapa-legenda">
+      <span><i style="background:#3d2f1a"></i>Mares e enseadas</span>
+      <span><i style="background:#c9a96e"></i>Terras baixas</span>
+      <span><i style="background:#7a5f30"></i>Serras</span>
+      <span><i style="background:#5c5330"></i>Bosques</span>
+      <span><i style="background:#a08a5c"></i>Campos de pedra</span>
+    </div>
+  </div>
 
 
   <div class="worlds-grid">
@@ -15593,5 +15650,66 @@ if (window.lucide) window.lucide.createIcons();
 })();
 </script>
 
+<script>
+(function(){
+  var vp=document.getElementById('mapa-vp'); if(!vp) return;
+  var im=document.getElementById('mapa-img'), esc=document.getElementById('mapa-esc'),
+      bMais=document.getElementById('mapa-mais'), bMenos=document.getElementById('mapa-menos'),
+      bReset=document.getElementById('mapa-reset');
+  var z=1,x=0,y=0,drag=false,px=0,py=0;
+
+  // A carta é mais larga que o quadro, então a moldura já transborda em escala 1
+  // e se percorre arrastando. O limite tem que sair da largura RENDERIZADA da
+  // imagem, não da do quadro — foi por não fazer isso que o arrasto travava.
+  // A carta cabe inteira em escala 1, então o quadro É a imagem: o limite de
+  // arrasto sai da largura do quadro, e só passa a existir depois do zoom.
+  // No desktop a carta cabe inteira e o quadro É a imagem; no celular ela
+  // transborda, e aí o limite tem que sair da largura RENDERIZADA.
+  function larguraImg(){
+    var r=(im.naturalWidth/im.naturalHeight)||(2400/880);
+    var porAltura=vp.clientHeight*r;
+    return porAltura>vp.clientWidth+1 ? porAltura : vp.clientWidth;
+  }
+  function apply(){
+    var w=vp.clientWidth, h=vp.clientHeight, iw=larguraImg()*z, ih=h*z;
+    x=Math.min(0,Math.max(w-iw,x));
+    y=Math.min(0,Math.max(h-ih,y));
+    im.style.transform='translate('+x+'px,'+y+'px) scale('+z+')';
+    esc.textContent=z.toFixed(1).replace('.',',')+'\u00d7';
+    // Estado nos controles: botão que não faz nada fica desabilitado, em vez de
+    // parecer quebrado quando o clique não produz efeito.
+    bMenos.disabled = z<=1.001;
+    bReset.disabled = (z<=1.001 && x===0 && y===0);
+    bMais.disabled  = z>=9.99;
+  }
+  function zoomEm(cx,cy,f){
+    var nz=Math.min(10,Math.max(1,z*f));
+    if(nz===z) return;
+    x=cx-(cx-x)*(nz/z); y=cy-(cy-y)*(nz/z); z=nz; apply();
+  }
+  vp.addEventListener('wheel',function(e){ e.preventDefault();
+    var r=vp.getBoundingClientRect();
+    zoomEm(e.clientX-r.left,e.clientY-r.top,e.deltaY<0?1.18:1/1.18); },{passive:false});
+
+  vp.addEventListener('pointerdown',function(e){
+    // Sem isto os botões não funcionam: o `setPointerCapture` abaixo rouba o
+    // ponteiro no pointerdown e o `click` nunca chega ao botão.
+    if(e.target.closest('button')) return;
+    drag=true;px=e.clientX;py=e.clientY;
+    vp.classList.add('dragging'); vp.setPointerCapture(e.pointerId);
+  });
+  vp.addEventListener('pointermove',function(e){ if(!drag)return;
+    x+=e.clientX-px; y+=e.clientY-py; px=e.clientX; py=e.clientY; apply(); });
+  ['pointerup','pointercancel'].forEach(function(t){
+    vp.addEventListener(t,function(){ drag=false; vp.classList.remove('dragging'); }); });
+
+  bMais .addEventListener('click',function(){ zoomEm(vp.clientWidth/2,vp.clientHeight/2,1.5); });
+  bMenos.addEventListener('click',function(){ zoomEm(vp.clientWidth/2,vp.clientHeight/2,1/1.5); });
+  bReset.addEventListener('click',function(){ z=1;y=0;x=0;apply(); });
+  window.addEventListener('resize',apply);
+  if(im.complete) apply(); else im.addEventListener('load',apply);
+  apply();
+})();
+</script>
 </body>
 </html>
