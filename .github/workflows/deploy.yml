@@ -5,7 +5,6 @@ on:
     branches: [main]
     paths:
       - 'site/**'
-      - 'concepts/**'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
@@ -27,38 +26,21 @@ jobs:
 
       - name: Prepare deploy directory
         env:
-          # Defina a variável de repositório ASSET_HOST (Settings > Secrets and variables
-          # > Actions > Variables) com a URL do backend de assets, ex.:
-          # https://assets.asteroth.com.br  (o backend serve em /assets/concepts/...).
-          # VAZIO = comportamento atual: empacota concepts/ (1.3GB) no bundle do Pages.
-          # SETADO = imagens vêm do host; concepts/ não é empacotado e as refs são reescritas.
+          # URL do backend (Settings > Secrets and variables > Actions > Variables).
+          # So alimenta window.ASTEROTH_API — os grids de governantes/sub-governantes
+          # hidratam por ela. As imagens sao locais (site/img, geradas por
+          # scripts/build-webp.py), nao dependem do host.
           ASSET_HOST: ${{ vars.ASSET_HOST }}
         run: |
           set -e
           mkdir -p _deploy
           cp -r site/. _deploy/
-          # Remove o symlink de dev (site/concepts -> ../../asteroth-assets/concepts)
+          # symlink de dev (site/concepts -> ../../asteroth-assets/concepts): so o
+          # build-webp.py usa, nao vai pro ar.
           rm -rf _deploy/concepts
           if [ -n "$ASSET_HOST" ]; then
-            echo ">> ASSET_HOST=$ASSET_HOST — imagens do host; concepts/ NAO empacotado."
-            # 1) reescreve refs estaticas: "concepts/..., 'concepts/... e url(...concepts/...)
-            #    -> $ASSET_HOST/assets/concepts/...
-            #    A regra de aspas simples pega os caminhos montados em JS (icones de raca/classe
-            #    do seletor de afinidades, pills de tipo, UI da forja) que antes ficavam
-            #    relativos e quebravam, ja que concepts/ nao vai no bundle.
-            find _deploy -type f \( -name '*.html' -o -name '*.css' \) -print0 \
-              | xargs -0 sed -i \
-                  -e "s#\"concepts/#\"${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#url(\"concepts/#url(\"${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#url('concepts/#url('${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#url(concepts/#url(${ASSET_HOST}/assets/concepts/#g" \
-                  -e "s#'concepts/#'${ASSET_HOST}/assets/concepts/#g"
-            # 2) injeta window.ASTEROTH_API (grids governantes/sub-gov + icones do afinidades em prod)
             find _deploy -maxdepth 1 -name '*.html' -print0 \
               | xargs -0 sed -i "s#<head>#<head><script>window.ASTEROTH_API=\"${ASSET_HOST}\";</script>#"
-          else
-            echo ">> ASSET_HOST vazio — comportamento atual: empacotando concepts/ (1.3GB)."
-            cp -r concepts _deploy/concepts
           fi
 
       - name: Setup Pages
